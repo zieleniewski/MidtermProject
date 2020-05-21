@@ -1,1 +1,3 @@
 rootProject.name = 'RoundTableGaming'
+
+includeFlat 'JPAMidterm'
