@@ -4,7 +4,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 
-	<persistence-unit name="SERGIO!">
+	<persistence-unit name="RoundTable">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider
     </provider>
     
@@ -13,9 +13,9 @@
 		
 		<properties>
 			<property name="javax.persistence.jdbc.url"
-				value="jdbc:mysql://localhost:3306/SERGIO!?useSSL=false&amp;useLegacyDatetimeCode=false&amp;serverTimezone=US/Mountain" />
-			<property name="javax.persistence.jdbc.user" value="student" />
-			<property name="javax.persistence.jdbc.password" value="student" />
+				value="jdbc:mysql://localhost:3306/roundtabledb?useSSL=false&amp;useLegacyDatetimeCode=false&amp;serverTimezone=US/Mountain" />
+			<property name="javax.persistence.jdbc.user" value="gamer" />
+			<property name="javax.persistence.jdbc.password" value="roundtable" />
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
 
 			<property name="hibernate.show_sql" value="true" />
