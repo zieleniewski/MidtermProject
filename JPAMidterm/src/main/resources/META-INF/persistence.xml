@@ -7,16 +7,23 @@
 	<persistence-unit name="RoundTable">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider
     </provider>
-    
+
 		<class>com.skilldistillery.roundtablegaming.entities.User</class>
-		
-		
+		<class>com.skilldistillery.roundtablegaming.entities.Address</class>
+		<class>com.skilldistillery.roundtablegaming.entities.AddressId</class>
+		<class>com.skilldistillery.roundtablegaming.entities.Attendee</class>
+		<class>com.skilldistillery.roundtablegaming.entities.Event</class>
+		<class>com.skilldistillery.roundtablegaming.entities.EventComment</class>
+
+
 		<properties>
 			<property name="javax.persistence.jdbc.url"
 				value="jdbc:mysql://localhost:3306/roundtabledb?useSSL=false&amp;useLegacyDatetimeCode=false&amp;serverTimezone=US/Mountain" />
 			<property name="javax.persistence.jdbc.user" value="gamer" />
-			<property name="javax.persistence.jdbc.password" value="roundtable" />
-			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
+			<property name="javax.persistence.jdbc.password"
+				value="roundtable" />
+			<property name="javax.persistence.jdbc.driver"
+				value="com.mysql.cj.jdbc.Driver" />
 
 			<property name="hibernate.show_sql" value="true" />
 			<property name="hibernate.format_sql" value="true" />
@@ -34,5 +41,5 @@
 			<property name="hibernate.c3p0.timeout" value="60" />
 		</properties>
 	</persistence-unit>
-	
+
 </persistence>
