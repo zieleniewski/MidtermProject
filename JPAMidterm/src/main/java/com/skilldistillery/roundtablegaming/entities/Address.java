@@ -8,25 +8,17 @@ import javax.persistence.Id;
 
 @Entity
 public class Address {
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-
 	private String street1;
-
 	private String street2;
-
 	private String city;
-
 	private String state;
-
 	@Column(name = "zip_code")
 	private String zipCode;
 
-	public Address() {
-
-	}
+	public Address() {}
 
 	public Address(int id, String street1, String street2, String city, String state, String zipCode) {
 		super();
@@ -84,6 +76,28 @@ public class Address {
 
 	public void setZipCode(String zipCode) {
 		this.zipCode = zipCode;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + id;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Address other = (Address) obj;
+		if (id != other.id)
+			return false;
+		return true;
 	}
 
 	@Override
