@@ -5,8 +5,8 @@ import org.springframework.stereotype.Controller;
 
 @Controller
 public class AddressController {
-	
-	@Autowired
-	private AddressDAO dao;
+//	
+//	@Autowired
+//	private AddressDAO dao;
 
 }
