@@ -1,6 +1,8 @@
 package com.skilldistillery.roundtablegaming.data;
 
-import javax.persistence.Persistence;
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Service;
 
 import com.skilldistillery.roundtablegaming.entities.User;
 
