@@ -1,55 +1,54 @@
 package com.skilldistillery.roundtablegaming.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Category {
+public class Guild {
 	@Id
-	@GeneratedValue(strategy= GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String name;
 	private String description;
+	@Column(name = "logo_url")
+	private String logoURL;
 	
-	/*
-	 * Constructor
-	 */
-	public Category() {super();}
-	
-	/*
-	 * toString
-	 */
-	@Override
-	public String toString() {
-		return "Category [id=" + id + ", name=" + name + ", description=" + description + "]";
-	}
-	
-	/*
-	 * Getters and Setters
-	 */
+	public Guild() {}
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public String getDescription() {
 		return description;
 	}
+
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	/*
-	 * Hash and Equals
-	 */
+
+	public String getLogoURL() {
+		return logoURL;
+	}
+
+	public void setLogoURL(String logoURL) {
+		this.logoURL = logoURL;
+	}
 
 	@Override
 	public int hashCode() {
@@ -67,10 +66,25 @@ public class Category {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Category other = (Category) obj;
+		Guild other = (Guild) obj;
 		if (id != other.id)
 			return false;
 		return true;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Guild [id=");
+		builder.append(id);
+		builder.append(", name=");
+		builder.append(name);
+		builder.append(", description=");
+		builder.append(description);
+		builder.append(", logoURL=");
+		builder.append(logoURL);
+		builder.append("]");
+		return builder.toString();
 	}
 	
 }

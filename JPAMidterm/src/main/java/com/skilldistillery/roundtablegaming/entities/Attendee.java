@@ -14,19 +14,15 @@ public class Attendee {
 	@JoinColumn(name = "user_id")
 	@MapsId(value = "userId")
 	private User user;
-
 	@EmbeddedId
 	private AttendeeId id = new AttendeeId();
-
+	@Column(name = "event_rating")
 	private int eventRating;
-
 	@Column(name = "comment_by_attendee")
 	private String attendeeComment;
 
 //	CONSTRUCTORS
-	public Attendee() {
-
-	}
+	public Attendee() {}
 
 	public Attendee(User user, AttendeeId id, int eventRating, String attendeeComment) {
 		super();
@@ -74,10 +70,7 @@ public class Attendee {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((attendeeComment == null) ? 0 : attendeeComment.hashCode());
-		result = prime * result + eventRating;
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((user == null) ? 0 : user.hashCode());
 		return result;
 	}
 
@@ -90,27 +83,15 @@ public class Attendee {
 		if (getClass() != obj.getClass())
 			return false;
 		Attendee other = (Attendee) obj;
-		if (attendeeComment == null) {
-			if (other.attendeeComment != null)
-				return false;
-		} else if (!attendeeComment.equals(other.attendeeComment))
-			return false;
-		if (eventRating != other.eventRating)
-			return false;
 		if (id == null) {
 			if (other.id != null)
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
-		if (user == null) {
-			if (other.user != null)
-				return false;
-		} else if (!user.equals(other.user))
-			return false;
 		return true;
 	}
 
-//	TOSTRING
+	// TOSTRING
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
