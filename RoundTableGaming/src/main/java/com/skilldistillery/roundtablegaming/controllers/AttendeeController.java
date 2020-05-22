@@ -6,6 +6,6 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class AttendeeController {
 
-	@Autowired
-	private AttendeeDAO dao;
+//	@Autowired
+//	private AttendeeDAO dao;
 }
