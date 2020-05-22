@@ -1,74 +1,75 @@
 @charset "UTF-8";
 
-body {
+html body {
 
-background-color: #222831;
-color: white;
+background-color: black;
 
 
+}
+
+.fluid-container{
+	 align-content: center;
 }
 
 .navbar {
-  border-color: blue;;
-  border: solid;
+  
 
 
 }
 
-.main {
-    border: solid;
-    height: 400px;
+.img-fluid {
+	height: 400px;
+	width: 400px;
+}
+
+.carousel {
+   
+ 	margin-bottom: 50px;
+    margin-top: 50px;
 
 }
 
-.buttons {
+.carousel-inner img {
 
-    display: inline-block;
-    width:auto;
-    height: 300px;
-
+	height: 250px;
 
 }
 
-
-
-.table-top-button {
-  float:left;
-  width: 32%;
-  border: solid;
-  height: 250px;
-}
-.trading-card-button {
-  border: solid;
-  float: right;
-  width: 32%;
-  height: 250px;
-  padding-left: 15px;
-
+.entire-carousel{
+	margin-left: auto;
+	margin-right: auto;
 }
 
-.table-mini-button {
-  border: solid;
-  float: right;
-  width: 32%;
-  height: 250px;
+.container-whole{
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.carousel-buttons{
+	text-align: center;
 }
 
 .footer {
+margin-top: 50px;
+height:200px;
+  position: absolute;
+    bottom: 30px;
+    width: 100%;
 
-height:200px;;
 
 }
 
 .user-profile {
-  border: solid;
+ 
   float: left;
   width: 32%;
   height: 175px;
 }
 
 .create-event {
-  border: solid;
+ 
   float: right;
   width: 32%;
   height: 175px;
@@ -76,7 +77,7 @@ height:200px;;
 }
 
 .submit-game {
-  border: solid;
+
   float: right;
   width: 32%;
   height: 175px;
