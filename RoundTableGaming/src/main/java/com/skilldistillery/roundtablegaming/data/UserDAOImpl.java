@@ -16,14 +16,11 @@ public class UserDAOImpl implements UserDAO{
 	private EntityManager em;
 
 	@Override
-	public User createUser(User user) {
-		try {
+	public User createUser(User user) { 
 			em.persist(user);
 			em.flush();
-		}catch(Exception e) {
-			System.err.println(e.getMessage());
-		}
-		return user;
+			return user;
+
 	}
 
 	@Override
