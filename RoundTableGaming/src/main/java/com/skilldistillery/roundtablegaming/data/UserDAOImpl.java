@@ -3,30 +3,26 @@ package com.skilldistillery.roundtablegaming.data;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
-
 import org.springframework.stereotype.Service;
-
 import com.skilldistillery.roundtablegaming.entities.User;
 
 @Service
 @Transactional
-public class UserDAOImpl implements UserDAO{
-
+public class UserDAOImpl implements UserDAO {
 	@PersistenceContext
 	private EntityManager em;
 
 	@Override
-	public User createUser(User user) { 
-			em.persist(user);
-			em.flush();
-			return user;
-
+	public User createUser(User user) {
+		em.persist(user);
+		em.flush();
+		return user;
 	}
 
 	@Override
 	public User updateUser(int id, User user) {
-		User updated= em.find(User.class, id);
-		if(updated != null) {
+		User updated = em.find(User.class, id);
+		if (updated != null) {
 			updated.setFirstName(user.getFirstName());
 			updated.setLastName(user.getLastName());
 			updated.setEmail(user.getEmail());
@@ -37,21 +33,16 @@ public class UserDAOImpl implements UserDAO{
 			updated.setEnabled(user.isEnabled());
 		}
 		return updated;
-		
 	}
 
 	@Override
 	public boolean deleteUser(int id) {
-		boolean deleted= false;
-		
+		boolean deleted = false;
 		User toRemove = em.find(User.class, id);
-		
-		if(toRemove != null) {
+		if (toRemove != null) {
 			em.remove(toRemove);
 			deleted = true;
 		}
 		return deleted;
 	}
-
 }
-
