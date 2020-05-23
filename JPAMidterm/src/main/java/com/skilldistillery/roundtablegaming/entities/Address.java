@@ -1,7 +1,9 @@
 package com.skilldistillery.roundtablegaming.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,9 +22,9 @@ public class Address {
 	private String state;
 	@Column(name = "zip_code")
 	private String zipCode;
-	@OneToMany(mappedBy = "address")
+	@OneToMany(mappedBy = "address", cascade = CascadeType.PERSIST)
 	private List<Event> events;
-	@OneToMany(mappedBy = "address")
+	@OneToMany(mappedBy = "address", cascade = CascadeType.PERSIST)
 	private List<User> users;
 
 	public Address() {}
@@ -102,6 +104,46 @@ public class Address {
 
 	public void setUsers(List<User> users) {
 		this.users = users;
+	}
+	
+	public void addEvent(Event event) {
+		if (events == null) {
+			events = new ArrayList<>();
+		}
+		if (!events.contains(event)) {
+			events.add(event);
+			if (event.getAddress() != null) {
+				event.getAddress().getEvents().remove(event);
+			}
+			event.setAddress(this);
+		}
+	}
+	
+	public void removeEvent(Event event) {
+		event.setAddress(null);
+		if (events != null) {
+			events.remove(event);
+		}
+	}
+
+	public void addUser(User user) {
+		if (users == null) {
+			users = new ArrayList<>();
+		}
+		if (!users.contains(user)) {
+			users.add(user);
+			if (user.getAddress() != null) {
+				user.getAddress().getUsers().remove(user);
+			}
+			user.setAddress(this);
+		}
+	}
+	
+	public void removeUser(User user) {
+		user.setAddress(null);
+		if (users != null) {
+			users.remove(user);
+		}
 	}
 
 	@Override

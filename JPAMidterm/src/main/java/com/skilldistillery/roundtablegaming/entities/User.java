@@ -1,6 +1,7 @@
 package com.skilldistillery.roundtablegaming.entities;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -32,25 +33,25 @@ public class User {
 	@Column(name = "create_date")
 	private LocalDateTime created;
 	private boolean enabled;
-	@OneToMany(mappedBy = "creator")
+	@OneToMany(mappedBy = "creator", cascade = CascadeType.PERSIST)
 	private List<Game> games;
 	@ManyToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "address_id")
 	private Address address;
-	@OneToMany(mappedBy = "user")
+	@OneToMany(mappedBy = "user", cascade = CascadeType.PERSIST)
 	private List<Attendee> attendees;
-	@OneToMany
-	private List<Event> events;
-	@OneToMany(mappedBy = "user")
+	@OneToMany(mappedBy = "organizer", cascade = CascadeType.PERSIST)
+	private List<Event> organizerEvents;
+	@OneToMany(mappedBy = "user", cascade = CascadeType.PERSIST)
 	private List<EventComment> comments;
-	@ManyToMany(mappedBy = "members")
+	@ManyToMany(mappedBy = "members", cascade = CascadeType.PERSIST)
 	private List<Guild> guilds;
 
 	public User() {}
 
 	public User(int id, String username, String password, String role, String firstName, String lastName, String email,
 			String avatar, LocalDateTime created, boolean enabled, List<Game> games, Address address,
-			List<Attendee> attendees, List<Event> events, List<EventComment> comments, List<Guild> guilds) {
+			List<Attendee> attendees, List<Event> organizerEvents, List<EventComment> comments, List<Guild> guilds) {
 		super();
 		this.id = id;
 		this.username = username;
@@ -65,7 +66,7 @@ public class User {
 		this.games = games;
 		this.address = address;
 		this.attendees = attendees;
-		this.events = events;
+		this.organizerEvents = organizerEvents;
 		this.comments = comments;
 		this.guilds = guilds;
 	}
@@ -174,12 +175,12 @@ public class User {
 		this.attendees = attendees;
 	}
 
-	public List<Event> getEvents() {
-		return events;
+	public List<Event> getOrganizerEvents() {
+		return organizerEvents;
 	}
 
-	public void setEvents(List<Event> events) {
-		this.events = events;
+	public void setOrganizerEvents(List<Event> events) {
+		this.organizerEvents = events;
 	}
 
 	public List<EventComment> getComments() {
@@ -197,7 +198,104 @@ public class User {
 	public void setGuilds(List<Guild> guilds) {
 		this.guilds = guilds;
 	}
+	
+	public void addGame(Game game) {
+		if (games == null) {
+			games = new ArrayList<>();
+		}
+		if (!games.contains(game)) {
+			games.add(game);
+			if (game.getCreator() != null) {
+				game.getCreator().getGames().remove(game);
+			}
+			game.setCreator(this);
+		}
+	}
+	
+	public void removeGame(Game game) {
+		game.setCreator(null);
+		if (games != null) {
+			games.remove(game);
+		}
+	}
+	
+	public void addAttendee(Attendee attendee) {
+		if (attendees == null) {
+			attendees = new ArrayList<>();
+		}
+		if (!attendees.contains(attendee)) {
+			attendees.add(attendee);
+			if (attendee.getUser() != null) {
+				attendee.getUser().getAttendees().remove(attendee);
+			}
+			attendee.setUser(this);
+		}
+	}
+	
+	public void removeAttendee(Attendee attendee) {
+		attendee.setUser(null);
+		if (attendees != null) {
+			attendees.remove(attendee);
+		}
+	}
+	
+	public void addOrganizerEvent(Event event) {
+		if (organizerEvents == null) {
+			organizerEvents = new ArrayList<>();
+		}
+		if (!organizerEvents.contains(event)) {
+			organizerEvents.add(event);
+			if (event.getOrganizer() != null) {
+				event.getOrganizer().getOrganizerEvents().remove(event);
+			}
+			event.setOrganizer(this);
+		}
+	}
+	
+	public void removeOrganizerEvent(Event event) {
+		event.setOrganizer(null);
+		if (organizerEvents != null) {
+			organizerEvents.remove(event);
+		}
+	}
+	
+	public void addEventComment(EventComment evComm) {
+		if (comments == null) {
+			comments = new ArrayList<>();
+		}
+		if (!comments.contains(evComm)) {
+			comments.add(evComm);
+			if (evComm.getUser() != null) {
+				evComm.getUser().getComments().remove(evComm);
+			}
+			evComm.setUser(this);
+		}
+	}
+	
+	public void removeEventComment(EventComment evComm) {
+		evComm.setUser(null);
+		if (comments != null) {
+			comments.remove(evComm);
+		}
+	}
 
+	public void addGuild(Guild guild) {
+		if (guilds == null) {
+			guilds = new ArrayList<>();
+		}
+		if (!guilds.contains(guild)) {
+			guilds.add(guild);
+			guild.addMember(this);
+		}
+	}
+	
+	public void removeGuild(Guild guild) {
+		if (guilds != null && guilds.contains(guild)) {
+			guilds.remove(guild);
+			guild.removeMember(this);
+		}
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
