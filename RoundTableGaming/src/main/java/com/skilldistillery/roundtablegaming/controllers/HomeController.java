@@ -13,10 +13,14 @@ public class HomeController {
 		return "index";
 	}
 
-	
 	@GetMapping("register.do")
 	public String register() {
 		return "register";
+	}
+
+	@GetMapping("rpg.do")
+	public String rpg() {
+		return "rpg";
 	}
 
 }
