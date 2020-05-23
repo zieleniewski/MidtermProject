@@ -54,6 +54,25 @@
 </div>
 
 </div>
+<div>
+
+<jsp:include page="register.jsp" />
+
+</div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
