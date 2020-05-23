@@ -37,12 +37,12 @@ public class GameDAOImpl implements GameDAO{
 		
 
 	@Override
-	public Game findGameById(int id) {
+	public Game getGameById(int id) {
 		return em.find(Game.class, id);
 	}
 	
 	@Override
-	public List<Game> findGamesByKeyword(String keyword) {
+	public List<Game> getGamesByKeyword(String keyword) {
 		keyword= "%"+keyword+"%";
 		String query= "SELECT g FROM Game g WHERE g.title OR g.description LIKE :input";
 		List<Game> foundGames = em.createQuery(query, Game.class).setParameter("input", keyword).getResultList();
@@ -50,7 +50,7 @@ public class GameDAOImpl implements GameDAO{
 	}
 	
 	@Override
-	public List<Game> findGamesByCategory(int categoryID) {
+	public List<Game> getGamesByCategory(int categoryID) {
 		List<Game> allGames= getAllGames();
 		List<Game> categoryGames= new ArrayList<>();
 		

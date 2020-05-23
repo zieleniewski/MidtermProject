@@ -11,10 +11,10 @@ public interface GameDAO {
 	public Game updateGame(Game game);
 	public boolean deleteGame(int id);
 	//For Listing Games by Category
-	public List<Game> findGamesByCategory(int categoryID);
+	public List<Game> getGamesByCategory(int categoryID);
 	//For Listing Games by Search
-	public List<Game> findGamesByKeyword(String keyword);
+	public List<Game> getGamesByKeyword(String keyword);
 	//Possibly used internally
-	public Game findGameById(int id);
+	public Game getGameById(int id);
 	
 }
