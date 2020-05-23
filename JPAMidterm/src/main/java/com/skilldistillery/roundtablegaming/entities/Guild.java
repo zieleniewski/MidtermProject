@@ -1,10 +1,15 @@
 package com.skilldistillery.roundtablegaming.entities;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Guild {
@@ -15,6 +20,11 @@ public class Guild {
 	private String description;
 	@Column(name = "logo_url")
 	private String logoURL;
+	@ManyToMany
+	@JoinTable(name = "guild_member",
+			joinColumns = @JoinColumn(name = "guild_id"),
+			inverseJoinColumns = @JoinColumn(name = "user_id"))
+	private List<User> members;
 	
 	public Guild() {}
 

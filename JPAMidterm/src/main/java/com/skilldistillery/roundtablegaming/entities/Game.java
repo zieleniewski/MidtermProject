@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
@@ -21,78 +22,55 @@ public class Game {
 	private int maxPlayers;
 	private String description;
 	private boolean enabled;
+	@ManyToOne
+	@JoinColumn(name = "category_id")
+	private Category category;
 	
-//	@OneToMany
-//	@JoinColumn(name="category_id")
-//	private Category category;
-//	
-//	@OneToOne
-//	@JoinColumn(name="creator_id")
-//	private User creator;
-
-	
-	/*
-	 * Constructors
-	 */
 	public Game() {super();}
 	
-	/*
-	 * Getters and Setters
-	 */
 	public int getId() {
 		return id;
 	}
-
 
 	public void setId(int id) {
 		this.id = id;
 	}
 
-
 	public String getTitle() {
 		return title;
 	}
-
 
 	public void setTitle(String title) {
 		this.title = title;
 	}
 
-
 	public String getDescription() {
 		return description;
 	}
-
 
 	public void setDescription(String description) {
 		this.description = description;
 	}
 
-
 	public int getMinPlayers() {
 		return minPlayers;
 	}
-
 
 	public void setMinPlayers(int minPlayers) {
 		this.minPlayers = minPlayers;
 	}
 
-
 	public int getMaxPlayers() {
 		return maxPlayers;
 	}
-
 
 	public void setMaxPlayers(int maxPlayers) {
 		this.maxPlayers = maxPlayers;
 	}
 
-
 	public boolean isEnabled() {
 		return enabled;
 	}
-
 
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
@@ -137,25 +115,6 @@ public class Game {
 		if (id != other.id)
 			return false;
 		return true;
-	}
-
-	@Override
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("Game [id=");
-		builder.append(id);
-		builder.append(", title=");
-		builder.append(title);
-		builder.append(", minPlayers=");
-		builder.append(minPlayers);
-		builder.append(", maxPlayers=");
-		builder.append(maxPlayers);
-		builder.append(", description=");
-		builder.append(description);
-		builder.append(", enabled=");
-		builder.append(enabled);
-		builder.append("]");
-		return builder.toString();
 	}
 	
 }
