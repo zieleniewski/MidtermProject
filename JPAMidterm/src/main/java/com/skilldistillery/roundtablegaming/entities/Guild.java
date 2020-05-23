@@ -1,5 +1,6 @@
 package com.skilldistillery.roundtablegaming.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -77,6 +78,23 @@ public class Guild {
 		this.members = members;
 	}
 
+	public void addMember(User member) {
+		if (members == null) {
+			members = new ArrayList<>();
+		}
+		if (!members.contains(member)) {
+			members.add(member);
+			member.addGuild(this);
+		}
+	}
+	
+	public void removeMember(User member) {
+		if (member != null && members.contains(member)) {
+			members.remove(member);
+			member.removeGuild(this);
+		}
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;

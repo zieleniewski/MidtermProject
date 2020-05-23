@@ -2,6 +2,7 @@ package com.skilldistillery.roundtablegaming.entities;
 
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -168,6 +169,46 @@ public class Event {
 		this.eventComments = eventComments;
 	}
 
+	public void addEventGame(EventGame evGame) {
+		if (eventGames == null) {
+			eventGames = new ArrayList<>();
+		}
+		if (!eventGames.contains(evGame)) {
+			eventGames.add(evGame);
+			if (evGame.getEvent() != null) {
+				evGame.getEvent().getEventGames().remove(evGame);
+			}
+			evGame.setEvent(this);
+		}
+	}
+	
+	public void removeEventGame(EventGame evGame) {
+		evGame.setEvent(null);
+		if (eventGames != null) {
+			eventGames.remove(evGame);
+		}
+	}
+	
+	public void addEventComment(EventComment evComm) {
+		if (eventComments == null) {
+			eventComments = new ArrayList<>();
+		}
+		if (!eventComments.contains(evComm)) {
+			eventComments.add(evComm);
+			if (evComm.getEvent() != null) {
+				evComm.getEvent().getEventComments().remove(evComm);
+			}
+			evComm.setEvent(this);
+		}
+	}
+	
+	public void removeEventComment(EventComment evComm) {
+		evComm.setEvent(null);
+		if (eventComments != null) {
+			eventComments.remove(evComm);
+		}
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;

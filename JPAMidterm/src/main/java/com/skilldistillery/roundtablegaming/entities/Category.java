@@ -1,5 +1,6 @@
 package com.skilldistillery.roundtablegaming.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -60,6 +61,26 @@ public class Category {
 		this.games = games;
 	}
 
+	public void addGame(Game game) {
+		if (games == null) {
+			games = new ArrayList<>();
+		}
+		if (!games.contains(game)) {
+			games.add(game);
+			if (game.getCategory() != null) {
+				game.getCategory().getGames().remove(game);
+			}
+			game.setCategory(this);
+		}
+	}
+	
+	public void removeGame(Game game) {
+		game.setCategory(null);
+		if (games != null) {
+			games.remove(game);
+		}
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;

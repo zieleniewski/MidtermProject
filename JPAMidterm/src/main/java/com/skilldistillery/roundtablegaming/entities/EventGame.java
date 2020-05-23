@@ -1,6 +1,7 @@
 package com.skilldistillery.roundtablegaming.entities;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -114,6 +115,26 @@ public class EventGame {
 		this.event = event;
 	}
 
+	public void addAttendee(Attendee attendee) {
+		if (players == null) {
+			players = new ArrayList<>();
+		}
+		if (!players.contains(attendee)) {
+			players.add(attendee);
+			if (attendee.getEventGame() != null) {
+				attendee.getEventGame().getPlayers().remove(attendee);
+			}
+			attendee.setEventGame(this);
+		}
+	}
+	
+	public void removeAttendee(Attendee user) {
+		user.setEventGame(null);
+		if (players != null) {
+			players.remove(user);
+		}
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;

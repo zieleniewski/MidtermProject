@@ -1,6 +1,7 @@
 package com.skilldistillery.roundtablegaming.entities;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -198,6 +199,23 @@ public class User {
 		this.guilds = guilds;
 	}
 
+	public void addGuild(Guild guild) {
+		if (guilds == null) {
+			guilds = new ArrayList<>();
+		}
+		if (!guilds.contains(guild)) {
+			guilds.add(guild);
+			guild.addMember(this);
+		}
+	}
+	
+	public void removeGuild(Guild guild) {
+		if (guilds != null && guilds.contains(guild)) {
+			guilds.remove(guild);
+			guild.removeMember(this);
+		}
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
