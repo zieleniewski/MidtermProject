@@ -20,6 +20,14 @@ public class Category {
 	
 	public Category() {}
 
+	public Category(int id, String name, String description, List<Game> games) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.description = description;
+		this.games = games;
+	}
+
 	public int getId() {
 		return id;
 	}

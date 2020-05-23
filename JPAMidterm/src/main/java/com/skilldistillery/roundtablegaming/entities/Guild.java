@@ -28,6 +28,15 @@ public class Guild {
 	
 	public Guild() {}
 
+	public Guild(int id, String name, String description, String logoURL, List<User> members) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.description = description;
+		this.logoURL = logoURL;
+		this.members = members;
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -58,6 +67,14 @@ public class Guild {
 
 	public void setLogoURL(String logoURL) {
 		this.logoURL = logoURL;
+	}
+
+	public List<User> getMembers() {
+		return members;
+	}
+
+	public void setMembers(List<User> members) {
+		this.members = members;
 	}
 
 	@Override
@@ -96,5 +113,5 @@ public class Guild {
 		builder.append("]");
 		return builder.toString();
 	}
-	
+
 }
