@@ -3,6 +3,7 @@ package com.skilldistillery.roundtablegaming.entities;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,7 +22,7 @@ public class Guild {
 	private String description;
 	@Column(name = "logo_url")
 	private String logoURL;
-	@ManyToMany
+	@ManyToMany(cascade = CascadeType.PERSIST)
 	@JoinTable(name = "guild_member",
 			joinColumns = @JoinColumn(name = "guild_id"),
 			inverseJoinColumns = @JoinColumn(name = "user_id"))

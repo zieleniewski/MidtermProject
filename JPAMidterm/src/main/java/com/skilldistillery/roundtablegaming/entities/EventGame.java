@@ -4,6 +4,7 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -27,12 +28,12 @@ public class EventGame {
 	private Integer maxPlayers;
 	@Column(name = "start_time")
 	private LocalTime startTime;
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "game_id")
 	private Game game;
-	@OneToMany(mappedBy = "eventGame")
+	@OneToMany(mappedBy = "eventGame", cascade = CascadeType.PERSIST)
 	private List<Attendee> players;
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "event_id")
 	private Event event;
 	

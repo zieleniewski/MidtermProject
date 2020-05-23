@@ -20,7 +20,7 @@ public class Event {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "organizer_id")
 	private User organizer;
 	@ManyToOne(cascade = CascadeType.PERSIST)
@@ -39,9 +39,9 @@ public class Event {
 	@Column(name = "last_update")
 	private LocalDateTime lastUpdate;
 	private boolean enabled;
-	@OneToMany(mappedBy = "event")
+	@OneToMany(mappedBy = "event", cascade = CascadeType.PERSIST)
 	private List<EventGame> eventGames;
-	@OneToMany(mappedBy = "event")
+	@OneToMany(mappedBy = "event", cascade = CascadeType.PERSIST)
 	private List<EventComment> eventComments;
 	
 	public Event() {}
