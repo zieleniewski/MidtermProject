@@ -26,8 +26,7 @@
 							src="https://geekandsundry.com/wp-content/uploads/2018/11/Video-Games-RPG-FI.png"
 							class="img d-block w-100">
 						<div class="carousel-caption d-none d-md-block">
-							<h5>First slide label</h5>
-							<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+							<h5>Table Top RPG's</h5>
 						</div>
 					</div>
 					<div class="carousel-item">
@@ -35,8 +34,7 @@
 							src="https://upload.wikimedia.org/wikipedia/en/2/24/CCG_card_back_image_assortment.jpg"
 							class="img d-block w-100">
 						<div class="carousel-caption d-none d-md-block">
-							<h5>First slide label</h5>
-							<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+							<h5>Trading Card Games</h5>
 						</div>
 					</div>
 					<div class="carousel-item">
@@ -44,8 +42,7 @@
 							src="https://cf.geekdo-images.com/imagepage/img/z0AI_-IWdbGh870R6FOOx6Ep08o=/fit-in/900x600/filters:no_upscale()/pic5336547.jpg"
 							class="img d-block w-100">
 						<div class="carousel-caption d-none d-md-block">
-							<h5>First slide label</h5>
-							<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+							<h5>Miniatures</h5>
 						</div>
 					</div>
 

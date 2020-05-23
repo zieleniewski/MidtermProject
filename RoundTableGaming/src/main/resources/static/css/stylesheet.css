@@ -11,10 +11,11 @@ color: #eeeeee;
 	 align-content: center;
 }
 
-.navbar {
-  
 
 
+.navbar-custom {
+    color:#d65a31;
+    background-color:  #CC3333;
 }
 
 .img-fluid {
@@ -42,6 +43,7 @@ color: #eeeeee;
 
 .container-whole{
 	width: 80%;
+	 max-width: 500px;
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;

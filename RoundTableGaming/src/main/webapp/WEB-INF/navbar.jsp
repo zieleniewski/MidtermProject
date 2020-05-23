@@ -18,21 +18,21 @@
 	crossorigin="anonymous"></script>
 
 
-<nav class="navbar navbar-expand-sm navbar-light fixed-top" style="background-color: white; font-color: #d65a31">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar5">
+<nav class="navbar navbar-expand-sm navbar-light fixed-top navbar-custom">
+    <button class="navbar-toggler nav-btn" type="button" data-toggle="collapse" data-target="#navbar5">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <a href="/" class="navbar-brand">Round Table Games</a>
+    <a href="/" class="navbar-brand nav-btn">Round Table Games</a>
     <div class="navbar-collapse collapse justify-content-stretch" id="navbar5">
         <ul class="navbar-nav">
             <li class="nav-item active">
-                <a class="nav-link" href="#">About <span class="sr-only">Home</span></a>
+                <a class="nav-link " href="#">About <span class="sr-only">Home</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Login</a>
+                <a class="nav-link " href="#">Login</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="register.do">Register</a>
+                <a class="nav-link " href="register.do">Register</a>
             </li>
            
         </ul>
