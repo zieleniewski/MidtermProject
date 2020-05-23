@@ -17,11 +17,12 @@ public class Attendee {
 	private User user;
 	@EmbeddedId
 	private AttendeeId id = new AttendeeId();
-	@Column(name = "event_rating")
-	private Integer eventRating;
 	@ManyToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "event_game_id")
+	@MapsId(value = "eventId")
 	private EventGame eventGame;
+	@Column(name = "event_rating")
+	private Integer eventRating;
 	@Column(name = "comment_by_attendee")
 	private String attendeeComment;
 
