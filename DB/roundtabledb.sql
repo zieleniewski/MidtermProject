@@ -372,6 +372,16 @@ COMMIT;
 
 
 -- -----------------------------------------------------
+-- Data for table `guild_member`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `roundtabledb`;
+INSERT INTO `guild_member` (`guild_id`, `user_id`) VALUES (1, 1);
+
+COMMIT;
+
+
+-- -----------------------------------------------------
 -- Data for table `event_comment`
 -- -----------------------------------------------------
 START TRANSACTION;

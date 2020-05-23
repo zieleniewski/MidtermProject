@@ -31,7 +31,7 @@
                 <a class="nav-link " href="#">About <span class="sr-only">Home</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="#">Login</a>
+                <a   href="" class="btn btn-default btn-rounded" data-toggle="modal" data-target="#darkModalForm">Login</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link " href="${pageContext.request.contextPath}/register.do">Register</a>
