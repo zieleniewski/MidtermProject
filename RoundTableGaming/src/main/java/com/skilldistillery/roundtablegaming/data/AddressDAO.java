@@ -10,5 +10,4 @@ public interface AddressDAO {
 	
 	public Address updateAddress(int id, Address updatedAddress);
 	
-	public Address searchByZipCode(String zipCode);
 }
