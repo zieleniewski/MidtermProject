@@ -35,7 +35,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="table-top col-sm">
-						Table Top <a href="rpg.do"><img class="img-responsive"
+						Table Top <a href="/rpg.do"><img class="img-responsive"
 							src="https://geekandsundry.com/wp-content/uploads/2018/11/Video-Games-RPG-FI.png"
 							style="height: 200px; width: 100%; display: inline-block"></a>
 
