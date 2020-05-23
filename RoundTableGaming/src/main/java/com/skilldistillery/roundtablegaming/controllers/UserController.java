@@ -27,4 +27,6 @@ public class UserController {
 		session.setAttribute("user", newUser);
 		return "index";
 	}
+	
+//	@RequestMapping(path = "logIn.do")
 }
