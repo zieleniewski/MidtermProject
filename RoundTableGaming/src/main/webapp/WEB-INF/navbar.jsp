@@ -18,7 +18,7 @@
 	crossorigin="anonymous"></script>
 
 
-<nav class="navbar navbar-expand-sm navbar-light fixed-top bg-dark">
+<nav class="navbar navbar-expand-sm navbar-light fixed-top" style="background-color: white; font-color: #d65a31">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar5">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -32,7 +32,7 @@
                 <a class="nav-link" href="#">Login</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Register</a>
+                <a class="nav-link" href="register.do">Register</a>
             </li>
            
         </ul>
