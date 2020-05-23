@@ -1,5 +1,7 @@
 package com.skilldistillery.roundtablegaming.entities;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,7 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 
 @Entity
 public class Game {
@@ -25,9 +26,28 @@ public class Game {
 	@ManyToOne
 	@JoinColumn(name = "category_id")
 	private Category category;
+	@OneToMany(mappedBy = "game")
+	private List<EventGame> eventGames;
+	@ManyToOne
+	@JoinColumn(name = "creator_id")
+	private User creator;
 	
-	public Game() {super();}
+	public Game() {}
 	
+	public Game(int id, String title, int minPlayers, int maxPlayers, String description, boolean enabled,
+			Category category, List<EventGame> eventGames, User creator) {
+		super();
+		this.id = id;
+		this.title = title;
+		this.minPlayers = minPlayers;
+		this.maxPlayers = maxPlayers;
+		this.description = description;
+		this.enabled = enabled;
+		this.category = category;
+		this.eventGames = eventGames;
+		this.creator = creator;
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -76,24 +96,29 @@ public class Game {
 		this.enabled = enabled;
 	}
 
-//	public Category getCategory() {
-//		return category;
-//	}
-//
-//
-//	public void setCategory(Category category) {
-//		this.category = category;
-//	}
-//
-//
-//	public User getCreator() {
-//		return creator;
-//	}
-//
-//
-//	public void setCreator(User creator) {
-//		this.creator = creator;
-//	}
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
+	}
+
+	public List<EventGame> getEventGames() {
+		return eventGames;
+	}
+
+	public void setEventGames(List<EventGame> eventGames) {
+		this.eventGames = eventGames;
+	}
+
+	public User getCreator() {
+		return creator;
+	}
+
+	public void setCreator(User creator) {
+		this.creator = creator;
+	}
 
 	@Override
 	public int hashCode() {
@@ -115,6 +140,29 @@ public class Game {
 		if (id != other.id)
 			return false;
 		return true;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Game [id=");
+		builder.append(id);
+		builder.append(", title=");
+		builder.append(title);
+		builder.append(", minPlayers=");
+		builder.append(minPlayers);
+		builder.append(", maxPlayers=");
+		builder.append(maxPlayers);
+		builder.append(", description=");
+		builder.append(description);
+		builder.append(", enabled=");
+		builder.append(enabled);
+		builder.append(", category=");
+		builder.append(category);
+		builder.append(", creator=");
+		builder.append(creator);
+		builder.append("]");
+		return builder.toString();
 	}
 	
 }

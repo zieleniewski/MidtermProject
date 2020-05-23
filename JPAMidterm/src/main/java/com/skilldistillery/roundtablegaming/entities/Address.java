@@ -1,10 +1,13 @@
 package com.skilldistillery.roundtablegaming.entities;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Address {
@@ -17,10 +20,15 @@ public class Address {
 	private String state;
 	@Column(name = "zip_code")
 	private String zipCode;
+	@OneToMany(mappedBy = "address")
+	private List<Event> events;
+	@OneToMany(mappedBy = "address")
+	private List<User> users;
 
 	public Address() {}
 
-	public Address(int id, String street1, String street2, String city, String state, String zipCode) {
+	public Address(int id, String street1, String street2, String city, String state, String zipCode,
+			List<Event> events, List<User> users) {
 		super();
 		this.id = id;
 		this.street1 = street1;
@@ -28,6 +36,8 @@ public class Address {
 		this.city = city;
 		this.state = state;
 		this.zipCode = zipCode;
+		this.events = events;
+		this.users = users;
 	}
 
 	public int getId() {
@@ -78,6 +88,22 @@ public class Address {
 		this.zipCode = zipCode;
 	}
 
+	public List<Event> getEvents() {
+		return events;
+	}
+
+	public void setEvents(List<Event> events) {
+		this.events = events;
+	}
+
+	public List<User> getUsers() {
+		return users;
+	}
+
+	public void setUsers(List<User> users) {
+		this.users = users;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -103,9 +129,20 @@ public class Address {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Address [id=").append(id).append(", street1=").append(street1).append(", street2=")
-				.append(street2).append(", city=").append(city).append(", state=").append(state).append(", zipCode=")
-				.append(zipCode).append("]");
+		builder.append("Address [id=");
+		builder.append(id);
+		builder.append(", street1=");
+		builder.append(street1);
+		builder.append(", street2=");
+		builder.append(street2);
+		builder.append(", city=");
+		builder.append(city);
+		builder.append(", state=");
+		builder.append(state);
+		builder.append(", zipCode=");
+		builder.append(zipCode);
+		builder.append("]");
 		return builder.toString();
 	}
+
 }

@@ -16,7 +16,7 @@ import org.junit.jupiter.api.Test;
 class GuildTest {
 	private static EntityManagerFactory emf;
 	private EntityManager em;
-	private Game game;
+	private Guild guild;
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -31,25 +31,30 @@ class GuildTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		em = emf.createEntityManager();
-		game = em.find(Game.class, 1);
+		guild = em.find(Guild.class, 1);
 	}
 
 	@AfterEach
 	void tearDown() throws Exception {
-		game = null;
+		guild = null;
 		em.close();
 	}
 
 	@Test
-	@DisplayName("testing user mapping")
+	@DisplayName("testing Guild mapping")
 	void test1() {
-		assertNotNull(game);
-		//assertEquals("Blades in the Dark is a tabletop role-playing game about a crew of daring scoundrels seeking their fortunes on the haunted streets of an industrial-fantasy city. There are heists, chases, occult mysteries, dangerous bargains, bloody skirmishes, and, above all, riches to be had — if you’re bold enough to seize them.\n" + 
-		//		"You and your fledgling crew must thrive amidst the threats of rival gangs, powerful noble families, vengeful ghosts, the Bluecoats of the city watch, and the siren song of your scoundrel’s own vices. Will you rise to power in the criminal underworld? What are you willing to do to get to the top?", game.getDescription());
-		assertEquals("Blades In The Dark", game.getTitle());
-		assertEquals(10, game.getMaxPlayers());
-		assertEquals(3, game.getMinPlayers());
-		assertTrue(game.isEnabled());
+		assertNotNull(guild);
+		assertEquals("Guild of Mecha Admins", guild.getName());
+		assertEquals("DBA Life", guild.getDescription());
+		assertEquals("anon.jpg", guild.getLogoURL());
 	}
+	
+//	@Test
+//	@DisplayName("testing relational mapping to User")
+//	void test2() {
+//		assertNotNull(guild.getMembers());
+//		assertTrue(guild.getMembers().size() > 0);
+//		assertEquals("")
+//	}
 
 }

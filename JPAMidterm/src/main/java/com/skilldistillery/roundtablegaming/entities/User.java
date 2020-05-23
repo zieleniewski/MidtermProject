@@ -3,12 +3,16 @@ package com.skilldistillery.roundtablegaming.entities;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class User {
@@ -28,19 +32,25 @@ public class User {
 	@Column(name = "create_date")
 	private LocalDateTime created;
 	private boolean enabled;
-//	@OneToOne(cascade = CascadeType.PERSIST)
-//	@JoinColumn(name = "address_id")
-//	private Address address;
-//	@OneToMany
-//	private List<Event> events;
-//	private List<EventComment> comments;
+	@OneToMany(mappedBy = "creator")
+	private List<Game> games;
+	@ManyToOne(cascade = CascadeType.PERSIST)
+	@JoinColumn(name = "address_id")
+	private Address address;
+	@OneToMany(mappedBy = "user")
+	private List<Attendee> attendees;
+	@OneToMany
+	private List<Event> events;
+	@OneToMany(mappedBy = "user")
+	private List<EventComment> comments;
 	@ManyToMany(mappedBy = "members")
 	private List<Guild> guilds;
-	
+
 	public User() {}
 
 	public User(int id, String username, String password, String role, String firstName, String lastName, String email,
-			String avatar, LocalDateTime created, boolean enabled) {
+			String avatar, LocalDateTime created, boolean enabled, List<Game> games, Address address,
+			List<Attendee> attendees, List<Event> events, List<EventComment> comments, List<Guild> guilds) {
 		super();
 		this.id = id;
 		this.username = username;
@@ -52,6 +62,12 @@ public class User {
 		this.avatar = avatar;
 		this.created = created;
 		this.enabled = enabled;
+		this.games = games;
+		this.address = address;
+		this.attendees = attendees;
+		this.events = events;
+		this.comments = comments;
+		this.guilds = guilds;
 	}
 
 	public int getId() {
@@ -134,6 +150,53 @@ public class User {
 		this.enabled = enabled;
 	}
 
+	public List<Game> getGames() {
+		return games;
+	}
+
+	public void setGames(List<Game> games) {
+		this.games = games;
+	}
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
+	public List<Attendee> getAttendees() {
+		return attendees;
+	}
+
+	public void setAttendees(List<Attendee> attendees) {
+		this.attendees = attendees;
+	}
+
+	public List<Event> getEvents() {
+		return events;
+	}
+
+	public void setEvents(List<Event> events) {
+		this.events = events;
+	}
+
+	public List<EventComment> getComments() {
+		return comments;
+	}
+
+	public void setComments(List<EventComment> comments) {
+		this.comments = comments;
+	}
+
+	public List<Guild> getGuilds() {
+		return guilds;
+	}
+
+	public void setGuilds(List<Guild> guilds) {
+		this.guilds = guilds;
+	}
 
 	@Override
 	public int hashCode() {
@@ -180,8 +243,10 @@ public class User {
 		builder.append(created);
 		builder.append(", enabled=");
 		builder.append(enabled);
+		builder.append(", address=");
+		builder.append(address);
 		builder.append("]");
 		return builder.toString();
 	}
-	
+
 }

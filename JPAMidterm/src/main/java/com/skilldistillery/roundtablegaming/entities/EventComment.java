@@ -2,11 +2,14 @@ package com.skilldistillery.roundtablegaming.entities;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -15,12 +18,12 @@ public class EventComment {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-//	@ManyToOne
-//	@JoinColumn(name = "user_id")
-//	private User user;
-//	@ManyToOne
-//	@JoinColumn(name = "event_id")
-//	private Event event;
+	@ManyToOne(cascade = CascadeType.PERSIST)
+	@JoinColumn(name = "user_id")
+	private User user;
+	@ManyToOne(cascade = CascadeType.PERSIST)
+	@JoinColumn(name = "event_id")
+	private Event event;
 	@Column(name = "comment_date")
 	private LocalDateTime commentDate;
 	@Column(name = "content")
@@ -31,8 +34,8 @@ public class EventComment {
 	public EventComment(int id, User user, Event event, LocalDateTime commentDate, String comment) {
 		super();
 		this.id = id;
-//		this.user = user;
-//		this.event = event;
+		this.user = user;
+		this.event = event;
 		this.commentDate = commentDate;
 		this.comment = comment;
 	}
@@ -45,21 +48,21 @@ public class EventComment {
 		this.id = id;
 	}
 
-//	public User getUser() {
-//		return user;
-//	}
-//
-//	public void setUser(User user) {
-//		this.user = user;
-//	}
-//
-//	public Event getEvent() {
-//		return event;
-//	}
-//
-//	public void setEvent(Event event) {
-//		this.event = event;
-//	}
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Event getEvent() {
+		return event;
+	}
+
+	public void setEvent(Event event) {
+		this.event = event;
+	}
 
 	public LocalDateTime getCommentDate() {
 		return commentDate;
@@ -104,10 +107,10 @@ public class EventComment {
 		StringBuilder builder = new StringBuilder();
 		builder.append("EventComment [id=");
 		builder.append(id);
-//		builder.append(", user=");
-//		builder.append(user);
-//		builder.append(", event=");
-//		builder.append(event);
+		builder.append(", user=");
+		builder.append(user);
+		builder.append(", event=");
+		builder.append(event);
 		builder.append(", commentDate=");
 		builder.append(commentDate);
 		builder.append(", comment=");
