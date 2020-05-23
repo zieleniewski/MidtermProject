@@ -16,6 +16,8 @@
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
 	integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
 	crossorigin="anonymous"></script>
+	        <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+	
 
 
 <nav class="navbar navbar-expand-sm navbar-light fixed-top navbar-custom">
@@ -32,7 +34,7 @@
                 <a class="nav-link " href="#">Login</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="register.do">Register</a>
+                <a class="nav-link " href="${pageContext.request.contextPath}/register.do">Register</a>
             </li>
            
         </ul>
