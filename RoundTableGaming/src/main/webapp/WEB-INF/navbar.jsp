@@ -42,7 +42,7 @@
             <div class="input-group">
                 <input type="text" class="form-control" placeholder="Search Games">
                 <span class="input-group-btn">
-                <button class="btn btn-outline-secondary" type="button">GO</button>
+                <button class="btn btn-outline-primary" type="button">GO</button>
               </span>
             </div>
         </form>
