@@ -1,6 +1,8 @@
 package com.skilldistillery.roundtablegaming.data;
 
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
@@ -8,6 +10,7 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import com.skilldistillery.roundtablegaming.entities.Address;
+import com.skilldistillery.roundtablegaming.entities.Event;
 
 @Service
 @Transactional
@@ -40,6 +43,32 @@ public class AddressDAOImpl implements AddressDAO {
 		address.setZipCode(updatedAddress.getZipCode());
 		return address;
 	}
+	
+	@Override
+	public List<Address> getAllAddresses() {
+		String query= "SELECT a FROM Address a";
+		List<Address> allAddresses = em.createQuery(query, Address.class).getResultList();
+		return allAddresses;
+	}
+
+	@Override
+	public Address getAddressById(int id) {
+		return em.find(Address.class, id);
+	}
+
+	@Override
+	public Address getAddressByEventId(int id) {
+		EventDAO ev = new EventDAOImpl();
+		List<Event> allEvents= ev.getAllEvents();
+		Address found= null;
+		for (Event event : allEvents) {
+			if(event.getAddress().getId()== id) {
+				found= event.getAddress();
+			}
+		}
+		return found;
+	}
+
 
 //	@Override
 //	public List<Event> searchByZipCode(String zipCode) {
