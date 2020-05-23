@@ -81,4 +81,19 @@ class EventTest {
 		assertTrue(event.getEventComments().size() > 0);
 		assertEquals("Incredible event. Holy smokes.", event.getEventComments().get(0).getComment());
 	}
+	
+	@Test
+	@DisplayName("testing EventGames Attendees")
+	void test6() {
+		assertNotNull(event.getEventGames().get(0).getPlayers());
+		assertTrue(event.getEventGames().get(0).getPlayers().size() > 0);
+		assertEquals("admin test", event.getEventGames().get(0).getPlayers().get(0).getAttendeeComment());
+	}
+	
+	@Test
+	@DisplayName("testing mapping through Attendee to User")
+	void test7() {
+		assertNotNull(event.getEventGames().get(0).getPlayers().get(0).getUser());
+		assertEquals("admin", event.getEventGames().get(0).getPlayers().get(0).getUser().getUsername());
+	}
 }
