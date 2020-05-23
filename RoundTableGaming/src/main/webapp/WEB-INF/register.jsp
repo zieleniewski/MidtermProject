@@ -17,7 +17,7 @@
 </head>
 <body>
 <div class="container">
-            <form class="form-horizontal" role="form">
+            <form class="form-horizontal" role="form" action="registrationComplete.do" method="POST">
                 <h2>Registration</h2>
                 <div class="form-group">
                     <label for="firstName" class="col-sm-3 control-label">First Name</label>
