@@ -13,10 +13,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-class CategoryTest {
+class EventGameTest {
 	private static EntityManagerFactory emf;
 	private EntityManager em;
-	private Category cat;
+	private Guild guild;
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -31,27 +31,22 @@ class CategoryTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		em = emf.createEntityManager();
-		cat = em.find(Category.class, 1);
+		guild = em.find(Guild.class, 1);
 	}
 
 	@AfterEach
 	void tearDown() throws Exception {
-		cat = null;
+		guild = null;
 		em.close();
 	}
 
 	@Test
-	@DisplayName("testing category mapping")
+	@DisplayName("testing guild mapping")
 	void test1() {
-		assertNotNull(cat);
-		assertEquals("Tabletop RPG", cat.getName());
-		assertEquals("A form of role-playing game (RPG) in which the participants "
-				+ "describe their characters' actions through speech. Participants "
-				+ "determine the actions of their characters based on their characterization, "
-				+ "and the actions succeed or fail according to a set formal system "
-				+ "of rules and guidelines. Within the rules, players have the freedom "
-				+ "to improvise; their choices shape the direction and "
-				+ "outcome of the game.", cat.getDescription());
+		assertNotNull(guild);
+		assertEquals("Guild of Mecha Admins", guild.getName());
+		assertEquals("DBA Life", guild.getDescription());
+		assertEquals("anon.jpg", guild.getLogoURL());
 	}
 
 }
