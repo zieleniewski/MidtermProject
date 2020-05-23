@@ -49,12 +49,12 @@ class GuildTest {
 		assertEquals("anon.jpg", guild.getLogoURL());
 	}
 	
-//	@Test
-//	@DisplayName("testing relational mapping to User")
-//	void test2() {
-//		assertNotNull(guild.getMembers());
-//		assertTrue(guild.getMembers().size() > 0);
-//		assertEquals("")
-//	}
+	@Test
+	@DisplayName("testing relational mapping to User")
+	void test2() {
+		assertNotNull(guild.getMembers());
+		assertTrue(guild.getMembers().size() > 0);
+		assertEquals("admin", guild.getMembers().get(0).getUsername());
+	}
 
 }

@@ -76,10 +76,10 @@ class UserTest {
 	@Test
 	@DisplayName("testing relational mapping to Event")
 	void test5() {
-		assertNotNull(user.getEvents());
-		assertTrue(user.getEvents().size() > 0);
-		assertEquals("TestFest", user.getEvents().get(0).getTitle());
-		assertEquals("Just some sweet admin testing", user.getEvents().get(0).getDescription());
+		assertNotNull(user.getOrganizerEvents());
+		assertTrue(user.getOrganizerEvents().size() > 0);
+		assertEquals("TestFest", user.getOrganizerEvents().get(0).getTitle());
+		assertEquals("Just some sweet admin testing", user.getOrganizerEvents().get(0).getDescription());
 	}
 	@Test
 	@DisplayName("testing relational mapping to EventComment")

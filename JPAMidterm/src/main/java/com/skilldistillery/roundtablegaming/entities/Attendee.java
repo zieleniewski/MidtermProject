@@ -11,7 +11,7 @@ import javax.persistence.MapsId;
 @Entity
 public class Attendee {
 
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "user_id")
 	@MapsId(value = "userId")
 	private User user;
