@@ -12,4 +12,9 @@ public class HomeController {
 		return "index";
 	}
 	
+	@RequestMapping(name="register.do")
+	public String register() {
+		return "register";
+	}
+	
 }
