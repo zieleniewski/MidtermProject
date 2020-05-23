@@ -1,7 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+        <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+
 <html>
+<link rel="stylesheet" href="css/stylesheet.css" type="text/css">
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
@@ -10,7 +13,7 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <meta charset="UTF-8">
 <head>
-<title>Insert title here</title>
+<title>Sign Up</title>
 </head>
 <body>
 <div class="container">
@@ -40,61 +43,52 @@
                         <input type="password" id="password" placeholder="Password" class="form-control">
                     </div>
                 </div>
+               
+              
                 <div class="form-group">
-                    <label for="password" class="col-sm-3 control-label">Confirm Password*</label>
+                    <label for="userName" class="col-sm-3 control-label">Username </label>
                     <div class="col-sm-9">
-                        <input type="password" id="password" placeholder="Password" class="form-control">
+                        <input type="text" id="userName" placeholder="Username" class="form-control">
+                        <span class="help-block"> </span>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="birthDate" class="col-sm-3 control-label">Date of Birth*</label>
+                        <label for="street1" class="col-sm-3 control-label">Address </label>
                     <div class="col-sm-9">
-                        <input type="date" id="birthDate" class="form-control">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="phoneNumber" class="col-sm-3 control-label">Phone number </label>
-                    <div class="col-sm-9">
-                        <input type="phoneNumber" id="phoneNumber" placeholder="Phone number" class="form-control">
-                        <span class="help-block">Your phone number won't be disclosed anywhere </span>
-                    </div>
-                </div>
-                <div class="form-group">
-                        <label for="Height" class="col-sm-3 control-label">Height* </label>
-                    <div class="col-sm-9">
-                        <input type="number" id="height" placeholder="Please write your height in centimetres" class="form-control">
+                        <input type="text" id="street1" placeholder="Address" class="form-control">
                     </div>
                 </div>
                  <div class="form-group">
-                        <label for="weight" class="col-sm-3 control-label">Weight* </label>
+                        <label for="street2" class="col-sm-3 control-label">Address </label>
                     <div class="col-sm-9">
-                        <input type="number" id="weight" placeholder="Please write your weight in kilograms" class="form-control">
+                        <input type="text" id="street2" placeholder="Address" class="form-control">
                     </div>
                 </div>
-                <div class="form-group">
-                    <label class="control-label col-sm-3">Gender</label>
-                    <div class="col-sm-6">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <label class="radio-inline">
-                                    <input type="radio" id="femaleRadio" value="Female">Female
-                                </label>
-                            </div>
-                            <div class="col-sm-4">
-                                <label class="radio-inline">
-                                    <input type="radio" id="maleRadio" value="Male">Male
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div> <!-- /.form-group -->
-                <div class="form-group">
-                    <div class="col-sm-9 col-sm-offset-3">
-                        <span class="help-block">*Required fields</span>
+                 <div class="form-group">
+                        <label for="city" class="col-sm-3 control-label">City </label>
+                    <div class="col-sm-9">
+                        <input type="text" id="city" placeholder="City" class="form-control">
                     </div>
                 </div>
+                 <div class="form-group">
+                        <label for="state" class="col-sm-3 control-label">State </label>
+                    <div class="col-sm-9">
+                        <input type="text" id="state" placeholder="State" class="form-control">
+                    </div>
+                </div>
+                 <div class="form-group">
+                        <label for="zipCode" class="col-sm-3 control-label">Address </label>
+                    <div class="col-sm-9">
+                        <input type="text" id="zipCode" placeholder="Zip Code" class="form-control">
+                    </div>
+                </div>
+                
+                      
+               
+               
                 <button type="submit" class="btn btn-primary btn-block">Register</button>
-            </form> <!-- /form -->
-        </div> <!-- ./container -->
+            </form> 
+                    </div>
+        
 </body>
 </html>
