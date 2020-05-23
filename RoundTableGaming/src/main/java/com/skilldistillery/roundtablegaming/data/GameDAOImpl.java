@@ -29,7 +29,7 @@ public class GameDAOImpl implements GameDAO{
 	@Override
 	public List<Game> getAllGames() {
 
-		String query= "SELECT g FROM game g";
+		String query= "SELECT g FROM Game g";
 		List<Game> allGames = em.createQuery(query, Game.class).getResultList();
 
 		return allGames;
@@ -37,32 +37,29 @@ public class GameDAOImpl implements GameDAO{
 		
 
 	@Override
-	public Game findGameById(int id) {
+	public Game getGameById(int id) {
 		return em.find(Game.class, id);
 	}
 	
 	@Override
-	public List<Game> findGamesByKeyword(String keyword) {
+	public List<Game> getGamesByKeyword(String keyword) {
 		keyword= "%"+keyword+"%";
-		String query= "SELECT g FROM game g WHERE g.title OR g.description LIKE :input";
+		String query= "SELECT g FROM Game g WHERE g.title OR g.description LIKE :input";
 		List<Game> foundGames = em.createQuery(query, Game.class).setParameter("input", keyword).getResultList();
 		return foundGames;
 	}
 	
-	//NEEDS WORK!!!!
 	@Override
-	public List<Game> findGamesByCategory(int categoryID) {
+	public List<Game> getGamesByCategory(int categoryID) {
 		List<Game> allGames= getAllGames();
 		List<Game> categoryGames= new ArrayList<>();
+		
 		for (Game game : allGames) {
-			
-			//TODO Game needs a Category/CategoryID
 			if(game.getCategory().getId() == categoryID ) {
 				categoryGames.add(game);
 			}
 		}
-		
-		
+				
 		return categoryGames;
 	}
 	
