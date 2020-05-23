@@ -29,7 +29,7 @@
         </div>
         <!--Body-->
         <div class="modal-body">
-        <form id="login" action="register.do" method="GET">
+        <form id="login" action="logIn.do" method="GET">
           <!--Body-->
           <div class="md-form mb-5">
             <input type="text" id="userName" class="form-control validate white-text">
@@ -47,7 +47,7 @@
 
             <!--Grid column-->
             <div class="text-center mb-3 col-md-12">
-              <button type="button" id="login-button" class="btn btn-success btn-block btn-rounded z-depth-1">Log in</button>
+              <button type="submit" id="login-button" class="btn btn-success btn-block btn-rounded z-depth-1">Log in</button>
 	</form>
             </div>
             <!--Grid column-->
@@ -78,7 +78,7 @@
 </div>
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     
     <script>
         
@@ -186,7 +186,7 @@
 });
 
     }) */
-    </script>
+    </script> -->
 
 </body>
 </html>
