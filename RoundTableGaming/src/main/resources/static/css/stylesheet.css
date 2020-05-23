@@ -2,8 +2,7 @@
 
 html body {
 
-background-color: black;
-font-color: white;
+
 
 }
 
@@ -55,22 +54,19 @@ font-color: white;
 
 .footer {
 margin-top: 50px;
-height:200px;
-  position: absolute;
-    bottom: 30px;
-    width: 100%;
+margin-bottom: 100px;
+padding-bottom: 100px;
+ text-align: center;
 
 
 }
 
 .user-profile {
  
-  float: left;
-  width: 32%;
-  height: 175px;
 }
 
 .create-event {
+ 	border: solid;
  
   float: right;
   width: 32%;
@@ -79,7 +75,8 @@ height:200px;
 }
 
 .submit-game {
-
+	border: solid;
+	
   float: right;
   width: 32%;
   height: 175px;
