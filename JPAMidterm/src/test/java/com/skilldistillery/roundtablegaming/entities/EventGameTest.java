@@ -16,7 +16,7 @@ import org.junit.jupiter.api.Test;
 class EventGameTest {
 	private static EntityManagerFactory emf;
 	private EntityManager em;
-	private Guild guild;
+	private EventGame evGame;
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -31,22 +31,46 @@ class EventGameTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		em = emf.createEntityManager();
-		guild = em.find(Guild.class, 1);
+		evGame = em.find(EventGame.class, 1);
 	}
 
 	@AfterEach
 	void tearDown() throws Exception {
-		guild = null;
+		evGame = null;
 		em.close();
 	}
 
 	@Test
-	@DisplayName("testing guild mapping")
+	@DisplayName("testing EventGame mapping")
 	void test1() {
-		assertNotNull(guild);
-		assertEquals("Guild of Mecha Admins", guild.getName());
-		assertEquals("DBA Life", guild.getDescription());
-		assertEquals("anon.jpg", guild.getLogoURL());
+		assertNotNull(evGame);
+		assertEquals("Just a buncha nerds nerdin'", evGame.getDescription());
+		assertEquals(2, evGame.getMinPlayers());
+		assertEquals(2, evGame.getMaxPlayers());
+	}
+	
+	@Test
+	@DisplayName("testing relational mapping to Game")
+	void test2() {
+		assertNotNull(evGame.getGame());
+		assertEquals("Blades In The Dark", evGame.getGame().getTitle());
+		assertEquals(3, evGame.getGame().getMinPlayers());
+		assertEquals(10, evGame.getGame().getMaxPlayers());
+	}
+	
+	@Test
+	@DisplayName("testing relational mapping to Attendee")
+	void test3() {
+		assertNotNull(evGame.getPlayers());
+		assertTrue(evGame.getPlayers().size() > 0);
+		assertEquals("Incredible event. Holy smokes.", evGame.getPlayers().get(0).getAttendeeComment());
 	}
 
+	@Test
+	@DisplayName("testing relational mapping to Event")
+	void test4() {
+		assertNotNull(evGame.getEvent());
+		assertEquals("TestFest", evGame.getEvent().getTitle());
+		assertEquals("someimage.png", evGame.getEvent().getImgURL());
+	}
 }

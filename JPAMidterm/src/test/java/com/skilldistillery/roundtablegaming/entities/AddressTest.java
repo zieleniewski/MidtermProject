@@ -41,7 +41,7 @@ class AddressTest {
 	}
 
 	@Test
-	@DisplayName("testing address mapping")
+	@DisplayName("testing Address mapping")
 	void test1() {
 		assertNotNull(addr);
 		assertEquals("123 admin st", addr.getStreet1());
@@ -50,4 +50,20 @@ class AddressTest {
 		assertEquals("00000", addr.getZipCode());
 	}
 
+	@Test
+	@DisplayName("testing relational mapping to Event")
+	void test2() {
+		assertNotNull(addr.getEvents());
+		assertTrue(addr.getEvents().size() > 0);
+		assertEquals("TestFest", addr.getEvents().get(0).getTitle());
+	}
+	
+	@Test
+	@DisplayName("testing relational mapping to User")
+	void test3() {
+		assertNotNull(addr.getUsers());
+		assertTrue(addr.getUsers().size() > 0);
+		assertEquals("admin", addr.getUsers().get(0).getUsername());
+		assertEquals("admin", addr.getUsers().get(0).getPassword());
+	}
 }

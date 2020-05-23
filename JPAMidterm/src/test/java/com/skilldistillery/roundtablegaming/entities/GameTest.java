@@ -41,7 +41,7 @@ class GameTest {
 	}
 
 	@Test
-	@DisplayName("testing game mapping")
+	@DisplayName("testing Game mapping")
 	void test1() {
 		assertNotNull(game);
 		assertEquals("Blades In The Dark", game.getTitle());
@@ -50,4 +50,36 @@ class GameTest {
 		assertTrue(game.isEnabled());
 	}
 
+	@Test
+	@DisplayName("testing relational mapping to Category")
+	void test2() {
+		assertNotNull(game.getCategory());
+		assertEquals("Tabletop RPG", game.getCategory().getName());
+		assertEquals("A form of role-playing game (RPG) in which the participants "
+				+ "describe their characters' actions through speech. Participants "
+				+ "determine the actions of their characters based on their characterization, "
+				+ "and the actions succeed or fail according to a set formal system "
+				+ "of rules and guidelines. Within the rules, players have the freedom "
+				+ "to improvise; their choices shape the direction "
+				+ "and outcome of the game.", game.getCategory().getDescription());
+	}
+	
+	@Test
+	@DisplayName("testing relational mapping to EventGame")
+	void test3() {
+		assertNotNull(game.getEventGames());
+		assertTrue(game.getEventGames().size() > 0);
+		assertEquals("Just a buncha nerds nerdin'", game.getEventGames().get(0).getDescription());
+		assertEquals(2, game.getEventGames().get(0).getMinPlayers());
+		assertEquals(2, game.getEventGames().get(0).getMaxPlayers());
+	}
+	
+	@Test
+	@DisplayName("testing relational mapping to User")
+	void test4() {
+		assertNotNull(game.getCreator());
+		assertEquals("admin", game.getCreator().getUsername());
+		assertEquals("admin", game.getCreator().getPassword());
+	}
+	
 }

@@ -54,4 +54,11 @@ class CategoryTest {
 				+ "outcome of the game.", cat.getDescription());
 	}
 
+	@Test
+	@DisplayName("testing relational mapping to game")
+	void test2() {
+		assertNotNull(cat.getGames());
+		assertTrue(cat.getGames().size() > 0);
+		assertEquals("Blades In The Dark", cat.getGames().get(0).getTitle());
+	}
 }

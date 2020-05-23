@@ -16,7 +16,7 @@ import org.junit.jupiter.api.Test;
 class EventCommentTest {
 	private static EntityManagerFactory emf;
 	private EntityManager em;
-	private Event event;
+	private EventComment evCom;
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -31,21 +31,37 @@ class EventCommentTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		em = emf.createEntityManager();
-		event = em.find(Event.class, 1);
+		evCom = em.find(EventComment.class, 1);
 	}
 
 	@AfterEach
 	void tearDown() throws Exception {
-		event = null;
+		evCom = null;
 		em.close();
 	}
 
 	@Test
-	@DisplayName("testing event mapping")
+	@DisplayName("testing EventComment mapping")
 	void test1() {
-		assertNotNull(event);
-		assertEquals("TestFest", event.getTitle());
-		assertEquals("someimage.png", event.getImgURL());
+		assertNotNull(evCom);
+		assertEquals("2020-05-22T17:14", evCom.getCommentDate().toString());
+		assertEquals("Incredible event. Holy smokes.", evCom.getComment());
+	}
+	
+	@Test
+	@DisplayName("testing relational mapping to User")
+	void test2() {
+		assertNotNull(evCom.getUser());
+		assertEquals("admin", evCom.getUser().getUsername());
+		assertEquals("admin", evCom.getUser().getPassword());
+	}
+	
+	@Test
+	@DisplayName("testing relational mapping to Event")
+	void test3() {
+		assertNotNull(evCom.getEvent());
+		assertEquals("TestFest", evCom.getEvent().getTitle());
+		assertEquals("someimage.png", evCom.getEvent().getImgURL());
 	}
 
 }

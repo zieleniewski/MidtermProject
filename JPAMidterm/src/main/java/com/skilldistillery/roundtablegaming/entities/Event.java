@@ -11,8 +11,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
@@ -24,7 +22,7 @@ public class Event {
 	@ManyToOne
 	@JoinColumn(name = "organizer_id")
 	private User organizer;
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "address_id")
 	private Address address;
 	private String title;
@@ -40,17 +38,16 @@ public class Event {
 	@Column(name = "last_update")
 	private LocalDateTime lastUpdate;
 	private boolean enabled;
-//	@ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
-//	@JoinTable(name = "event_game",
-//			joinColumns = @JoinColumn())
-//	private List<User> attendees;
-//	@OneToMany(mappedBy = "event")
-//	private List<EventComment> eventComments;
+	@OneToMany(mappedBy = "event")
+	private List<EventGame> eventGames;
+	@OneToMany(mappedBy = "event")
+	private List<EventComment> eventComments;
 	
 	public Event() {}
 
 	public Event(int id, User organizer, Address address, String title, String description, LocalDateTime eventDate,
-			LocalTime startTime, String imgURL, LocalDateTime createDate, LocalDateTime lastUpdate, boolean enabled) {
+			LocalTime startTime, String imgURL, LocalDateTime createDate, LocalDateTime lastUpdate, boolean enabled,
+			List<EventGame> eventGames, List<EventComment> eventComments) {
 		super();
 		this.id = id;
 		this.organizer = organizer;
@@ -63,6 +60,8 @@ public class Event {
 		this.createDate = createDate;
 		this.lastUpdate = lastUpdate;
 		this.enabled = enabled;
+		this.eventGames = eventGames;
+		this.eventComments = eventComments;
 	}
 
 	public int getId() {
@@ -151,6 +150,22 @@ public class Event {
 
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
+	}
+
+	public List<EventGame> getEventGames() {
+		return eventGames;
+	}
+
+	public void setEventGames(List<EventGame> eventGames) {
+		this.eventGames = eventGames;
+	}
+
+	public List<EventComment> getEventComments() {
+		return eventComments;
+	}
+
+	public void setEventComments(List<EventComment> eventComments) {
+		this.eventComments = eventComments;
 	}
 
 	@Override

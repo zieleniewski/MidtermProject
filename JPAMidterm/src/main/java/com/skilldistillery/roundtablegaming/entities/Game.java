@@ -1,13 +1,15 @@
 package com.skilldistillery.roundtablegaming.entities;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 
 @Entity
 public class Game {
@@ -21,101 +23,102 @@ public class Game {
 	private int maxPlayers;
 	private String description;
 	private boolean enabled;
+	@ManyToOne
+	@JoinColumn(name = "category_id")
+	private Category category;
+	@OneToMany(mappedBy = "game")
+	private List<EventGame> eventGames;
+	@ManyToOne
+	@JoinColumn(name = "creator_id")
+	private User creator;
 	
-//	@OneToMany
-//	@JoinColumn(name="category_id")
-//	private Category category;
-//	
-//	@OneToOne
-//	@JoinColumn(name="creator_id")
-//	private User creator;
+	public Game() {}
+	
+	public Game(int id, String title, int minPlayers, int maxPlayers, String description, boolean enabled,
+			Category category, List<EventGame> eventGames, User creator) {
+		super();
+		this.id = id;
+		this.title = title;
+		this.minPlayers = minPlayers;
+		this.maxPlayers = maxPlayers;
+		this.description = description;
+		this.enabled = enabled;
+		this.category = category;
+		this.eventGames = eventGames;
+		this.creator = creator;
+	}
 
-	
-	/*
-	 * Constructors
-	 */
-	public Game() {super();}
-	
-	/*
-	 * Getters and Setters
-	 */
 	public int getId() {
 		return id;
 	}
-
 
 	public void setId(int id) {
 		this.id = id;
 	}
 
-
 	public String getTitle() {
 		return title;
 	}
-
 
 	public void setTitle(String title) {
 		this.title = title;
 	}
 
-
 	public String getDescription() {
 		return description;
 	}
-
 
 	public void setDescription(String description) {
 		this.description = description;
 	}
 
-
 	public int getMinPlayers() {
 		return minPlayers;
 	}
-
 
 	public void setMinPlayers(int minPlayers) {
 		this.minPlayers = minPlayers;
 	}
 
-
 	public int getMaxPlayers() {
 		return maxPlayers;
 	}
-
 
 	public void setMaxPlayers(int maxPlayers) {
 		this.maxPlayers = maxPlayers;
 	}
 
-
 	public boolean isEnabled() {
 		return enabled;
 	}
-
 
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
 	}
 
-//	public Category getCategory() {
-//		return category;
-//	}
-//
-//
-//	public void setCategory(Category category) {
-//		this.category = category;
-//	}
-//
-//
-//	public User getCreator() {
-//		return creator;
-//	}
-//
-//
-//	public void setCreator(User creator) {
-//		this.creator = creator;
-//	}
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
+	}
+
+	public List<EventGame> getEventGames() {
+		return eventGames;
+	}
+
+	public void setEventGames(List<EventGame> eventGames) {
+		this.eventGames = eventGames;
+	}
+
+	public User getCreator() {
+		return creator;
+	}
+
+	public void setCreator(User creator) {
+		this.creator = creator;
+	}
 
 	@Override
 	public int hashCode() {
@@ -154,6 +157,10 @@ public class Game {
 		builder.append(description);
 		builder.append(", enabled=");
 		builder.append(enabled);
+		builder.append(", category=");
+		builder.append(category);
+		builder.append(", creator=");
+		builder.append(creator);
 		builder.append("]");
 		return builder.toString();
 	}

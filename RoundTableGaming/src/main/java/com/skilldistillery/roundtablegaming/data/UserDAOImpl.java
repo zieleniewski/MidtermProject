@@ -3,7 +3,10 @@ package com.skilldistillery.roundtablegaming.data;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
+
 import org.springframework.stereotype.Service;
+
+import com.skilldistillery.roundtablegaming.entities.Address;
 import com.skilldistillery.roundtablegaming.entities.User;
 
 @Service
@@ -13,7 +16,7 @@ public class UserDAOImpl implements UserDAO {
 	private EntityManager em;
 
 	@Override
-	public User createUser(User user) {
+	public User createUser(User user, Address address) {
 		em.persist(user);
 		em.flush();
 		return user;

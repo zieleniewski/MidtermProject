@@ -1,5 +1,6 @@
 package com.skilldistillery.roundtablegaming.entities;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
@@ -17,22 +18,27 @@ public class Attendee {
 	@EmbeddedId
 	private AttendeeId id = new AttendeeId();
 	@Column(name = "event_rating")
-	private int eventRating;
+	private Integer eventRating;
+	@ManyToOne(cascade = CascadeType.PERSIST)
+	@JoinColumn(name = "event_game_id")
+	private EventGame eventGame;
 	@Column(name = "comment_by_attendee")
 	private String attendeeComment;
 
 //	CONSTRUCTORS
 	public Attendee() {}
 
-	public Attendee(User user, AttendeeId id, int eventRating, String attendeeComment) {
+	public Attendee(User user, AttendeeId id, int eventRating, EventGame eventGame, String attendeeComment) {
 		super();
 		this.user = user;
 		this.id = id;
 		this.eventRating = eventRating;
+		this.eventGame = eventGame;
 		this.attendeeComment = attendeeComment;
 	}
 
 //	GETTERS AND SETTERS
+
 	public User getUser() {
 		return user;
 	}
@@ -57,6 +63,14 @@ public class Attendee {
 		this.eventRating = eventRating;
 	}
 
+	public EventGame getEventGame() {
+		return eventGame;
+	}
+
+	public void setEventGame(EventGame eventGame) {
+		this.eventGame = eventGame;
+	}
+
 	public String getAttendeeComment() {
 		return attendeeComment;
 	}
@@ -65,7 +79,7 @@ public class Attendee {
 		this.attendeeComment = attendeeComment;
 	}
 
-//	EQUALS AND HASHCODE
+//	 EQUALS AND HASHCODE
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -91,12 +105,21 @@ public class Attendee {
 		return true;
 	}
 
-	// TOSTRING
+//	 TOSTRING
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Attendee [user=").append(user).append(", id=").append(id).append(", eventRating=")
-				.append(eventRating).append(", attendeeComment=").append(attendeeComment).append("]");
+		builder.append("Attendee [user=");
+		builder.append(user);
+		builder.append(", id=");
+		builder.append(id);
+		builder.append(", eventRating=");
+		builder.append(eventRating);
+		builder.append(", eventGame=");
+		builder.append(eventGame);
+		builder.append(", attendeeComment=");
+		builder.append(attendeeComment);
+		builder.append("]");
 		return builder.toString();
 	}
 
