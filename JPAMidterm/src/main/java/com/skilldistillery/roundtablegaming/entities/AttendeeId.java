@@ -18,9 +18,7 @@ public class AttendeeId implements Serializable {
 	private int eventId;
 
 //	CONSTRUCTORS
-	public AttendeeId() {
-
-	}
+	public AttendeeId() {}
 
 	public AttendeeId(int userId, int eventId) {
 		super();
