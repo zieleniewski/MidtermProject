@@ -296,6 +296,16 @@ COMMIT;
 
 
 -- -----------------------------------------------------
+-- Data for table `event`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `roundtabledb`;
+INSERT INTO `event` (`id`, `organizer_id`, `address_id`, `title`, `description`, `event_date`, `start_time`, `img_url`, `create_date`, `last_update`, `enabled`) VALUES (1, 1, 1, 'TestFest', 'Just some sweet admin testing', '2020-05-22', '08:00:00', 'someimage.png', '2020-05-22 17:14:00', NULL, 1);
+
+COMMIT;
+
+
+-- -----------------------------------------------------
 -- Data for table `game`
 -- -----------------------------------------------------
 START TRANSACTION;
@@ -327,6 +337,46 @@ INSERT INTO `game` (`id`, `category_id`, `creator_id`, `title`, `min_players`, `
 INSERT INTO `game` (`id`, `category_id`, `creator_id`, `title`, `min_players`, `max_players`, `description`, `enabled`) VALUES (25, 3, 1, 'WarMachine/Hordes', 2, 2, 'Warmachine is a tabletop wargame set in a semi-industralised fantasy world. A player\'s army is centred around a powerful warcaster who controls a group of giant robots called warjacks, backed up by a few combat units and support solos. Hordes represents the untamed wilds of the same fantasy world.', 1);
 INSERT INTO `game` (`id`, `category_id`, `creator_id`, `title`, `min_players`, `max_players`, `description`, `enabled`) VALUES (26, 3, 1, 'Wings of Glory', 2, 8, 'Year 1917. All across Europe, while men face a last-ditch battle in the mud of the trenches, colorful biplanes fly in the foggy sky, gallantly fighting each other as true \"knights of the air.\"  Take the commands of one of the early flying machines to shoot down your enemy, complete recon missions, and become an ace, following in the steps of men like Manfred von Richthofen, Eddie Rickenbacker, Georges Guynemer and Francesco Baracca!', 1);
 INSERT INTO `game` (`id`, `category_id`, `creator_id`, `title`, `min_players`, `max_players`, `description`, `enabled`) VALUES (27, 3, 1, 'X-Wing', 2, 4, 'Star Wars: X-Wing Miniatures Game is a tactical ship-to-ship combat game in which players take control of powerful Rebel X-wings and nimble Imperial TIE fighters, facing them against each other in fast-paced space combat.', 1);
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `guild`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `roundtabledb`;
+INSERT INTO `guild` (`id`, `name`, `description`, `logo_url`) VALUES (1, 'Guild of Mecha Admins', 'DBA Life', 'anon.jpg');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `event_game`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `roundtabledb`;
+INSERT INTO `event_game` (`id`, `event_id`, `game_id`, `description`, `min_players`, `max_players`, `start_time`) VALUES (1, 1, 1, 'Just a buncha nerds nerdin\'', 2, 2, '18:00:00');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `attendee`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `roundtabledb`;
+INSERT INTO `attendee` (`user_id`, `event_game_id`, `event_rating`, `comment_by_attendee`) VALUES (1, 1, 5, 'admin test');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `event_comment`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `roundtabledb`;
+INSERT INTO `event_comment` (`id`, `user_id`, `event_id`, `comment_date`, `content`) VALUES (1, 1, 1, '2020-05-22 17:14:00', 'Incredible event. Holy smokes.');
 
 COMMIT;
 

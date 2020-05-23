@@ -13,10 +13,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-class GameTest {
+class AddressTest {
 	private static EntityManagerFactory emf;
 	private EntityManager em;
-	private Game game;
+	private Address addr;
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -31,23 +31,23 @@ class GameTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		em = emf.createEntityManager();
-		game = em.find(Game.class, 1);
+		addr = em.find(Address.class, 1);
 	}
 
 	@AfterEach
 	void tearDown() throws Exception {
-		game = null;
+		addr = null;
 		em.close();
 	}
 
 	@Test
-	@DisplayName("testing game mapping")
+	@DisplayName("testing address mapping")
 	void test1() {
-		assertNotNull(game);
-		assertEquals("Blades In The Dark", game.getTitle());
-		assertEquals(10, game.getMaxPlayers());
-		assertEquals(3, game.getMinPlayers());
-		assertTrue(game.isEnabled());
+		assertNotNull(addr);
+		assertEquals("123 admin st", addr.getStreet1());
+		assertEquals("Adminsville", addr.getCity());
+		assertEquals("Adminado", addr.getState());
+		assertEquals("00000", addr.getZipCode());
 	}
 
 }
