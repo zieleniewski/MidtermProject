@@ -28,6 +28,7 @@ public class EventGame {
 	private Integer maxPlayers;
 	@Column(name = "start_time")
 	private LocalTime startTime;
+	private boolean enabled;
 	@ManyToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "game_id")
 	private Game game;
@@ -39,7 +40,7 @@ public class EventGame {
 	
 	public EventGame() {}
 
-	public EventGame(int id, String description, Integer minPlayers, Integer maxPlayers, LocalTime startTime, Game game,
+	public EventGame(int id, String description, Integer minPlayers, Integer maxPlayers, LocalTime startTime, boolean enabled, Game game,
 			List<Attendee> players, Event event) {
 		super();
 		this.id = id;
@@ -47,6 +48,7 @@ public class EventGame {
 		this.minPlayers = minPlayers;
 		this.maxPlayers = maxPlayers;
 		this.startTime = startTime;
+		this.enabled = enabled;
 		this.game = game;
 		this.players = players;
 		this.event = event;
@@ -90,6 +92,14 @@ public class EventGame {
 
 	public void setStartTime(LocalTime startTime) {
 		this.startTime = startTime;
+	}
+
+	public boolean isEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
 	}
 
 	public Game getGame() {
@@ -171,6 +181,8 @@ public class EventGame {
 		builder.append(maxPlayers);
 		builder.append(", startTime=");
 		builder.append(startTime);
+		builder.append(", enabled=");
+		builder.append(enabled);
 		builder.append(", game=");
 		builder.append(game);
 		builder.append(", event=");

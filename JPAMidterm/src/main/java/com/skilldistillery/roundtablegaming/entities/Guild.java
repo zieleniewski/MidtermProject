@@ -26,16 +26,18 @@ public class Guild {
 	@JoinTable(name = "guild_member",
 			joinColumns = @JoinColumn(name = "guild_id"),
 			inverseJoinColumns = @JoinColumn(name = "user_id"))
+	private boolean enabled;
 	private List<User> members;
 	
 	public Guild() {}
 
-	public Guild(int id, String name, String description, String logoURL, List<User> members) {
+	public Guild(int id, String name, String description, String logoURL, boolean enabled, List<User> members) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.description = description;
 		this.logoURL = logoURL;
+		this.enabled = enabled;
 		this.members = members;
 	}
 
@@ -69,6 +71,14 @@ public class Guild {
 
 	public void setLogoURL(String logoURL) {
 		this.logoURL = logoURL;
+	}
+
+	public boolean isEnabled() {
+		return enabled;
+	}
+	
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
 	}
 
 	public List<User> getMembers() {
@@ -129,6 +139,8 @@ public class Guild {
 		builder.append(description);
 		builder.append(", logoURL=");
 		builder.append(logoURL);
+		builder.append(", enabled=");
+		builder.append(enabled);
 		builder.append("]");
 		return builder.toString();
 	}
