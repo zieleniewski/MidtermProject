@@ -22,60 +22,103 @@
 
 
 
-<nav
-	class="navbar navbar-expand-sm navbar-light fixed-top navbar-custom">
-	<button class="navbar-toggler nav-btn" type="button"
-		data-toggle="collapse" data-target="#navbar5">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-	<a href="/" class="navbar-brand nav-btn">Round Table Games</a>
-	<div class="navbar-collapse collapse justify-content-stretch"
-		id="navbar5">
-		<ul class="navbar-nav">
-			<li class="nav-item active"><a class="nav-link " href="#">About
-					<span class="sr-only">Home</span>
-			</a></li>
-			<c:choose>
-			<c:when test="${not empty loggedInUser}">
-				<li class="nav-item"><a href=""
-					class="btn btn-default btn-rounded" data-toggle="modal"
-					data-target="#darkModalForm">${loggedInUser.firstName }</a></li>
-				<%-- <li class="nav-item"><a class="nav-link "
-					href="${pageContext.request.contextPath}/register.do">Register</a>
-				</li> --%>
-			</c:when>
-			<c:otherwise>
-				<li class="nav-item"><a href=""
-					class="btn btn-default btn-rounded" data-toggle="modal"
-					data-target="#darkModalForm">Login</a></li>
-			</c:otherwise>
-			</c:choose>
-			<li class="nav-item"><a class="nav-link "
-				href="${pageContext.request.contextPath}/register.do">Register</a></li>
-
-
-		</ul>
-		<form class="mx-2 my-auto d-inline w-100">
-			<div class="input-group">
-				<input type="text" class="form-control" placeholder="Search Games">
-				<span class="input-group-btn">
-					<button class="btn btn-outline-secondary" type="button">GO</button>
-				</span>
+<c:choose>
+	<c:when test="${not empty loggedInUser}">
+		<nav
+			class="navbar navbar-expand-sm navbar-light fixed-top navbar-custom">
+			<button class="navbar-toggler nav-btn" type="button"
+				data-toggle="collapse" data-target="#navbar5">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<a href="/" class="navbar-brand nav-btn">Round Table Games</a>
+			<div class="navbar-collapse collapse justify-content-stretch"
+				id="navbar5">
+				<ul class="navbar-nav">
+					<li class="nav-item active"><a class="nav-link " href="#">About
+							<span class="sr-only">Home</span>
+					</a></li>
+					<li class="nav-item"><a href=""
+						class="btn btn-default btn-rounded" data-toggle="modal"
+						data-target="#darkModalForm">${loggedInUser.firstName}</a></li>
+					<li class="nav-item"><a class="nav-link "
+						href="${pageContext.request.contextPath}/logOut.do">Log Out</a></li>
+					<li class="nav-item"><a class="nav-link "
+						href="${pageContext.request.contextPath}/account.do">Account</a></li>
+				</ul>
+				<form class="mx-2 my-auto d-inline w-100">
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Search Games">
+						<span class="input-group-btn">
+							<button class="btn btn-outline-secondary" type="button">GO</button>
+						</span>
+					</div>
+				</form>
+				<ul class="navbar-nav">
+					<li class="nav-item dropdown"><a class="nav-link"
+						href="http://example.com" id="navbarDropdownMenuLink"
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<i class="fa fa-cog fa-lg"></i>
+					</a>
+						<div class="dropdown-menu dropdown-menu-right"
+							aria-labelledby="navbarDropdownMenuLink">
+							<a class="dropdown-item" href="#">Action</a> <a
+								class="dropdown-item" href="#">Another action</a> <a
+								class="dropdown-item" href="#">Something else here</a>
+						</div></li>
+				</ul>
 			</div>
-		</form>
-		<ul class="navbar-nav">
-			<li class="nav-item dropdown"><a class="nav-link"
-				href="http://example.com" id="navbarDropdownMenuLink"
-				data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					<i class="fa fa-cog fa-lg"></i>
-			</a>
-				<div class="dropdown-menu dropdown-menu-right"
-					aria-labelledby="navbarDropdownMenuLink">
-					<a class="dropdown-item" href="#">Action</a> <a
-						class="dropdown-item" href="#">Another action</a> <a
-						class="dropdown-item" href="#">Something else here</a>
-				</div></li>
-		</ul>
-	</div>
 
-</nav>
+		</nav>
+	</c:when>
+
+	<c:otherwise>
+		<nav
+			class="navbar navbar-expand-sm navbar-light fixed-top navbar-custom">
+			<button class="navbar-toggler nav-btn" type="button"
+				data-toggle="collapse" data-target="#navbar5">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<a href="/" class="navbar-brand nav-btn">Round Table Games</a>
+			<div class="navbar-collapse collapse justify-content-stretch"
+				id="navbar5">
+				<ul class="navbar-nav">
+					<li class="nav-item active"><a class="nav-link " href="#">About
+							<span class="sr-only">Home</span>
+					</a></li>
+
+
+					<li class="nav-item"><a href=""
+						class="btn btn-default btn-rounded" data-toggle="modal"
+						data-target="#darkModalForm">Login</a></li>
+
+					<li class="nav-item"><a class="nav-link "
+						href="${pageContext.request.contextPath}/register.do">Register</a></li>
+
+
+				</ul>
+				<form class="mx-2 my-auto d-inline w-100">
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Search Games">
+						<span class="input-group-btn">
+							<button class="btn btn-outline-secondary" type="button">GO</button>
+						</span>
+					</div>
+				</form>
+				<ul class="navbar-nav">
+					<li class="nav-item dropdown"><a class="nav-link"
+						href="http://example.com" id="navbarDropdownMenuLink"
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<i class="fa fa-cog fa-lg"></i>
+					</a>
+						<div class="dropdown-menu dropdown-menu-right"
+							aria-labelledby="navbarDropdownMenuLink">
+							<a class="dropdown-item" href="#">Action</a> <a
+								class="dropdown-item" href="#">Another action</a> <a
+								class="dropdown-item" href="#">Something else here</a>
+						</div></li>
+				</ul>
+			</div>
+
+		</nav>
+	</c:otherwise>
+</c:choose>
