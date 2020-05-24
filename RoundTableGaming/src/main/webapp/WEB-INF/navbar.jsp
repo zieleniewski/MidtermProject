@@ -47,6 +47,7 @@
 					<li class="nav-item"><a class="nav-link "
 						href="${pageContext.request.contextPath}/account.do">Account</a></li>
 				</ul>
+				<div class="search-box">
 				<form class="mx-2 my-auto d-inline w-50">
 					<div class="input-group">
 						<input type="text" class="form-control" placeholder="Search Games">
@@ -55,19 +56,7 @@
 						</span>
 					</div>
 				</form>
-				<ul class="navbar-nav">
-					<li class="nav-item dropdown"><a class="nav-link"
-						href="http://example.com" id="navbarDropdownMenuLink"
-						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<i class="fa fa-cog fa-lg"></i>
-					</a>
-						<div class="dropdown-menu dropdown-menu-right"
-							aria-labelledby="navbarDropdownMenuLink">
-							<a class="dropdown-item" href="#">Action</a> <a
-								class="dropdown-item" href="#">Another action</a> <a
-								class="dropdown-item" href="#">Something else here</a>
-						</div></li>
-				</ul>
+				</div>
 			</div>
 
 		</nav>
@@ -98,7 +87,8 @@
 
 
 				</ul>
-				<form class="mx-2 my-auto d-inline w-100">
+				<div class="search-box">
+				<form class="mx-2 my-auto d-inline w-50 align-right">
 					<div class="input-group">
 						<input type="text" class="form-control" placeholder="Search Games">
 						<span class="input-group-btn">
@@ -106,19 +96,7 @@
 						</span>
 					</div>
 				</form>
-				<ul class="navbar-nav">
-					<li class="nav-item dropdown"><a class="nav-link"
-						href="http://example.com" id="navbarDropdownMenuLink"
-						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<i class="fa fa-cog fa-lg"></i>
-					</a>
-						<div class="dropdown-menu dropdown-menu-right"
-							aria-labelledby="navbarDropdownMenuLink">
-							<a class="dropdown-item" href="#">Action</a> <a
-								class="dropdown-item" href="#">Another action</a> <a
-								class="dropdown-item" href="#">Something else here</a>
-						</div></li>
-				</ul>
+				</div>
 			</div>
 
 		</nav>

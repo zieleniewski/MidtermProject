@@ -1,10 +1,10 @@
 @charset "UTF-8";
 
-body {
+.background {
 	background-image:
-		url("https://wallpaperaccess.com/full/416185.jpg");
-		background-repeat: no-repeat;
-		background-size: cover;
+	 	url("https://wallpaperaccess.com/full/416185.jpg");
+		background-repeat: no-repeat; 
+		background-size: cover; 
 }
 
 .container-fluid {
@@ -94,3 +94,31 @@ h1 {
 	border-color: #d65a31;
 	transition: 0.5s;
 }
+
+.game-list{
+	background-color: black;
+	display: block;
+	text-align: center;
+	color: #e84545;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
