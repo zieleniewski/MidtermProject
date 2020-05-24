@@ -13,7 +13,7 @@ public interface AddressDAO {
 	
 	public Address disableAddress(int id);
 	
-	public Address updateAddress(int id, Address updatedAddress);
+	public Address updateAddress(Address updatedAddress);
 	
 	public List<Address> getAllAddresses();
 	

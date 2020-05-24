@@ -24,8 +24,8 @@ public class AttendeeDAOImpl implements AttendeeDAO {
 	}
 
 	@Override
-	public Attendee update(Attendee attn, AttendeeId id) {
-		Attendee updated = em.find(Attendee.class, id);
+	public Attendee update(Attendee attn) {
+		Attendee updated = em.find(Attendee.class, attn.getId());
 		updated.setUser(attn.getUser());
 		updated.setEventGame(attn.getEventGame());
 		updated.setEventRating(attn.getEventRating());
