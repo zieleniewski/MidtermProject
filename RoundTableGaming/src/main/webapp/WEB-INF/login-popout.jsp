@@ -17,7 +17,7 @@
   aria-hidden="true">
   <div class="modal-dialog form-dark" role="document">
     <!--Content-->
-    <div class="modal-content card card-image" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/pricing-table%20(7).jpg'); background-repeat:no-repeat; background-size: cover;">
+    <div class="modal-content card card-image" style="background-image: url('https://i.pinimg.com/originals/87/23/13/8723132f6b15d64873f99db412d0c739.jpg'); background-repeat:no-repeat; background-size: cover;">
       <div class="text-white rgba-stylish-strong py-5 px-5 z-depth-4">
         <!--Header-->
         <div class="modal-header text-center pb-4">
@@ -32,12 +32,12 @@
         <form id="login" action="logIn.do" method="GET">
           <!--Body-->
           <div class="md-form mb-5">
-            <input type="text" id="userName" class="form-control validate white-text">
+            <input type="text" id="userName" class="form-control validate white-text" name="username">
             <label data-error="wrong" data-success="right" for="userName">Your username</label>
           </div>
 
           <div class="md-form pb-3">
-            <input type="password" id="password" class="form-control validate white-text">
+            <input type="password" id="password" class="form-control validate white-text" name="password">
             <label data-error="wrong" data-success="right" for="password">Your password</label>
             
           </div>
