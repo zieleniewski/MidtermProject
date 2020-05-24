@@ -28,16 +28,18 @@ public class EventComment {
 	private LocalDateTime commentDate;
 	@Column(name = "content")
 	private String comment;
+	private boolean enabled;
 	
 	public EventComment() {}
 
-	public EventComment(int id, User user, Event event, LocalDateTime commentDate, String comment) {
+	public EventComment(int id, User user, Event event, LocalDateTime commentDate, String comment, boolean enabled) {
 		super();
 		this.id = id;
 		this.user = user;
 		this.event = event;
 		this.commentDate = commentDate;
 		this.comment = comment;
+		this.enabled = enabled;
 	}
 
 	public int getId() {
@@ -80,6 +82,14 @@ public class EventComment {
 		this.comment = comment;
 	}
 
+	public boolean isEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -115,6 +125,8 @@ public class EventComment {
 		builder.append(commentDate);
 		builder.append(", comment=");
 		builder.append(comment);
+		builder.append(", enabled=");
+		builder.append(enabled);
 		builder.append("]");
 		return builder.toString();
 	}

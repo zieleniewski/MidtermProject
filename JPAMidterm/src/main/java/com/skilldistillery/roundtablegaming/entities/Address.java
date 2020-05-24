@@ -22,6 +22,7 @@ public class Address {
 	private String state;
 	@Column(name = "zip_code")
 	private String zipCode;
+	private boolean enabled;
 	@OneToMany(mappedBy = "address", cascade = CascadeType.PERSIST)
 	private List<Event> events;
 	@OneToMany(mappedBy = "address", cascade = CascadeType.PERSIST)
@@ -30,7 +31,7 @@ public class Address {
 	public Address() {}
 
 	public Address(int id, String street1, String street2, String city, String state, String zipCode,
-			List<Event> events, List<User> users) {
+			boolean enabled, List<Event> events, List<User> users) {
 		super();
 		this.id = id;
 		this.street1 = street1;
@@ -38,6 +39,7 @@ public class Address {
 		this.city = city;
 		this.state = state;
 		this.zipCode = zipCode;
+		this.enabled = enabled;
 		this.events = events;
 		this.users = users;
 	}
@@ -88,6 +90,14 @@ public class Address {
 
 	public void setZipCode(String zipCode) {
 		this.zipCode = zipCode;
+	}
+
+	public boolean isEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
 	}
 
 	public List<Event> getEvents() {
@@ -183,6 +193,8 @@ public class Address {
 		builder.append(state);
 		builder.append(", zipCode=");
 		builder.append(zipCode);
+		builder.append(", enabled=");
+		builder.append(enabled);
 		builder.append("]");
 		return builder.toString();
 	}
