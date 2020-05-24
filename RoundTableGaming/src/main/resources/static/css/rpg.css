@@ -1,10 +1,18 @@
 @charset "UTF-8";
 
+body, html {
+	height: 100%;
+}
+
+
 .background {
 	background-image:
 	 	url("https://wallpaperaccess.com/full/416185.jpg");
 		background-repeat: no-repeat; 
 		background-size: cover; 
+		background-attachment: fixed;
+  background-position: center;
+  height: 100%;
 }
 
 .container-fluid {
@@ -95,22 +103,26 @@ h1 {
 	transition: 0.5s;
 }
 
-.game-list{
-	background-color: black;
-	display: block;
+ .table {
+	
+border-radius: 10px;
 	text-align: center;
 	color: #e84545;
+    background: black;
+	opacity: 0.5;
+
+	border-width: 0px;
+	
+} 
+.table td, .table th {
+	border: 0px !important;
+	color: white;
+	font-size: 25px;
 }
-
-
-
-
-
-
-
-
-
-
+.game-list {
+	margin-left: 40px;
+	margin-right: 40px;
+}
 
 
 
