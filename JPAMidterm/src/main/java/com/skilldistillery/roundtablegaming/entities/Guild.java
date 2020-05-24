@@ -22,11 +22,11 @@ public class Guild {
 	private String description;
 	@Column(name = "logo_url")
 	private String logoURL;
+	private boolean enabled;
 	@ManyToMany(cascade = CascadeType.PERSIST)
 	@JoinTable(name = "guild_member",
 			joinColumns = @JoinColumn(name = "guild_id"),
 			inverseJoinColumns = @JoinColumn(name = "user_id"))
-	private boolean enabled;
 	private List<User> members;
 	
 	public Guild() {}

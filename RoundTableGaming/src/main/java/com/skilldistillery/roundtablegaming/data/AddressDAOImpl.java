@@ -27,12 +27,23 @@ public class AddressDAOImpl implements AddressDAO {
 	}
 
 	@Override
-	public Address deleteAddress(int id) {
-		Address deleteAddress = em.find(Address.class, id);
-		em.remove(deleteAddress);
-		return deleteAddress;
+	public Address enableAddress(int id) {
+		Address enabledAddress = em.find(Address.class, id);
+		enabledAddress.setEnabled(true);
+		em.persist(enabledAddress);
+		em.flush();
+		return enabledAddress;
 	}
 
+	@Override
+	public Address disableAddress(int id) {
+		Address disabledAddress = em.find(Address.class, id);
+		disabledAddress.setEnabled(false);
+		em.persist(disabledAddress);
+		em.flush();
+		return disabledAddress;
+	}
+	
 	@Override
 	public Address updateAddress(int id, Address updatedAddress) {
 		Address address = em.find(Address.class, id);
@@ -53,12 +64,12 @@ public class AddressDAOImpl implements AddressDAO {
 				.getResultList();
 		return allAddresses;
 	}
-
+	
 	@Override
 	public Address getAddressById(int id) {
 		return em.find(Address.class, id);
 	}
-
+	
 	@Override
 	public Address getAddressByEventId(int id) {
 		EventDAO ev = new EventDAOImpl();
@@ -66,7 +77,7 @@ public class AddressDAOImpl implements AddressDAO {
 		Address found = event.getAddress();
 		return found;
 	}
-
+	
 	@Override
 	public List<Event> searchByZipCode(String zipCode) {
 		List<Event> events;
