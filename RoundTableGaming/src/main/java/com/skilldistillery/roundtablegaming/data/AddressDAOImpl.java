@@ -45,8 +45,8 @@ public class AddressDAOImpl implements AddressDAO {
 	}
 	
 	@Override
-	public Address updateAddress(int id, Address updatedAddress) {
-		Address address = em.find(Address.class, id);
+	public Address updateAddress(Address updatedAddress) {
+		Address address = em.find(Address.class, updatedAddress.getId());
 		address.setCity(updatedAddress.getCity());
 		address.setState(updatedAddress.getState());
 		address.setStreet1(updatedAddress.getStreet1());
