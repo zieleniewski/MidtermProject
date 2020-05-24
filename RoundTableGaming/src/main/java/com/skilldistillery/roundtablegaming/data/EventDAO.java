@@ -26,7 +26,7 @@ public interface EventDAO {
 	
 	public List<Event> getEventsByKeyword(String keyword);
 	
-	public Event updateEvent(Event event, int id);
+	public Event updateEvent(Event updatedEvent, int id);
 	
 	public boolean deleteEvent(int id);
 	

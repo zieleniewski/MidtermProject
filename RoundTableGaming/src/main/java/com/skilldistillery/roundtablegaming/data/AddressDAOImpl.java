@@ -41,6 +41,8 @@ public class AddressDAOImpl implements AddressDAO {
 		address.setStreet1(updatedAddress.getStreet1());
 		address.setStreet2(updatedAddress.getStreet2());
 		address.setZipCode(updatedAddress.getZipCode());
+		em.persist(address);
+		em.flush();
 		return address;
 	}
 	

@@ -96,16 +96,30 @@ public class EventDAOImpl implements EventDAO {
 		List<Event> selectedEvents = new ArrayList<>();
 		for (Event event : allEvents) {
 			if (event.getEventDate().equals(date)) {
-				
+				selectedEvents.add(event);
 			}
 		}
-		return null;
+		return selectedEvents;
 	}
 
 	@Override
-	public Event updateEvent(Event event, int id) {
-		// TODO Auto-generated method stub
-		return null;
+	public Event updateEvent(Event updatedEvent, int id) {
+		Event event = em.find(Event.class, id);
+		event.setOrganizer(updatedEvent.getOrganizer());
+		event.setAddress(updatedEvent.getAddress());
+		event.setTitle(updatedEvent.getTitle());
+		event.setDescription(updatedEvent.getDescription());
+		event.setEventDate(updatedEvent.getEventDate());
+		event.setStartTime(updatedEvent.getStartTime());
+		event.setImgURL(updatedEvent.getImgURL());
+		event.setCreateDate(updatedEvent.getCreateDate());
+		event.setLastUpdate(updatedEvent.getLastUpdate());
+		event.setEnabled(updatedEvent.isEnabled());
+		event.setEventGames(updatedEvent.getEventGames());
+		event.setEventComments(updatedEvent.getEventComments());
+		em.persist(event);
+		em.flush();
+		return event;
 	}
 
 	@Override
