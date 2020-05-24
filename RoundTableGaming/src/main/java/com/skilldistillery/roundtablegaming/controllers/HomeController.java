@@ -22,5 +22,15 @@ public class HomeController {
 	public String rpg() {
 		return "rpg";
 	}
+	
+	@GetMapping("miniature.do")
+	public String mini() {
+		return "miniature";
+	}
+	
+	@GetMapping("tcg.do")
+	public String tcg() {
+		return "tcg";
+	}
 
 }
