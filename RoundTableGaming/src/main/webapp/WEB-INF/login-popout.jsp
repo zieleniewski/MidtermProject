@@ -32,12 +32,12 @@
         <form id="login" action="logIn.do" method="GET">
           <!--Body-->
           <div class="md-form mb-5">
-            <input type="text" id="userName" class="form-control validate white-text">
+            <input type="text" id="userName" class="form-control validate white-text" name="username">
             <label data-error="wrong" data-success="right" for="userName">Your username</label>
           </div>
 
           <div class="md-form pb-3">
-            <input type="password" id="password" class="form-control validate white-text">
+            <input type="password" id="password" class="form-control validate white-text" name="password">
             <label data-error="wrong" data-success="right" for="password">Your password</label>
             
           </div>
