@@ -2,6 +2,7 @@ package com.skilldistillery.roundtablegaming.data;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceException;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
@@ -57,20 +58,18 @@ public class UserDAOImpl implements UserDAO {
 	public User checkLogin(User user) {
 		String jpql = "SELECT user FROM User user WHERE user.username = :username";
 
-		User loggingUser = em.createQuery(jpql, User.class).setParameter("username", user.getUsername())
-				.getSingleResult();
-		System.out.println(loggingUser);
-		if (loggingUser == null) {
-			System.out.println("");
+		try {
+			User loggingUser = em.createQuery(jpql, User.class).setParameter("username", user.getUsername())
+					.getSingleResult();
+			if (loggingUser.getPassword().equals(user.getPassword())) {
+				System.out.println("ping");
+				return loggingUser;
+			}
+
+		} catch (PersistenceException e) {
 			return null;
 		}
-
-		if (loggingUser.getPassword().equals(user.getPassword())) {
-		System.out.println("ping");	return loggingUser;
-		} else {
-			return null;
-		}
-
+		return null;
 	}
 
 }
