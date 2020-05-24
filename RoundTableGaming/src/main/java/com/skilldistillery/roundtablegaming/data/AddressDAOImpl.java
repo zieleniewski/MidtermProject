@@ -47,7 +47,8 @@ public class AddressDAOImpl implements AddressDAO {
 	@Override
 	public List<Address> getAllAddresses() {
 		String query= "SELECT a FROM Address a";
-		List<Address> allAddresses = em.createQuery(query, Address.class).getResultList();
+		List<Address> allAddresses = em.createQuery(query, Address.class)
+				.getResultList();
 		return allAddresses;
 	}
 
@@ -59,24 +60,19 @@ public class AddressDAOImpl implements AddressDAO {
 	@Override
 	public Address getAddressByEventId(int id) {
 		EventDAO ev = new EventDAOImpl();
-		List<Event> allEvents= ev.getAllEvents();
-		Address found= null;
-		for (Event event : allEvents) {
-			if(event.getAddress().getId()== id) {
-				found= event.getAddress();
-			}
-		}
+		Event event= ev.getEventById(id);
+		Address found = event.getAddress();
 		return found;
 	}
 
-
-//	@Override
-//	public List<Event> searchByZipCode(String zipCode) {
-//		List<Event> events;
-//		String jpql = "SELECT event FROM Event event WHERE Address.zipCode = :zipCode";
-//		events = em.createQuery(jpql, Event.class).setParameter("zipCode", zipCode)
-//				.getResultList();
-//		return events;
-//	}
+	@Override
+	public List<Event> searchByZipCode(String zipCode) {
+		List<Event> events;
+		String jpql = "SELECT e FROM Event e WHERE address.zipCode = :zipCode";
+		events = em.createQuery(jpql, Event.class)
+				.setParameter("zipCode", zipCode)
+				.getResultList();
+		return events;
+	}
 
 }

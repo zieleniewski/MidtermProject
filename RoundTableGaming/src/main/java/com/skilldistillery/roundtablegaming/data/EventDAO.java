@@ -1,6 +1,6 @@
 package com.skilldistillery.roundtablegaming.data;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.List;
 
 import com.skilldistillery.roundtablegaming.entities.Address;
@@ -22,7 +22,7 @@ public interface EventDAO {
 	
 	public List<Event> getEventsByGame(Game game);
 	
-	public List<Event> getEventsByDate(LocalDateTime when);
+	public List<Event> getEventsByDate(LocalDate date);
 	
 	public List<Event> getEventsByKeyword(String keyword);
 	
