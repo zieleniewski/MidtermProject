@@ -18,7 +18,6 @@ public class GameDAOImpl implements GameDAO{
 	@PersistenceContext
 	private EntityManager em;
 	
-	
 	@Override
 	public Game createGame(Game game) {
 		em.persist(game);
@@ -35,7 +34,6 @@ public class GameDAOImpl implements GameDAO{
 		return allGames;
 	}
 		
-
 	@Override
 	public Game getGameById(int id) {
 		return em.find(Game.class, id);
@@ -61,11 +59,8 @@ public class GameDAOImpl implements GameDAO{
 				categoryGames.add(game);
 			}
 		}
-				
 		return categoryGames;
 	}
-	
-	
 	
 	@Override
 	public Game updateGame(Game game) {
@@ -77,11 +72,11 @@ public class GameDAOImpl implements GameDAO{
 			updated.setMinPlayers(game.getMinPlayers());
 			updated.setMaxPlayers(game.getMaxPlayers());
 			updated.setEnabled(game.isEnabled());
+			em.persist(updated);
+			em.flush();
 		}
-		
 		return updated;
 	}
-	
 	
 	public boolean deleteGame(int id) {
 		
@@ -92,7 +87,6 @@ public class GameDAOImpl implements GameDAO{
 			em.remove(toRemove);
 			deleted= true;
 		}
-		
 		return deleted;
 	}
 

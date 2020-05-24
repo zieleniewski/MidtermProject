@@ -32,6 +32,8 @@ public class EventGameDAOImpl implements EventGameDAO{
 		updated.setMinPlayers(eg.getMinPlayers());
 		updated.setPlayers(eg.getPlayers());
 		updated.setStartTime(eg.getStartTime());
+		em.persist(updated);
+		em.flush();
 		return updated;
 	}
 
