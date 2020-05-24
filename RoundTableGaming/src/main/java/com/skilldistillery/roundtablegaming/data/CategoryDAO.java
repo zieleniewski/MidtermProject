@@ -12,8 +12,9 @@ public interface CategoryDAO {
 	 */
 	public Category createCategory(Category newCategory);
 
-	public boolean disableCategory(int categoryId);
-
+//	public boolean disableCategory(int categoryId);
+//
+//	public boolean enableCategory(int categoryId);
 
 
 }
