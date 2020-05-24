@@ -6,6 +6,6 @@ public interface EventGameDAO {
 
 	public EventGame create(EventGame eg);
 	public EventGame update(EventGame eg);
-	public EventGame delete(int id);
+	public boolean delete(int id);
 	public EventGame findById(int id);
 }
