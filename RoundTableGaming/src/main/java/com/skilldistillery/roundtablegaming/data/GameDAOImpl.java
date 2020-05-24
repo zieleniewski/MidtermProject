@@ -43,9 +43,11 @@ public class GameDAOImpl implements GameDAO{
 	
 	@Override
 	public List<Game> getGamesByKeyword(String keyword) {
+		
 		keyword= "%"+keyword+"%";
 		String query= "SELECT g FROM Game g WHERE g.title OR g.description LIKE :input";
 		List<Game> foundGames = em.createQuery(query, Game.class).setParameter("input", keyword).getResultList();
+		
 		return foundGames;
 	}
 	
@@ -68,6 +70,7 @@ public class GameDAOImpl implements GameDAO{
 	@Override
 	public Game updateGame(Game game) {
 		Game updated = em.find(Game.class, game.getId());
+		
 		if (updated != null) {
 			updated.setTitle(game.getTitle());
 			updated.setDescription(game.getDescription());
@@ -75,17 +78,21 @@ public class GameDAOImpl implements GameDAO{
 			updated.setMaxPlayers(game.getMaxPlayers());
 			updated.setEnabled(game.isEnabled());
 		}
+		
 		return updated;
 	}
 	
 	
 	public boolean deleteGame(int id) {
+		
 		boolean deleted = false;
 		Game toRemove = em.find(Game.class, id);
+		
 		if(toRemove != null) {
 			em.remove(toRemove);
 			deleted= true;
 		}
+		
 		return deleted;
 	}
 

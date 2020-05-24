@@ -19,5 +19,6 @@ public interface AddressDAO {
 	
 	public Address getAddressByEventId(int id);
 	
-	public List<Event> searchByZipCode(String zipCode);
+	public List<Address> getAddressesByZipCode(String zip);
+	
 }
