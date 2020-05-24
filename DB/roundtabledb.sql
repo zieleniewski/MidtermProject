@@ -27,6 +27,7 @@ CREATE TABLE IF NOT EXISTS `address` (
   `city` VARCHAR(100) NULL,
   `state` VARCHAR(100) NULL,
   `zip_code` VARCHAR(10) NOT NULL,
+  `enabled` TINYINT NOT NULL DEFAULT 1,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -87,7 +88,7 @@ CREATE TABLE IF NOT EXISTS `event` (
   `img_url` VARCHAR(5000) NULL,
   `create_date` DATETIME NULL,
   `last_update` DATETIME NULL,
-  `enabled` TINYINT NULL,
+  `enabled` TINYINT NULL DEFAULT 1,
   PRIMARY KEY (`id`),
   INDEX `fk_event_organizer_idx` (`organizer_id` ASC),
   INDEX `fk_event_address1_idx` (`address_id` ASC),
@@ -144,6 +145,7 @@ CREATE TABLE IF NOT EXISTS `guild` (
   `name` VARCHAR(200) NOT NULL,
   `description` TEXT NULL,
   `logo_url` VARCHAR(5000) NULL,
+  `enabled` TINYINT NULL DEFAULT 1,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -161,6 +163,7 @@ CREATE TABLE IF NOT EXISTS `event_game` (
   `min_players` INT NULL,
   `max_players` INT NULL,
   `start_time` TIME NULL,
+  `enabled` TINYINT NULL DEFAULT 1,
   PRIMARY KEY (`id`),
   INDEX `fk_event_game_event1_idx` (`event_id` ASC),
   INDEX `fk_event_game_game1_idx` (`game_id` ASC),
@@ -187,6 +190,7 @@ CREATE TABLE IF NOT EXISTS `attendee` (
   `event_game_id` INT NOT NULL,
   `event_rating` INT NULL,
   `comment_by_attendee` TEXT NULL,
+  `enabled` TINYINT NULL DEFAULT 1,
   PRIMARY KEY (`user_id`, `event_game_id`),
   INDEX `fk_attendee_event_game1_idx` (`event_game_id` ASC),
   CONSTRAINT `fk_attendee_user1`
@@ -237,6 +241,7 @@ CREATE TABLE IF NOT EXISTS `event_comment` (
   `event_id` INT NOT NULL,
   `comment_date` DATETIME NULL,
   `content` TEXT NULL,
+  `enabled` TINYINT NULL DEFAULT 1,
   PRIMARY KEY (`id`),
   INDEX `fk_event_comment_user1_idx` (`user_id` ASC),
   INDEX `fk_event_comment_event1_idx` (`event_id` ASC),
@@ -268,7 +273,10 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `roundtabledb`;
-INSERT INTO `address` (`id`, `street1`, `street2`, `city`, `state`, `zip_code`) VALUES (1, '123 admin st', NULL, 'Adminsville', 'Adminado', '00000');
+INSERT INTO `address` (`id`, `street1`, `street2`, `city`, `state`, `zip_code`, `enabled`) VALUES (1, '123 admin st', NULL, 'Adminsville', 'Adminado', '00000', 1);
+INSERT INTO `address` (`id`, `street1`, `street2`, `city`, `state`, `zip_code`, `enabled`) VALUES (2, '45 Ecksdee Ave', NULL, 'Springfield', 'Kentucky', '12345', 1);
+INSERT INTO `address` (`id`, `street1`, `street2`, `city`, `state`, `zip_code`, `enabled`) VALUES (3, '7400 E Orchard Rd', '#1450n', 'Greenwood Village', 'Colorado', '80111', 1);
+INSERT INTO `address` (`id`, `street1`, `street2`, `city`, `state`, `zip_code`, `enabled`) VALUES (4, '404 Notfound Pl', NULL, 'Unknown', 'Beatsme', '99999', 1);
 
 COMMIT;
 
@@ -279,6 +287,10 @@ COMMIT;
 START TRANSACTION;
 USE `roundtabledb`;
 INSERT INTO `user` (`id`, `address_id`, `username`, `password`, `role`, `first_name`, `last_name`, `email`, `avatar_url`, `create_date`, `enabled`) VALUES (1, 1, 'admin', 'admin', 'admin', NULL, NULL, NULL, NULL, NULL, 1);
+INSERT INTO `user` (`id`, `address_id`, `username`, `password`, `role`, `first_name`, `last_name`, `email`, `avatar_url`, `create_date`, `enabled`) VALUES (2, 1, 'serg', 'lol', 'user', 'Sergio', 'Samoiloff', 'dontworryaboutit@nunya.com', NULL, '2020-05-24 12:30:00', 1);
+INSERT INTO `user` (`id`, `address_id`, `username`, `password`, `role`, `first_name`, `last_name`, `email`, `avatar_url`, `create_date`, `enabled`) VALUES (3, 2, 'shane', 'cereal', 'user', 'Shane', 'Duncan', 'poptarts@kentucky.gov', NULL, '2020-05-24 12:33:00', 1);
+INSERT INTO `user` (`id`, `address_id`, `username`, `password`, `role`, `first_name`, `last_name`, `email`, `avatar_url`, `create_date`, `enabled`) VALUES (4, 3, 'jacob', 'hatred', 'user', 'Jacob', 'Zieleniewski', 'livingina@crawlspace.com', NULL, '2020-05-24 12:35:00', 1);
+INSERT INTO `user` (`id`, `address_id`, `username`, `password`, `role`, `first_name`, `last_name`, `email`, `avatar_url`, `create_date`, `enabled`) VALUES (5, 4, 'mike', 'cats', 'user', 'Mike', 'Matosky', 'seeyalater@yardwork.net', NULL, '2020-05-24 12:51:00', 1);
 
 COMMIT;
 
@@ -301,6 +313,9 @@ COMMIT;
 START TRANSACTION;
 USE `roundtabledb`;
 INSERT INTO `event` (`id`, `organizer_id`, `address_id`, `title`, `description`, `event_date`, `start_time`, `img_url`, `create_date`, `last_update`, `enabled`) VALUES (1, 1, 1, 'TestFest', 'Just some sweet admin testing', '2020-05-22', '08:00:00', 'someimage.png', '2020-05-22 17:14:00', NULL, 1);
+INSERT INTO `event` (`id`, `organizer_id`, `address_id`, `title`, `description`, `event_date`, `start_time`, `img_url`, `create_date`, `last_update`, `enabled`) VALUES (2, 1, 4, 'CatCon', 'This is where Mike disappears to.', '2020-05-24', '10:00:00', 'poweroutage.png', '2020-05-24 12:24:00', NULL, 1);
+INSERT INTO `event` (`id`, `organizer_id`, `address_id`, `title`, `description`, `event_date`, `start_time`, `img_url`, `create_date`, `last_update`, `enabled`) VALUES (3, 2, 2, 'Shane\'s Dungeon of Treats', 'A journey into the occult...and cereal.', '2020-05-30', '20:00:00', 'getthegimp.png', '2020-05-24 12:34:00', NULL, 1);
+INSERT INTO `event` (`id`, `organizer_id`, `address_id`, `title`, `description`, `event_date`, `start_time`, `img_url`, `create_date`, `last_update`, `enabled`) VALUES (4, 3, 3, 'Let\'s Play', 'Everything at the same time', '2020-05-29', '13:00:00', 'stockimage.png', '2020-05-24 12:38:00', NULL, 1);
 
 COMMIT;
 
@@ -346,7 +361,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `roundtabledb`;
-INSERT INTO `guild` (`id`, `name`, `description`, `logo_url`) VALUES (1, 'Guild of Mecha Admins', 'DBA Life', 'anon.jpg');
+INSERT INTO `guild` (`id`, `name`, `description`, `logo_url`, `enabled`) VALUES (1, 'Guild of Mecha Admins', 'DBA Life', 'anon.jpg', 1);
 
 COMMIT;
 
@@ -356,7 +371,12 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `roundtabledb`;
-INSERT INTO `event_game` (`id`, `event_id`, `game_id`, `description`, `min_players`, `max_players`, `start_time`) VALUES (1, 1, 1, 'Just a buncha nerds nerdin\'', 2, 2, '18:00:00');
+INSERT INTO `event_game` (`id`, `event_id`, `game_id`, `description`, `min_players`, `max_players`, `start_time`, `enabled`) VALUES (1, 1, 1, 'Just a buncha nerds nerdin\'', 2, 2, '18:00:00', 1);
+INSERT INTO `event_game` (`id`, `event_id`, `game_id`, `description`, `min_players`, `max_players`, `start_time`, `enabled`) VALUES (2, 2, 11, 'Card game', 2, 2, '22:00:00', 1);
+INSERT INTO `event_game` (`id`, `event_id`, `game_id`, `description`, `min_players`, `max_players`, `start_time`, `enabled`) VALUES (3, 3, 18, 'Miniature game', 2, 2, '21:30:00', 1);
+INSERT INTO `event_game` (`id`, `event_id`, `game_id`, `description`, `min_players`, `max_players`, `start_time`, `enabled`) VALUES (4, 4, 3, 'RPG', 3, 10, '13:45:00', 1);
+INSERT INTO `event_game` (`id`, `event_id`, `game_id`, `description`, `min_players`, `max_players`, `start_time`, `enabled`) VALUES (5, 4, 14, 'Cards', 2, 2, '15:00:00', 1);
+INSERT INTO `event_game` (`id`, `event_id`, `game_id`, `description`, `min_players`, `max_players`, `start_time`, `enabled`) VALUES (6, 4, 20, 'Minis', 2, 2, '18:00:00', 1);
 
 COMMIT;
 
@@ -366,7 +386,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `roundtabledb`;
-INSERT INTO `attendee` (`user_id`, `event_game_id`, `event_rating`, `comment_by_attendee`) VALUES (1, 1, 5, 'admin test');
+INSERT INTO `attendee` (`user_id`, `event_game_id`, `event_rating`, `comment_by_attendee`, `enabled`) VALUES (1, 1, 5, 'admin test', 1);
 
 COMMIT;
 
@@ -386,7 +406,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `roundtabledb`;
-INSERT INTO `event_comment` (`id`, `user_id`, `event_id`, `comment_date`, `content`) VALUES (1, 1, 1, '2020-05-22 17:14:00', 'Incredible event. Holy smokes.');
+INSERT INTO `event_comment` (`id`, `user_id`, `event_id`, `comment_date`, `content`, `enabled`) VALUES (1, 1, 1, '2020-05-22 17:14:00', 'Incredible event. Holy smokes.', 1);
 
 COMMIT;
 
