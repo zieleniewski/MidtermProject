@@ -22,7 +22,7 @@ public class UserController {
 	@RequestMapping(path = "registrationComplete.do", method = RequestMethod.POST)
 	public String completeUser(User user, Address address, Model model, HttpSession session) {
 		User newUser = dao.createUser(user, address);
-		session.setAttribute("user", newUser);
+		session.setAttribute("loggedInUser", newUser);
 		return "index";
 	}
 

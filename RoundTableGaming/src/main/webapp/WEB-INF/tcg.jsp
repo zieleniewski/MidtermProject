@@ -7,8 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
+<div class="navbar">
+			<jsp:include page="navbar.jsp" />
+		</div>
 
 Trading card game page
 
+<jsp:include page="login-popout.jsp"></jsp:include>
 </body>
 </html>

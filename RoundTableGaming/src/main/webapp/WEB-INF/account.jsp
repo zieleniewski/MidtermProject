@@ -7,6 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
+<div class="navbar">
+			<jsp:include page="navbar.jsp" />
+		</div>
 Account TODO
+
+<jsp:include page="login-popout.jsp"></jsp:include>
 </body>
 </html>
