@@ -15,12 +15,12 @@
 
 </head>
 <div class="navbar">
-	<jsp:include page="navbar.jsp" /><br><br>
+	<jsp:include page="navbar.jsp" /><br> <br>
 </div>
 <body>
 	<div class="container p-0">
 
-		<h1 class="h3 mb-3">Settings</h1>
+
 
 		<div class="row">
 			<div class="col-md-5 col-xl-4">
@@ -36,15 +36,9 @@
 							class="list-group-item list-group-item-action" data-toggle="list"
 							href="#password" role="tab"> Password </a> <a
 							class="list-group-item list-group-item-action" data-toggle="list"
-							href="#" role="tab"> Privacy and safety </a> <a
+							href="#upcoming-games" role="tab"> Upcoming Games </a> <a
 							class="list-group-item list-group-item-action" data-toggle="list"
-							href="#" role="tab"> Email notifications </a> <a
-							class="list-group-item list-group-item-action" data-toggle="list"
-							href="#" role="tab"> Web notifications </a> <a
-							class="list-group-item list-group-item-action" data-toggle="list"
-							href="#" role="tab"> Widgets </a> <a
-							class="list-group-item list-group-item-action" data-toggle="list"
-							href="#" role="tab"> Your data </a> <a
+							href="#game-history" role="tab"> Game History </a> <a
 							class="list-group-item list-group-item-action" data-toggle="list"
 							href="#" role="tab"> Delete account </a>
 					</div>
@@ -57,29 +51,7 @@
 
 						<div class="card">
 							<div class="card-header">
-								<div class="card-actions float-right">
-									<div class="dropdown show">
-										<a href="#" data-toggle="dropdown" data-display="static">
-											<svg xmlns="http://www.w3.org/2000/svg" width="24"
-												height="24" viewBox="0 0 24 24" fill="none"
-												stroke="currentColor" stroke-width="2"
-												stroke-linecap="round" stroke-linejoin="round"
-												class="feather feather-more-horizontal align-middle">
-                                            <circle cx="12" cy="12"
-													r="1"></circle>
-                                            <circle cx="19" cy="12"
-													r="1"></circle>
-                                            <circle cx="5" cy="12" r="1"></circle>
-                                        </svg>
-										</a>
-
-										<div class="dropdown-menu dropdown-menu-right">
-											<a class="dropdown-item" href="#">Action</a> <a
-												class="dropdown-item" href="#">Another action</a> <a
-												class="dropdown-item" href="#">Something else here</a>
-										</div>
-									</div>
-								</div>
+								<div class="card-actions float-right"></div>
 								<h5 class="card-title mb-0">Public info</h5>
 							</div>
 							<div class="card-body">
@@ -89,7 +61,7 @@
 											<div class="form-group">
 												<label for="inputUsername">Username</label> <input
 													type="text" class="form-control" id="inputUsername"
-													placeholder="Username">
+													placeholder="put esl here to show user name" readonly>
 											</div>
 											<div class="form-group">
 												<label for="inputUsername">Biography</label>
@@ -100,21 +72,20 @@
 										<div class="col-md-4">
 											<div class="text-center">
 												<img alt="Andrew Jones"
-													src="https://bootdey.com/img/Content/avatar/avatar1.png"
+													src="https://static.artfire.com/uploads/mfs/items/3c/58/large/3c58575a667b657c32614b0a891c3477b4ea7e937b4766d45ab41ef84ea8c9bc.jpg"
 													class="rounded-circle img-responsive mt-2" width="128"
 													height="128">
 												<div class="mt-2">
-													<span class="btn btn-primary"><svg
+													<!-- <span class="btn btn-primary"><svg
 															class="svg-inline--fa fa-upload fa-w-16"
 															aria-hidden="true" data-prefix="fas" data-icon="upload"
 															role="img" xmlns="http://www.w3.org/2000/svg"
 															viewBox="0 0 512 512" data-fa-i2svg="">
 															<path fill="currentColor"
 																d="M296 384h-80c-13.3 0-24-10.7-24-24V192h-87.7c-17.8 0-26.7-21.5-14.1-34.1L242.3 5.7c7.5-7.5 19.8-7.5 27.3 0l152.2 152.2c12.6 12.6 3.7 34.1-14.1 34.1H320v168c0 13.3-10.7 24-24 24zm216-8v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h136v8c0 30.9 25.1 56 56 56h80c30.9 0 56-25.1 56-56v-8h136c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"></path></svg>
-														<!-- <i class="fas fa-upload"></i> --> Upload</span>
+														<i class="fas fa-upload"></i> Upload</span> -->
 												</div>
-												<small>For best results, use an image at least 128px
-													by 128px in .jpg format</small>
+												<small></small>
 											</div>
 										</div>
 									</div>
@@ -128,29 +99,7 @@
 
 						<div class="card">
 							<div class="card-header">
-								<div class="card-actions float-right">
-									<div class="dropdown show">
-										<a href="#" data-toggle="dropdown" data-display="static">
-											<svg xmlns="http://www.w3.org/2000/svg" width="24"
-												height="24" viewBox="0 0 24 24" fill="none"
-												stroke="currentColor" stroke-width="2"
-												stroke-linecap="round" stroke-linejoin="round"
-												class="feather feather-more-horizontal align-middle">
-                                            <circle cx="12" cy="12"
-													r="1"></circle>
-                                            <circle cx="19" cy="12"
-													r="1"></circle>
-                                            <circle cx="5" cy="12" r="1"></circle>
-                                        </svg>
-										</a>
-
-										<div class="dropdown-menu dropdown-menu-right">
-											<a class="dropdown-item" href="#">Action</a> <a
-												class="dropdown-item" href="#">Another action</a> <a
-												class="dropdown-item" href="#">Something else here</a>
-										</div>
-									</div>
-								</div>
+								<div class="card-actions float-right"></div>
 								<h5 class="card-title mb-0">Private info</h5>
 							</div>
 							<div class="card-body">
@@ -228,6 +177,42 @@
 									</div>
 									<button type="submit" class="btn btn-primary">Save
 										changes</button>
+								</form>
+
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane fade" id="upcoming-games" role="tabpanel">
+						<div class="card">
+							<div class="card-body">
+								<h5 class="card-title">Upcoming Games</h5>
+
+								<form>
+									<ul>
+										<c:forEach var="event" items="${category}">
+											<h3>${event.title}<br> ${event.eventDate }
+											</h3>
+										</c:forEach>
+
+									</ul>
+								</form>
+
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane fade" id="game-history" role="tabpanel">
+						<div class="card">
+							<div class="card-body">
+								<h5 class="card-title">Game History</h5>
+
+								<form>
+									<ul>
+										<c:forEach var="event" items="${category}">
+											<h3>${event.title}<br> ${event.eventDate }
+											</h3>
+										</c:forEach>
+
+									</ul>
 								</form>
 
 							</div>
