@@ -13,6 +13,7 @@ import com.skilldistillery.roundtablegaming.entities.User;
 @Service
 @Transactional
 public class UserDAOImpl implements UserDAO {
+	
 	@PersistenceContext
 	private EntityManager em;
 
@@ -36,6 +37,8 @@ public class UserDAOImpl implements UserDAO {
 			updated.setAvatar(user.getAvatar());
 			updated.setRole(user.getRole());
 			updated.setEnabled(user.isEnabled());
+			em.persist(updated);
+			em.flush();
 		}
 		return updated;
 	}
