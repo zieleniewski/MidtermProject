@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -29,5 +31,12 @@ public class EventController {
 		System.out.println(dateResults.get(0).toString());
 		session.setAttribute("events", dateResults);
 		return "#";
+	}
+	
+	@GetMapping("rpg.do")
+	public String rpg(Model model) {
+		List<Event> rpgEvents = dao.getEventsByCategory("Tabletop RPG");
+		model.addAttribute("category", rpgEvents);
+		return "rpg";
 	}
 }

@@ -18,7 +18,7 @@ public interface EventDAO {
 	
 	public List<Event> getEventsByAddress(Address address);
 	
-	public List<Event> getEventsByCategory(Category category);
+	public List<Event> getEventsByCategory(String category);
 	
 	public List<Event> getEventsByGame(Game game);
 	

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,9 +15,9 @@
 <title>Role Play Games</title>
 </head>
 <body>
-<div class="navbar">
-			<jsp:include page="navbar.jsp" />
-		</div>
+	<div class="navbar">
+		<jsp:include page="navbar.jsp" />
+	</div>
 
 	<h1 class="text-center">Table Top Role Play Games</h1>
 
@@ -28,7 +29,7 @@
 				<div class="our-team-main">
 
 					<div class="team-front">
-						
+
 						<h1>Blades In The Dark</h1>
 
 					</div>
@@ -52,7 +53,7 @@
 				<div class="our-team-main">
 
 					<div class="team-front">
-						
+
 						<h1>Call Of Cthulhu</h1>
 					</div>
 
@@ -74,7 +75,7 @@
 				<div class="our-team-main">
 
 					<div class="team-front">
-						
+
 						<h1>Carbon 2185</h1>
 					</div>
 
@@ -96,7 +97,7 @@
 				<div class="our-team-main">
 
 					<div class="team-front">
-						
+
 						<h1>Cyberpunk 2020</h1>
 					</div>
 
@@ -119,14 +120,14 @@
 				<div class="our-team-main">
 
 					<div class="team-front">
-						
+
 						<h1>Dungeons & Dragons</h1>
 					</div>
 
 					<div class="team-back">
 						<span> It's Dungeons & Dragons, nuff said.<br> <br>
+							<br> <br> <br> <br> <br> <br> <br>
 							<br> <br> <br> <br> <br>
-						<br> <br> <br> <br> <br> <br> <br>
 						</span>
 					</div>
 
@@ -139,7 +140,7 @@
 				<div class="our-team-main">
 
 					<div class="team-front">
-						
+
 						<h1>Pathfinder</h1>
 					</div>
 
@@ -161,7 +162,7 @@
 				<div class="our-team-main">
 
 					<div class="team-front">
-						
+
 						<h1>Rifts</h1>
 					</div>
 
@@ -184,7 +185,7 @@
 				<div class="our-team-main">
 
 					<div class="team-front">
-						
+
 						<h1>Shadowrun</h1>
 					</div>
 
@@ -231,7 +232,7 @@
 				<div class="our-team-main">
 
 					<div class="team-front">
-						
+
 						<h1>WarHammer</h1>
 					</div>
 
@@ -253,7 +254,11 @@
 
 		</div>
 	</div>
-
-<jsp:include page="login-popout.jsp"></jsp:include>
+<ul>
+	<c:forEach var="event" items="${category}">
+	<li>${event.title}</li>
+	</c:forEach> 
+	</ul>
+	<jsp:include page="login-popout.jsp"></jsp:include>
 </body>
 </html>

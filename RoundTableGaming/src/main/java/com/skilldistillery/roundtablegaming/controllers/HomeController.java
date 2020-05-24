@@ -18,16 +18,11 @@ public class HomeController {
 		return "register";
 	}
 
-	@GetMapping("rpg.do")
-	public String rpg() {
-		return "rpg";
-	}
-	
 	@GetMapping("miniature.do")
 	public String mini() {
 		return "miniature";
 	}
-	
+
 	@GetMapping("tcg.do")
 	public String tcg() {
 		return "tcg";
