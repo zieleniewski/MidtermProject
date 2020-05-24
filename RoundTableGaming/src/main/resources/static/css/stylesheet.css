@@ -19,7 +19,9 @@ height: 20px;
 justify-content: space-between;
 
 }
-
+.nav-search{
+	display: inline-block;
+}
 
 .navbar-custom {
     color:#d65a31;

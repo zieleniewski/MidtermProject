@@ -298,13 +298,13 @@
 		</div>  --%>
 		</div>
 
+	<jsp:include page="login-popout.jsp"></jsp:include>
 	</div>
 
 
 
 
 
-	<jsp:include page="login-popout.jsp"></jsp:include>
 
 </body>
 </html>

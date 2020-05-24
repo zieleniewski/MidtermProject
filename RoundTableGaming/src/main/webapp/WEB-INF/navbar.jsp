@@ -6,18 +6,6 @@
 
 <link rel="stylesheet" href="css/stylesheet.css" type="text/css">
 
-<!-- JS, Popper.js, and jQuery -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-	integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-	crossorigin="anonymous"></script>
-<script
-	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-	integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-	crossorigin="anonymous"></script>
-<script
-	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-	integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-	crossorigin="anonymous"></script>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
@@ -32,7 +20,8 @@
 				data-toggle="collapse" data-target="#navbar5">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-			<a href="/" class="navbar-brand nav-btn"><img class="logo" src="images/newRoundTableLogo.png"></a>
+			<a href="/" class="navbar-brand nav-btn"><img class="logo"
+				src="images/newRoundTableLogo.png"></a>
 			<div class="navbar-collapse collapse justify-content-stretch"
 				id="navbar5">
 				<ul class="navbar-nav">
@@ -46,14 +35,15 @@
 					<li>Hello ${loggedInUser.firstName}</li>
 				</ul>
 				<div class="search-box">
-				<form class="mx-2 my-auto d-inline w-50" action="searchByGame.do">
-					<div class="input-group">
-						<input type="text" class="form-control" placeholder="Search Games">
-						<span class="input-group-btn">
-							<button class="btn btn-outline-secondary" type="submit">GO</button>
-						</span>
-					</div>
-				</form>
+					<form class="mx-2 my-auto d-inline w-50" action="searchByGame.do">
+						<div class="input-group">
+							<input type="text" class="form-control"
+								placeholder="Search Games"> <span
+								class="input-group-btn">
+								<button class="btn btn-outline-secondary" type="submit">GO</button>
+							</span>
+						</div>
+					</form>
 				</div>
 			</div>
 
@@ -67,7 +57,8 @@
 				data-toggle="collapse" data-target="#navbar5">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-			<a href="/" class="navbar-brand nav-btn"><img class="logo" src="images/newRoundTableLogo.png"></a>
+			<a href="/" class="navbar-brand nav-btn"><img class="logo"
+				src="images/newRoundTableLogo.png"></a>
 			<div class="navbar-collapse collapse justify-content-stretch"
 				id="navbar5">
 				<ul class="navbar-nav">
@@ -85,18 +76,43 @@
 
 
 				</ul>
-				<div class="search-box">
-				<form class="mx-2 my-auto d-inline w-50 align-right" action="searchByGame.do">
-					<div class="input-group">
-						<input type="text" class="form-control" placeholder="Search Games" name="keyword">
-						<span class="input-group-btn">
-							<button class="btn btn-outline-secondary" type="submit">GO</button>
-						</span>
-					</div>
-				</form>
 				</div>
-			</div>
+				<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Navigation
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+  </div>
+</div>
+					<form class="mx-2 my-auto d-inline w-30 align-right"
+						action="searchByGame.do">
+						<div class="input-group">
+							<input type="text" class="form-control"
+								placeholder="Search Games" name="keyword"> <span
+								class="input-group-btn">
+								<button class="btn btn-outline-secondary" type="submit">GO</button>
+							</span>
+						</div>
+					</form>
+
+
+	
 
 		</nav>
 	</c:otherwise>
 </c:choose>
+<!-- JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+	integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+	integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+	crossorigin="anonymous"></script>
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+	integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+	crossorigin="anonymous"></script>
