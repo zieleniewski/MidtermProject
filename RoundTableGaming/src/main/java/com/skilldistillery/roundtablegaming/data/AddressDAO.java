@@ -9,7 +9,9 @@ public interface AddressDAO {
 
 	public Address createAddress(Address address);
 	
-	public Address deleteAddress(int id);
+	public Address enableAddress(int id);
+	
+	public Address disableAddress(int id);
 	
 	public Address updateAddress(int id, Address updatedAddress);
 	
