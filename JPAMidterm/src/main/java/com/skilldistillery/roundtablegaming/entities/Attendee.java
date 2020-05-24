@@ -25,17 +25,21 @@ public class Attendee {
 	private Integer eventRating;
 	@Column(name = "comment_by_attendee")
 	private String attendeeComment;
+	private boolean enabled;
 
 //	CONSTRUCTORS
-	public Attendee() {}
+	public Attendee() {
+	}
 
-	public Attendee(User user, AttendeeId id, int eventRating, EventGame eventGame, String attendeeComment) {
+	public Attendee(User user, AttendeeId id, EventGame eventGame, Integer eventRating, String attendeeComment,
+			boolean enabled) {
 		super();
 		this.user = user;
 		this.id = id;
-		this.eventRating = eventRating;
 		this.eventGame = eventGame;
+		this.eventRating = eventRating;
 		this.attendeeComment = attendeeComment;
+		this.enabled = enabled;
 	}
 
 //	GETTERS AND SETTERS
@@ -56,20 +60,20 @@ public class Attendee {
 		this.id = id;
 	}
 
-	public int getEventRating() {
-		return eventRating;
-	}
-
-	public void setEventRating(int eventRating) {
-		this.eventRating = eventRating;
-	}
-
 	public EventGame getEventGame() {
 		return eventGame;
 	}
 
 	public void setEventGame(EventGame eventGame) {
 		this.eventGame = eventGame;
+	}
+
+	public Integer getEventRating() {
+		return eventRating;
+	}
+
+	public void setEventRating(Integer eventRating) {
+		this.eventRating = eventRating;
 	}
 
 	public String getAttendeeComment() {
@@ -80,7 +84,16 @@ public class Attendee {
 		this.attendeeComment = attendeeComment;
 	}
 
+	public boolean isEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
+
 //	 EQUALS AND HASHCODE
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -107,6 +120,7 @@ public class Attendee {
 	}
 
 //	 TOSTRING
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();

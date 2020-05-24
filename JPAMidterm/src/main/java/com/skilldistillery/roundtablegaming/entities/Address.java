@@ -28,10 +28,11 @@ public class Address {
 	@OneToMany(mappedBy = "address", cascade = CascadeType.PERSIST)
 	private List<User> users;
 
-	public Address() {}
+	public Address() {
+	}
 
-	public Address(int id, String street1, String street2, String city, String state, String zipCode,
-			boolean enabled, List<Event> events, List<User> users) {
+	public Address(int id, String street1, String street2, String city, String state, String zipCode, boolean enabled,
+			List<Event> events, List<User> users) {
 		super();
 		this.id = id;
 		this.street1 = street1;
@@ -115,7 +116,7 @@ public class Address {
 	public void setUsers(List<User> users) {
 		this.users = users;
 	}
-	
+
 	public void addEvent(Event event) {
 		if (events == null) {
 			events = new ArrayList<>();
@@ -128,7 +129,7 @@ public class Address {
 			event.setAddress(this);
 		}
 	}
-	
+
 	public void removeEvent(Event event) {
 		event.setAddress(null);
 		if (events != null) {
@@ -148,7 +149,7 @@ public class Address {
 			user.setAddress(this);
 		}
 	}
-	
+
 	public void removeUser(User user) {
 		user.setAddress(null);
 		if (users != null) {
