@@ -123,9 +123,10 @@ public class EventDAOImpl implements EventDAO {
 	}
 
 	@Override
-	public boolean deleteEvent(int id) {
-		// TODO Auto-generated method stub
-		return false;
+	public Event deleteEvent(int id) {
+		Event deleteEvent = em.find(Event.class, id);
+		em.remove(deleteEvent);
+		return deleteEvent;
 	}
 
 }

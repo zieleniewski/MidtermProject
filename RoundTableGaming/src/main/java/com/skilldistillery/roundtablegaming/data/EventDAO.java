@@ -28,6 +28,6 @@ public interface EventDAO {
 	
 	public Event updateEvent(Event updatedEvent, int id);
 	
-	public boolean deleteEvent(int id);
+	public Event deleteEvent(int id);
 	
 }

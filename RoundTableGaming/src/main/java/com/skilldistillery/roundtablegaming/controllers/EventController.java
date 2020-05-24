@@ -23,7 +23,8 @@ public class EventController {
 	private EventDAO dao;
 
 	@RequestMapping(path = "searchByDate.do", method = RequestMethod.POST)
-	public String getEventsByDate(@RequestParam @DateTimeFormat(iso = ISO.DATE) LocalDate date, HttpSession session) {
+	public String getEventsByDate(@RequestParam 
+			@DateTimeFormat(iso = ISO.DATE) LocalDate date, HttpSession session) {
 		List<Event> dateResults = dao.getEventsByDate(date);
 		System.out.println(dateResults.get(0).toString());
 		session.setAttribute("events", dateResults);
