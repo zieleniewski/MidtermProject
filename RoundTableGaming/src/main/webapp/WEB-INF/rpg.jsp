@@ -14,6 +14,9 @@
 <title>Role Play Games</title>
 </head>
 <body>
+<div class="navbar">
+			<jsp:include page="navbar.jsp" />
+		</div>
 
 	<h1 class="text-center">Table Top Role Play Games</h1>
 
@@ -251,5 +254,6 @@
 		</div>
 	</div>
 
+<jsp:include page="login-popout.jsp"></jsp:include>
 </body>
 </html>

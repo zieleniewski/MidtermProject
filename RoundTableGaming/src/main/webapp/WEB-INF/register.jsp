@@ -16,6 +16,9 @@
 <title>Sign Up</title>
 </head>
 <body>
+<div class="navbar">
+			<jsp:include page="navbar.jsp" />
+		</div>
 <div class="container">
             <form class="form-horizontal" role="form" action="registrationComplete.do" method="POST">
                 <h2>Registration</h2>
@@ -90,5 +93,6 @@
             </form> 
                     </div>
         
+        <jsp:include page="login-popout.jsp"></jsp:include>
 </body>
 </html>

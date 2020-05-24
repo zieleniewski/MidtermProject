@@ -112,3 +112,8 @@ body {
     letter-spacing: 4px;
 }
 
+.logo{
+	height: 50px !important; 
+	width: 150px !important;
+}
+

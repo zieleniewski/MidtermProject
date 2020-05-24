@@ -4,6 +4,8 @@
 	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
 	crossorigin="anonymous">
 
+<link rel="stylesheet" href="css/stylesheet.css" type="text/css">
+
 <!-- JS, Popper.js, and jQuery -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
 	integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -30,7 +32,7 @@
 				data-toggle="collapse" data-target="#navbar5">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-			<a href="/" class="navbar-brand nav-btn">Round Table Games</a>
+			<a href="/" class="navbar-brand nav-btn"><img class="logo" src="images/newRoundTableLogo.png"></a>
 			<div class="navbar-collapse collapse justify-content-stretch"
 				id="navbar5">
 				<ul class="navbar-nav">
@@ -45,7 +47,7 @@
 					<li class="nav-item"><a class="nav-link "
 						href="${pageContext.request.contextPath}/account.do">Account</a></li>
 				</ul>
-				<form class="mx-2 my-auto d-inline w-100">
+				<form class="mx-2 my-auto d-inline w-50">
 					<div class="input-group">
 						<input type="text" class="form-control" placeholder="Search Games">
 						<span class="input-group-btn">
@@ -78,7 +80,7 @@
 				data-toggle="collapse" data-target="#navbar5">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-			<a href="/" class="navbar-brand nav-btn">Round Table Games</a>
+			<a href="/" class="navbar-brand nav-btn"><img class="logo" src="images/newRoundTableLogo.png"></a>
 			<div class="navbar-collapse collapse justify-content-stretch"
 				id="navbar5">
 				<ul class="navbar-nav">
