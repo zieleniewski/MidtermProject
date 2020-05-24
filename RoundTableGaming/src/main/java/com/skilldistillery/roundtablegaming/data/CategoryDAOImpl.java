@@ -6,6 +6,7 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
+import com.skilldistillery.roundtablegaming.entities.Attendee;
 import com.skilldistillery.roundtablegaming.entities.Category;
 
 @Service
@@ -36,12 +37,6 @@ public class CategoryDAOImpl implements CategoryDAO{
 		em.flush();
 		
 		return newCategory;
-	}
-
-	@Override
-	public boolean disableCategory(int categoryId) {
-		
-		return false;
 	}
 	
 	
