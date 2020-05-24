@@ -53,13 +53,19 @@ public class EventDAOImpl implements EventDAO {
 	}
 
 	@Override
-	public List<Event> getEventsByCategory(Category category) {
+	public List<Event> getEventsByCategory(String category) {
+//		String jpql = "SELECT event FROM Event event JOIN FETCH event.eventGames "
+//				+ "WHERE event.eventGames.game.category = :category";
+//		List<Event> categoryEvents = em.createQuery(jpql, Event.class).setParameter("category", category)
+//				.getResultList();
+//		return categoryEvents;
+
 		List<Event> allEvents = getAllEvents();
 		List<Event> selectedEvents = new ArrayList<>();
 		for (Event event : allEvents) {
 			List<EventGame> eventGames = event.getEventGames();
 			for (EventGame eg : eventGames) {
-				if (eg.getGame().getCategory().equals(category))
+				if (eg.getGame().getCategory().getName().equals(category))
 					selectedEvents.add(event);
 			}
 		}
@@ -84,9 +90,7 @@ public class EventDAOImpl implements EventDAO {
 	public List<Event> getEventsByKeyword(String keyword) {
 		keyword = "%" + keyword + "%";
 		String query = "SELECT e FROM Event e WHERE e.title OR e.description LIKE :input";
-		List<Event> foundEvents = em.createQuery(query, Event.class)
-				.setParameter("input", keyword)
-				.getResultList();
+		List<Event> foundEvents = em.createQuery(query, Event.class).setParameter("input", keyword).getResultList();
 		return foundEvents;
 	}
 
