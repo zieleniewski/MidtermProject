@@ -28,24 +28,32 @@
 					<li class="nav-item active"><a class="nav-link " href="#">About
 							<span class="sr-only">Home</span>
 					</a></li>
-					<li class="nav-item"><a class="nav-link "
+					<li class="nav-item"><a class="btn btn-default btn-rounded "
 						href="${pageContext.request.contextPath}/logOut.do">Log Out</a></li>
-					<li class="nav-item"><a class="nav-link "
+					<li class="nav-item"><a class="btn btn-default btn-rounded "
 						href="${pageContext.request.contextPath}/account.do">Account</a></li>
-					<li>Hello ${loggedInUser.firstName}</li>
-				</ul>
-				<div class="search-box">
-					<form class="mx-2 my-auto d-inline w-50" action="searchByGame.do">
-						<div class="input-group">
-							<input type="text" class="form-control"
-								placeholder="Search Games"> <span
-								class="input-group-btn">
-								<button class="btn btn-outline-secondary" type="submit">GO</button>
-							</span>
-						</div>
-					</form>
+					
+				</ul></div>
+				<div class="dropdown">
+					<button class="btn btn-default dropdown-toggle" type="button"
+						id="dropdownMenuButton" data-toggle="dropdown"
+						aria-haspopup="true" aria-expanded="false">Navigation</button>
+					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+						<a class="dropdown-item" href="#">Action</a> <a
+							class="dropdown-item" href="#">Another action</a> <a
+							class="dropdown-item" href="#">Something else here</a>
+					</div>
 				</div>
-			</div>
+				<form class="mx-2 my-auto d-inline w-30 align-right"
+					action="searchByGame.do">
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Search Games"
+							name="keyword"> <span class="input-group-btn">
+							<button class="btn btn-default btn-rounded" type="submit">GO</button>
+						</span>
+					</div>
+				</form>
+			
 
 		</nav>
 	</c:when>
@@ -71,35 +79,34 @@
 						class="btn btn-default btn-rounded" data-toggle="modal"
 						data-target="#darkModalForm">Login</a></li>
 
-					<li class="nav-item"><a class="nav-link "
+					<li class="nav-item"><a class="btn btn-default btn-rounded"
 						href="${pageContext.request.contextPath}/register.do">Register</a></li>
 
 
 				</ul>
+			</div>
+			<div class="dropdown">
+				<button class="btn btn-default dropdown-toggle" type="button"
+					id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+					aria-expanded="false">Navigation</button>
+				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+					<a class="dropdown-item" href="#">Action</a> <a
+						class="dropdown-item" href="#">Another action</a> <a
+						class="dropdown-item" href="#">Something else here</a>
 				</div>
-				<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Navigation
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-  </div>
-</div>
-					<form class="mx-2 my-auto d-inline w-30 align-right"
-						action="searchByGame.do">
-						<div class="input-group">
-							<input type="text" class="form-control"
-								placeholder="Search Games" name="keyword"> <span
-								class="input-group-btn">
-								<button class="btn btn-outline-secondary" type="submit">GO</button>
-							</span>
-						</div>
-					</form>
+			</div>
+			<form class="mx-2 my-auto d-inline w-30 align-right"
+				action="searchByGame.do">
+				<div class="input-group">
+					<input type="text" class="form-control" placeholder="Search Games"
+						name="keyword"> <span class="input-group-btn">
+						<button class="btn btn-default btn-rounded" type="submit">GO</button>
+					</span>
+				</div>
+			</form>
 
 
-	
+
 
 		</nav>
 	</c:otherwise>
