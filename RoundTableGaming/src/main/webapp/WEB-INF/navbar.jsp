@@ -39,13 +39,11 @@
 					<li class="nav-item active"><a class="nav-link " href="#">About
 							<span class="sr-only">Home</span>
 					</a></li>
-					<li class="nav-item"><a href=""
-						class="btn btn-default btn-rounded" data-toggle="modal"
-						data-target="#darkModalForm">${loggedInUser.firstName}</a></li>
 					<li class="nav-item"><a class="nav-link "
 						href="${pageContext.request.contextPath}/logOut.do">Log Out</a></li>
 					<li class="nav-item"><a class="nav-link "
 						href="${pageContext.request.contextPath}/account.do">Account</a></li>
+					<li>Hello ${loggedInUser.firstName}</li>
 				</ul>
 				<div class="search-box">
 				<form class="mx-2 my-auto d-inline w-50">
