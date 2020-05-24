@@ -1,82 +1,96 @@
 @charset "UTF-8";
-body
-{
-	background:#00bcd4;
+
+body {
+	background-image:
+		url("https://wallpaperaccess.com/full/416185.jpg");
+		background-repeat: no-repeat;
+		background-size: cover;
 }
 
-h1
-{
-	color:#fff;
-	margin:40px 0 60px 0;
-	font-weight:300;
+.container-fluid {
+	content-align: center;
 }
 
-.our-team-main
-{
-	width:100%;
-	height:auto;
-	border-bottom:5px #323233 solid;
-	background:#fff;
-	text-align:center;
-	border-radius:10px;
-	overflow:hidden;
-	position:relative;
-	transition:0.5s;
-	margin-bottom:28px;
+.row {
+	text-align: center;
 }
 
+h1 {
+	color: #fff;
+	margin: 40px 0 60px 0;
+	font-weight: 300;
+}
 
-.our-team-main img
-{
-	border-radius:50%;
-	margin-bottom:20px;
+.our-team-main {
+	width: 100%;
+	height: auto;
+	border-bottom: 5px #323233 solid;
+	background: #fff;
+	text-align: center;
+	border-radius: 10px;
+	overflow: hidden; position : relative;
+	transition: 0.5s;
+	margin-bottom: 28px;
+	position: relative;
+	 opacity: 0.5;
+}
+
+.our-team-main img {
+	border-radius: 50%;
+	margin-bottom: 20px;
 	width: 90px;
 }
 
-.our-team-main h3
-{
-	font-size:20px;
-	font-weight:700;
+.our-team-main h3 {
+	font-size: 20px;
+	font-weight: 700;
 }
 
-.our-team-main p
-{
-	margin-bottom:0;
+.our-team-main p {
+	margin-bottom: 0;
 }
 
-.team-back
-{
-	width:100%;
-	height:auto;
-	position:absolute;
-	top:0;
-	left:0;
-	padding:5px 15px 0 15px;
-	text-align:left;
-	background:#fff;
-	
+.team-back span {
+	overflow: scroll;
 }
 
-.team-front
-{
-	width:100%;
-	height:auto;
-	position:relative;
-	z-index:10;
-	background:#fff;
-	padding:15px;
-	bottom:0px;
+.team-back {
+	width: 100%;
+	/*	height:auto;   */
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 5px 15px 0 15px;
+	text-align: left;
+	background: black;
+	color: white;
+}
+
+.col-xl-4 {
+	min-width: 435px;
+	max-width: 435px;
+	float: none;
+	margin: 0 auto;
+}
+
+.team-front {
+	min-width: 400px;
+	width: 100%;
+	height: auto;
+	position: relative;
+	z-index: 1000;
+	background: black;
+	padding: 15px;
+	bottom: 0px;
 	transition: all 0.5s ease;
 }
 
-.our-team-main:hover .team-front
-{
-	bottom:-200px;
+.our-team-main:hover .team-front {
+	bottom: -250px;
 	transition: all 0.5s ease;
 }
 
-.our-team-main:hover
-{
-	border-color:#777;
-	transition:0.5s;
+.our-team-main:hover {
+	border-color: #d65a31;
+	transition: 0.5s;
 }
