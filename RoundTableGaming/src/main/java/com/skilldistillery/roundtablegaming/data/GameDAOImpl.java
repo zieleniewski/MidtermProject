@@ -42,9 +42,9 @@ public class GameDAOImpl implements GameDAO{
 	@Override
 	public List<Game> getGamesByKeyword(String keyword) {
 		
-		keyword= "%"+keyword+"%";
-		String query= "SELECT g FROM Game g WHERE g.title OR g.description LIKE :input";
-		List<Game> foundGames = em.createQuery(query, Game.class).setParameter("input", keyword).getResultList();
+//		String newKeyword= "'%"+keyword+"%'";
+		String query= "SELECT g FROM Game g WHERE g.title LIKE '" + "%" + keyword + "%'";
+		List<Game> foundGames = em.createQuery(query, Game.class).getResultList();
 		
 		return foundGames;
 	}

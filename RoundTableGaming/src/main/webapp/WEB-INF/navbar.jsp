@@ -46,11 +46,11 @@
 					<li>Hello ${loggedInUser.firstName}</li>
 				</ul>
 				<div class="search-box">
-				<form class="mx-2 my-auto d-inline w-50">
+				<form class="mx-2 my-auto d-inline w-50" action="searchByGame.do">
 					<div class="input-group">
 						<input type="text" class="form-control" placeholder="Search Games">
 						<span class="input-group-btn">
-							<button class="btn btn-outline-secondary" type="button">GO</button>
+							<button class="btn btn-outline-secondary" type="submit">GO</button>
 						</span>
 					</div>
 				</form>
@@ -86,11 +86,11 @@
 
 				</ul>
 				<div class="search-box">
-				<form class="mx-2 my-auto d-inline w-50 align-right">
+				<form class="mx-2 my-auto d-inline w-50 align-right" action="searchByGame.do">
 					<div class="input-group">
-						<input type="text" class="form-control" placeholder="Search Games">
+						<input type="text" class="form-control" placeholder="Search Games" name="keyword">
 						<span class="input-group-btn">
-							<button class="btn btn-outline-secondary" type="button">GO</button>
+							<button class="btn btn-outline-secondary" type="submit">GO</button>
 						</span>
 					</div>
 				</form>
