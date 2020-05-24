@@ -54,15 +54,16 @@ public class UserDAOImpl implements UserDAO {
 	public User checkLogin(User user) {
 		String jpql = "SELECT user FROM User user WHERE user.username = :username";
 
-		User logingUser = em.createQuery(jpql, User.class).setParameter("username", user.getUsername())
+		User loggingUser = em.createQuery(jpql, User.class).setParameter("username", user.getUsername())
 				.getSingleResult();
-		if (logingUser == null) {
-
+		System.out.println(loggingUser);
+		if (loggingUser == null) {
+			System.out.println("");
 			return null;
 		}
 
-		if (logingUser.getPassword() == user.getPassword()) {
-			return logingUser;
+		if (loggingUser.getPassword().equals(user.getPassword())) {
+		System.out.println("ping");	return loggingUser;
 		} else {
 			return null;
 		}

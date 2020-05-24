@@ -31,6 +31,7 @@ public class UserController {
 	@RequestMapping(path = "logIn.do")
 	public String login(User user, HttpSession session) {
 		User loggingUser = dao.checkLogin(user);
+		System.out.println(loggingUser);
 			session.setAttribute("loggedInUser", loggingUser);
 			return "index";
 		

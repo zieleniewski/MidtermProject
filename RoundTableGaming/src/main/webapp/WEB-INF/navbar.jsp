@@ -21,6 +21,7 @@
 
 
 
+
 <nav
 	class="navbar navbar-expand-sm navbar-light fixed-top navbar-custom">
 	<button class="navbar-toggler nav-btn" type="button"
@@ -34,19 +35,21 @@
 			<li class="nav-item active"><a class="nav-link " href="#">About
 					<span class="sr-only">Home</span>
 			</a></li>
-			<c:if test="${not empty user}">
+			<c:choose>
+			<c:when test="${not empty loggedInUser}">
 				<li class="nav-item"><a href=""
 					class="btn btn-default btn-rounded" data-toggle="modal"
-					data-target="#darkModalForm">${user.firstName }</a></li>
+					data-target="#darkModalForm">${loggedInUser.firstName }</a></li>
 				<%-- <li class="nav-item"><a class="nav-link "
 					href="${pageContext.request.contextPath}/register.do">Register</a>
 				</li> --%>
-			</c:if>
-			<c:if test="${empty user}">
+			</c:when>
+			<c:otherwise>
 				<li class="nav-item"><a href=""
 					class="btn btn-default btn-rounded" data-toggle="modal"
 					data-target="#darkModalForm">Login</a></li>
-			</c:if>
+			</c:otherwise>
+			</c:choose>
 			<li class="nav-item"><a class="nav-link "
 				href="${pageContext.request.contextPath}/register.do">Register</a></li>
 
@@ -74,4 +77,5 @@
 				</div></li>
 		</ul>
 	</div>
+
 </nav>
