@@ -17,15 +17,4 @@ public class HomeController {
 	public String register() {
 		return "register";
 	}
-
-	@GetMapping("miniature.do")
-	public String mini() {
-		return "miniature";
-	}
-
-	@GetMapping("tcg.do")
-	public String tcg() {
-		return "tcg";
-	}
-
 }

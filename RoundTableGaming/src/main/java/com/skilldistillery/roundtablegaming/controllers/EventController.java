@@ -16,13 +16,18 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.skilldistillery.roundtablegaming.data.EventDAO;
+import com.skilldistillery.roundtablegaming.data.GameDAO;
 import com.skilldistillery.roundtablegaming.entities.Event;
+import com.skilldistillery.roundtablegaming.entities.Game;
 
 @Controller
 public class EventController {
 	
 	@Autowired
 	private EventDAO dao;
+	
+	@Autowired
+	private GameDAO gameDao;
 
 	@RequestMapping(path = "searchByDate.do", method = RequestMethod.POST)
 	public String getEventsByDate(@RequestParam 
@@ -39,4 +44,26 @@ public class EventController {
 		model.addAttribute("category", rpgEvents);
 		return "rpg";
 	}
+	
+	@GetMapping("miniature.do")
+	public String mini(Model model) {
+		List<Event> miniEvents = dao.getEventsByCategory("Miniatures");
+		model.addAttribute("category", miniEvents);
+		return "miniature";
+	}
+	
+	@GetMapping("tcg.do")
+	public String tcg(Model model) {
+		List<Event> tcgEvents = dao.getEventsByCategory("Trading Card Games");
+		model.addAttribute("category", tcgEvents);
+		return "tcg";
+	}
+	
+	@GetMapping("searchByGame.do")
+	public String sbg(@RequestParam String keyword, Model model) {
+		List<Game> searchedGames = gameDao.getGamesByKeyword(keyword);
+		model.addAttribute("searchedGames", searchedGames);
+		return "searchedGames";
+	}
+
 }
