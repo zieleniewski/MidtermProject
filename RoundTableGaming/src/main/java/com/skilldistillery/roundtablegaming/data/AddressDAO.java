@@ -3,6 +3,7 @@ package com.skilldistillery.roundtablegaming.data;
 import java.util.List;
 
 import com.skilldistillery.roundtablegaming.entities.Address;
+import com.skilldistillery.roundtablegaming.entities.Event;
 
 public interface AddressDAO {
 
@@ -18,6 +19,6 @@ public interface AddressDAO {
 	
 	public Address getAddressByEventId(int id);
 	
-	public List<Address> getAddressesByZipCode(String zip);
+	public List<Event> searchByZipCode(String zipCode);
 	
 }

@@ -1,5 +1,6 @@
 package com.skilldistillery.roundtablegaming.entities;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -29,7 +30,7 @@ public class Event {
 	private String title;
 	private String description;
 	@Column(name = "event_date")
-	private LocalDateTime eventDate;
+	private LocalDate eventDate;
 	@Column(name = "start_time")
 	private LocalTime startTime;
 	@Column(name = "img_url")
@@ -46,7 +47,7 @@ public class Event {
 	
 	public Event() {}
 
-	public Event(int id, User organizer, Address address, String title, String description, LocalDateTime eventDate,
+	public Event(int id, User organizer, Address address, String title, String description, LocalDate eventDate,
 			LocalTime startTime, String imgURL, LocalDateTime createDate, LocalDateTime lastUpdate, boolean enabled,
 			List<EventGame> eventGames, List<EventComment> eventComments) {
 		super();
@@ -105,11 +106,11 @@ public class Event {
 		this.description = description;
 	}
 
-	public LocalDateTime getEventDate() {
+	public LocalDate getEventDate() {
 		return eventDate;
 	}
 
-	public void setEventDate(LocalDateTime eventDate) {
+	public void setEventDate(LocalDate eventDate) {
 		this.eventDate = eventDate;
 	}
 
