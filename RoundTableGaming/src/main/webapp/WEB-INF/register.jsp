@@ -4,22 +4,20 @@
         <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
 <html>
-<link rel="stylesheet" href="css/stylesheet.css" type="text/css">
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<head>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<meta charset="UTF-8">
-<head>
+<link rel="stylesheet" href="css/stylesheet.css" type="text/css">
+
 <title>Sign Up</title>
 </head>
 <body>
-<div class="navbar">
+<div class="narbar-rpg">
 			<jsp:include page="navbar.jsp" />
-		</div>
-<div class="container">
+		</div>	
+			<br><br>
+<div class="container-register">
             <form class="form-horizontal" role="form" action="registrationComplete.do" method="POST">
                 <h2>Registration</h2>
                 <div class="form-group">

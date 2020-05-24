@@ -18,6 +18,7 @@
 	<div class="navbar">
 		<jsp:include page="navbar.jsp" />
 	</div>
+	<div class=background>
 
 	<h1 class="text-center">Table Top Role Play Games</h1>
 
@@ -252,13 +253,25 @@
 
 
 
+
+
 		</div>
 	</div>
-<ul>
-	<c:forEach var="event" items="${category}">
-	<li>${event.title}</li>
-	</c:forEach> 
-	</ul>
+
+</div>
+			<div class="game-list">
+				<c:forEach var="event" items="${category}">
+				<h3>${event.title}<br>
+				${event.eventDate }</h3>
+				</c:forEach>
+
+			</div>
+
+
+
+
+
 	<jsp:include page="login-popout.jsp"></jsp:include>
+
 </body>
 </html>
