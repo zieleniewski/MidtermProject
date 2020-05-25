@@ -32,7 +32,8 @@ public class EventDAOImpl implements EventDAO {
 	@Override
 	public List<Event> getAllEvents() {
 		String query = "SELECT e FROM Event e";
-		List<Event> allEvents = em.createQuery(query, Event.class).getResultList();
+		List<Event> allEvents = em.createQuery(query, Event.class)
+				.getResultList();
 		return allEvents;
 	}
 

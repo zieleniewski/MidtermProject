@@ -26,8 +26,8 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public User updateUser(int id, User user) {
-		User updated = em.find(User.class, id);
+	public User updateUser(User user) {
+		User updated = em.find(User.class, user.getId());
 		if (updated != null) {
 			updated.setFirstName(user.getFirstName());
 			updated.setLastName(user.getLastName());
@@ -44,20 +44,36 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public boolean deleteUser(int id) {
-		boolean deleted = false;
-		User toRemove = em.find(User.class, id);
-		if (toRemove != null) {
-			em.remove(toRemove);
-			deleted = true;
+	public boolean enableUser(int id) {
+		User enabled = em.find(User.class, id);
+		if (enabled != null) {
+			enabled.setEnabled(true);
+			em.persist(enabled);
+			em.flush();
+			return true;
 		}
-		return deleted;
+		else {
+			return false;
+		}
 	}
 
 	@Override
+	public boolean disableUser(int id) {
+		User disabled = em.find(User.class, id);
+		if (disabled != null) {
+			disabled.setEnabled(false);
+			em.persist(disabled);
+			em.flush();
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
+	@Override
 	public User checkLogin(User user) {
 		String jpql = "SELECT user FROM User user WHERE user.username = :username";
-
 		try {
 			User loggingUser = em.createQuery(jpql, User.class).setParameter("username", user.getUsername())
 					.getSingleResult();
@@ -65,7 +81,7 @@ public class UserDAOImpl implements UserDAO {
 				System.out.println("ping");
 				return loggingUser;
 			}
-
+			
 		} catch (PersistenceException e) {
 			return null;
 		}

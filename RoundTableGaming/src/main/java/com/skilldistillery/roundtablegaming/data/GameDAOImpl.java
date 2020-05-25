@@ -1,6 +1,5 @@
 package com.skilldistillery.roundtablegaming.data;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -47,14 +46,11 @@ public class GameDAOImpl implements GameDAO{
 	
 	@Override
 	public List<Game> getGamesByCategory(int categoryID) {
-		List<Game> allGames= getAllGames();
-		List<Game> categoryGames= new ArrayList<>();
-		for (Game game : allGames) {
-			if(game.getCategory().getId() == categoryID ) {
-				categoryGames.add(game);
-			}
-		}
-		return categoryGames;
+		String query = "SELECT g FROM Game g WHERE g.category = :catId";
+		List<Game> games = em.createQuery(query, Game.class)
+				.setParameter("catId", categoryID)
+				.getResultList();
+		return games;
 	}
 	
 	@Override
