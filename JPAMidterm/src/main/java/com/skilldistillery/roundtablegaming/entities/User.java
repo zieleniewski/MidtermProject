@@ -7,6 +7,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -41,7 +42,7 @@ public class User {
 	private boolean enabled;
 	@NotNull
 	private boolean admin;
-	@OneToMany(mappedBy = "creator", cascade = CascadeType.PERSIST)
+	@OneToMany(mappedBy = "creator", cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
 	private List<Game> games;
 	@ManyToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "address_id")

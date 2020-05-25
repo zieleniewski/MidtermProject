@@ -4,9 +4,10 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.skilldistillery.roundtablegaming.data.UserDAO;
 import com.skilldistillery.roundtablegaming.entities.Address;
@@ -32,7 +33,7 @@ public class UserController {
 			return "index";
 		} else {
 			session.setAttribute("loggedInUser", loggingUser);
-			return "index";
+			return "redirect:home.do";
 		}
 	}
 
@@ -42,8 +43,12 @@ public class UserController {
 		return "index";
 	}
 	
-	@GetMapping("account.do")
-	public String account() {
-		return "account";
+	@PostMapping("updateAccount.do")
+	public String updateAccount(User user, Address address, HttpSession session) {
+		User updatedUser = dao.updateUser(user);
+//		session.removeAttribute("loggedInUser");
+		session.setAttribute("loggedInUser", updatedUser);
+		return "index";
 	}
+	
 }

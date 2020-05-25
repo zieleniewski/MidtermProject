@@ -17,4 +17,10 @@ public class HomeController {
 	public String register() {
 		return "register";
 	}
+	
+	@GetMapping("account.do")
+	public String account() {
+		return "account";
+	}
+	
 }
