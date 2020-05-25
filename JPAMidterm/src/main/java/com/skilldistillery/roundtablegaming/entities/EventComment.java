@@ -24,21 +24,25 @@ public class EventComment {
 	@ManyToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "event_id")
 	private Event event;
-	@Column(name = "comment_date")
-	private LocalDateTime commentDate;
 	@Column(name = "content")
 	private String comment;
+	@Column(name = "comment_date")
+	private LocalDateTime commentDate;
+	@Column(name = "last_updated")
+	private LocalDateTime lastUpdated;
 	private boolean enabled;
 	
 	public EventComment() {}
 
-	public EventComment(int id, User user, Event event, LocalDateTime commentDate, String comment, boolean enabled) {
+	public EventComment(int id, User user, Event event, String comment, LocalDateTime commentDate,
+			LocalDateTime lastUpdated, boolean enabled) {
 		super();
 		this.id = id;
 		this.user = user;
 		this.event = event;
-		this.commentDate = commentDate;
 		this.comment = comment;
+		this.commentDate = commentDate;
+		this.lastUpdated = lastUpdated;
 		this.enabled = enabled;
 	}
 
@@ -66,6 +70,14 @@ public class EventComment {
 		this.event = event;
 	}
 
+	public String getComment() {
+		return comment;
+	}
+
+	public void setComment(String comment) {
+		this.comment = comment;
+	}
+
 	public LocalDateTime getCommentDate() {
 		return commentDate;
 	}
@@ -74,12 +86,12 @@ public class EventComment {
 		this.commentDate = commentDate;
 	}
 
-	public String getComment() {
-		return comment;
+	public LocalDateTime getLastUpdated() {
+		return lastUpdated;
 	}
 
-	public void setComment(String comment) {
-		this.comment = comment;
+	public void setLastUpdated(LocalDateTime lastUpdated) {
+		this.lastUpdated = lastUpdated;
 	}
 
 	public boolean isEnabled() {
@@ -121,10 +133,12 @@ public class EventComment {
 		builder.append(user);
 		builder.append(", event=");
 		builder.append(event);
-		builder.append(", commentDate=");
-		builder.append(commentDate);
 		builder.append(", comment=");
 		builder.append(comment);
+		builder.append(", commentDate=");
+		builder.append(commentDate);
+		builder.append(", lastUpdated=");
+		builder.append(lastUpdated);
 		builder.append(", enabled=");
 		builder.append(enabled);
 		builder.append("]");

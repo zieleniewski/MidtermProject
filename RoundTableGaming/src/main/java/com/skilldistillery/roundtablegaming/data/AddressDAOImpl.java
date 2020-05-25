@@ -27,33 +27,45 @@ public class AddressDAOImpl implements AddressDAO {
 	}
 
 	@Override
-	public Address enableAddress(int id) {
+	public boolean enableAddress(int id) {
 		Address enabledAddress = em.find(Address.class, id);
-		enabledAddress.setEnabled(true);
-		em.persist(enabledAddress);
-		em.flush();
-		return enabledAddress;
+		if (enabledAddress != null) {
+			enabledAddress.setEnabled(true);
+			em.persist(enabledAddress);
+			em.flush();
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 
 	@Override
-	public Address disableAddress(int id) {
+	public boolean disableAddress(int id) {
 		Address disabledAddress = em.find(Address.class, id);
-		disabledAddress.setEnabled(false);
-		em.persist(disabledAddress);
-		em.flush();
-		return disabledAddress;
+		if (disabledAddress != null) {
+			disabledAddress.setEnabled(false);
+			em.persist(disabledAddress);
+			em.flush();
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 	
 	@Override
 	public Address updateAddress(Address updatedAddress) {
 		Address address = em.find(Address.class, updatedAddress.getId());
-		address.setCity(updatedAddress.getCity());
-		address.setState(updatedAddress.getState());
-		address.setStreet1(updatedAddress.getStreet1());
-		address.setStreet2(updatedAddress.getStreet2());
-		address.setZipCode(updatedAddress.getZipCode());
-		em.persist(address);
-		em.flush();
+		if (address != null) {
+			address.setStreet1(updatedAddress.getStreet1());
+			address.setStreet2(updatedAddress.getStreet2());
+			address.setCity(updatedAddress.getCity());
+			address.setState(updatedAddress.getState());
+			address.setZipCode(updatedAddress.getZipCode());
+			em.persist(address);
+			em.flush();
+		}
 		return address;
 	}
 	
@@ -73,16 +85,15 @@ public class AddressDAOImpl implements AddressDAO {
 	@Override
 	public Address getAddressByEventId(int id) {
 		EventDAO ev = new EventDAOImpl();
-		Event event= ev.getEventById(id);
+		Event event = ev.getEventById(id);
 		Address found = event.getAddress();
 		return found;
 	}
 	
 	@Override
 	public List<Event> searchByZipCode(String zipCode) {
-		List<Event> events;
 		String jpql = "SELECT e FROM Event e WHERE address.zipCode = :zipCode";
-		events = em.createQuery(jpql, Event.class)
+		List<Event> events = em.createQuery(jpql, Event.class)
 				.setParameter("zipCode", zipCode)
 				.getResultList();
 		return events;

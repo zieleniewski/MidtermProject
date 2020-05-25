@@ -4,7 +4,6 @@ import java.time.LocalDate;
 import java.util.List;
 
 import com.skilldistillery.roundtablegaming.entities.Address;
-import com.skilldistillery.roundtablegaming.entities.Category;
 import com.skilldistillery.roundtablegaming.entities.Event;
 import com.skilldistillery.roundtablegaming.entities.Game;
 
@@ -28,6 +27,8 @@ public interface EventDAO {
 	
 	public Event updateEvent(Event updatedEvent, int id);
 	
-	public Event deleteEvent(int id);
+	public boolean enableEvent(int id);
+	
+	public boolean disableEvent(int id);
 	
 }

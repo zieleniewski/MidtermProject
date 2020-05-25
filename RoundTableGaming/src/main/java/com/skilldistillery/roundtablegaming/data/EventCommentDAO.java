@@ -17,6 +17,8 @@ public interface EventCommentDAO {
 	//don't know if we need this. Maybe in a for loop?
 	public EventComment getEventCommentById(int id);
 	
-	public boolean deleteEventComment(int id);
+	public boolean enableEventComment(int id);
+	
+	public boolean disableEventComment(int id);
 	
 }

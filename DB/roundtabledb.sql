@@ -85,6 +85,7 @@ CREATE TABLE IF NOT EXISTS `event` (
   `description` TEXT NULL,
   `event_date` DATE NULL,
   `start_time` TIME NULL,
+  `capacity` INT NULL,
   `img_url` VARCHAR(5000) NULL,
   `create_date` DATETIME NULL,
   `last_update` DATETIME NULL,
@@ -239,8 +240,9 @@ CREATE TABLE IF NOT EXISTS `event_comment` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `user_id` INT NOT NULL,
   `event_id` INT NOT NULL,
-  `comment_date` DATETIME NULL,
   `content` TEXT NULL,
+  `comment_date` DATETIME NULL,
+  `last_updated` DATETIME NULL,
   `enabled` TINYINT NULL DEFAULT 1,
   PRIMARY KEY (`id`),
   INDEX `fk_event_comment_user1_idx` (`user_id` ASC),
@@ -312,10 +314,10 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `roundtabledb`;
-INSERT INTO `event` (`id`, `organizer_id`, `address_id`, `title`, `description`, `event_date`, `start_time`, `img_url`, `create_date`, `last_update`, `enabled`) VALUES (1, 1, 1, 'TestFest', 'Just some sweet admin testing', '2020-05-22', '08:00:00', 'someimage.png', '2020-05-22 17:14:00', NULL, 1);
-INSERT INTO `event` (`id`, `organizer_id`, `address_id`, `title`, `description`, `event_date`, `start_time`, `img_url`, `create_date`, `last_update`, `enabled`) VALUES (2, 1, 4, 'CatCon', 'This is where Mike disappears to.', '2020-05-24', '10:00:00', 'poweroutage.png', '2020-05-24 12:24:00', NULL, 1);
-INSERT INTO `event` (`id`, `organizer_id`, `address_id`, `title`, `description`, `event_date`, `start_time`, `img_url`, `create_date`, `last_update`, `enabled`) VALUES (3, 2, 2, 'Shane\'s Dungeon of Treats', 'A journey into the occult...and cereal.', '2020-05-30', '20:00:00', 'getthegimp.png', '2020-05-24 12:34:00', NULL, 1);
-INSERT INTO `event` (`id`, `organizer_id`, `address_id`, `title`, `description`, `event_date`, `start_time`, `img_url`, `create_date`, `last_update`, `enabled`) VALUES (4, 3, 3, 'Let\'s Play', 'Everything at the same time', '2020-05-29', '13:00:00', 'stockimage.png', '2020-05-24 12:38:00', NULL, 1);
+INSERT INTO `event` (`id`, `organizer_id`, `address_id`, `title`, `description`, `event_date`, `start_time`, `capacity`, `img_url`, `create_date`, `last_update`, `enabled`) VALUES (1, 1, 1, 'TestFest', 'Just some sweet admin testing', '2020-05-22', '08:00:00', 1, 'someimage.png', '2020-05-22 17:14:00', '2020-05-22 17:14:00', 1);
+INSERT INTO `event` (`id`, `organizer_id`, `address_id`, `title`, `description`, `event_date`, `start_time`, `capacity`, `img_url`, `create_date`, `last_update`, `enabled`) VALUES (2, 1, 4, 'CatCon', 'This is where Mike disappears to.', '2020-05-24', '10:00:00', 1, 'poweroutage.png', '2020-05-24 12:24:00', '2020-05-24 12:24:00', 1);
+INSERT INTO `event` (`id`, `organizer_id`, `address_id`, `title`, `description`, `event_date`, `start_time`, `capacity`, `img_url`, `create_date`, `last_update`, `enabled`) VALUES (3, 2, 2, 'Shane\'s Dungeon of Treats', 'A journey into the occult...and cereal.', '2020-05-30', '20:00:00', 10, 'getthegimp.png', '2020-05-24 12:34:00', '2020-05-24 12:34:00', 1);
+INSERT INTO `event` (`id`, `organizer_id`, `address_id`, `title`, `description`, `event_date`, `start_time`, `capacity`, `img_url`, `create_date`, `last_update`, `enabled`) VALUES (4, 3, 3, 'Let\'s Play', 'Everything at the same time', '2020-05-29', '13:00:00', 50, 'stockimage.png', '2020-05-24 12:38:00', '2020-05-24 12:38:00', 1);
 
 COMMIT;
 
@@ -406,7 +408,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `roundtabledb`;
-INSERT INTO `event_comment` (`id`, `user_id`, `event_id`, `comment_date`, `content`, `enabled`) VALUES (1, 1, 1, '2020-05-22 17:14:00', 'Incredible event. Holy smokes.', 1);
+INSERT INTO `event_comment` (`id`, `user_id`, `event_id`, `content`, `comment_date`, `last_updated`, `enabled`) VALUES (1, 1, 1, 'Incredible event. Holy smokes.', '2020-05-22 17:14:00', NULL, 1);
 
 COMMIT;
 
