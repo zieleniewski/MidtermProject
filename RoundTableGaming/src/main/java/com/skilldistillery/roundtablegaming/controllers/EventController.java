@@ -2,6 +2,7 @@ package com.skilldistillery.roundtablegaming.controllers;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.skilldistillery.roundtablegaming.data.EventDAO;
 import com.skilldistillery.roundtablegaming.data.GameDAO;
+import com.skilldistillery.roundtablegaming.entities.Attendee;
 import com.skilldistillery.roundtablegaming.entities.Event;
 import com.skilldistillery.roundtablegaming.entities.Game;
 
@@ -66,4 +68,11 @@ public class EventController {
 		return "searchedGames";
 	}
 
+	@GetMapping("getAttendees.do")
+	public String getAttendees(int eventId, Model model) {
+		Event event = dao.getEventById(eventId);
+		Map<Integer, Attendee> attendees = dao.getEventAttendees(event);
+		model.addAttribute("attendees", attendees);
+		return "events";
+	}
 }
