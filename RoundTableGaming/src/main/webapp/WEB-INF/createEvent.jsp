@@ -32,7 +32,7 @@
 
 			<div class="form-group">
 
-				<div class="col-md-4 col-md-offset-4">
+				<div class="col-md-6 mx-auto">
 					<input type="text" id="eventName" placeholder="Event Name"
 						class="form-control" autofocus name="eventName">
 				</div>
@@ -41,7 +41,7 @@
 
 
 			<div class="form-group">
-				<div class="col-md-4 col-md-offset-4">
+				<div class="col-md-6 mx-auto">
 					<select class="custom-select" id="inputGroupSelect01">
 						<option selected>Select Game Title</option>
 						<c:forEach var="games" items="${games}">
@@ -52,7 +52,7 @@
 			</div>
 			
 			<div class="form-group">
-				<div class="col-md-4 col-md-offset-4">
+				<div class="col-md-6 mx-auto">
 					<select class="custom-select" id="inputGroupSelect01">
 						<option selected>Select Game Title</option>
 						<c:forEach var="games" items="${games}">
@@ -63,7 +63,7 @@
 		</div>
 
 			<div class="form-group">
-				<div class="col-md-4 col-md-offset-4">
+				<div class="col-md-6 mx-auto">
 
 					<select class="custom-select" id="inputGroupSelect01">
 						<option selected>Select Game Title</option>
@@ -75,7 +75,7 @@
 			</div>
 
 			<div class="form-group">
-				<div class="col-md-4 col-md-offset-4">
+				<div class="col-md-6 mx-auto">
 
 					<select class="custom-select" id="inputGroupSelect01">
 						<option selected>Select Game Title</option>
@@ -87,7 +87,7 @@
 			</div>
 
 			<div class="form-group">
-				<div class="col-md-4 col-md-offset-4">
+				<div class="col-md-6 mx-auto">
 
 					<select class="custom-select" id="inputGroupSelect01">
 						<option selected>Select Game Title</option>
@@ -103,7 +103,7 @@
 
 			<div class="form-group">
 				
-				<div class="col-md-4 col-md-offset-4">
+				<div class="col-md-6 mx-auto">
 					<input type="text" id="description" placeholder="Event Description "
 						class="form-control" name="description">
 				</div>
@@ -112,7 +112,7 @@
 
 			<div class="form-group">
 				
-				<div class="col-md-4 col-md-offset-4">
+				<div class="col-md-6 mx-auto">
 					<input type="text" id="maxPlayers" placeholder="Max Players"
 						class="form-control" name="maxPlayers"> <span
 						class="help-block"> </span>
@@ -120,41 +120,41 @@
 			</div>
 			<div class="form-group">
 			
-				<div class="col-md-4 col-md-offset-4">
+				<div class="col-md-6 mx-auto">
 					<input type="text" id="street1" placeholder="Address"
 						class="form-control" name="street1">
 				</div>
 			</div>
 			<div class="form-group">
 				
-				<div class="col-md-4 col-md-offset-4">
+				<div class="col-md-6 mx-auto">
 					<input type="text" id="street2" placeholder="Address"
 						class="form-control" name="street2">
 				</div>
 			</div>
 			<div class="form-group">
 				
-				<div class="col-md-4 col-md-offset-4">
+				<div class="col-md-6 mx-auto">
 					<input type="text" id="city" placeholder="City"
 						class="form-control" name="city">
 				</div>
 			</div>
 			<div class="form-group">
 				
-				<div class="col-md-4 col-md-offset-4">
+				<div class="col-md-6 mx-auto">
 					<input type="text" id="state" placeholder="State"
 						class="form-control" name="state">
 				</div>
 			</div>
 			<div class="form-group">
 				
-				<div class="col-md-4 col-md-offset-4">
+				<div class="col-md-6 mx-auto">
 					<input type="text" id="zipCode" placeholder="Zip Code"
 						class="form-control" name="zipCode">
 				</div>
 			</div>
 			
-					<div class="col-md-4 col-md-offset-4">
+					<div class="col-md-6 mx-auto">
 			
 			<label for="eventTime">Date and time for event - </label>
 
