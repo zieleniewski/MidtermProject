@@ -8,7 +8,7 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<link rel="stylesheet" href="css/stylesheet.css" type="text/css">
+<link rel="stylesheet" href="css/register.css" type="text/css">
 
 <title>Sign Up</title>
 </head>
@@ -83,7 +83,6 @@
                         <input type="text" id="zipCode" placeholder="Zip Code" class="form-control" name="zipCode">
                     </div>
                 </div>
-                		<input type="hidden" name="role" value="user">
                 
                       
                

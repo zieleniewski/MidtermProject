@@ -260,8 +260,8 @@
 				<table class="table table-hover">
 					<thead>
 						<tr>
-							<h2><th scope="col">Event Title:</th></h2>
-							<h2><th scope="col">Event Date:</th></h2>
+							<h2><th scope="col">Upcoming Events</th></h2>
+							<h2><th scope="col">Date</th></h2>
 						</tr>
 					</thead>
 					<tbody>
