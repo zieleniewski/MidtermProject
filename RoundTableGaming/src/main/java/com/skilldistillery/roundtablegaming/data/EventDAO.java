@@ -28,6 +28,8 @@ public interface EventDAO {
 	
 	public List<Attendee> getEventAttendees(Event event);
 	
+	public List<Attendee> filterUniqueAttendees(List<Attendee> aList);
+	
 	public Event updateEvent(Event updatedEvent, int id);
 	
 	public boolean enableEvent(int id);
