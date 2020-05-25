@@ -2,9 +2,7 @@ package com.skilldistillery.roundtablegaming.data;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -102,17 +100,15 @@ public class EventDAOImpl implements EventDAO {
 	}
 
 	@Override
-	public Map<Integer, Attendee> getEventAttendees(Event event) {
-		Map<Integer, Attendee> attendees = new HashMap<>();
+	public List<Attendee> getEventAttendees(Event event) {
+		List<Attendee> attendees = new ArrayList<>();
 		List<EventGame> allMatches = event.getEventGames();
 		
 		if (allMatches.size() > 0) {
-			Integer key = 0;
 			for (EventGame eg : allMatches) {
 				if (eg.getPlayers().size() > 0) {
 					for (Attendee player : eg.getPlayers()) {
-						attendees.put(key, player);
-						key++;
+						attendees.add(player);
 					}
 				}
 			}

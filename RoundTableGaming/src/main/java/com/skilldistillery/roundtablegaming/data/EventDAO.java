@@ -2,7 +2,6 @@ package com.skilldistillery.roundtablegaming.data;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Map;
 
 import com.skilldistillery.roundtablegaming.entities.Address;
 import com.skilldistillery.roundtablegaming.entities.Attendee;
@@ -27,7 +26,7 @@ public interface EventDAO {
 	
 	public List<Event> getEventsByKeyword(String keyword);
 	
-	public Map<Integer, Attendee> getEventAttendees(Event event);
+	public List<Attendee> getEventAttendees(Event event);
 	
 	public Event updateEvent(Event updatedEvent, int id);
 	

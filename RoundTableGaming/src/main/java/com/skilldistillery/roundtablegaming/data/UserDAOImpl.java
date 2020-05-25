@@ -75,7 +75,8 @@ public class UserDAOImpl implements UserDAO {
 	public User checkLogin(User user) {
 		String jpql = "SELECT user FROM User user WHERE user.username = :username";
 		try {
-			User loggingUser = em.createQuery(jpql, User.class).setParameter("username", user.getUsername())
+			User loggingUser = em.createQuery(jpql, User.class)
+					.setParameter("username", user.getUsername())
 					.getSingleResult();
 			if (loggingUser.getPassword().equals(user.getPassword())) {
 				System.out.println("ping");
