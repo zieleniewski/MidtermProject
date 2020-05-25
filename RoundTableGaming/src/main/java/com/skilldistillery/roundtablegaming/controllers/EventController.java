@@ -60,9 +60,17 @@ public class EventController {
 	@GetMapping("getAttendees.do")
 	public String getAttendees(int eventId, Model model) {
 		Event event = dao.getEventById(eventId);
-		List<Attendee> attendees = dao.getEventAttendees(event);
+		List<Attendee> unfiltAttendees = dao.getEventAttendees(event);
+		List<Attendee> attendees = dao.filterUniqueAttendees(unfiltAttendees);
 		model.addAttribute("attendees", attendees);
 		return "events";
+	}
+	
+	@GetMapping("createEventPage.do")
+	public String createEvent(Model model) {
+		List<Game> allGames = gameDao.getAllGames();
+		model.addAttribute("games", allGames);
+		return "createEvent";
 	}
 	
 	@PostMapping("searchByDate.do")
@@ -75,8 +83,10 @@ public class EventController {
 	}
 	
 	@PostMapping("createEvent.do")
-	public String create(Event event, Model model) {
-		
-		return "#";
+	public String create(Event newEvent, Model model) {
+		Event event = dao.createEvent(newEvent);
+		model.addAttribute("newEvent", event);
+		return "account";
 	}
+	
 }
