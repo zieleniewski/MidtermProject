@@ -98,5 +98,16 @@ public class AddressDAOImpl implements AddressDAO {
 				.getResultList();
 		return events;
 	}
+
+	@Override
+	public Address checkAddress(Address address) {
+		Address checked = em.find(Address.class, address.getId());
+		if (checked == null) {
+			em.persist(address);
+			return address;
+		} else {
+			return null;
+		}
+	}
 	
 }

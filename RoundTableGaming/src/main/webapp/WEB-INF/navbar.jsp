@@ -37,10 +37,10 @@
 				<div class="dropdown">
 					<button class="btn btn-default dropdown-toggle" type="button"
 						id="dropdownMenuButton" data-toggle="dropdown"
-						aria-haspopup="true" aria-expanded="false">Navigation</button>
+						aria-haspopup="true" aria-expanded="true">Navigation</button>
 					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 						<a class="dropdown-item" href="createEventPage.do">Create Event</a> <a
-							class="dropdown-item" href="#">Another action</a> <a
+							class="dropdown-item" href="getAllEvents.do">List All Events</a> <a
 							class="dropdown-item" href="#">Something else here</a>
 					</div>
 				</div>
@@ -91,7 +91,7 @@
 					aria-expanded="false">Navigation</button>
 				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 					<a class="dropdown-item" href="createEventPage.do">Create Event</a> <a
-						class="dropdown-item" href="#">Another action</a> <a
+						class="dropdown-item" href="getAllEvents.do">List All Events</a> <a
 						class="dropdown-item" href="#">Something else here</a>
 				</div>
 			</div>

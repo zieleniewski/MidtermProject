@@ -125,8 +125,8 @@ public class EventDAOImpl implements EventDAO {
 	}
 	
 	@Override
-	public Event updateEvent(Event updatedEvent, int id) {
-		Event event = em.find(Event.class, id);
+	public Event updateEvent(Event updatedEvent, Address address) {
+		Event event = em.find(Event.class, updatedEvent.getId());
 		if (event != null) {
 			event.setOrganizer(updatedEvent.getOrganizer());
 			event.setAddress(updatedEvent.getAddress());

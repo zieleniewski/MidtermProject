@@ -23,4 +23,6 @@ public interface AddressDAO {
 	
 	public List<Event> searchByZipCode(String zipCode);
 	
+	public Address checkAddress(Address address);
+	
 }
