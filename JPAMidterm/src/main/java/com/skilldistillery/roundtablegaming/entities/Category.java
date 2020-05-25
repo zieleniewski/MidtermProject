@@ -10,11 +10,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.sun.istack.NotNull;
+
 @Entity
 public class Category {
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
+	@NotNull
 	private int id;
+	@NotNull
 	private String name;
 	private String description;
 	@OneToMany(mappedBy = "category", cascade = CascadeType.PERSIST)

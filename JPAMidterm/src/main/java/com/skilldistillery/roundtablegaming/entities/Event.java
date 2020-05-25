@@ -16,17 +16,23 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.sun.istack.NotNull;
+
 @Entity
 public class Event {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@NotNull
 	private int id;
+	@NotNull
 	@ManyToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "organizer_id")
 	private User organizer;
+	@NotNull
 	@ManyToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "address_id")
 	private Address address;
+	@NotNull
 	private String title;
 	private String description;
 	@Column(name = "event_date")
@@ -40,6 +46,7 @@ public class Event {
 	private LocalDateTime createDate;
 	@Column(name = "last_update")
 	private LocalDateTime lastUpdate;
+	@NotNull
 	private boolean enabled;
 	@OneToMany(mappedBy = "event", cascade = CascadeType.PERSIST)
 	private List<EventGame> eventGames;

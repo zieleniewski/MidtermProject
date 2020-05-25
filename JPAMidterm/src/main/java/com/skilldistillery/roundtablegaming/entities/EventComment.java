@@ -12,15 +12,20 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.sun.istack.NotNull;
+
 @Entity
 @Table(name = "event_comment")
 public class EventComment {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@NotNull
 	private int id;
+	@NotNull
 	@ManyToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "user_id")
 	private User user;
+	@NotNull
 	@ManyToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "event_id")
 	private Event event;
@@ -30,6 +35,7 @@ public class EventComment {
 	private LocalDateTime commentDate;
 	@Column(name = "last_updated")
 	private LocalDateTime lastUpdated;
+	@NotNull
 	private boolean enabled;
 	
 	public EventComment() {}

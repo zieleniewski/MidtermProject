@@ -8,6 +8,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
 
+import com.sun.istack.NotNull;
+
 @Entity
 public class Attendee {
 
@@ -25,6 +27,7 @@ public class Attendee {
 	private Integer eventRating;
 	@Column(name = "comment_by_attendee")
 	private String attendeeComment;
+	@NotNull
 	private boolean enabled;
 
 //	CONSTRUCTORS
