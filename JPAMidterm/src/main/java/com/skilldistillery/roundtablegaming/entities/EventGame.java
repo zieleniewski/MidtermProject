@@ -15,11 +15,14 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.sun.istack.NotNull;
+
 @Entity
 @Table(name = "event_game")
 public class EventGame {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@NotNull
 	private int id;
 	private String description;
 	@Column(name = "min_players")
@@ -28,9 +31,11 @@ public class EventGame {
 	private Integer maxPlayers;
 	@Column(name = "start_time")
 	private LocalTime startTime;
+	@NotNull
 	private boolean enabled;
 	@ManyToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "game_id")
+	@NotNull
 	private Game game;
 	@OneToMany(mappedBy = "eventGame", cascade = CascadeType.PERSIST)
 	private List<Attendee> players;

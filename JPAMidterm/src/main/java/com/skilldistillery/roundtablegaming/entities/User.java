@@ -15,12 +15,17 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.sun.istack.NotNull;
+
 @Entity
 public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@NotNull
 	private int id;
+	@NotNull
 	private String username;
+	@NotNull
 	private String password;
 	private String role;
 	@Column(name = "first_name")
@@ -32,7 +37,10 @@ public class User {
 	private String avatar;
 	@Column(name = "create_date")
 	private LocalDateTime created;
+	@NotNull
 	private boolean enabled;
+	@NotNull
+	private boolean admin;
 	@OneToMany(mappedBy = "creator", cascade = CascadeType.PERSIST)
 	private List<Game> games;
 	@ManyToOne(cascade = CascadeType.PERSIST)
@@ -50,7 +58,7 @@ public class User {
 	public User() {}
 
 	public User(int id, String username, String password, String role, String firstName, String lastName, String email,
-			String avatar, LocalDateTime created, boolean enabled, List<Game> games, Address address,
+			String avatar, LocalDateTime created, boolean enabled, boolean admin, List<Game> games, Address address,
 			List<Attendee> attendees, List<Event> organizerEvents, List<EventComment> comments, List<Guild> guilds) {
 		super();
 		this.id = id;
@@ -63,6 +71,7 @@ public class User {
 		this.avatar = avatar;
 		this.created = created;
 		this.enabled = enabled;
+		this.admin = admin;
 		this.games = games;
 		this.address = address;
 		this.attendees = attendees;
@@ -149,6 +158,14 @@ public class User {
 
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
+	}
+
+	public boolean isAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(boolean admin) {
+		this.admin = admin;
 	}
 
 	public List<Game> getGames() {
@@ -341,6 +358,8 @@ public class User {
 		builder.append(created);
 		builder.append(", enabled=");
 		builder.append(enabled);
+		builder.append(", admin=");
+		builder.append(admin);
 		builder.append(", address=");
 		builder.append(address);
 		builder.append("]");

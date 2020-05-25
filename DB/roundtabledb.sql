@@ -49,6 +49,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `avatar_url` VARCHAR(5000) NULL,
   `create_date` DATETIME NULL,
   `enabled` TINYINT NOT NULL DEFAULT 1,
+  `admin` TINYINT NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`),
   INDEX `fk_user_address1_idx` (`address_id` ASC),
   CONSTRAINT `fk_user_address1`
@@ -89,7 +90,7 @@ CREATE TABLE IF NOT EXISTS `event` (
   `img_url` VARCHAR(5000) NULL,
   `create_date` DATETIME NULL,
   `last_update` DATETIME NULL,
-  `enabled` TINYINT NULL DEFAULT 1,
+  `enabled` TINYINT NOT NULL DEFAULT 1,
   PRIMARY KEY (`id`),
   INDEX `fk_event_organizer_idx` (`organizer_id` ASC),
   INDEX `fk_event_address1_idx` (`address_id` ASC),
@@ -119,7 +120,7 @@ CREATE TABLE IF NOT EXISTS `game` (
   `min_players` INT NULL,
   `max_players` INT NULL,
   `description` TEXT NULL,
-  `enabled` TINYINT NULL,
+  `enabled` TINYINT NOT NULL DEFAULT 1,
   PRIMARY KEY (`id`),
   INDEX `fk_game_category_idx` (`category_id` ASC),
   INDEX `fk_game_user1_idx` (`creator_id` ASC),
@@ -146,7 +147,7 @@ CREATE TABLE IF NOT EXISTS `guild` (
   `name` VARCHAR(200) NOT NULL,
   `description` TEXT NULL,
   `logo_url` VARCHAR(5000) NULL,
-  `enabled` TINYINT NULL DEFAULT 1,
+  `enabled` TINYINT NOT NULL DEFAULT 1,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -164,7 +165,7 @@ CREATE TABLE IF NOT EXISTS `event_game` (
   `min_players` INT NULL,
   `max_players` INT NULL,
   `start_time` TIME NULL,
-  `enabled` TINYINT NULL DEFAULT 1,
+  `enabled` TINYINT NOT NULL DEFAULT 1,
   PRIMARY KEY (`id`),
   INDEX `fk_event_game_event1_idx` (`event_id` ASC),
   INDEX `fk_event_game_game1_idx` (`game_id` ASC),
@@ -191,7 +192,7 @@ CREATE TABLE IF NOT EXISTS `attendee` (
   `event_game_id` INT NOT NULL,
   `event_rating` INT NULL,
   `comment_by_attendee` TEXT NULL,
-  `enabled` TINYINT NULL DEFAULT 1,
+  `enabled` TINYINT NOT NULL DEFAULT 1,
   PRIMARY KEY (`user_id`, `event_game_id`),
   INDEX `fk_attendee_event_game1_idx` (`event_game_id` ASC),
   CONSTRAINT `fk_attendee_user1`
@@ -243,7 +244,7 @@ CREATE TABLE IF NOT EXISTS `event_comment` (
   `content` TEXT NULL,
   `comment_date` DATETIME NULL,
   `last_updated` DATETIME NULL,
-  `enabled` TINYINT NULL DEFAULT 1,
+  `enabled` TINYINT NOT NULL DEFAULT 1,
   PRIMARY KEY (`id`),
   INDEX `fk_event_comment_user1_idx` (`user_id` ASC),
   INDEX `fk_event_comment_event1_idx` (`event_id` ASC),
@@ -288,11 +289,11 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `roundtabledb`;
-INSERT INTO `user` (`id`, `address_id`, `username`, `password`, `role`, `first_name`, `last_name`, `email`, `avatar_url`, `create_date`, `enabled`) VALUES (1, 1, 'admin', 'admin', 'admin', NULL, NULL, NULL, NULL, NULL, 1);
-INSERT INTO `user` (`id`, `address_id`, `username`, `password`, `role`, `first_name`, `last_name`, `email`, `avatar_url`, `create_date`, `enabled`) VALUES (2, 1, 'serg', 'lol', 'user', 'Sergio', 'Samoiloff', 'dontworryaboutit@nunya.com', NULL, '2020-05-24 12:30:00', 1);
-INSERT INTO `user` (`id`, `address_id`, `username`, `password`, `role`, `first_name`, `last_name`, `email`, `avatar_url`, `create_date`, `enabled`) VALUES (3, 2, 'shane', 'cereal', 'user', 'Shane', 'Duncan', 'poptarts@kentucky.gov', NULL, '2020-05-24 12:33:00', 1);
-INSERT INTO `user` (`id`, `address_id`, `username`, `password`, `role`, `first_name`, `last_name`, `email`, `avatar_url`, `create_date`, `enabled`) VALUES (4, 3, 'jacob', 'hatred', 'user', 'Jacob', 'Zieleniewski', 'livingina@crawlspace.com', NULL, '2020-05-24 12:35:00', 1);
-INSERT INTO `user` (`id`, `address_id`, `username`, `password`, `role`, `first_name`, `last_name`, `email`, `avatar_url`, `create_date`, `enabled`) VALUES (5, 4, 'mike', 'cats', 'user', 'Mike', 'Matosky', 'seeyalater@yardwork.net', NULL, '2020-05-24 12:51:00', 1);
+INSERT INTO `user` (`id`, `address_id`, `username`, `password`, `role`, `first_name`, `last_name`, `email`, `avatar_url`, `create_date`, `enabled`, `admin`) VALUES (1, 1, 'admin', 'admin', '', 'admin', 'admin', 'admin@admin.com', NULL, '2020-05-22 13:00:00', 1, 1);
+INSERT INTO `user` (`id`, `address_id`, `username`, `password`, `role`, `first_name`, `last_name`, `email`, `avatar_url`, `create_date`, `enabled`, `admin`) VALUES (2, 1, 'serg', 'lol', '', 'Sergio', 'Samoiloff', 'dontworryaboutit@nunya.com', NULL, '2020-05-24 12:30:00', 1, 0);
+INSERT INTO `user` (`id`, `address_id`, `username`, `password`, `role`, `first_name`, `last_name`, `email`, `avatar_url`, `create_date`, `enabled`, `admin`) VALUES (3, 2, 'shane', 'cereal', '', 'Shane', 'Duncan', 'poptarts@kentucky.gov', NULL, '2020-05-24 12:33:00', 1, 0);
+INSERT INTO `user` (`id`, `address_id`, `username`, `password`, `role`, `first_name`, `last_name`, `email`, `avatar_url`, `create_date`, `enabled`, `admin`) VALUES (4, 3, 'jacob', 'hatred', '', 'Jacob', 'Zieleniewski', 'livingina@crawlspace.com', NULL, '2020-05-24 12:35:00', 1, 0);
+INSERT INTO `user` (`id`, `address_id`, `username`, `password`, `role`, `first_name`, `last_name`, `email`, `avatar_url`, `create_date`, `enabled`, `admin`) VALUES (5, 4, 'mike', 'cats', '', 'Mike', 'Matosky', 'seeyalater@yardwork.net', NULL, '2020-05-24 12:51:00', 1, 0);
 
 COMMIT;
 
