@@ -55,13 +55,13 @@
 								<h5 class="card-title mb-0">Public info</h5>
 							</div>
 							<div class="card-body">
-								<form>
+								<form action="updateAccount.do" method="post">
 									<div class="row">
 										<div class="col-md-8">
 											<div class="form-group">
 												<label for="inputUsername">Username</label> <input
-													type="text" class="form-control" id="inputUsername"
-													placeholder="put esl here to show user name" readonly>
+													type="text" class="form-control" id="inputUsername" name="username"
+													value="${loggedInUser.username}">
 											</div>
 											<div class="form-group">
 												<label for="inputUsername">Biography</label>
@@ -89,7 +89,15 @@
 											</div>
 										</div>
 									</div>
-
+									<input type="hidden" name="role" value="${loggedInUser.role}">
+									<input type="hidden" name="firstName" value="${loggedInUser.firstName}">
+									<input type="hidden" name="lastName" value="${loggedInUser.lastName}">
+									<input type="hidden" name="email" value="${loggedInUser.email}">
+									<input type="hidden" name="avatar" value="${loggedInUser.avatar}">
+									<input type="hidden" name="enabled" value="${loggedInUser.enabled}">
+									<input type="hidden" name="admin" value="${loggedInUser.admin}">
+									<input type="hidden" name="id" value="${loggedInUser.id}">
+									<input type="hidden" name="password" value="${loggedInUser.password}">
 									<button type="submit" class="btn btn-primary">Save
 										changes</button>
 								</form>
@@ -103,50 +111,100 @@
 								<h5 class="card-title mb-0">Private info</h5>
 							</div>
 							<div class="card-body">
-								<form>
+								<form action="updateAccount.do" method=post>
 									<div class="form-row">
 										<div class="form-group col-md-6">
 											<label for="inputFirstName">First name</label> <input
 												type="text" class="form-control" id="inputFirstName"
-												placeholder="First name">
+												value="${loggedInUser.firstName}" name="firstName">
 										</div>
 										<div class="form-group col-md-6">
 											<label for="inputLastName">Last name</label> <input
 												type="text" class="form-control" id="inputLastName"
-												placeholder="Last name">
+												value="${loggedInUser.lastName}" name="lastName">
 										</div>
 									</div>
 									<div class="form-group">
 										<label for="inputEmail4">Email</label> <input type="email"
-											class="form-control" id="inputEmail4" placeholder="Email">
+											class="form-control" id="inputEmail4" value="${loggedInUser.email}" name="email">
 									</div>
 									<div class="form-group">
 										<label for="inputAddress">Address</label> <input type="text"
 											class="form-control" id="inputAddress"
-											placeholder="1234 Main St">
+											value="${loggedInUser.address.street1}" name="street1">
 									</div>
 									<div class="form-group">
 										<label for="inputAddress2">Address 2</label> <input
 											type="text" class="form-control" id="inputAddress2"
-											placeholder="Apartment, studio, or floor">
+											value="${loggedInUser.address.street2}" name="street2">
 									</div>
 									<div class="form-row">
 										<div class="form-group col-md-6">
 											<label for="inputCity">City</label> <input type="text"
-												class="form-control" id="inputCity">
+												value="${loggedInUser.address.city}" class="form-control" id="inputCity" name="city">
 										</div>
 										<div class="form-group col-md-4">
 											<label for="inputState">State</label> <select id="inputState"
-												class="form-control">
-												<option selected="">Choose...</option>
-												<option>...</option>
+												class="form-control" name="state">
+												<option selected="">${loggedInUser.address.state}</option>
+												<option>Alabama</option>
+												<option>Alaska</option>
+												<option>Arizona</option>
+												<option>Arkansas</option>
+												<option>California</option>
+												<option>Colorado</option>
+												<option>Connecticut</option>
+												<option>Delaware</option>
+												<option>Florida</option>
+												<option>Georgia</option>
+												<option>Hawaii</option>
+												<option>Idaho</option>
+												<option>Illinois</option>
+												<option>Indiana</option>
+												<option>Iowa</option>
+												<option>Kansas</option>
+												<option>Kentucky</option>
+												<option>Louisiana</option>
+												<option>Maine</option>
+												<option>Maryland</option>
+												<option>Massachusetts</option>
+												<option>Michigan</option>
+												<option>Minnesota</option>
+												<option>Mississippi</option>
+												<option>Missouri</option>
+												<option>Montana</option>
+												<option>Nebraska</option>
+												<option>Nevada</option>
+												<option>New Hampshire</option>
+												<option>New Jersey</option>
+												<option>New Mexico</option>
+												<option>New York</option>
+												<option>North Carolina</option>
+												<option>North Dakatoa</option>
+												<option>Ohio</option>
+												<option>Oklahoma</option>
+												<option>Oregon</option>
+												<option>Pennsylvania</option>
+												<option>Rhode Island</option>
+												<option>South Carolina</option>
+												<option>South Dakota</option>
+												<option>Tennessee</option>
+												<option>Texas</option>
+												<option>Utah</option>
+												<option>Vermont</option>
+												<option>Virgina</option>
+												<option>Washington</option>
+												<option>West Virginia</option>
+												<option>Wisconsin</option>
+												<option>Wyoming</option>
 											</select>
 										</div>
 										<div class="form-group col-md-2">
 											<label for="inputZip">Zip</label> <input type="text"
-												class="form-control" id="inputZip">
+											value="${loggedInUser.address.zipCode}" class="form-control" id="inputZip" name="zipCode">
 										</div>
 									</div>
+									<input type="hidden" name="id" value="${loggedInUser.id}">
 									<button type="submit" class="btn btn-primary">Save
 										changes</button>
 								</form>
