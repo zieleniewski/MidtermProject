@@ -11,7 +11,6 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import com.skilldistillery.roundtablegaming.entities.Address;
-import com.skilldistillery.roundtablegaming.entities.Category;
 import com.skilldistillery.roundtablegaming.entities.Event;
 import com.skilldistillery.roundtablegaming.entities.EventGame;
 import com.skilldistillery.roundtablegaming.entities.Game;
@@ -33,7 +32,8 @@ public class EventDAOImpl implements EventDAO {
 	@Override
 	public List<Event> getAllEvents() {
 		String query = "SELECT e FROM Event e";
-		List<Event> allEvents = em.createQuery(query, Event.class).getResultList();
+		List<Event> allEvents = em.createQuery(query, Event.class)
+				.getResultList();
 		return allEvents;
 	}
 
@@ -44,22 +44,15 @@ public class EventDAOImpl implements EventDAO {
 
 	@Override
 	public List<Event> getEventsByAddress(Address address) {
-		List<Event> events = getAllEvents();
-		for (Event event : events) {
-			if (event.getAddress().equals(address))
-				events.add(event);
-		}
+		String jpql = "SELECT e FROM Event e WHERE e.address.id = :search";
+		List<Event> events = em.createQuery(jpql, Event.class)
+				.setParameter("search", address.getId())
+				.getResultList();
 		return events;
 	}
 
 	@Override
 	public List<Event> getEventsByCategory(String category) {
-//		String jpql = "SELECT event FROM Event event JOIN FETCH event.eventGames "
-//				+ "WHERE event.eventGames.game.category = :category";
-//		List<Event> categoryEvents = em.createQuery(jpql, Event.class).setParameter("category", category)
-//				.getResultList();
-//		return categoryEvents;
-
 		List<Event> allEvents = getAllEvents();
 		List<Event> selectedEvents = new ArrayList<>();
 		for (Event event : allEvents) {
@@ -68,7 +61,7 @@ public class EventDAOImpl implements EventDAO {
 				if (eg.getGame().getCategory().getName().equals(category))
 					selectedEvents.add(event);
 			}
-		}
+		}		
 		return selectedEvents;
 	}
 
@@ -88,49 +81,71 @@ public class EventDAOImpl implements EventDAO {
 
 	@Override
 	public List<Event> getEventsByKeyword(String keyword) {
-		keyword = "%" + keyword + "%";
-		String query = "SELECT e FROM Event e WHERE e.title OR e.description LIKE :input";
-		List<Event> foundEvents = em.createQuery(query, Event.class).setParameter("input", keyword).getResultList();
-		return foundEvents;
+		String query = "SELECT e FROM Event e WHERE e.title OR e.description "
+				+ "LIKE '"+"%"+keyword+"%'";
+		List<Event> events = em.createQuery(query, Event.class)
+				.setParameter("input", keyword)
+				.getResultList();
+		return events;
 	}
 
 	@Override
 	public List<Event> getEventsByDate(LocalDate date) {
-		List<Event> allEvents = getAllEvents();
-		List<Event> selectedEvents = new ArrayList<>();
-		for (Event event : allEvents) {
-			if (event.getEventDate().equals(date)) {
-				selectedEvents.add(event);
-			}
-		}
-		return selectedEvents;
+		String jpql = "SELECT e FROM Event e WHERE e.eventDate = :search";
+		List<Event> events = em.createQuery(jpql, Event.class)
+				.setParameter("search", date)
+				.getResultList();
+		return events;
 	}
 
 	@Override
 	public Event updateEvent(Event updatedEvent, int id) {
 		Event event = em.find(Event.class, id);
-		event.setOrganizer(updatedEvent.getOrganizer());
-		event.setAddress(updatedEvent.getAddress());
-		event.setTitle(updatedEvent.getTitle());
-		event.setDescription(updatedEvent.getDescription());
-		event.setEventDate(updatedEvent.getEventDate());
-		event.setStartTime(updatedEvent.getStartTime());
-		event.setImgURL(updatedEvent.getImgURL());
-		event.setCreateDate(updatedEvent.getCreateDate());
-		event.setLastUpdate(updatedEvent.getLastUpdate());
-		event.setEnabled(updatedEvent.isEnabled());
-		event.setEventGames(updatedEvent.getEventGames());
-		event.setEventComments(updatedEvent.getEventComments());
-		em.persist(event);
-		em.flush();
+		if (event != null) {
+			event.setOrganizer(updatedEvent.getOrganizer());
+			event.setAddress(updatedEvent.getAddress());
+			event.setTitle(updatedEvent.getTitle());
+			event.setDescription(updatedEvent.getDescription());
+			event.setEventDate(updatedEvent.getEventDate());
+			event.setStartTime(updatedEvent.getStartTime());
+			event.setCapacity(updatedEvent.getCapacity());
+			event.setImgURL(updatedEvent.getImgURL());
+			event.setCreateDate(updatedEvent.getCreateDate());
+			event.setLastUpdate(updatedEvent.getLastUpdate());
+			event.setEventGames(updatedEvent.getEventGames());
+			event.setEventComments(updatedEvent.getEventComments());
+			em.persist(event);
+			em.flush();
+		}
 		return event;
 	}
 
 	@Override
-	public Event deleteEvent(int id) {
-		Event deleteEvent = em.find(Event.class, id);
-		em.remove(deleteEvent);
-		return deleteEvent;
+	public boolean enableEvent(int id) {
+		Event event = em.find(Event.class, id);
+		if (event != null) {
+			event.setEnabled(true);
+			em.persist(event);
+			em.flush();
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+
+	@Override
+	public boolean disableEvent(int id) {
+		Event event = em.find(Event.class, id);
+		if (event != null) {
+			event.setEnabled(false);
+			em.persist(event);
+			em.flush();
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 
 }

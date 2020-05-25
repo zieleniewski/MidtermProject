@@ -33,6 +33,7 @@ public class Event {
 	private LocalDate eventDate;
 	@Column(name = "start_time")
 	private LocalTime startTime;
+	private Integer capacity;
 	@Column(name = "img_url")
 	private String imgURL;
 	@Column(name = "create_date")
@@ -48,7 +49,7 @@ public class Event {
 	public Event() {}
 
 	public Event(int id, User organizer, Address address, String title, String description, LocalDate eventDate,
-			LocalTime startTime, String imgURL, LocalDateTime createDate, LocalDateTime lastUpdate, boolean enabled,
+			LocalTime startTime, Integer capacity, String imgURL, LocalDateTime createDate, LocalDateTime lastUpdate, boolean enabled,
 			List<EventGame> eventGames, List<EventComment> eventComments) {
 		super();
 		this.id = id;
@@ -58,6 +59,7 @@ public class Event {
 		this.description = description;
 		this.eventDate = eventDate;
 		this.startTime = startTime;
+		this.capacity = capacity;
 		this.imgURL = imgURL;
 		this.createDate = createDate;
 		this.lastUpdate = lastUpdate;
@@ -120,6 +122,14 @@ public class Event {
 
 	public void setStartTime(LocalTime startTime) {
 		this.startTime = startTime;
+	}
+
+	public Integer getCapacity() {
+		return capacity;
+	}
+
+	public void setCapacity(Integer capacity) {
+		this.capacity = capacity;
 	}
 
 	public String getImgURL() {
@@ -249,6 +259,8 @@ public class Event {
 		builder.append(eventDate);
 		builder.append(", startTime=");
 		builder.append(startTime);
+		builder.append(", capacity=");
+		builder.append(capacity);
 		builder.append(", imgURL=");
 		builder.append(imgURL);
 		builder.append(", createDate=");

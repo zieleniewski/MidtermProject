@@ -12,7 +12,9 @@ public interface GameDAO {
 	
 	public Game updateGame(Game game);
 	
-	public boolean deleteGame(int id);
+	public boolean enableGame(int id);
+	
+	public boolean disableGame(int id);
 	
 	//For Listing Games by Category
 	public List<Game> getGamesByCategory(int categoryID);

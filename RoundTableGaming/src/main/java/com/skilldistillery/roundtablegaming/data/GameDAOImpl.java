@@ -1,6 +1,5 @@
 package com.skilldistillery.roundtablegaming.data;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -27,10 +26,8 @@ public class GameDAOImpl implements GameDAO{
 
 	@Override
 	public List<Game> getAllGames() {
-
 		String query= "SELECT g FROM Game g";
 		List<Game> allGames = em.createQuery(query, Game.class).getResultList();
-
 		return allGames;
 	}
 		
@@ -41,31 +38,24 @@ public class GameDAOImpl implements GameDAO{
 	
 	@Override
 	public List<Game> getGamesByKeyword(String keyword) {
-		
-//		String newKeyword= "'%"+keyword+"%'";
-		String query= "SELECT g FROM Game g WHERE g.title LIKE '" + "%" + keyword + "%'";
-		List<Game> foundGames = em.createQuery(query, Game.class).getResultList();
-		
+		String query= "SELECT g FROM Game g WHERE g.title LIKE '"+"%"+keyword+"%'";
+		List<Game> foundGames = em.createQuery(query, Game.class)
+				.getResultList();
 		return foundGames;
 	}
 	
 	@Override
 	public List<Game> getGamesByCategory(int categoryID) {
-		List<Game> allGames= getAllGames();
-		List<Game> categoryGames= new ArrayList<>();
-		
-		for (Game game : allGames) {
-			if(game.getCategory().getId() == categoryID ) {
-				categoryGames.add(game);
-			}
-		}
-		return categoryGames;
+		String query = "SELECT g FROM Game g WHERE g.category = :catId";
+		List<Game> games = em.createQuery(query, Game.class)
+				.setParameter("catId", categoryID)
+				.getResultList();
+		return games;
 	}
 	
 	@Override
 	public Game updateGame(Game game) {
 		Game updated = em.find(Game.class, game.getId());
-		
 		if (updated != null) {
 			updated.setTitle(game.getTitle());
 			updated.setDescription(game.getDescription());
@@ -77,17 +67,29 @@ public class GameDAOImpl implements GameDAO{
 		}
 		return updated;
 	}
-	
-	public boolean deleteGame(int id) {
-		
-		boolean deleted = false;
-		Game toRemove = em.find(Game.class, id);
-		
-		if(toRemove != null) {
-			em.remove(toRemove);
-			deleted= true;
+
+	@Override
+	public boolean enableGame(int id) {
+		Game game = em.find(Game.class, id);
+		if (game != null) {
+			game.setEnabled(true);
+			return true;
 		}
-		return deleted;
+		else {
+			return false;
+		}
 	}
 
+	@Override
+	public boolean disableGame(int id) {
+		Game game = em.find(Game.class, id);
+		if (game != null) {
+			game.setEnabled(false);
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
 }
