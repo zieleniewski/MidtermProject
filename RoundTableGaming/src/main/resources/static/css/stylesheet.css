@@ -19,9 +19,10 @@ height: 20px;
 justify-content: space-between;
 
 }
-.nav-search{
-	display: inline-block;
-}
+.dropdown{
+	margin-right: 10px;
+	
+	}
 
 .navbar-custom {
     color:#d65a31;
