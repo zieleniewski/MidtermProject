@@ -38,7 +38,7 @@ public class EventController {
 	public String getAllEvents(Model model) {
 		List<Event> events = dao.getAllEvents();
 		model.addAttribute(events);
-		return "#";
+		return "events";
 	}
 	
 	@GetMapping("rpg.do")
@@ -104,9 +104,12 @@ public class EventController {
 	
 	@PostMapping("updateEvent.do")
 	public String update(Event event, Address address, Model model) {
-		Address updAddress = addrDao.checkAddress(address);
-		if (updAddress == null) {
-			updAddress = address;
+		Address updAddress = null;
+		if (addrDao.checkAddress(address)) {
+			updAddress = addrDao.createAddress(address);
+		}
+		else {
+			updAddress = addrDao.getAddressById(address.getId());
 		}
 		Event updEvent = dao.updateEvent(event, updAddress);
 		model.addAttribute("updatedEvent", updEvent);
