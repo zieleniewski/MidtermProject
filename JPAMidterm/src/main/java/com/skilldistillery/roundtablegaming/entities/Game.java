@@ -13,25 +13,32 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.sun.istack.NotNull;
+
 @Entity
 public class Game {
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
+	@NotNull
 	private int id;
+	@NotNull
 	private String title;
 	@Column(name="min_players")
 	private int minPlayers;
 	@Column(name="max_players")
 	private int maxPlayers;
 	private String description;
+	@NotNull
 	private boolean enabled;
 	@ManyToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "category_id")
+	@NotNull
 	private Category category;
 	@OneToMany(mappedBy = "game", cascade = CascadeType.PERSIST)
 	private List<EventGame> eventGames;
 	@ManyToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "creator_id")
+	@NotNull
 	private User creator;
 	
 	public Game() {}

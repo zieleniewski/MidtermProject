@@ -13,15 +13,20 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
+import com.sun.istack.NotNull;
+
 @Entity
 public class Guild {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@NotNull
 	private int id;
+	@NotNull
 	private String name;
 	private String description;
 	@Column(name = "logo_url")
 	private String logoURL;
+	@NotNull
 	private boolean enabled;
 	@ManyToMany(cascade = CascadeType.PERSIST)
 	@JoinTable(name = "guild_member",

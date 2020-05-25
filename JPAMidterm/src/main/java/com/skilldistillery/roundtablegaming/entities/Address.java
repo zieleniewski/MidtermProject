@@ -11,17 +11,22 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.sun.istack.NotNull;
+
 @Entity
 public class Address {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@NotNull
 	private int id;
 	private String street1;
 	private String street2;
 	private String city;
 	private String state;
+	@NotNull
 	@Column(name = "zip_code")
 	private String zipCode;
+	@NotNull
 	private boolean enabled;
 	@OneToMany(mappedBy = "address", cascade = CascadeType.PERSIST)
 	private List<Event> events;
