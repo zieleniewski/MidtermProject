@@ -30,7 +30,7 @@ public interface EventDAO {
 	
 	public List<Attendee> filterUniqueAttendees(List<Attendee> aList);
 	
-	public Event updateEvent(Event updatedEvent, int id);
+	public Event updateEvent(Event updatedEvent, Address address);
 	
 	public boolean enableEvent(int id);
 	
