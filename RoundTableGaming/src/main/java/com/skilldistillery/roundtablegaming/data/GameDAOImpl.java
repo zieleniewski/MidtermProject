@@ -43,6 +43,15 @@ public class GameDAOImpl implements GameDAO{
 				.getResultList();
 		return foundGames;
 	}
+
+	@Override
+	public Game getGameByTitle(String title) {
+		String query = "SELECT g FROM Game g WHERE g.title = :title";
+		Game game = em.createQuery(query, Game.class)
+				.setParameter("title", title)
+				.getSingleResult();
+		return game;
+	}
 	
 	@Override
 	public List<Game> getGamesByCategory(int categoryID) {
@@ -67,7 +76,7 @@ public class GameDAOImpl implements GameDAO{
 		}
 		return updated;
 	}
-
+	
 	@Override
 	public boolean enableGame(int id) {
 		Game game = em.find(Game.class, id);
@@ -79,7 +88,7 @@ public class GameDAOImpl implements GameDAO{
 			return false;
 		}
 	}
-
+	
 	@Override
 	public boolean disableGame(int id) {
 		Game game = em.find(Game.class, id);
