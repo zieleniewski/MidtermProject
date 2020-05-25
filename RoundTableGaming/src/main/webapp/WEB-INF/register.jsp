@@ -83,6 +83,7 @@
                         <input type="text" id="zipCode" placeholder="Zip Code" class="form-control" name="zipCode">
                     </div>
                 </div>
+                		<input type="hidden" name="role" value="user">
                 
                       
                

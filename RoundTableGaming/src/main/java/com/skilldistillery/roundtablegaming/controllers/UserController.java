@@ -4,7 +4,6 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,14 +19,14 @@ public class UserController {
 	private UserDAO dao;
 
 	@RequestMapping(path = "registrationComplete.do", method = RequestMethod.POST)
-	public String completeUser(User user, Address address, Model model, HttpSession session) {
+	public String completeUser(User user, Address address, HttpSession session) {
 		User newUser = dao.createUser(user, address);
 		session.setAttribute("loggedInUser", newUser);
 		return "index";
 	}
 
 	@RequestMapping(path = "logIn.do")
-	public String login(User user, HttpSession session, Model model) {
+	public String login(User user, HttpSession session) {
 		User loggingUser = dao.checkLogin(user);
 		if (loggingUser == null) {
 			return "index";
