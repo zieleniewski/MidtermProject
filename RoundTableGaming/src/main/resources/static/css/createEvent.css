@@ -1,12 +1,9 @@
-@charset "UTF-8";
 
-.container-register {
-
- margin-left: auto !important;
-    margin-right: auto !important;
-background-color: white;
-	
+.main-body {
+ text-align:center;
 }
+
+
 
 label {
     display: block;
