@@ -2,7 +2,9 @@ package com.skilldistillery.roundtablegaming.data;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -11,6 +13,7 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import com.skilldistillery.roundtablegaming.entities.Address;
+import com.skilldistillery.roundtablegaming.entities.Attendee;
 import com.skilldistillery.roundtablegaming.entities.Event;
 import com.skilldistillery.roundtablegaming.entities.EventGame;
 import com.skilldistillery.roundtablegaming.entities.Game;
@@ -99,6 +102,26 @@ public class EventDAOImpl implements EventDAO {
 	}
 
 	@Override
+	public Map<Integer, Attendee> getEventAttendees(Event event) {
+		Map<Integer, Attendee> attendees = new HashMap<>();
+		List<EventGame> allMatches = event.getEventGames();
+		
+		if (allMatches.size() > 0) {
+			Integer key = 0;
+			for (EventGame eg : allMatches) {
+				if (eg.getPlayers().size() > 0) {
+					for (Attendee player : eg.getPlayers()) {
+						attendees.put(key, player);
+						key++;
+					}
+				}
+			}
+		}
+		
+		return attendees;
+	}
+	
+	@Override
 	public Event updateEvent(Event updatedEvent, int id) {
 		Event event = em.find(Event.class, id);
 		if (event != null) {
@@ -119,7 +142,7 @@ public class EventDAOImpl implements EventDAO {
 		}
 		return event;
 	}
-
+	
 	@Override
 	public boolean enableEvent(int id) {
 		Event event = em.find(Event.class, id);
@@ -133,7 +156,7 @@ public class EventDAOImpl implements EventDAO {
 			return false;
 		}
 	}
-
+	
 	@Override
 	public boolean disableEvent(int id) {
 		Event event = em.find(Event.class, id);
