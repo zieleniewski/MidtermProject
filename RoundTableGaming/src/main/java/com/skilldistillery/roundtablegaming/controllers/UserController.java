@@ -4,6 +4,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -42,13 +43,33 @@ public class UserController {
 		session.removeAttribute("loggedInUser");
 		return "index";
 	}
-	
+
 	@PostMapping("updateAccount.do")
 	public String updateAccount(User user, Address address, HttpSession session) {
 		User updatedUser = dao.updateUser(user);
-//		session.removeAttribute("loggedInUser");
 		session.setAttribute("loggedInUser", updatedUser);
 		return "index";
 	}
-	
+
+	@PostMapping("updatePassword.do")
+	public String updatePassword(@RequestParam String currentPassword, String newPassword, String verifyPassword,
+			User user, HttpSession session, Model model) {
+		if (currentPassword.equals(user.getPassword())) {
+			if (newPassword.equals(verifyPassword)) {
+				user.setPassword(verifyPassword);
+				User newPasswordUser = dao.updateUser(user);
+				session.setAttribute("loggedInUser", newPasswordUser);
+				return "account";
+			} else {
+				boolean correctPassword = false;
+				model.addAttribute("correctPassword", correctPassword);
+				return "account";
+			}
+		} else {
+			boolean correctPassword = false;
+			model.addAttribute("correctPassword", correctPassword);
+			return "account";
+
+		}
+	}
 }

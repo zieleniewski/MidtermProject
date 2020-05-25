@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <title>Insert title here</title>
@@ -29,19 +30,38 @@
 					<div class="card-header">
 						<h5 class="card-title mb-0">Profile Settings</h5>
 					</div>
-
-					<div class="list-group list-group-flush" role="tablist">
-						<a class="list-group-item list-group-item-action active"
-							data-toggle="list" href="#account" role="tab"> Account </a> <a
-							class="list-group-item list-group-item-action" data-toggle="list"
-							href="#password" role="tab"> Password </a> <a
-							class="list-group-item list-group-item-action" data-toggle="list"
-							href="#upcoming-games" role="tab"> Upcoming Games </a> <a
-							class="list-group-item list-group-item-action" data-toggle="list"
-							href="#game-history" role="tab"> Game History </a> <a
-							class="list-group-item list-group-item-action" data-toggle="list"
-							href="#" role="tab"> Delete account </a>
-					</div>
+					<c:choose>
+						<c:when test="${correctPassword  == false}">
+							<div class="list-group list-group-flush" role="tablist">
+								<a class="list-group-item list-group-item-action"
+									data-toggle="list" href="#account" role="tab"> Account </a> <a
+									class="list-group-item list-group-item-action active"
+									data-toggle="list" href="#password" role="tab"> Password </a> <a
+									class="list-group-item list-group-item-action"
+									data-toggle="list" href="#upcoming-games" role="tab">
+									Upcoming Games </a> <a
+									class="list-group-item list-group-item-action"
+									data-toggle="list" href="#game-history" role="tab"> Game
+									History </a> <a class="list-group-item list-group-item-action"
+									data-toggle="list" href="#" role="tab"> Delete account </a>
+							</div>
+						</c:when>
+						<c:otherwise>
+							<div class="list-group list-group-flush" role="tablist">
+								<a class="list-group-item list-group-item-action active"
+									data-toggle="list" href="#account" role="tab"> Account </a> <a
+									class="list-group-item list-group-item-action"
+									data-toggle="list" href="#password" role="tab"> Password </a> <a
+									class="list-group-item list-group-item-action"
+									data-toggle="list" href="#upcoming-games" role="tab">
+									Upcoming Games </a> <a
+									class="list-group-item list-group-item-action"
+									data-toggle="list" href="#game-history" role="tab"> Game
+									History </a> <a class="list-group-item list-group-item-action"
+									data-toggle="list" href="#" role="tab"> Delete account </a>
+							</div>
+						</c:otherwise>
+					</c:choose>
 				</div>
 			</div>
 
@@ -60,8 +80,8 @@
 										<div class="col-md-8">
 											<div class="form-group">
 												<label for="inputUsername">Username</label> <input
-													type="text" class="form-control" id="inputUsername" name="username"
-													value="${loggedInUser.username}">
+													type="text" class="form-control" id="inputUsername"
+													name="username" value="${loggedInUser.username}">
 											</div>
 											<div class="form-group">
 												<label for="inputUsername">Biography</label>
@@ -90,14 +110,17 @@
 										</div>
 									</div>
 									<input type="hidden" name="role" value="${loggedInUser.role}">
-									<input type="hidden" name="firstName" value="${loggedInUser.firstName}">
-									<input type="hidden" name="lastName" value="${loggedInUser.lastName}">
+									<input type="hidden" name="firstName"
+										value="${loggedInUser.firstName}"> <input
+										type="hidden" name="lastName" value="${loggedInUser.lastName}">
 									<input type="hidden" name="email" value="${loggedInUser.email}">
-									<input type="hidden" name="avatar" value="${loggedInUser.avatar}">
-									<input type="hidden" name="enabled" value="${loggedInUser.enabled}">
-									<input type="hidden" name="admin" value="${loggedInUser.admin}">
+									<input type="hidden" name="avatar"
+										value="${loggedInUser.avatar}"> <input type="hidden"
+										name="enabled" value="${loggedInUser.enabled}"> <input
+										type="hidden" name="admin" value="${loggedInUser.admin}">
 									<input type="hidden" name="id" value="${loggedInUser.id}">
-									<input type="hidden" name="password" value="${loggedInUser.password}">
+									<input type="hidden" name="password"
+										value="${loggedInUser.password}">
 									<button type="submit" class="btn btn-primary">Save
 										changes</button>
 								</form>
@@ -126,7 +149,8 @@
 									</div>
 									<div class="form-group">
 										<label for="inputEmail4">Email</label> <input type="email"
-											class="form-control" id="inputEmail4" value="${loggedInUser.email}" name="email">
+											class="form-control" id="inputEmail4"
+											value="${loggedInUser.email}" name="email">
 									</div>
 									<div class="form-group">
 										<label for="inputAddress">Address</label> <input type="text"
@@ -141,7 +165,8 @@
 									<div class="form-row">
 										<div class="form-group col-md-6">
 											<label for="inputCity">City</label> <input type="text"
-												value="${loggedInUser.address.city}" class="form-control" id="inputCity" name="city">
+												value="${loggedInUser.address.city}" class="form-control"
+												id="inputCity" name="city">
 										</div>
 										<div class="form-group col-md-4">
 											<label for="inputState">State</label> <select id="inputState"
@@ -201,10 +226,19 @@
 										</div>
 										<div class="form-group col-md-2">
 											<label for="inputZip">Zip</label> <input type="text"
-											value="${loggedInUser.address.zipCode}" class="form-control" id="inputZip" name="zipCode">
+												value="${loggedInUser.address.zipCode}" class="form-control"
+												id="inputZip" name="zipCode">
 										</div>
 									</div>
-									<input type="hidden" name="id" value="${loggedInUser.id}">
+									<input type="hidden" name="admin" value="${loggedInUser.admin}">
+									<input type="hidden" name="role" value="${loggedInUser.role}">
+									<input type="hidden" name="avatar"
+										value="${loggedInUser.avatar}"> <input type="hidden"
+										name="enabled" value="${loggedInUser.enabled}"> <input
+										type="hidden" name="password" value="${loggedInUser.password}">
+									<input type="hidden" name="username"
+										value="${loggedInUser.username}"> <input type="hidden"
+										name="id" value="${loggedInUser.id}">
 									<button type="submit" class="btn btn-primary">Save
 										changes</button>
 								</form>
@@ -217,25 +251,83 @@
 						<div class="card">
 							<div class="card-body">
 								<h5 class="card-title">Password</h5>
+								<c:choose>
+									<c:when test="${correctPassword == false}">
 
-								<form>
-									<div class="form-group">
-										<label for="inputPasswordCurrent">Current password</label> <input
-											type="password" class="form-control"
-											id="inputPasswordCurrent"> <small><a href="#">Forgot
-												your password?</a></small>
-									</div>
-									<div class="form-group">
-										<label for="inputPasswordNew">New password</label> <input
-											type="password" class="form-control" id="inputPasswordNew">
-									</div>
-									<div class="form-group">
-										<label for="inputPasswordNew2">Verify password</label> <input
-											type="password" class="form-control" id="inputPasswordNew2">
-									</div>
-									<button type="submit" class="btn btn-primary">Save
-										changes</button>
-								</form>
+										<form action="updatePassword.do" method="post">
+											<div class="form-group">
+												<label for="inputPasswordCurrent">Current password</label> <input
+													type="password" class="form-control" name="currentPassword"
+													id="inputPasswordCurrent" placeholder="Unable to update password"> <small><a
+													href="#">Forgot your password?</a></small>
+											</div>
+											<div class="form-group">
+												<label for="inputPasswordNew">New password</label> <input
+													type="password" class="form-control" id="inputPasswordNew"
+													name="newPassword">
+											</div>
+											<div class="form-group">
+												<label for="inputPasswordNew2">Verify password</label> <input
+													type="password" class="form-control" id="inputPasswordNew2"
+													name="verifyPassword">
+											</div>
+											<input type="hidden" name="role" value="${loggedInUser.role}">
+											<input type="hidden" name="firstName"
+												value="${loggedInUser.firstName}"> <input
+												type="hidden" name="lastName"
+												value="${loggedInUser.lastName}"> <input
+												type="hidden" name="email" value="${loggedInUser.email}">
+											<input type="hidden" name="avatar"
+												value="${loggedInUser.avatar}"> <input type="hidden"
+												name="enabled" value="${loggedInUser.enabled}"> <input
+												type="hidden" name="admin" value="${loggedInUser.admin}">
+											<input type="hidden" name="id" value="${loggedInUser.id}">
+											<input type="hidden" name="password"
+												value="${loggedInUser.password}"> <input
+												type="hidden" name="username"
+												value="${loggedInUser.username}">
+											<button type="submit" class="btn btn-primary">Save
+												changes</button>
+										</form>
+									</c:when>
+									<c:otherwise>
+										<form action="updatePassword.do" method="post">
+											<div class="form-group">
+												<label for="inputPasswordCurrent">Current password</label> <input
+													type="password" class="form-control" name="currentPassword"
+													id="inputPasswordCurrent"> <small><a
+													href="#">Forgot your password?</a></small>
+											</div>
+											<div class="form-group">
+												<label for="inputPasswordNew">New password</label> <input
+													type="password" class="form-control" id="inputPasswordNew"
+													name="newPassword">
+											</div>
+											<div class="form-group">
+												<label for="inputPasswordNew2">Verify password</label> <input
+													type="password" class="form-control" id="inputPasswordNew2"
+													name="verifyPassword">
+											</div>
+											<input type="hidden" name="role" value="${loggedInUser.role}">
+											<input type="hidden" name="firstName"
+												value="${loggedInUser.firstName}"> <input
+												type="hidden" name="lastName"
+												value="${loggedInUser.lastName}"> <input
+												type="hidden" name="email" value="${loggedInUser.email}">
+											<input type="hidden" name="avatar"
+												value="${loggedInUser.avatar}"> <input type="hidden"
+												name="enabled" value="${loggedInUser.enabled}"> <input
+												type="hidden" name="admin" value="${loggedInUser.admin}">
+											<input type="hidden" name="id" value="${loggedInUser.id}">
+											<input type="hidden" name="password"
+												value="${loggedInUser.password}"> <input
+												type="hidden" name="username"
+												value="${loggedInUser.username}">
+											<button type="submit" class="btn btn-primary">Save
+												changes</button>
+										</form>
+									</c:otherwise>
+								</c:choose>
 
 							</div>
 						</div>
