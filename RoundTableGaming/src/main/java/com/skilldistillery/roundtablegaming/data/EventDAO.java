@@ -26,6 +26,8 @@ public interface EventDAO {
 	
 	public List<Event> getEventsByKeyword(String keyword);
 	
+	public List<Event> getEventsByZipCode(String zipCode);
+	
 	public List<Attendee> getEventAttendees(Event event);
 	
 	public List<Attendee> filterUniqueAttendees(List<Attendee> aList);

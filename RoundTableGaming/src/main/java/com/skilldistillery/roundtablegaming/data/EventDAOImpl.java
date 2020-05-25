@@ -90,6 +90,15 @@ public class EventDAOImpl implements EventDAO {
 				.getResultList();
 		return events;
 	}
+	
+	@Override
+	public List<Event> getEventsByZipCode(String zipCode) {
+		String jpql = "SELECT e FROM Event e WHERE address.zipCode = :zipCode";
+		List<Event> events = em.createQuery(jpql, Event.class)
+				.setParameter("zipCode", zipCode)
+				.getResultList();
+		return events;
+	}
 
 	@Override
 	public List<Event> getEventsByDate(LocalDate date) {

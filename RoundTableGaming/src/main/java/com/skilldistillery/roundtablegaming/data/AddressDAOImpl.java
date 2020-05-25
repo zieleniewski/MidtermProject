@@ -89,25 +89,30 @@ public class AddressDAOImpl implements AddressDAO {
 		Address found = event.getAddress();
 		return found;
 	}
-	
-	@Override
-	public List<Event> searchByZipCode(String zipCode) {
-		String jpql = "SELECT e FROM Event e WHERE address.zipCode = :zipCode";
-		List<Event> events = em.createQuery(jpql, Event.class)
-				.setParameter("zipCode", zipCode)
-				.getResultList();
-		return events;
-	}
 
 	@Override
-	public Address checkAddress(Address address) {
-		Address checked = em.find(Address.class, address.getId());
-		if (checked == null) {
-			em.persist(address);
-			return address;
-		} else {
-			return null;
+	public boolean checkAddress(Address address) {
+		List<Address> allAddresses = getAllAddresses();
+		boolean unique = false;
+		
+		for (Address dbAddress : allAddresses) {
+			if (!dbAddress.getStreet1().equals(address.getStreet1())) {
+				unique = true;
+			}
+			if (!dbAddress.getStreet2().equals(address.getStreet2())) {
+				unique = true;
+			}
+			if (!dbAddress.getCity().equals(address.getCity())) {
+				unique = true;
+			}
+			if (!dbAddress.getState().equals(address.getState())) {
+				unique = true;
+			}
+			if (!dbAddress.getZipCode().equals(address.getZipCode())) {
+				unique = true;
+			}
 		}
+		return unique;
 	}
 	
 }
