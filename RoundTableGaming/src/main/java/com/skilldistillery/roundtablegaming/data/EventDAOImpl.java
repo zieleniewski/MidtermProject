@@ -3,6 +3,7 @@ package com.skilldistillery.roundtablegaming.data;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -115,6 +116,12 @@ public class EventDAOImpl implements EventDAO {
 		}
 		
 		return attendees;
+	}
+
+	@Override
+	public List<Attendee> filterUniqueAttendees(List<Attendee> aList) {
+		List<Attendee> filtered = aList.stream().distinct().collect(Collectors.toList());
+		return filtered;
 	}
 	
 	@Override
