@@ -1,0 +1,126 @@
+@charset "UTF-8";
+
+html body {
+
+
+
+}
+
+.table-top {
+	.z-depth-5
+}
+
+
+.fluid-container{
+	 align-content: center;
+}
+.container-register{
+	 align-content: center;
+	 text-align: center;
+}
+#navbar5{
+height: 20px;
+justify-content: space-between;
+
+}
+.dropdown{
+	margin-right: 10px;
+	
+	}
+
+.navbar-custom {
+    color:#d65a31;
+    background-color:  #CC3333;
+}
+
+.img-fluid {
+	height: 400px;
+	width: 400px;
+}
+
+.carousel {
+   
+ 	margin-bottom: 50px;
+    margin-top: 50px;
+
+}
+
+.carousel-inner img {
+
+	height: 250px;
+
+}
+
+.entire-carousel{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.container-whole{
+	width: 80%;
+	 max-width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.carousel-buttons{
+	text-align: center;
+}
+
+.footer {
+margin-top: 50px;
+margin-bottom: 100px;
+padding-bottom: 100px;
+ text-align: center;
+
+
+}
+
+
+
+.create-event {
+ 	border: solid;
+ 
+  float: right;
+  width: 32%;
+  height: 175px;
+  padding-left: 15px;
+}
+
+.submit-game {
+	border: solid;
+	
+  float: right;
+  width: 32%;
+  height: 175px;
+}
+
+}
+
+
+*[role="form"] {
+    max-width: 530px;
+    padding: 15px;
+    margin: 0 auto;
+    border-radius: 0.3em;
+    background-color: #f2f2f2;
+}
+
+*[role="form"] h2 { 
+    font-family: 'Open Sans' , sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    color: #000000;
+    margin-top: 5%;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.logo{
+	height: 35px !important; 
+	width: 70px !important;
+
+}
+
