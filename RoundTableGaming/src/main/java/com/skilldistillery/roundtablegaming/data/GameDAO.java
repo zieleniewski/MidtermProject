@@ -16,13 +16,12 @@ public interface GameDAO {
 	
 	public boolean disableGame(int id);
 	
-	//For Listing Games by Category
+	public Game getGameByTitle(String title);
+	
 	public List<Game> getGamesByCategory(int categoryID);
 	
-	//For Listing Games by Search
 	public List<Game> getGamesByKeyword(String keyword);
 	
-	//Possibly used internally
 	public Game getGameById(int id);
 	
 }

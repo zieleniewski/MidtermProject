@@ -50,11 +50,12 @@ public class EventController {
 		return "tcg";
 	}
 	
-	@GetMapping("searchByGame.do")
-	public String sbg(@RequestParam String keyword, Model model) {
-		List<Game> searchedGames = gameDao.getGamesByKeyword(keyword);
-		model.addAttribute("searchedGames", searchedGames);
-		return "searchedGames";
+	@GetMapping("searchEventsByGame.do")
+	public String sbg(@RequestParam String title, Model model) {
+		Game search = gameDao.getGameByTitle(title);
+		List<Event> eventResults = dao.getEventsByGame(search);
+		model.addAttribute("events", eventResults);
+		return "#";
 	}
 	
 	@GetMapping("getAttendees.do")
