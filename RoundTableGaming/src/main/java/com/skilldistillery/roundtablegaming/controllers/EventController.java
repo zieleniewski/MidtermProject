@@ -37,8 +37,18 @@ public class EventController {
 	@GetMapping("getAllEvents.do")
 	public String getAllEvents(Model model) {
 		List<Event> events = dao.getAllEvents();
-		
+		List<Address> eventAddresses = addrDao.getAddressesForAllEvents();
+		String zipCodes = "";
+		for (int i=0; i < eventAddresses.size(); i++) {
+			if (i == eventAddresses.size() - 1) {
+				zipCodes += eventAddresses.get(i).getZipCode();
+			}
+			else {
+				zipCodes += eventAddresses.get(i).getZipCode()+"|";
+			}
+		}
 		model.addAttribute("events", events);
+		model.addAttribute("zipCodes", zipCodes);
 		return "events";
 	}
 	
