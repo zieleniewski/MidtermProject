@@ -27,12 +27,12 @@
 		<table class="table table-dark table-hover">
 			<thead>
 				<tr>
-					<h2>
+					
 						<th scope="col">Upcoming Events</th>
-					</h2>
-					<h2>
+				
+					
 						<th scope="col">Date</th>
-					</h2>
+					
 
 					<th scope="col">Event Games</th>
 					<th scope="col">Location <th>
