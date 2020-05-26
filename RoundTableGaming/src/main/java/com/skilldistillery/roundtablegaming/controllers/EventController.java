@@ -1,16 +1,24 @@
 package com.skilldistillery.roundtablegaming.controllers;
 
+import java.beans.PropertyEditorSupport;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -150,6 +158,32 @@ public class EventController {
 		return "thisEvent";
 	}
 	
-	
+	@InitBinder
+	public void initBinder(WebDataBinder webDataBinder) {
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		SimpleDateFormat timeFormat = new SimpleDateFormat("HH:MM");
+		dateFormat.setLenient(true);
+		webDataBinder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
+		webDataBinder.registerCustomEditor(LocalDate.class, new PropertyEditorSupport() {
+			@Override
+			public void setAsText(String text) throws IllegalArgumentException {
+				setValue(LocalDate.parse(text, DateTimeFormatter.ofPattern("yyyy-MM-dd")));
+			}
+			@Override
+			public String getAsText() throws IllegalArgumentException {
+				return DateTimeFormatter.ofPattern("yyyy-MM-dd").format((LocalDate) getValue());
+			}
+		});
+		webDataBinder.registerCustomEditor(LocalTime.class, new PropertyEditorSupport() {
+			@Override
+			public void setAsText(String text) throws IllegalArgumentException {
+				setValue(LocalTime.parse(text, DateTimeFormatter.ofPattern("HH:MM")));
+			}
+			@Override
+			public String getAsText() throws IllegalArgumentException {
+				return DateTimeFormatter.ofPattern("HH:MM").format((LocalDate) getValue());
+			}
+		});
+}
 
 }
