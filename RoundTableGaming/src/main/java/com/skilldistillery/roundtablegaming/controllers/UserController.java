@@ -1,5 +1,7 @@
 package com.skilldistillery.roundtablegaming.controllers;
 
+import java.time.LocalDateTime;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +28,7 @@ public class UserController {
 
 	@RequestMapping(path = "registrationComplete.do", method = RequestMethod.POST)
 	public String completeUser(User user, Address address, HttpSession session) {
+		user.setCreated(LocalDateTime.now());
 		User newUser = dao.createUser(user, address);
 		session.setAttribute("loggedInUser", newUser);
 		return "index";
@@ -51,6 +54,7 @@ public class UserController {
 	@PostMapping("updateAccount.do")
 	public String updateAccount(User user, Address address, HttpSession session) {
 		Address updatedAddress = null;
+//		System.out.println("\n\n\n\n"+address+"\n\n\n\n");
 		if (addrDao.checkAddress(address)) {
 			updatedAddress = addrDao.createAddress(address);
 		}
