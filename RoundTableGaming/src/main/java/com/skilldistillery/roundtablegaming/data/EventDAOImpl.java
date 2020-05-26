@@ -15,7 +15,6 @@ import com.skilldistillery.roundtablegaming.entities.Address;
 import com.skilldistillery.roundtablegaming.entities.Attendee;
 import com.skilldistillery.roundtablegaming.entities.Event;
 import com.skilldistillery.roundtablegaming.entities.EventGame;
-import com.skilldistillery.roundtablegaming.entities.Game;
 
 @Service
 @Transactional
@@ -33,7 +32,7 @@ public class EventDAOImpl implements EventDAO {
 
 	@Override
 	public List<Event> getAllEvents() {
-		String query = "SELECT e FROM Event e";
+		String query = "SELECT e FROM Event e ORDER BY e.eventDate";
 		List<Event> allEvents = em.createQuery(query, Event.class)
 				.getResultList();
 		return allEvents;
@@ -112,18 +111,11 @@ public class EventDAOImpl implements EventDAO {
 	@Override
 	public List<Attendee> getEventAttendees(Event event) {
 		List<Attendee> attendees = new ArrayList<>();
-		List<EventGame> allMatches = event.getEventGames();
-		
-		if (allMatches.size() > 0) {
-			for (EventGame eg : allMatches) {
-				if (eg.getPlayers().size() > 0) {
-					for (Attendee player : eg.getPlayers()) {
-						attendees.add(player);
-					}
-				}
-			}
-		}
-		
+		String jpql = "SELECT a FROM Attendee a JOIN a.eventGame g WHERE "
+				+ "g.event.id = :id";
+		attendees = em.createQuery(jpql, Attendee.class)
+				.setParameter("id", event.getId())
+				.getResultList();		
 		return attendees;
 	}
 

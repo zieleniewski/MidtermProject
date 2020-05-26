@@ -79,6 +79,14 @@ public class AddressDAOImpl implements AddressDAO {
 	}
 	
 	@Override
+	public List<Address> getAddressesForAllEvents() {
+		String query= "SELECT a FROM Address a JOIN FETCH a.events WHERE ";
+		List<Address> allEventAddresses = em.createQuery(query, Address.class)
+				.getResultList();
+		return allEventAddresses;
+	}
+
+	@Override
 	public Address getAddressById(int id) {
 		return em.find(Address.class, id);
 	}
@@ -90,7 +98,7 @@ public class AddressDAOImpl implements AddressDAO {
 		Address found = event.getAddress();
 		return found;
 	}
-
+	
 	@Override
 	public boolean checkAddress(Address address) {
 		List<Address> allAddresses = getAllAddresses();
