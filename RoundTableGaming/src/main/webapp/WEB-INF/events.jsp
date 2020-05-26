@@ -41,7 +41,7 @@
 				<c:forEach var="event" items="${events}">
 					<tr>
 
-						<td>${event.title}</td>
+						<td>${event.title}<p>${event.address.city}, ${event.address.state}</p></td>
 						<td>${event.eventDate }</td>
 						<td><c:forEach var="event" items="${events}">
 								<c:forEach var="eventGames" items="${event.eventGames}">

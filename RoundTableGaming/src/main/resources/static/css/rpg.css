@@ -33,6 +33,7 @@ a span:link{
 
 .container-fluid {
 	content-align: center;
+	padding-top: 100px !important;
 }
 
 .row {
@@ -125,7 +126,7 @@ h1 {
 border-radius: 10px;
 	text-align: center;
 background: black;
-	 opacity: 0.85;
+	 opacity: 0.55 !important;
 
 	border-width: 0px;
 	
@@ -147,7 +148,9 @@ h1 {
 .team-back{
 	font-family: "Courier New";
 }
-
+p {
+	font-size: 15px;
+}
 
 
 
