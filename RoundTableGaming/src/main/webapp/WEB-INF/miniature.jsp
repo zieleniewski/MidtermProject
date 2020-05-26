@@ -31,16 +31,15 @@
 
 						<div class="team-front">
 
-							<h1>Blades In The Dark</h1>
+							<h1>A Song of Ice and Fire</h1>
 
 						</div>
 
 						<div class="team-back">
-							<span> Blades in the Dark is a tabletop role-playing game
-								about a crew of daring scoundrels seeking their fortunes on the
-								haunted streets of an industrial-fantasy city. There are heists,
-								chases, occult mysteries, dangerous bargains, bloody skirmishes,
-								and, above all, riches to be had.<br> <br> <br> <br>
+							<span> A Song of Ice & Fire: Tabletop Miniatures Game is a competitive miniatures game for two or more 
+							players. Each player controls one of the Great Houses of Westeros, commanding battlefield units, recruiting 
+							legendary Heroes, and manipulating the political stage, in the attempt to claim the greatest prize of all:
+							 The Iron Throne.<br> <br> <br> <br>
 								<br> <br> <br>
 							</span>
 						</div>
@@ -55,15 +54,14 @@
 
 						<div class="team-front">
 
-							<h1>Call Of Cthulhu</h1>
+							<h1>Guild Ball</h1>
 						</div>
 
 						<div class="team-back">
-							CALL OF CTHULHU is Chaosium's classic roleplaying game of
-							Lovecraftian horror in which ordinary people are confronted by
-							the terrifying and alien forces of the Cthulhu Mythos. CALL OF
-							CTHULHU uses Chaosium's Basic Roleplaying System, easy to learn
-							and quick to play.<br> <br> <br> <br> <br>
+							 Guild Ball is a fast-paced mob football skirmish game that takes place in the Empire of the Free Cities.
+							   Victory comes with carefully constructed plays and counter plays with emphasis on positioning and resource 
+							   management. Anybody can pick up the ball and give it a kick, but only the most experienced coach can earn
+							 the title of Guild Ball World Champion - decided each year at SFGs own convention SteamCon.<br> <br> <br> <br> <br>
 							<br> <br>
 						</div>
 
@@ -77,15 +75,15 @@
 
 						<div class="team-front">
 
-							<h1>Carbon 2185</h1>
+							<h1>Malifaux</h1>
 						</div>
 
 						<div class="team-back">
-							<span> Carbon 2185 is a cyberpunk RPG created by Robert
-								Marriner-Dodds released in 2019. Carbon 2185 is all about
-								telling stories in a dark dystopian future influenced by
-								franchises such as Blade Runner, Ghost in the Shell, and Deus
-								Ex. <br> <br> <br> <br> <br> <br>
+							<span> Welcome to Malifaux, a twisted mirror of an alternate Earth in the 1900s; a world of gothic horror,
+							 Victorian structures, steampunk constructs, and wild west gunslingers. Rife with undead amalgamations, 
+							 monstrous vengeful apparitions, and other creatures that bump in the night, these near-lawless lands are 
+							 still worth treading for some, as the Soulstones deep within the cavernous catacombs are worth more than 
+							 the sweat and blood it takes to obtain them. <br> <br> <br> <br> <br> <br>
 								<br>​
 							</span>
 						</div>
@@ -100,15 +98,12 @@
 
 						<div class="team-front">
 
-							<h1>Cyberpunk 2020</h1>
+							<h1>Monsterpocalypse</h1>
 						</div>
 
 						<div class="team-back">
-							<span> WELCOME TO THE DARK FUTURE The Corporations control
-								the world from their skyscraper fortresses, enforcing their rule
-								with armies of cyborg assassins. On the Street, Boostergangs
-								roam a shattered urban wilderness, killing and looting.All while
-								the rest of the world is a perpetual party.<br> <br> <br>
+							<span> Monsterpocalypse is a fast-moving, action-packed battle miniatures game played with detailed hobby
+						 miniatures that players assemble and paint to portray the most fearsome giant monsters on earth!<br> <br> <br>
 								<br> <br> <br> <br>
 							</span>
 						</div>
@@ -123,11 +118,14 @@
 
 						<div class="team-front">
 
-							<h1>Dungeons & Dragons</h1>
+							<h1>Star Wars: Legion</h1>
 						</div>
 
 						<div class="team-back">
-							<span> It's Dungeons & Dragons, nuff said.<br> <br>
+							<span> Warfare is an inescapable part of the Star Wars universe, from the blow dealt to the Rebel Alliance
+							 in the Battle of Hoth to a few Rebel strike teams taking on a legion of stormtroopers stationed on Endor. 
+							 Seize your chance to get your boots on the ground and lead your troops to victory with Star Wars™: 
+							 Legion, a miniatures game of thrilling infantry battles in the Star Wars universe!<br> <br>
 								<br> <br> <br> <br> <br> <br> <br>
 								<br> <br> <br> <br> <br>
 							</span>
@@ -165,16 +163,13 @@
 
 						<div class="team-front">
 
-							<h1>Rifts</h1>
+							<h1>The Walking Dead: All Out War</h1>
 						</div>
 
 						<div class="team-back">
-							<span> Rifts® is a multi-genre role-playing game that
-								captures the imagination unlike any other. Elements of magic,
-								horror, and the supernatural co-exist with science, high
-								technology and the ordinary. The game spans countless
-								dimensions, making anything and everything possible. Players are
-								truly limited only by their imaginations! <br> <br> <br>
+							<span> All Out War is a game of fast-paced, head-to-head skirmishes in the world of the Walking Dead.
+							 Assemble a group of your favorite characters and then battle it out over scarce resources 
+							 and weapons. <br> <br> <br>
 								<br> <br> <br> <br>
 							</span>
 						</div>
@@ -188,15 +183,13 @@
 
 						<div class="team-front">
 
-							<h1>Shadowrun</h1>
+							<h1>WarHammer 40K/Age of Sigmar</h1>
 						</div>
 
 						<div class="team-back">
-							<span> Shadowrun is a science fantasy tabletop
-								role-playing game set in a near-future fictional universe in
-								which cybernetics, magic and fantasy creatures co-exist. It
-								combines genres of cyberpunk, urban fantasy and crime, with
-								occasional elements of conspiracy, horror and detective fiction.<br>
+							<span> Warhammer 40,000 is set in the distant future, where a stagnant human civilization is beset by 
+							hostile aliens and malevolent supernatural creatures. The models in the game are a mixture of humans, 
+							aliens, and supernatural monsters, wielding futuristic weaponry and magical powers.<br>
 								<br> <br> <br> <br> <br> <br>
 							</span>
 						</div>
@@ -210,13 +203,14 @@
 
 						<div class="team-front">
 
-							<h1>Star Wars</h1>
+							<h1>WarMachine/Hordes</h1>
 						</div>
 
 						<div class="team-back">
-							<span> The Star Wars Roleplaying Game is a tabletop
-								role-playing game set in the Star Wars universe first published
-								by Fantasy Flight Games in August 2012. <br> <br> <br>
+							<span> Warmachine is a tabletop wargame set in a semi-industralised fantasy world. A player's army is
+							 centred around a powerful warcaster who controls a group of giant robots called warjacks, backed up by a 
+							 few combat units and support solos. Hordes represents the untamed wilds of the same fantasy 
+							 world. <br> <br> <br>
 								<br> <br> <br> <br>
 
 
@@ -235,15 +229,34 @@
 
 						<div class="team-front">
 
-							<h1>WarHammer</h1>
+							<h1>Wings of Glory</h1>
 						</div>
 
 						<div class="team-back">
-							<span> Warhammer Fantasy Roleplay is a new, exciting way
-								to experience the popular Warhammer Fantasy setting. It is a
-								grim world, constantly at war. As a hero, you will take up
-								weapon, spell, or prayer and do your best to combat the might of
-								enemies terrifying to behold. <br> <br> <br> <br>
+							<span> Year 1917. All across Europe, while men face a last-ditch battle in the mud of the trenches,
+							 colorful biplanes fly in the foggy sky, gallantly fighting each other as true "knights of the air." 
+							  Take the commands of one of the early flying machines to shoot down your enemy, complete recon missions,
+							   and become an ace, following in the steps of men like Manfred von Richthofen, Eddie Rickenbacker, 
+							   Georges Guynemer and Francesco Baracca! <br> <br> <br> <br>
+								<br> <br> <br>
+							</span>
+						</div>
+
+					</div>
+				</div>
+				<!--team-6-->
+				<div class="col-xl-4">
+					<div class="our-team-main">
+
+						<div class="team-front">
+
+							<h1> X-Wing</h1>
+						</div>
+
+						<div class="team-back">
+							<span> Star Wars: X-Wing Miniatures Game is a tactical ship-to-ship combat game in which players take 
+							control of powerful Rebel X-wings and nimble Imperial TIE fighters, facing them against each other in 
+							fast-paced space combat. <br> <br> <br> <br>
 								<br> <br> <br>
 							</span>
 						</div>
