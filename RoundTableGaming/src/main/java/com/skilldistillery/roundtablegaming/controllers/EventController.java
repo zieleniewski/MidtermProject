@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -119,10 +120,12 @@ public class EventController {
 	}
 	
 	@PostMapping("createEvent.do")
-	public String create(Event newEvent, Model model, HttpSession session) {
+	public String create(Event newEvent, Model model, HttpSession session, @RequestParam ("eventGameIds") Integer[] eventGameIds) {
+		System.out.println(Arrays.deepToString(eventGameIds));
 		User loggedInUser = (User)session.getAttribute("loggedInUser");
 		newEvent.setOrganizer(userDao.getUserById(loggedInUser.getId()));
-		Event event = dao.createEvent(newEvent);
+		System.out.println(newEvent.getEventGames());
+		Event event = dao.createEvent(newEvent, eventGameIds);
 		model.addAttribute("newEvent", event);
 		return "account";
 	}
