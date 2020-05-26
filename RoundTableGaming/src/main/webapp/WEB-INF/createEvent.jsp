@@ -53,7 +53,7 @@
 			
 			<div class="form-group">
 				<div class="col-md-6 mx-auto">
-					<select class="custom-select" id="inputGroupSelect01">
+					<select class="custom-select" id="inputGroupSelect02">
 						<option selected>Select Game Title</option>
 						<c:forEach var="games" items="${games}">
 							<option value="${games.id }">${games.title}</option>
@@ -65,7 +65,7 @@
 			<div class="form-group">
 				<div class="col-md-6 mx-auto">
 
-					<select class="custom-select" id="inputGroupSelect01">
+					<select class="custom-select" id="inputGroupSelect03">
 						<option selected>Select Game Title</option>
 						<c:forEach var="games" items="${games}">
 							<option value="${games.id }">${games.title}</option>
@@ -77,7 +77,7 @@
 			<div class="form-group">
 				<div class="col-md-6 mx-auto">
 
-					<select class="custom-select" id="inputGroupSelect01">
+					<select class="custom-select" id="inputGroupSelect04">
 						<option selected>Select Game Title</option>
 						<c:forEach var="games" items="${games}">
 							<option value="${games.id }">${games.title}</option>
@@ -88,8 +88,7 @@
 
 			<div class="form-group">
 				<div class="col-md-6 mx-auto">
-
-					<select class="custom-select" id="inputGroupSelect01">
+					<select class="custom-select" id="inputGroupSelect05">
 						<option selected>Select Game Title</option>
 						<c:forEach var="games" items="${games}">
 							<option value="${games.id }">${games.title}</option>
@@ -99,7 +98,6 @@
 			</div>
 
 
-					
 
 			<div class="form-group">
 				
@@ -111,7 +109,6 @@
 
 
 			<div class="form-group">
-				
 				<div class="col-md-6 mx-auto">
 					<input type="text" id="maxPlayers" placeholder="Max Players"
 						class="form-control" name="maxPlayers"> <span
@@ -119,14 +116,12 @@
 				</div>
 			</div>
 			<div class="form-group">
-			
 				<div class="col-md-6 mx-auto">
 					<input type="text" id="street1" placeholder="Address"
 						class="form-control" name="street1">
 				</div>
 			</div>
-			<div class="form-group">
-				
+			<div class="form-group">				
 				<div class="col-md-6 mx-auto">
 					<input type="text" id="street2" placeholder="Address"
 						class="form-control" name="street2">
