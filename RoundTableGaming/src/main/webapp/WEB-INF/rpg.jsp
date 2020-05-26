@@ -283,8 +283,8 @@
 
 						<c:forEach var="event" items="${category}">
 							<tr>
-								
-									<td><h3>${event.title}</h3>
+								<td>	
+							<a href="singleEvent.do?id=${event.id}"	>${event.title}</a>
 									<p>${event.address.city}, ${event.address.state}<p></td>
 								
 								
