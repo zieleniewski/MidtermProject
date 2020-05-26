@@ -43,10 +43,11 @@
 
 			<div class="form-group">
 				<div class="col-md-6 mx-auto">
-					<select class="custom-select" id="inputGroupSelect01" name="eventGames.game.id">
+					<!-- <select class="custom-select" id="inputGroupSelect01" name="eventGames.game.id"> -->
+					<select class="custom-select" id="inputGroupSelect01" name="eventGameIds">
 						<option selected>Select Game Title</option>
-						<c:forEach var="games" items="${games}">
-							<option value="${games.id }">${games.title}</option>
+						<c:forEach var="game" items="${games}">
+							<option value="${game.id }">${game.title}</option>
 						</c:forEach>
 					</select>
 				</div>
@@ -54,10 +55,10 @@
 			
 			<div class="form-group">
 				<div class="col-md-6 mx-auto">
-					<select class="custom-select" id="inputGroupSelect02" name="eventGames.game.id">
+					<select class="custom-select" id="inputGroupSelect02" name="eventGameIds">
 						<option selected>Select Game Title</option>
-						<c:forEach var="games" items="${games}">
-							<option value="${games.id }">${games.title}</option>
+						<c:forEach var="game" items="${games}">
+							<option value="${game.id }">${game.title}</option>
 						</c:forEach>
 					</select>
 				</div>
@@ -66,10 +67,10 @@
 			<div class="form-group">
 				<div class="col-md-6 mx-auto">
 
-					<select class="custom-select" id="inputGroupSelect03" name="eventGames.game.id">
+					<select class="custom-select" id="inputGroupSelect03" name="eventGameIds">
 						<option selected>Select Game Title</option>
-						<c:forEach var="games" items="${games}">
-							<option value="${games.id }">${games.title}</option>
+						<c:forEach var="game" items="${games}">
+							<option value="${game.id }">${game.title}</option>
 						</c:forEach>
 					</select>
 				</div>
@@ -78,10 +79,10 @@
 			<div class="form-group">
 				<div class="col-md-6 mx-auto">
 
-					<select class="custom-select" id="inputGroupSelect04" name="eventGames.game.id">
+					<select class="custom-select" id="inputGroupSelect04" name="eventGameIds">
 						<option selected>Select Game Title</option>
-						<c:forEach var="games" items="${games}">
-							<option value="${games.id }">${games.title}</option>
+						<c:forEach var="game" items="${games}">
+							<option value="${game.id }">${game.title}</option>
 						</c:forEach>
 					</select>
 				</div>
@@ -89,10 +90,10 @@
 
 			<div class="form-group">
 				<div class="col-md-6 mx-auto">
-					<select class="custom-select" id="inputGroupSelect05" name="eventGames.game.id">
+					<select class="custom-select" id="inputGroupSelect05" name="eventGameIds">
 						<option selected>Select Game Title</option>
-						<c:forEach var="games" items="${games}">
-							<option value="${games.id }">${games.title}</option>
+						<c:forEach var="game" items="${games}">
+							<option value="${game.id }">${game.title}</option>
 						</c:forEach>
 					</select>
 				</div>
