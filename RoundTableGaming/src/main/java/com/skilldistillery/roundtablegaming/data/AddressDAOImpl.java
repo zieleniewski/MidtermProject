@@ -99,21 +99,52 @@ public class AddressDAOImpl implements AddressDAO {
 		for (Address dbAddress : allAddresses) {
 			if (!dbAddress.getStreet1().equals(address.getStreet1())) {
 				unique = true;
+//				System.out.println("\n\n"+dbAddress.getStreet1());
+//				System.out.println("IF: " + unique);
+//				System.out.println(address.getStreet1());
+			} else {
+				unique = false;
+//				System.out.println("ELSE: " + unique);
 			}
 			if (dbAddress.getStreet2() != null ) {
 				if (!dbAddress.getStreet2().equals(address.getStreet2())) {
 					unique = true;
+//					System.out.println("\n"+dbAddress.getStreet2());
+//					System.out.println("IF: " + unique);
+//					System.out.println(address.getStreet2());
+				} else {
+					unique = false;
+//					System.out.println("ELSE: " + unique);
 				}
 			}
 			if (!dbAddress.getCity().equals(address.getCity())) {
 				unique = true;
+//				System.out.println("\n"+dbAddress.getCity());
+//				System.out.println("IF: " + unique);
+//				System.out.println(address.getCity());
+			} else {
+				unique = false;
+//				System.out.println("ELSE: " + unique);
 			}
 			if (!dbAddress.getState().equals(address.getState())) {
 				unique = true;
+//				System.out.println("\n"+dbAddress.getState());
+//				System.out.println("IF: " + unique);
+//				System.out.println(address.getState());
+			} else {
+				unique = false;
+//				System.out.println("ELSE: " + unique);
 			}
 			if (!dbAddress.getZipCode().equals(address.getZipCode())) {
 				unique = true;
+//				System.out.println("\n"+dbAddress.getZipCode());
+//				System.out.println("IF: " + unique);
+//				System.out.println(address.getZipCode());
+			} else {
+				unique = false;
+//				System.out.println("ELSE: " + unique + "\n\n");
 			}
+			if (unique == false) {break;}
 		}
 		return unique;
 	}
