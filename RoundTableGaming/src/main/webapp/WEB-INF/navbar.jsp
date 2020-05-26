@@ -32,6 +32,8 @@
 						href="${pageContext.request.contextPath}/logOut.do">Log Out</a></li>
 					<li class="nav-item"><a class="btn btn-default btn-rounded "
 						href="${pageContext.request.contextPath}/account.do">Account</a></li>
+					<li class="nav-item"><a class="btn btn-default btn-rounded "
+						href="${pageContext.request.contextPath}/createEventPage.do">Create Event</a></li>
 					
 				</ul></div>
 				<div class="dropdown">
