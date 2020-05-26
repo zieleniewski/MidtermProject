@@ -57,9 +57,16 @@ public class UserController {
 		else {
 			updatedAddress = addrDao.getAddressById(address.getId());
 		}
-		User updatedUser = dao.updateUser(user, updatedAddress);
+		User updatedUser = dao.updateAccount(user, updatedAddress);
 		session.setAttribute("loggedInUser", updatedUser);
-		return "index";
+		return "account";
+	}
+	
+	@PostMapping("updateUsername.do")
+	public String updateUsername(User user, HttpSession session) {
+		User updatedUser = dao.updateUsername(user);
+		session.setAttribute("loggedInUser", updatedUser);
+		return "account";
 	}
 
 	@PostMapping("updatePassword.do")
@@ -68,8 +75,8 @@ public class UserController {
 		if (currentPassword.equals(user.getPassword())) {
 			if (newPassword.equals(verifyPassword)) {
 				user.setPassword(verifyPassword);
-//				User newPasswordUser = dao.updateUser(user);
-//				session.setAttribute("loggedInUser", newPasswordUser);
+				User newPasswordUser = dao.updatePassword(user);
+				session.setAttribute("loggedInUser", newPasswordUser);
 				return "account";
 			} else {
 				boolean correctPassword = false;
