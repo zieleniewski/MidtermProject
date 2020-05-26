@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="css/events.css" type="text/css">
+<link rel="stylesheet" href="css/thisEvent.css" type="text/css">
 <script
 	src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script
@@ -68,72 +68,78 @@
 						
 						
 				</tr>
-					<%-- 	<td class="text-center"><h3>Created By:
-								${event.organizer }</h3> <br> <br></td>
-					</tr>
-
-					<tr>
-						<td>${event.description }<br> <br>
-						</td>
-
-					</tr>
-
-					<tr> --%>
-						<%-- 	<td>Game(s) at this event</td>
-			</tr>
-			<c:forEach var="eventGame" items="${event.eventGames }">
-				<tr>
-					<td>${eventGame.title } </td>
-				</tr>
-				<tr>
-					<td>${eventGame.description }</td>
-				</tr>
-				<tr>
-					<td>Signed up= ${eventGame.players.size()} / ${eventGame.maxPlayers }</td>
-				</tr>
-				<!-- I want to list the users attending each game. Not 100% on how to get usernames -->
-				<tr>
-					<td>
-						<c:forEach var="attendee" items="${eventGame.players }">
-							<!-- Pick the one that works -->
-							${attendee.user.username }
-							<br>
-							${attendee.user.getUsername() }
-							<br>
-							${attendee.user.getUsername }
-						</c:forEach>
-					</td>
-				</tr>
-			</c:forEach> --%>
-						<!-- Address of the event
-			               Address: (street1)  (street2)
-			                        (city) (state), (zipcode)  -->
-						<!-- Trying to center by right justifying the left column and left justifying the second column -->
-<%-- 					<tr>
-						<td class="float-center">
-						<td class="text-right"><br>
-						<br> Address: <br>
-						<br>
-						<br></td>
-						<td class="text-left"><br>
-						<br> <!-- Notice the same problem as above needs to be figured out -->
-							${event.address.street1} ${event.address.street2 } <br>
-							${event.address.city } ${event.address.state},
-							${event.address.zipCode } <br></td>
-						</td>
-					</tr>
-				</tbody>
-				<tfoot class="text-center">
-					<tr>
-						<td>Max Capacity= ${event.capacity}</td>
-					<tr>
-				</tfoot>
- --%>			</table>
+					
+		</table>
 			<br>
 			<br>
 			<br>
 			<br>
 		</div>
 	</div>
+	<div class="detailBox">
+    <div class="titleBox">
+      <label>Event Comments</label>
+        <button type="button" class="close" aria-hidden="true">&times;</button>
+    </div>
+    
+    <div class="actionBox">
+        <ul class="commentList">
+            <li>
+                <div class="commenterImage">
+                  <img src="https://static.artfire.com/uploads/mfs/items/3c/58/large/3c58575a667b657c32614b0a891c3477b4ea7e937b4766d45ab41ef84ea8c9bc.jpg" />
+                </div>
+                <div class="commentText">
+                    <p class="">Hello Sergio...</p> <span class="date sub-text">on March 5th, 2014</span>
+
+                </div>
+            </li>
+            <li>
+                <div class="commenterImage">
+                  <img src="https://static.artfire.com/uploads/mfs/items/3c/58/large/3c58575a667b657c32614b0a891c3477b4ea7e937b4766d45ab41ef84ea8c9bc.jpg" />
+                </div>
+                <div class="commentText">
+                    <p class="">....I know what you did last night ....</p> <span class="date sub-text">on March 5th, 2014</span>
+
+                </div>
+            </li>
+            <li>
+                <div class="commenterImage">
+                  <img src="https://static.artfire.com/uploads/mfs/items/3c/58/large/3c58575a667b657c32614b0a891c3477b4ea7e937b4766d45ab41ef84ea8c9bc.jpg" />
+                </div>
+                <div class="commentText">
+                    <p class="">.... </p> <span class="date sub-text">on March 5th, 2014</span>
+
+                </div>
+            </li>
+            <li>
+                <div class="commenterImage">
+                  <img src="https://static.artfire.com/uploads/mfs/items/3c/58/large/3c58575a667b657c32614b0a891c3477b4ea7e937b4766d45ab41ef84ea8c9bc.jpg" />
+                </div>
+                <div class="commentText">
+                    <p class="">.... ...  </p> <span class="date sub-text">on March 5th, 2014</span>
+
+                </div>
+            </li>
+            <li>
+                <div class="commenterImage">
+                  <img src="https://static.artfire.com/uploads/mfs/items/3c/58/large/3c58575a667b657c32614b0a891c3477b4ea7e937b4766d45ab41ef84ea8c9bc.jpg" />
+                </div>
+                <div class="commentText">
+                    <p class="">.... wouldn't you like to know ...  </p> <span class="date sub-text">on March 5th, 2014</span>
+
+                </div>
+            </li>
+        </ul>
+        <form class="form-inline" role="form">
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="Your comments" />
+            </div>
+            <div class="form-group">
+                <button class="btn btn-default">Add</button>
+            </div>
+        </form>
+    </div>
+</div>
+	
 </body>
 </html>
