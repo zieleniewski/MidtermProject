@@ -9,7 +9,18 @@ body, html {
 		background-attachment: fixed;
 	
 }
-
+a span{
+ color:white !important;
+  text-decoration: none;
+}
+a span:hover{
+ color:white !important;
+  text-decoration: none !important;
+}
+a span:link{
+ color:white !important;
+  text-decoration: none !important;
+}
 
 /* .background {
 	background-image:
