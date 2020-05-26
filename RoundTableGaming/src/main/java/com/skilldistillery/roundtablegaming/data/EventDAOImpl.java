@@ -25,6 +25,10 @@ public class EventDAOImpl implements EventDAO {
 
 	@Override
 	public Event createEvent(Event event) {
+		System.out.println(event);
+		Address tempAddr = event.getAddress();
+		em.persist(tempAddr);
+		event.setAddress(tempAddr);
 		em.persist(event);
 		em.flush();
 		return event;
