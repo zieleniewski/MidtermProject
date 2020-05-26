@@ -33,6 +33,24 @@ class AddressDAOImplTest {
 		assertNotNull(addresses);
 		assertTrue(addresses.size() > 0);
 		assertEquals("Adminsville", addresses.get(0).getCity());
+		assertEquals(4, addresses.size());
 	}
 
+	@Test
+	@DisplayName("testing zipCode concatenation")
+	void test2() {
+		Address a = new Address();
+		a.setId(1);
+		List<Address> addresses = daoImpl.getAddressesForAllEvents();
+		String zipCodes = "";
+		for (int i=0; i < addresses.size(); i++) {
+			if (i == addresses.size() - 1) {
+				zipCodes += addresses.get(i).getZipCode();
+			}
+			else {
+				zipCodes += addresses.get(i).getZipCode()+"|";
+			}
+		}
+		System.out.println(zipCodes);
+	}
 }

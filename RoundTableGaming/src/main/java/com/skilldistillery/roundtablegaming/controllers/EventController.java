@@ -25,10 +25,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.skilldistillery.roundtablegaming.data.AddressDAO;
 import com.skilldistillery.roundtablegaming.data.EventDAO;
 import com.skilldistillery.roundtablegaming.data.GameDAO;
+import com.skilldistillery.roundtablegaming.data.UserDAO;
 import com.skilldistillery.roundtablegaming.entities.Address;
 import com.skilldistillery.roundtablegaming.entities.Attendee;
 import com.skilldistillery.roundtablegaming.entities.Event;
 import com.skilldistillery.roundtablegaming.entities.Game;
+import com.skilldistillery.roundtablegaming.entities.User;
 
 @Controller
 public class EventController {
@@ -41,12 +43,25 @@ public class EventController {
 	
 	@Autowired
 	private AddressDAO addrDao;
+	
+	@Autowired
+	private UserDAO userDao;
 
 	@GetMapping("getAllEvents.do")
 	public String getAllEvents(Model model) {
 		List<Event> events = dao.getAllEvents();
-		
+		List<Address> eventAddresses = addrDao.getAddressesForAllEvents();
+		String zipCodes = "";
+		for (int i=0; i < eventAddresses.size(); i++) {
+			if (i == eventAddresses.size() - 1) {
+				zipCodes += eventAddresses.get(i).getZipCode();
+			}
+			else {
+				zipCodes += eventAddresses.get(i).getZipCode()+"|";
+			}
+		}
 		model.addAttribute("events", events);
+		model.addAttribute("zipCodes", zipCodes);
 		return "events";
 	}
 	
@@ -104,7 +119,9 @@ public class EventController {
 	}
 	
 	@PostMapping("createEvent.do")
-	public String create(Event newEvent, Model model) {
+	public String create(Event newEvent, Model model, HttpSession session) {
+		User loggedInUser = (User)session.getAttribute("loggedInUser");
+		newEvent.setOrganizer(userDao.getUserById(loggedInUser.getId()));
 		Event event = dao.createEvent(newEvent);
 		model.addAttribute("newEvent", event);
 		return "account";
@@ -184,6 +201,9 @@ public class EventController {
 				return DateTimeFormatter.ofPattern("HH:MM").format((LocalDate) getValue());
 			}
 		});
-}
 
 }
+	}
+
+
+

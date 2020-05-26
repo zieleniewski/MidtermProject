@@ -18,5 +18,7 @@ public interface UserDAO {
 	public boolean disableUser(int id);
 	
 	public User checkLogin(User user);
+	
+	public User getUserById(int id);
 
 }
