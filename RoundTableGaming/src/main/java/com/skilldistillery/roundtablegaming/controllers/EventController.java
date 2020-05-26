@@ -37,7 +37,7 @@ public class EventController {
 	@GetMapping("getAllEvents.do")
 	public String getAllEvents(Model model) {
 		List<Event> events = dao.getAllEvents();
-		model.addAttribute("event", events);
+		model.addAttribute("events", events);
 		return "events";
 	}
 	
