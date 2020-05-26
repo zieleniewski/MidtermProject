@@ -12,6 +12,15 @@ background-image: url("https://i.imgur.com/Tdu3I6h.jpeg");
 	
 } */
 
+.navbar .footer a{
+	border: 2px solid white !important;
+}
+.navbar .footer{
+	padding-bottom: 0px;
+	margin-bottom: 25px;
+	padding-left: 30px;
+	padding-right: 30px;
+}
 
 
 .table-top {

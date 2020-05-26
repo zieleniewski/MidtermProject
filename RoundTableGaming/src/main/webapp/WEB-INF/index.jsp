@@ -101,13 +101,13 @@
 		<div class="navbar fixed-bottom" >
 	
 		
-<div>	<a href="rpg.do" class="btn btn-lg btn-default">Role Play Games</a></div>
-<div>	<a href="tcg.do" class="btn btn-lg btn-default">Trading Card Games</a></div>
-<div>	<a href="miniature.do" class="btn btn-lg btn-default">Miniatures</a></div>	
+<div class="footer">	<a href="rpg.do" class="btn btn-lg btn-default"><h1><em>Role Play Games</em></h1></a></div>
+<div class="footer">	<a href="tcg.do" class="btn btn-lg btn-default"><h1><em>Trading Card Games</em></h1></a></div>
+<div class="footer">	<a href="miniature.do" class="btn btn-lg btn-default"><h1><em>Miniatures</em></h1></a></div>	
 
 
-</div>
-			
+
+			</div>
 						<jsp:include page="login-popout.jsp"></jsp:include>
 </body>
 </html>
