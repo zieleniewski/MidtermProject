@@ -171,6 +171,7 @@
 				</div>
 				<!--team-6-->
 				<!--team-6-->
+
 				<div class="col-xl-4">
 					<div class="our-team-main">
 
