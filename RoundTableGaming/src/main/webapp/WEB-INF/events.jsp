@@ -5,15 +5,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+<script
+	src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <meta charset="UTF-8">
 <title>Events</title>
 </head>
 <body>
 	<div class="navbar">
 		<jsp:include page="navbar.jsp" />
+		<br> <br> <br>
 	</div>
-
+	<h1>TEST</h1>
 
 
 	<div class="game-list">
@@ -30,28 +34,19 @@
 			</thead>
 			<tbody>
 
-				<c:forEach var="event" items="${category}">
+				<c:forEach var="events" items="${event}">
 					<tr>
 						<h3>
-							<td>${event.title}</td>
+							<td>${events.title}</td>
 						</h3>
 						<h3>
-							<td>${event.eventDate }</td>
+							<td>${events.eventDate }</td>
 						</h3>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
 	</div>
-
-
-
-
-
-
-
-
-
 
 
 
