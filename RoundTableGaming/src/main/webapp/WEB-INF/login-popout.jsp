@@ -14,7 +14,7 @@
 <body>
 	<!-- Modal -->
 <div class="modal fade" id="darkModalForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-  aria-hidden="true">
+  aria-hidden="true"><br><br><br><br><br><br>
   <div class="modal-dialog form-dark" role="document">
     <!--Content-->
     <div class="modal-content card card-image" style="background-image: url('https://i.pinimg.com/originals/87/23/13/8723132f6b15d64873f99db412d0c739.jpg'); background-repeat:no-repeat; background-size: cover;">

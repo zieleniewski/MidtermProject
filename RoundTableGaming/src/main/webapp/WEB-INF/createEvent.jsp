@@ -19,6 +19,7 @@
 </head>
 <body>
 		<jsp:include page="navbar.jsp" />
+		<jsp:include page="login-popout.jsp"></jsp:include>
 <br>
 <br>
 <br>
@@ -156,6 +157,7 @@
 			<input type="datetime-local" id="meeting-time" name="meeting-time"
 				value="" min="2018-06-07T00:00"
 				max="2025-06-14T00:00">
+	
 	</div>
 			
 
@@ -165,7 +167,6 @@
 			<button type="submit" class="btn btn-primary btn-block" style="margin-top: 20px;">Create!</button>
 		</form>
 		
-	<jsp:include page="login-popout.jsp"></jsp:include>
 	</div>
 
 
