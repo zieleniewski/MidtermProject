@@ -20,7 +20,7 @@ public interface EventDAO {
 	
 	public List<Event> getEventsByCategory(String category);
 	
-	public List<Event> getEventsByGame(Game game);
+	public List<Event> getEventsByGame(String game);
 	
 	public List<Event> getEventsByDate(LocalDate date);
 	

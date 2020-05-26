@@ -64,8 +64,7 @@ public class EventController {
 	
 	@GetMapping("searchEventsByGame.do")
 	public String searchEventsByGame(@RequestParam String title, Model model) {
-		Game search = gameDao.getGameByTitle(title);
-		List<Event> eventResults = dao.getEventsByGame(search);
+		List<Event> eventResults = dao.getEventsByGame(title);
 		model.addAttribute("events", eventResults);
 		return "#";
 	}
@@ -114,6 +113,13 @@ public class EventController {
 		Event updEvent = dao.updateEvent(event, updAddress);
 		model.addAttribute("updatedEvent", updEvent);
 		return "#";
+	}
+	
+	@GetMapping("eventsByGame.do")
+	public String eventsByGame(@RequestParam String game, Model model) {
+		List<Event> eventsByGame = dao.getEventsByGame(game); 
+		model.addAttribute("eventsOfGame",eventsByGame);
+		return "gameEvents";
 	}
 	
 }
