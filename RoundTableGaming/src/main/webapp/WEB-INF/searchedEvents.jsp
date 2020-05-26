@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+test test
 <c:forEach var="game" items="${searchedGames}">
 				<h3>${game.title}<br>
 				${game.category}</h3>
