@@ -97,8 +97,8 @@
 			
 		
 		
-		</div>
 		
+		</div>
 		
 		<div class="navbar fixed-bottom" >
 	

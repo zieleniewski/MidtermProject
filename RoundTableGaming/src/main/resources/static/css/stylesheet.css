@@ -1,8 +1,10 @@
 @charset "UTF-8";
 
 html body {
-height: 100%;
+height: 75%;
 background-image: url("https://i.imgur.com/Tdu3I6h.jpeg");
+
+  
 
 }
 
@@ -12,14 +14,23 @@ background-image: url("https://i.imgur.com/Tdu3I6h.jpeg");
 	
 } */
 
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
+
+
 .navbar .footer a{
 	border: 2px solid white !important;
 }
 .navbar .footer{
 	padding-bottom: 0px;
 	margin-bottom: 25px;
-	padding-left: 30px;
-	padding-right: 30px;
+	padding-left: 0px;
+	padding-right: 0px;
 	
 }
 
@@ -28,7 +39,7 @@ background-image: url("https://i.imgur.com/Tdu3I6h.jpeg");
 	.z-depth-5
 }
 .container-fluid{
-	padding-top: 200px !important;
+	padding-top: 100px !important;
 	 text-align: center !important;
 }
 
