@@ -68,13 +68,13 @@ public class EventDAOImpl implements EventDAO {
 	}
 
 	@Override
-	public List<Event> getEventsByGame(Game game) {
+	public List<Event> getEventsByGame(String game) {
 		List<Event> allEvents = getAllEvents();
 		List<Event> selectedEvents = new ArrayList<>();
 		for (Event event : allEvents) {
 			List<EventGame> eventGames = event.getEventGames();
 			for (EventGame eg : eventGames) {
-				if (eg.getGame().equals(game))
+				if (eg.getGame().getTitle().equals(game))
 					selectedEvents.add(event);
 			}
 		}
