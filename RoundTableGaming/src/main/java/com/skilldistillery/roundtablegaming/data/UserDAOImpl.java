@@ -26,7 +26,7 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public User updateUser(User user) {
+	public User updateUser(User user, Address address) {
 		User updated = em.find(User.class, user.getId());
 		if (updated != null) {
 			updated.setFirstName(user.getFirstName());
@@ -37,6 +37,7 @@ public class UserDAOImpl implements UserDAO {
 			updated.setAvatar(user.getAvatar());
 			updated.setRole(user.getRole());
 			updated.setEnabled(user.isEnabled());
+			updated.setAddress(address);
 			em.persist(updated);
 			em.flush();
 		}
