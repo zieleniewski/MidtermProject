@@ -26,14 +26,12 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public User updateUser(User user, Address address) {
+	public User updateAccount(User user, Address address) {
 		User updated = em.find(User.class, user.getId());
 		if (updated != null) {
 			updated.setFirstName(user.getFirstName());
 			updated.setLastName(user.getLastName());
 			updated.setEmail(user.getEmail());
-			updated.setPassword(user.getPassword());
-			updated.setUsername(user.getUsername());
 			updated.setAvatar(user.getAvatar());
 			updated.setRole(user.getRole());
 			updated.setEnabled(user.isEnabled());
@@ -44,6 +42,28 @@ public class UserDAOImpl implements UserDAO {
 		return updated;
 	}
 
+	@Override
+	public User updateUsername(User user) {
+		User updated = em.find(User.class, user.getId());
+		if (updated != null) {
+			updated.setUsername(user.getUsername());
+			em.persist(updated);
+			em.flush();
+		}
+		return updated;
+	}
+	
+	@Override
+	public User updatePassword(User user) {
+		User updated = em.find(User.class, user.getId());
+		if (updated != null) {
+			updated.setPassword(user.getPassword());
+			em.persist(updated);
+			em.flush();
+		}
+		return updated;
+	}
+	
 	@Override
 	public boolean enableUser(int id) {
 		User enabled = em.find(User.class, id);
@@ -57,7 +77,7 @@ public class UserDAOImpl implements UserDAO {
 			return false;
 		}
 	}
-
+	
 	@Override
 	public boolean disableUser(int id) {
 		User disabled = em.find(User.class, id);
