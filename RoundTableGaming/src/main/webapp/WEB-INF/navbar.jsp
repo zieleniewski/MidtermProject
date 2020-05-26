@@ -15,7 +15,7 @@
 <c:choose>
 	<c:when test="${not empty loggedInUser}">
 		<nav
-			class="navbar navbar-expand-sm navbar-light fixed-top navbar-custom">
+			class="navbar navbar-expand-sm navbar-light fixed-top navbar-custom ">
 			<button class="navbar-toggler nav-btn" type="button"
 				data-toggle="collapse" data-target="#navbar5">
 				<span class="navbar-toggler-icon"></span>

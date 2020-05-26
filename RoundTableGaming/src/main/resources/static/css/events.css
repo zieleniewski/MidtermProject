@@ -1,9 +1,27 @@
 @charset "UTF-8";
 
 body {
+	height: 100%;
+	font-family: "Courier New";
+
 	background-image: url("https://fsb.zobj.net/crop.php?r=Da28LuD1vZs_GCsJAd1pj3xb-OUpy8edBGZQbB2__winaS_i6kfcqmr3rIIKZnrhAVAKVWZ0mS6ZCDHqomJkvin4abt39NhKyxoLrxPLLXENi5E6EO7Ky0beDwnDqF1KyPj9dXKRPYdpVURP");
 }
 
 .table {
 	margin-top: 20px;
+	margin-bottom: 0px !important;
+}
+
+img{
+	width: 100% !important;
+}
+
+p {
+	font-size: 15px;
+}
+.table td, .table th {
+	border: 0px !important;
+	color: white;
+	font-size: 25px;
+	font-family: "Courier New";
 }

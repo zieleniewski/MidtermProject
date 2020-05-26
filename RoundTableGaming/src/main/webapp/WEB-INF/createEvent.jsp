@@ -19,6 +19,7 @@
 </head>
 <body>
 		<jsp:include page="navbar.jsp" />
+		<jsp:include page="login-popout.jsp"></jsp:include>
 <br>
 <br>
 <br>
@@ -153,6 +154,7 @@
 					<div class="col-md-6 mx-auto">
 			<label for="eventTime">Date of Event - </label>
 
+
 			<input type="date" id="meeting-date" name="eventDate"
 				value="">
 	</div>
@@ -163,9 +165,9 @@
 			<label for="eventTime">Time of Event - </label>
 			<input type="time" id="meeting-time" name="startTime"
 				value="">
+				</div>
 	</div>
-	</div>
-			
+		
 
 
 
@@ -173,7 +175,6 @@
 			<button type="submit" class="btn btn-primary btn-block" style="margin-top: 20px;">Create!</button>
 		</form>
 		
-	<jsp:include page="login-popout.jsp"></jsp:include>
 	</div>
 
 
