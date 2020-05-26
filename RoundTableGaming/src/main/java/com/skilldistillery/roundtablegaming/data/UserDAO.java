@@ -7,7 +7,11 @@ public interface UserDAO {
 	
 	public User createUser(User user, Address address);
 	
-	public User updateUser(User user, Address address);
+	public User updateAccount(User user, Address address);
+	
+	public User updateUsername(User user);
+	
+	public User updatePassword(User user);
 	
 	public boolean enableUser(int id);
 	
