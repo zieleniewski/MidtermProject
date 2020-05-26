@@ -304,7 +304,7 @@
 
 						<c:forEach var="event" items="${category}">
 							<tr>
-							<h3><td>${event.title}</td></h3>
+							<h3><td>${event.title}<p>${event.address.city}, ${event.address.state}<p></td></h3>
 							<h3><td>${event.eventDate }</td></h3>
 							</tr>
 						</c:forEach>

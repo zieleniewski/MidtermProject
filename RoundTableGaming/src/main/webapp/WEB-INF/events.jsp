@@ -14,8 +14,10 @@
 <title>Events</title>
 </head>
 <body>
+
 	<div class="navbar">
 		<jsp:include page="navbar.jsp" />
+		<jsp:include page="login-popout.jsp"></jsp:include>
 		<br>
 	</div>
 
@@ -33,6 +35,7 @@
 					</h2>
 
 					<th scope="col">Event Games</th>
+					<th scope="col">Location <th>
 
 
 				</tr>
@@ -41,15 +44,21 @@
 				<c:forEach var="event" items="${events}">
 					<tr>
 
-						<td>${event.title}</td>
+						<td>${event.title}<p>${event.address.city}, ${event.address.state}</p></td>
 						<td>${event.eventDate }</td>
-						<td><c:forEach var="event" items="${events}">
+						<td>
 								<c:forEach var="eventGames" items="${event.eventGames}">
 							${eventGames.game.title }<br>
 								</c:forEach>
-							</c:forEach>
+							</td>
+							<td><img width="150px" src="https://maps.googleapis.com/maps/api/staticmap?center=us&zoom=3&size=150x150&markers=${event.address.zipCode}&key=AIzaSyBGkwnAWsK1Xff-R9G3nurccb9Wxt3d8R8">
+							
+							
+							
+							
+							${event.address.zipCode}</td>
 				</c:forEach>
-				</td>
+				
 				<tr>
 				<tr>
 
@@ -57,11 +66,11 @@
 			</tbody>
 		</table>
 
-	<%-- <img
-		src="https://maps.googleapis.com/maps/api/staticmap?center=us&zoom=3&size=400x400&markers=size:medium%7Ccolor:red%7CDelta+${zipCodes}&key=AIzaSyBGkwnAWsK1Xff-R9G3nurccb9Wxt3d8R8">
- --%>
+<img width="100%" src="https://maps.googleapis.com/maps/api/staticmap?center=us&zoom=3&size=800x800&markers=80401|75474&key=AIzaSyBGkwnAWsK1Xff-R9G3nurccb9Wxt3d8R8">
+	
+	
+ 
 
-	<jsp:include page="login-popout.jsp"></jsp:include>
 	</div>
 </body>
 </html>

@@ -283,12 +283,13 @@
 
 						<c:forEach var="event" items="${category}">
 							<tr>
-								<h3>
-									<td>${event.title}</td>
-								</h3>
-								<h3>
+								
+									<td><h3>${event.title}</h3>
+									<p>${event.address.city}, ${event.address.state}<p></td>
+								
+								
 									<td>${event.eventDate }</td>
-								</h3>
+							
 							</tr>
 						</c:forEach>
 					</tbody>

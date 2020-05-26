@@ -20,6 +20,7 @@
 <body>
 
 
+
 		<div class="navbar">
 			<jsp:include page="navbar.jsp" />
 		</div>
@@ -28,6 +29,7 @@
 	<div class="container-fluid">
 		
 		
+<img src="img/LogoMakr_7yQwOf.png">
 
 
 
@@ -95,15 +97,15 @@
 			
 		
 		
-		</div>
 		
+		</div>
 		
 		<div class="navbar fixed-bottom" >
 	
 		
-<div class="footer">	<a href="rpg.do" class="btn btn-lg btn-default"><h1><em>Role Play Games</em></h1></a></div>
-<div class="footer">	<a href="tcg.do" class="btn btn-lg btn-default"><h1><em>Trading Card Games</em></h1></a></div>
-<div class="footer">	<a href="miniature.do" class="btn btn-lg btn-default"><h1><em>Miniatures</em></h1></a></div>	
+<div class="footer">	<a href="rpg.do" class="btn btn-lg btn-default"><h3><em>Role Play Games</em></h3></a></div>
+<div class="footer">	<a href="tcg.do" class="btn btn-lg btn-default"><h3><em>Trading Card Games</em></h3></a></div>
+<div class="footer">	<a href="miniature.do" class="btn btn-lg btn-default"><h3><em>Miniatures</em></h3></a></div>	
 
 
 
