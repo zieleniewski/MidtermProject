@@ -1,6 +1,20 @@
 
+
+body {
+background-image:	url("https://i.pinimg.com/originals/8d/f9/ea/8df9ea0f6147c99050dd31a328925e7c.jpg");
+}
+
+
+.card {
+		 opacity: 0.85;
+		 background-color: blue;
+	
+}
+
+
 .main-body {
  text-align:center;
+ 
 }
 .btn btn-primary btn-block {
 	margin-top: 40px;
