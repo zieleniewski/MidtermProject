@@ -107,7 +107,9 @@
 			</tr>
 			</tbody>
 			<tfoot class= "text-center">
-				Max Capacity(${event.capacity})
+				<tr>
+					<td>Max Capacity= ${event.capacity}</td>
+				<tr>
 			</tfoot>
 		</table>
 		<br><br><br><br>
