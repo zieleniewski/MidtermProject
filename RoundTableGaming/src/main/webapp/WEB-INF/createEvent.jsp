@@ -25,11 +25,11 @@
 <div class="card w-75 mx-auto">
 	
 	<div class="card-body text-center">
-<div class="card-header">
+<div class="card-header" style="margin-bottom: 20px">
 		<h2>Create New Event</h2>
+</div>
 		<form class="form" role="form" action="createEvent.do" method="POST">
 
-</div>
 			<div class="form-group">
 
 				<div class="col-md-6 mx-auto">
@@ -167,7 +167,7 @@
 
 
 
-			<button type="submit" class="btn btn-primary btn-block">Create!</button>
+			<button type="submit" class="btn btn-primary btn-block" style="margin-top: 20px;">Create!</button>
 		</form>
 		
 	<jsp:include page="login-popout.jsp"></jsp:include>
