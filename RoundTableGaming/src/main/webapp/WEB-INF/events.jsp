@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="css/events.css" type="text/css">
 <script
 	src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script
@@ -15,9 +16,9 @@
 <body>
 	<div class="navbar">
 		<jsp:include page="navbar.jsp" />
-		<br> <br> <br>
+		<br>
 	</div>
-	<h1>TEST</h1>
+
 
 
 	<div class="game-list">
@@ -53,11 +54,7 @@
 
 
 
-	<%-- <ul>
-	<c:forEach var="atten" items="${attendees}">
-		<li>key: ${atten.key} value: ${atten.value.user.username}</li>
-	</c:forEach>
-	</ul> --%>
+	
 	<jsp:include page="login-popout.jsp"></jsp:include>
 </body>
 </html>
