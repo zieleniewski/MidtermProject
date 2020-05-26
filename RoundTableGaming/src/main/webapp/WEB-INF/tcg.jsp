@@ -160,8 +160,31 @@
 						</div>
 
 						<div class="team-back">
-							<span> n this game, two players Duel each other using a variety of Monster, Spell, and Trap Cards to defeat
+							<span> In this game, two players Duel each other using a variety of Monster, Spell, and Trap Cards to defeat
 							 their opponent's monsters and be the first to drop the other's Life Points to 0.<br> <br> <br>
+								<br> <br> <br> <br>
+							</span>
+						</div>
+
+					</div>
+				</div>
+				</a>
+				<!--team-6-->
+				<!--team-6-->
+				<a href="eventsByGame.do?game=Yu-Gi-Oh" >
+				<div class="col-xl-4">
+					<div class="our-team-main">
+
+						<div class="team-front">
+
+							<h1>Magic: The Gathering</h1>
+						</div>
+
+						<div class="team-back">
+							<span>Magic: The Gathering is a card game in which wizards cast spells, summon creatures, and exploit magic
+							 objects to defeat their opponents. In the game, two or more players each assemble a deck of 60 cards with
+							  varying powers. They choose these decks from a pool of some 20,000 cards created as the game 
+							  evolved.<br> <br> <br>
 								<br> <br> <br> <br>
 							</span>
 						</div>
