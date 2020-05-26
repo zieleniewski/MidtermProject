@@ -121,7 +121,6 @@
 									<input type="hidden" name="id" value="${loggedInUser.id}">
 									<input type="hidden" name="password"
 										value="${loggedInUser.password}">
-										<input type="hidden" name="address" value="${loggedInUser.address}">
 									<button type="submit" class="btn btn-primary">Save
 										changes</button>
 								</form>
