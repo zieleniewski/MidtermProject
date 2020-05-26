@@ -27,10 +27,14 @@ background-image: url("https://i.imgur.com/Tdu3I6h.jpeg");
 .table-top {
 	.z-depth-5
 }
-
+.container-fluid{
+	padding-top: 200px !important;
+	 text-align: center !important;
+}
 
 .fluid-container{
 	 align-content: center;
+	 
 }
 #navbar5{
 height: 20px;

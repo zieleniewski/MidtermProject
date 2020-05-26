@@ -20,6 +20,7 @@
 <body>
 
 
+
 		<div class="navbar">
 			<jsp:include page="navbar.jsp" />
 		</div>
@@ -28,6 +29,7 @@
 	<div class="container-fluid">
 		
 		
+<img src="img/LogoMakr_7yQwOf.png">
 
 
 
