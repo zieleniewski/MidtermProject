@@ -26,7 +26,7 @@
 			<div class="row">
 
 				<!--team-1-->
-				<div class="col-xl-4">
+				<a href="eventsByGame.do?game=Blades In The Dark" > <div class="col-xl-4">
 					<div class="our-team-main">
 
 						<div class="team-front">
@@ -48,8 +48,10 @@
 					</div>
 				</div>
 				<!--team-1-->
+				</a>
 
 				<!--team-2-->
+				<a href="eventsByGame.do?game=Call Of Cthulhu" >
 				<div class="col-xl-4">
 					<div class="our-team-main">
 
@@ -69,9 +71,11 @@
 
 					</div>
 				</div>
+				</a>
 				<!--team-2-->
 
 				<!--team-3-->
+				<a href="eventsByGame.do?game=Carbon 2185" >
 				<div class="col-xl-4">
 					<div class="our-team-main">
 
@@ -92,9 +96,11 @@
 
 					</div>
 				</div>
+				</a>
 				<!--team-3-->
 
 				<!--team-4-->
+				<a href="eventsByGame.do?game=Cyberpunk 2020" >
 				<div class="col-xl-4">
 					<div class="our-team-main">
 
@@ -115,9 +121,11 @@
 
 					</div>
 				</div>
+				</a>
 				<!--team-4-->
 
 				<!--team-5-->
+				<a href="eventsByGame.do?game=Dungeons & Dragons" >
 				<div class="col-xl-4">
 					<div class="our-team-main">
 
@@ -135,9 +143,11 @@
 
 					</div>
 				</div>
+				</a>
 				<!--team-5-->
 
 				<!--team-6-->
+				<a href="eventsByGame.do?game=Pathfinder" >
 				<div class="col-xl-4">
 					<div class="our-team-main">
 
@@ -158,8 +168,10 @@
 
 					</div>
 				</div>
+				</a>
 				<!--team-6-->
 				<!--team-6-->
+				<a href="eventsByGame.do?game=Rifts" >
 				<div class="col-xl-4">
 					<div class="our-team-main">
 
@@ -181,8 +193,10 @@
 
 					</div>
 				</div>
+				</a>
 				<!--team-6-->
 				<!--team-6-->
+				<a href="eventsByGame.do?game=Shadowrun" >
 				<div class="col-xl-4">
 					<div class="our-team-main">
 
@@ -203,8 +217,10 @@
 
 					</div>
 				</div>
+				</a>
 				<!--team-6-->
 				<!--team-6-->
+				<a href="eventsByGame.do?game=Star Wars" >
 				<div class="col-xl-4">
 					<div class="our-team-main">
 
@@ -228,8 +244,10 @@
 
 					</div>
 				</div>
+				</a>
 				<!--team-6-->
 				<!--team-6-->
+				<a href="eventsByGame.do?game=WarHammer" >
 				<div class="col-xl-4">
 					<div class="our-team-main">
 
@@ -250,6 +268,7 @@
 
 					</div>
 				</div>
+				</a>
 				<!--team-6-->
 
 
