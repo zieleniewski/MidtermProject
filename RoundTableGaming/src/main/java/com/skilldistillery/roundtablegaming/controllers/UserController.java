@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.skilldistillery.roundtablegaming.data.AddressDAO;
 import com.skilldistillery.roundtablegaming.data.UserDAO;
 import com.skilldistillery.roundtablegaming.entities.Address;
 import com.skilldistillery.roundtablegaming.entities.User;
@@ -19,6 +20,9 @@ public class UserController {
 
 	@Autowired
 	private UserDAO dao;
+	
+	@Autowired
+	private AddressDAO addrDao;
 
 	@RequestMapping(path = "registrationComplete.do", method = RequestMethod.POST)
 	public String completeUser(User user, Address address, HttpSession session) {
@@ -46,7 +50,14 @@ public class UserController {
 
 	@PostMapping("updateAccount.do")
 	public String updateAccount(User user, Address address, HttpSession session) {
-		User updatedUser = dao.updateUser(user);
+		Address updatedAddress = null;
+		if (addrDao.checkAddress(address)) {
+			updatedAddress = addrDao.createAddress(address);
+		}
+		else {
+			updatedAddress = addrDao.getAddressById(address.getId());
+		}
+		User updatedUser = dao.updateUser(user, updatedAddress);
 		session.setAttribute("loggedInUser", updatedUser);
 		return "index";
 	}
@@ -57,8 +68,8 @@ public class UserController {
 		if (currentPassword.equals(user.getPassword())) {
 			if (newPassword.equals(verifyPassword)) {
 				user.setPassword(verifyPassword);
-				User newPasswordUser = dao.updateUser(user);
-				session.setAttribute("loggedInUser", newPasswordUser);
+//				User newPasswordUser = dao.updateUser(user);
+//				session.setAttribute("loggedInUser", newPasswordUser);
 				return "account";
 			} else {
 				boolean correctPassword = false;

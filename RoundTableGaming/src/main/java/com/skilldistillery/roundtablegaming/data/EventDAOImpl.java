@@ -149,6 +149,7 @@ public class EventDAOImpl implements EventDAO {
 			event.setLastUpdate(updatedEvent.getLastUpdate());
 			event.setEventGames(updatedEvent.getEventGames());
 			event.setEventComments(updatedEvent.getEventComments());
+			event.setAddress(address);
 			em.persist(event);
 			em.flush();
 		}

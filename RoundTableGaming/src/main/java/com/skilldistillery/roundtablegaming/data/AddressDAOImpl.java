@@ -21,6 +21,7 @@ public class AddressDAOImpl implements AddressDAO {
 
 	@Override
 	public Address createAddress(Address address) {
+		address.setId(0);
 		em.persist(address);
 		em.flush();
 		return address;
@@ -99,8 +100,10 @@ public class AddressDAOImpl implements AddressDAO {
 			if (!dbAddress.getStreet1().equals(address.getStreet1())) {
 				unique = true;
 			}
-			if (!dbAddress.getStreet2().equals(address.getStreet2())) {
-				unique = true;
+			if (dbAddress.getStreet2() != null ) {
+				if (!dbAddress.getStreet2().equals(address.getStreet2())) {
+					unique = true;
+				}
 			}
 			if (!dbAddress.getCity().equals(address.getCity())) {
 				unique = true;
