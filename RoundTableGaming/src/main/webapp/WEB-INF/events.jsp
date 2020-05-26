@@ -31,6 +31,10 @@
 					<h2>
 						<th scope="col">Date</th>
 					</h2>
+
+					<th scope="col">Event Games</th>
+
+
 				</tr>
 			</thead>
 			<tbody>
@@ -39,44 +43,26 @@
 
 						<td>${event.title}</td>
 						<td>${event.eventDate }</td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>${event.description}</td>
-					</tr>
-					<tr>
-						<c:forEach var="eventGame" items="${event.eventGames}">
-							<tr>
-								<td>${eventGame.title } </td>
-							</tr>
-							<tr>
-								<td>${eventGame.description }</td>
-							</tr>
-							<tr>
-								<td>Signed up= ${eventGame.players.size()} / ${eventGame.maxPlayers }</td>
-							</tr>
-						</c:forEach>
-					</tr>
+						<td><c:forEach var="event" items="${events}">
+								<c:forEach var="eventGames" items="${event.eventGames}">
+							${eventGames.game.title }<br>
+								</c:forEach>
+							</c:forEach>
 				</c:forEach>
+				</td>
+				<tr>
+				<tr>
+
+				</tr>
 			</tbody>
 		</table>
-	</div>
-	
-	<%-- <c:forEach var="event" items="${events }">
-	<script type="text/javascript">
-	var zipCodes = zipCodes + '&' + ${event.address.zipCode};
-	
-	colsole.log(zipCodes);
-	</script>
-	
-	</c:forEach>
-	<!-- <script type="text/javascript"> -->
-	<img
-		src="https://maps.googleapis.com/maps/api/staticmap?center=us&zoom=3&size=400x400&markers=size:medium%7Ccolor:red%7CDelta+${zipCodes}&key=AIzaSyBGkwnAWsK1Xff-R9G3nurccb9Wxt3d8R8">
 
-<!-- </script> --> --%>
+	<%-- <img
+		src="https://maps.googleapis.com/maps/api/staticmap?center=us&zoom=3&size=400x400&markers=size:medium%7Ccolor:red%7CDelta+${zipCodes}&key=AIzaSyBGkwnAWsK1Xff-R9G3nurccb9Wxt3d8R8">
+ --%>
 
 	<jsp:include page="login-popout.jsp"></jsp:include>
+	</div>
 </body>
 </html>
 

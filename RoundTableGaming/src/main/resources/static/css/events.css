@@ -1,6 +1,8 @@
 @charset "UTF-8";
 
-
+body {
+	background-image: url("https://fsb.zobj.net/crop.php?r=Da28LuD1vZs_GCsJAd1pj3xb-OUpy8edBGZQbB2__winaS_i6kfcqmr3rIIKZnrhAVAKVWZ0mS6ZCDHqomJkvin4abt39NhKyxoLrxPLLXENi5E6EO7Ky0beDwnDqF1KyPj9dXKRPYdpVURP");
+}
 
 .table {
 	margin-top: 20px;
