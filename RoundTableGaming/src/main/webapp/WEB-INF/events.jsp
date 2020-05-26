@@ -44,7 +44,7 @@
 				<c:forEach var="event" items="${events}">
 					<tr>
 
-						<td>${event.title}<p>${event.address.city}, ${event.address.state}</p></td>
+						<td><a href="singleEvent.do?id=${event.id}">${event.title}</a><p>${event.address.city}, ${event.address.state} </p></td>
 						<td>${event.eventDate }</td>
 						<td>
 								<c:forEach var="eventGames" items="${event.eventGames}">
@@ -55,8 +55,7 @@
 							
 							
 							
-							
-							${event.address.zipCode}</td>
+							</td>
 				</c:forEach>
 				
 				<tr>
@@ -66,7 +65,7 @@
 			</tbody>
 		</table>
 
-<img width="100%" src="https://maps.googleapis.com/maps/api/staticmap?center=us&zoom=3&size=800x800&markers=80401|75474&key=AIzaSyBGkwnAWsK1Xff-R9G3nurccb9Wxt3d8R8">
+<img width="100%" src="https://maps.googleapis.com/maps/api/staticmap?center=us&zoom=3&size=800x800&markers=${zipCodes}&key=AIzaSyBGkwnAWsK1Xff-R9G3nurccb9Wxt3d8R8">
 	
 	
  
