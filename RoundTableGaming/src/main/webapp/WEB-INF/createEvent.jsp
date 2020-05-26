@@ -22,14 +22,14 @@
 <br>
 <br>
 <br>
-<div class="main-body">
+<div class="card w-75 mx-auto">
 	
-	<div class="container-register container">
-
+	<div class="card-body text-center">
+<div class="card-header">
 		<h2>Create New Event</h2>
 		<form class="form" role="form" action="createEvent.do" method="POST">
 
-
+</div>
 			<div class="form-group">
 
 				<div class="col-md-6 mx-auto">
