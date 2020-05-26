@@ -171,7 +171,7 @@
 				</a>
 				<!--team-6-->
 				<!--team-6-->
-				<a href="eventsByGame.do?game=Yu-Gi-Oh" >
+				<a href="eventsByGame.do?game=Magic: The Gathering" >
 				<div class="col-xl-4">
 					<div class="our-team-main">
 
