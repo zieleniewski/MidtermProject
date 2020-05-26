@@ -204,7 +204,7 @@
 
 	<jsp:include page="login-popout.jsp"></jsp:include>
 	</div>
-
+</div>
 
 
 
