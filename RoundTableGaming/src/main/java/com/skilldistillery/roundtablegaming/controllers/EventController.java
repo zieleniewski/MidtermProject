@@ -201,6 +201,9 @@ public class EventController {
 				return DateTimeFormatter.ofPattern("HH:MM").format((LocalDate) getValue());
 			}
 		});
-	}
 
 }
+	}
+
+
+

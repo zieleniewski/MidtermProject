@@ -16,6 +16,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 import com.sun.istack.NotNull;
 
 @Entity
@@ -42,9 +45,11 @@ public class Event {
 	private Integer capacity;
 	@Column(name = "img_url")
 	private String imgURL;
+	@CreationTimestamp
 	@Column(name = "create_date")
 	private LocalDateTime createDate;
 	@Column(name = "last_update")
+	@UpdateTimestamp
 	private LocalDateTime lastUpdate;
 	@NotNull
 	private boolean enabled;

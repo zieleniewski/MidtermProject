@@ -35,7 +35,7 @@
 
 				<div class="col-md-6 mx-auto">
 					<input type="text" id="eventName" placeholder="Event Name"
-						class="form-control" autofocus name="eventName">
+						class="form-control" autofocus name="title">
 				</div>
 			</div>
 			<!-- <!-- put drop down of games here with five rows  -->
@@ -43,7 +43,7 @@
 
 			<div class="form-group">
 				<div class="col-md-6 mx-auto">
-					<select class="custom-select" id="inputGroupSelect01">
+					<select class="custom-select" id="inputGroupSelect01" name="eventGames.game.id">
 						<option selected>Select Game Title</option>
 						<c:forEach var="games" items="${games}">
 							<option value="${games.id }">${games.title}</option>
@@ -54,7 +54,7 @@
 			
 			<div class="form-group">
 				<div class="col-md-6 mx-auto">
-					<select class="custom-select" id="inputGroupSelect02">
+					<select class="custom-select" id="inputGroupSelect02" name="eventGames.game.id">
 						<option selected>Select Game Title</option>
 						<c:forEach var="games" items="${games}">
 							<option value="${games.id }">${games.title}</option>
@@ -66,7 +66,7 @@
 			<div class="form-group">
 				<div class="col-md-6 mx-auto">
 
-					<select class="custom-select" id="inputGroupSelect03">
+					<select class="custom-select" id="inputGroupSelect03" name="eventGames.game.id">
 						<option selected>Select Game Title</option>
 						<c:forEach var="games" items="${games}">
 							<option value="${games.id }">${games.title}</option>
@@ -78,7 +78,7 @@
 			<div class="form-group">
 				<div class="col-md-6 mx-auto">
 
-					<select class="custom-select" id="inputGroupSelect04">
+					<select class="custom-select" id="inputGroupSelect04" name="eventGames.game.id">
 						<option selected>Select Game Title</option>
 						<c:forEach var="games" items="${games}">
 							<option value="${games.id }">${games.title}</option>
@@ -89,7 +89,7 @@
 
 			<div class="form-group">
 				<div class="col-md-6 mx-auto">
-					<select class="custom-select" id="inputGroupSelect05">
+					<select class="custom-select" id="inputGroupSelect05" name="eventGames.game.id">
 						<option selected>Select Game Title</option>
 						<c:forEach var="games" items="${games}">
 							<option value="${games.id }">${games.title}</option>
@@ -112,54 +112,62 @@
 			<div class="form-group">
 				<div class="col-md-6 mx-auto">
 					<input type="text" id="maxPlayers" placeholder="Max Players"
-						class="form-control" name="maxPlayers"> <span
+						class="form-control" name="capacity"> <span
 						class="help-block"> </span>
 				</div>
 			</div>
 			<div class="form-group">
 				<div class="col-md-6 mx-auto">
 					<input type="text" id="street1" placeholder="Address"
-						class="form-control" name="street1">
+						class="form-control" name="address.street1">
 				</div>
 			</div>
 			<div class="form-group">				
 				<div class="col-md-6 mx-auto">
 					<input type="text" id="street2" placeholder="Address"
-						class="form-control" name="street2">
+						class="form-control" name="address.street2">
 				</div>
 			</div>
 			<div class="form-group">
 				
 				<div class="col-md-6 mx-auto">
 					<input type="text" id="city" placeholder="City"
-						class="form-control" name="city">
+						class="form-control" name="address.city">
 				</div>
 			</div>
 			<div class="form-group">
 				
 				<div class="col-md-6 mx-auto">
 					<input type="text" id="state" placeholder="State"
-						class="form-control" name="state">
+						class="form-control" name="address.state">
 				</div>
 			</div>
 			<div class="form-group">
 				
 				<div class="col-md-6 mx-auto">
 					<input type="text" id="zipCode" placeholder="Zip Code"
-						class="form-control" name="zipCode">
+						class="form-control" name="address.zipCode">
 				</div>
 			</div>
 			
+			<div class="form-group">
 					<div class="col-md-6 mx-auto">
-			
-			<label for="eventTime">Date and time for event - </label>
+			<label for="eventTime">Date of Event - </label>
 
-			<input type="datetime-local" id="meeting-time" name="meeting-time"
-				value="" min="2018-06-07T00:00"
-				max="2025-06-14T00:00">
-	
+
+			<input type="date" id="meeting-date" name="eventDate"
+				value="">
 	</div>
-			
+	</div>
+	
+	<div class="form-group">
+					<div class="col-md-6 mx-auto">
+			<label for="eventTime">Time of Event - </label>
+			<input type="time" id="meeting-time" name="startTime"
+				value="">
+				</div>
+	</div>
+		
 
 
 
