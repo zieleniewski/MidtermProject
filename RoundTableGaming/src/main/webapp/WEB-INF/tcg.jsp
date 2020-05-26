@@ -26,7 +26,6 @@
 			<div class="row">
 
 				<!--team-1-->
-				<a href="eventsByGame.do?game=Final Fantasy" >
 				<div class="col-xl-4">
 					<div class="our-team-main">
 
@@ -36,6 +35,7 @@
 
 						</div>
 
+				<a href="eventsByGame.do?game=Final Fantasy" >
 						<div class="team-back">
 							<span> Final Fantasy trading card game is a trading card game by Square Enix and Hobby Japan.
 							 Each player uses a deck of 50 cards, with no more than 3 copies of the same card.
@@ -45,14 +45,13 @@
 								<br> <br> <br>
 							</span>
 						</div>
+				</a>
 
 					</div>
 				</div>
-				</a>
 				<!--team-1-->
 
 				<!--team-2-->
-				<a href="eventsByGame.do?game=KeyForge" >
 				<div class="col-xl-4">
 					<div class="our-team-main">
 
@@ -61,21 +60,21 @@
 							<h1>KeyForge</h1>
 						</div>
 
-						<div class="team-back">
+				<a href="eventsByGame.do?game=KeyForge" >
+						<div class="team-back"><span>
 							Enter a world where anything is possible in KeyForge! In the center of the universe hangs the Crucible,
 							 an artificial world built from the pieces of countless planets. Here, in the world’s first Unique Deck Game,
 							  created by legendary designer Richard Garfield, two players step into the roles of mighty Archons,
 							   racing to forge keys that unlock the Crucible’s hidden Vaults.<br> <br> <br> <br> <br>
-							<br> <br>
+							<br> <br></span>
 						</div>
+				</a>
 
 					</div>
 				</div>
-				</a>
 				<!--team-2-->
 
 				<!--team-3-->
-				<a href="eventsByGame.do?game=Legend of theFive Rings" >
 				<div class="col-xl-4">
 					<div class="our-team-main">
 
@@ -84,6 +83,7 @@
 							<h1>Legend of the Five Rings</h1>
 						</div>
 
+				<a href="eventsByGame.do?game=Legend of theFive Rings" >
 						<div class="team-back">
 							<span> Enter the vibrant world of Rokugan with Legend of the Five Rings: The Card Game, a Living Card Game® of
 							 honor and conflict for two players! Drawing on the legacy of AEG’s original Legend of the Five Rings 
@@ -93,14 +93,13 @@
 								<br>​
 							</span>
 						</div>
+				</a>
 
 					</div>
 				</div>
-				</a>
 				<!--team-3-->
 
 				<!--team-4-->
-				<a href="eventsByGame.do?game=Pokemon" >
 				<div class="col-xl-4">
 					<div class="our-team-main">
 
@@ -109,6 +108,7 @@
 							<h1>Pokemon</h1>
 						</div>
 
+				<a href="eventsByGame.do?game=Pokemon" >
 						<div class="team-back">
 							<span>  The Pokémon Trading Card Game, often abbreviated as Pokémon TCG or just TCG, is a tabletop game that
 							 involves collecting, trading and playing with Pokémon themed playing cards. It has its own set of rules but
@@ -119,14 +119,13 @@
 								<br> <br> <br> <br>
 							</span>
 						</div>
+				</a>
 
 					</div>
 				</div>
-				</a>
 				<!--team-4-->
 
 				<!--team-5-->
-				<a href="eventsByGame.do?game=Star Wars Trading Card Game" >
 				<div class="col-xl-4">
 					<div class="our-team-main">
 
@@ -135,6 +134,7 @@
 							<h1>Star Wars Trading Card Game</h1>
 						</div>
 
+				<a href="eventsByGame.do?game=Star Wars Trading Card Game" >
 						<div class="team-back">
 							<span> The Star Wars: TCG focuses on gaining control of in-game arenas. In this two-player game, each player
 							 controls units which battle in the arenas. The main way to win is to take control of two of the three arenas.
@@ -143,14 +143,13 @@
 								<br> <br> <br> <br> <br>
 							</span>
 						</div>
+				</a>
 
 					</div>
 				</div>
-				</a>
 				<!--team-5-->
 
 				<!--team-6-->
-				<a href="eventsByGame.do?game=Yu-Gi-Oh" >
 				<div class="col-xl-4">
 					<div class="our-team-main">
 
@@ -159,19 +158,19 @@
 							<h1>Yu-Gi-Oh</h1>
 						</div>
 
+				<a href="eventsByGame.do?game=Yu-Gi-Oh" >
 						<div class="team-back">
 							<span> In this game, two players Duel each other using a variety of Monster, Spell, and Trap Cards to defeat
 							 their opponent's monsters and be the first to drop the other's Life Points to 0.<br> <br> <br>
 								<br> <br> <br> <br>
 							</span>
 						</div>
+				</a>
 
 					</div>
 				</div>
-				</a>
 				<!--team-6-->
 				<!--team-6-->
-				<a href="eventsByGame.do?game=Yu-Gi-Oh" >
 				<div class="col-xl-4">
 					<div class="our-team-main">
 
@@ -180,6 +179,7 @@
 							<h1>Magic: The Gathering</h1>
 						</div>
 
+				<a href="eventsByGame.do?game=Yu-Gi-Oh" >
 						<div class="team-back">
 							<span>Magic: The Gathering is a card game in which wizards cast spells, summon creatures, and exploit magic
 							 objects to defeat their opponents. In the game, two or more players each assemble a deck of 60 cards with
@@ -188,12 +188,13 @@
 								<br> <br> <br> <br>
 							</span>
 						</div>
+				</a>
 
 					</div>
 				</div>
-				</a>
 				<!--team-6-->
 				
+		</div>
 
 			<div class="game-list">
 				<table class="table table-hover">
@@ -235,7 +236,6 @@
 
 
 		</div>  --%>
-		</div>
 
 	<jsp:include page="login-popout.jsp"></jsp:include>
 	</div>

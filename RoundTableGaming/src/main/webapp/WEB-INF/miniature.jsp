@@ -26,7 +26,6 @@
 			<div class="row">
 
 				<!--team-1-->
-				<a href="eventsByGame.do?game=A Song of Ice and Fire" >
 				<div class="col-xl-4">
 					<div class="our-team-main">
 
@@ -36,6 +35,7 @@
 
 						</div>
 
+				<a href="eventsByGame.do?game=A Song of Ice and Fire" >
 						<div class="team-back">
 							<span> A Song of Ice & Fire: Tabletop Miniatures Game is a competitive miniatures game for two or more 
 							players. Each player controls one of the Great Houses of Westeros, commanding battlefield units, recruiting 
@@ -45,13 +45,12 @@
 							</span>
 						</div>
 
+				</a>
 					</div>
 				</div>
-				</a>
 				<!--team-1-->
 
 				<!--team-2-->
-				<a href="eventsByGame.do?game=Guild Ball" >
 				<div class="col-xl-4">
 					<div class="our-team-main">
 
@@ -60,6 +59,7 @@
 							<h1>Guild Ball</h1>
 						</div>
 
+				<a href="eventsByGame.do?game=Guild Ball" >
 						<div class="team-back">
 							 Guild Ball is a fast-paced mob football skirmish game that takes place in the Empire of the Free Cities.
 							   Victory comes with carefully constructed plays and counter plays with emphasis on positioning and resource 
@@ -68,13 +68,12 @@
 							<br> <br>
 						</div>
 
+				</a>
 					</div>
 				</div>
-				</a>
 				<!--team-2-->
 
 				<!--team-3-->
-				<a href="eventsByGame.do?game=Malifaux" >
 				<div class="col-xl-4">
 					<div class="our-team-main">
 
@@ -83,6 +82,7 @@
 							<h1>Malifaux</h1>
 						</div>
 
+				<a href="eventsByGame.do?game=Malifaux" >
 						<div class="team-back">
 							<span> Welcome to Malifaux, a twisted mirror of an alternate Earth in the 1900s; a world of gothic horror,
 							 Victorian structures, steampunk constructs, and wild west gunslingers. Rife with undead amalgamations, 
@@ -92,14 +92,13 @@
 								<br>​
 							</span>
 						</div>
+				</a>
 
 					</div>
 				</div>
-				</a>
 				<!--team-3-->
 
 				<!--team-4-->
-				<a href="eventsByGame.do?game=Monsterpoclypse" >
 				<div class="col-xl-4">
 					<div class="our-team-main">
 
@@ -108,20 +107,20 @@
 							<h1>Monsterpocalypse</h1>
 						</div>
 
+				<a href="eventsByGame.do?game=Monsterpoclypse" >
 						<div class="team-back">
 							<span> Monsterpocalypse is a fast-moving, action-packed battle miniatures game played with detailed hobby
 						 miniatures that players assemble and paint to portray the most fearsome giant monsters on earth!<br> <br> <br>
 								<br> <br> <br> <br>
 							</span>
 						</div>
+				</a>
 
 					</div>
 				</div>
-				</a>
 				<!--team-4-->
 
 				<!--team-5-->
-				<a href="eventsByGame.do?game=Star Wars: Legion" >
 				<div class="col-xl-4">
 					<div class="our-team-main">
 
@@ -130,6 +129,7 @@
 							<h1>Star Wars: Legion</h1>
 						</div>
 
+				<a href="eventsByGame.do?game=Star Wars: Legion" >
 						<div class="team-back">
 							<span> Warfare is an inescapable part of the Star Wars universe, from the blow dealt to the Rebel Alliance
 							 in the Battle of Hoth to a few Rebel strike teams taking on a legion of stormtroopers stationed on Endor. 
@@ -140,13 +140,12 @@
 							</span>
 						</div>
 
+				</a>
 					</div>
 				</div>
-				</a>
 				<!--team-5-->
 
 				<!--team-6-->
-				<a href="eventsByGame.do?game=Pathfinder" >
 				<div class="col-xl-4">
 					<div class="our-team-main">
 
@@ -154,6 +153,7 @@
 
 							<h1>Pathfinder</h1>
 						</div>
+				<a href="eventsByGame.do?game=Pathfinder" >
 
 						<div class="team-back">
 							<span> The Pathfinder Roleplaying Game puts you in the
@@ -165,12 +165,11 @@
 							</span>
 						</div>
 
+				</a>
 					</div>
 				</div>
-				</a>
 				<!--team-6-->
 				<!--team-6-->
-				<a href="eventsByGame.do?game=The Walking Dead: All Out War" >
 				<div class="col-xl-4">
 					<div class="our-team-main">
 
@@ -178,6 +177,7 @@
 
 							<h1>The Walking Dead: All Out War</h1>
 						</div>
+				<a href="eventsByGame.do?game=The Walking Dead: All Out War" >
 
 						<div class="team-back">
 							<span> All Out War is a game of fast-paced, head-to-head skirmishes in the world of the Walking Dead.
@@ -187,12 +187,11 @@
 							</span>
 						</div>
 
+				</a>
 					</div>
 				</div>
-				</a>
 				<!--team-6-->
 				<!--team-6-->
-				<a href="eventsByGame.do?game=WarHammer 40K/Age of Sigmar" >
 				<div class="col-xl-4">
 					<div class="our-team-main">
 
@@ -200,6 +199,7 @@
 
 							<h1>WarHammer 40K/Age of Sigmar</h1>
 						</div>
+				<a href="eventsByGame.do?game=WarHammer 40K/Age of Sigmar" >
 
 						<div class="team-back">
 							<span> Warhammer 40,000 is set in the distant future, where a stagnant human civilization is beset by 
@@ -209,12 +209,11 @@
 							</span>
 						</div>
 
+				</a>
 					</div>
 				</div>
-				</a>
 				<!--team-6-->
 				<!--team-6-->
-				<a href="eventsByGame.do?game=WarMachine/Hordes" >
 				<div class="col-xl-4">
 					<div class="our-team-main">
 
@@ -222,6 +221,7 @@
 
 							<h1>WarMachine/Hordes</h1>
 						</div>
+				<a href="eventsByGame.do?game=WarMachine/Hordes" >
 
 						<div class="team-back">
 							<span> Warmachine is a tabletop wargame set in a semi-industralised fantasy world. A player's army is
@@ -237,12 +237,11 @@
 							</span>
 						</div>
 
+				</a>
 					</div>
 				</div>
-				</a>
 				<!--team-6-->
 				<!--team-6-->
-				<a href="eventsByGame.do?game=Wings of Glory" >
 				<div class="col-xl-4">
 					<div class="our-team-main">
 
@@ -250,6 +249,7 @@
 
 							<h1>Wings of Glory</h1>
 						</div>
+				<a href="eventsByGame.do?game=Wings of Glory" >
 
 						<div class="team-back">
 							<span> Year 1917. All across Europe, while men face a last-ditch battle in the mud of the trenches,
@@ -261,11 +261,10 @@
 							</span>
 						</div>
 
+				</a>
 					</div>
 				</div>
-				</a>
 				<!--team-6-->
-				<a href="eventsByGame.do?game=X-Wing" >
 				<div class="col-xl-4">
 					<div class="our-team-main">
 
@@ -273,18 +272,20 @@
 
 							<h1> X-Wing</h1>
 						</div>
+				<a href="eventsByGame.do?game=X-Wing">
 
-						<div class="team-back">
-							<span> Star Wars: X-Wing Miniatures Game is a tactical ship-to-ship combat game in which players take 
-							control of powerful Rebel X-wings and nimble Imperial TIE fighters, facing them against each other in 
-							fast-paced space combat. <br> <br> <br> <br>
-								<br> <br> <br>
-							</span>
-						</div>
-
+					<div class="team-back">
+						<span> Star Wars: X-Wing Miniatures Game is a tactical
+							ship-to-ship combat game in which players take control of
+							powerful Rebel X-wings and nimble Imperial TIE fighters, facing
+							them against each other in fast-paced space combat. <br> <br>
+							<br> <br> <br> <br> <br>
+						</span>
 					</div>
-				</div>
 				</a>
+
+			</div>
+				</div>
 				<!--team-6-->
 
 

@@ -34,8 +34,8 @@
 							<h1>Blades In The Dark</h1>
 
 						</div>
-							<div class="team-back">
 						<a href="eventsByGame.do?game=Blades In The Dark">
+							<div class="team-back">
 								<span> Blades in the Dark is a tabletop role-playing game
 									about a crew of daring scoundrels seeking their fortunes on the
 									haunted streets of an industrial-fantasy city. There are
@@ -43,8 +43,8 @@
 									skirmishes, and, above all, riches to be had.<br> <br>
 									<br> <br> <br> <br> <br>
 								</span>
-				</a>
 							</div>
+				</a>
 					</div>
 				</div>
 				<!--team-1-->
@@ -58,8 +58,8 @@
 
 							<h1>Call Of Cthulhu</h1>
 						</div>
-							<div class="team-back">
 						<a href="eventsByGame.do?game=Call Of Cthulhu">
+							<div class="team-back">
 						<span>
 								CALL OF CTHULHU is Chaosium's classic roleplaying game of
 								Lovecraftian horror in which ordinary people are confronted by
@@ -67,8 +67,8 @@
 								CTHULHU uses Chaosium's Basic Roleplaying System, easy to learn
 								and quick to play.<br> <br> <br> <br> <br>
 								<br> <br></span>
-				</a>
 							</div>
+				</a>
 					</div>
 				</div>
 				<!--team-2-->
@@ -82,8 +82,8 @@
 
 							<h1>Carbon 2185</h1>
 						</div>
-							<div class="team-back">
 						<a href="eventsByGame.do?game=Carbon 2185">
+							<div class="team-back">
 								<span> Carbon 2185 is a cyberpunk RPG created by Robert
 									Marriner-Dodds released in 2019. Carbon 2185 is all about
 									telling stories in a dark dystopian future influenced by
@@ -91,8 +91,8 @@
 									Ex. <br> <br> <br> <br> <br> <br>
 									<br>​
 								</span>
-				</a>
 							</div>
+				</a>
 					</div>
 				</div>
 				<!--team-3-->
@@ -106,8 +106,8 @@
 
 							<h1>Cyberpunk 2020</h1>
 						</div>
-							<div class="team-back">
 						<a href="eventsByGame.do?game=Cyberpunk 2020">
+							<div class="team-back">
 								<span> WELCOME TO THE DARK FUTURE The Corporations
 									control the world from their skyscraper fortresses, enforcing
 									their rule with armies of cyborg assassins. On the Street,
@@ -115,8 +115,8 @@
 									looting.All while the rest of the world is a perpetual party.<br>
 									<br> <br> <br> <br> <br> <br>
 								</span>
-				</a>
 							</div>
+				</a>
 					</div>
 				</div>
 				<!--team-4-->
@@ -130,14 +130,14 @@
 
 							<h1>Dungeons & Dragons</h1>
 						</div>
-							<div class="team-back">
 						<a href="eventsByGame.do?game=Dungeons & Dragons">
+							<div class="team-back">
 								<span> It's Dungeons & Dragons, nuff said.<br> <br>
 									<br> <br> <br> <br> <br> <br> <br>
 									<br> <br> <br> <br> <br>
 								</span>
-				</a>
 							</div>
+				</a>
 					</div>
 				</div>
 				<!--team-5-->
@@ -151,8 +151,8 @@
 
 							<h1>Pathfinder</h1>
 						</div>
-							<div class="team-back">
 						<a href="eventsByGame.do?game=Pathfinder">
+							<div class="team-back">
 								<span> The Pathfinder Roleplaying Game puts you in the
 									role of a brave adventurer fighting to survive in a world beset
 									by magic and evil. Will you cut your way through monster-filled
@@ -160,8 +160,8 @@
 									famous hero laden with fabulous treasure?<br> <br> <br>
 									<br> <br> <br> <br>
 								</span>
-				</a>
 							</div>
+				</a>
 					</div>
 				</div>
 				<!--team-6-->
@@ -174,8 +174,8 @@
 
 							<h1>Rifts</h1>
 						</div>
-							<div class="team-back">
 						<a href="eventsByGame.do?game=Rifts">
+							<div class="team-back">
 								<span> Rifts® is a multi-genre role-playing game that
 									captures the imagination unlike any other. Elements of magic,
 									horror, and the supernatural co-exist with science, high
@@ -184,8 +184,8 @@
 									are truly limited only by their imaginations! <br> <br>
 									<br> <br> <br> <br> <br>
 								</span>
-				</a>
 							</div>
+				</a>
 					</div>
 				</div>
 				<!--team-6-->
@@ -198,8 +198,8 @@
 
 							<h1>Shadowrun</h1>
 						</div>
-							<div class="team-back">
 						<a href="eventsByGame.do?game=Shadowrun">
+							<div class="team-back">
 								<span> Shadowrun is a science fantasy tabletop
 									role-playing game set in a near-future fictional universe in
 									which cybernetics, magic and fantasy creatures co-exist. It
@@ -208,8 +208,8 @@
 									fiction.<br> <br> <br> <br> <br> <br>
 									<br>
 								</span>
-				</a>
 							</div>
+				</a>
 					</div>
 				</div>
 				<!--team-6-->
@@ -222,8 +222,8 @@
 
 							<h1>Star Wars</h1>
 						</div>
-							<div class="team-back">
 						<a href="eventsByGame.do?game=Star Wars">
+							<div class="team-back">
 								<span> The Star Wars Roleplaying Game is a tabletop
 									role-playing game set in the Star Wars universe first published
 									by Fantasy Flight Games in August 2012. <br> <br> <br>
@@ -234,8 +234,8 @@
 
 
 								</span>
-				</a>
 							</div>
+				</a>
 					</div>
 				</div>
 				<!--team-6-->
@@ -248,8 +248,8 @@
 
 							<h1>WarHammer</h1>
 						</div>
-							<div class="team-back">
 						<a href="eventsByGame.do?game=WarHammer">
+							<div class="team-back">
 								<span> Warhammer Fantasy Roleplay is a new, exciting way
 									to experience the popular Warhammer Fantasy setting. It is a
 									grim world, constantly at war. As a hero, you will take up
@@ -257,8 +257,8 @@
 									of enemies terrifying to behold. <br> <br> <br>
 									<br> <br> <br> <br>
 								</span>
-				</a>
 							</div>
+				</a>
 					</div>
 				</div>
 				<!--team-6-->
