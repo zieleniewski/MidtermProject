@@ -41,14 +41,14 @@
 
 					</div>
 					<div class="miniature col-sm">
-						Trading Card <a href="miniature.do"><img
+						Trading Card <a href="tcg.do"><img
 							class="img-responsive"
 							src="https://upload.wikimedia.org/wikipedia/en/2/24/CCG_card_back_image_assortment.jpg"
 							style="height: 200px; width: 100%; display: inline-block"></a>
 
 					</div>
 					<div class="col-sm ">
-						Mini <a href="tcg.do"><img class="img-responsive"
+						Mini <a href="miniature.do"><img class="img-responsive"
 							src="https://cf.geekdo-images.com/imagepage/img/z0AI_-IWdbGh870R6FOOx6Ep08o=/fit-in/900x600/filters:no_upscale()/pic5336547.jpg"
 							style="height: 200px;; width: 100%; display: inline-block"></a>
 
