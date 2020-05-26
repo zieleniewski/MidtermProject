@@ -6,7 +6,6 @@ import java.util.List;
 import com.skilldistillery.roundtablegaming.entities.Address;
 import com.skilldistillery.roundtablegaming.entities.Attendee;
 import com.skilldistillery.roundtablegaming.entities.Event;
-import com.skilldistillery.roundtablegaming.entities.Game;
 
 public interface EventDAO {
 
