@@ -48,9 +48,9 @@
 						</c:when>
 						<c:otherwise>
 							<div class="list-group list-group-flush" role="tablist">
-								<a class="list-group-item list-group-item-action active"
+								<a class="list-group-item list-group-item-action"
 									data-toggle="list" href="#account" role="tab"> Account </a> <a
-									class="list-group-item list-group-item-action"
+									class="list-group-item list-group-item-action active"
 									data-toggle="list" href="#password" role="tab"> Password </a> <a
 									class="list-group-item list-group-item-action"
 									data-toggle="list" href="#upcoming-games" role="tab">
@@ -67,7 +67,7 @@
 
 			<div class="col-md-7 col-xl-8">
 				<div class="tab-content">
-					<div class="tab-pane fade show active" id="account" role="tabpanel">
+					<div class="tab-pane fade" id="account" role="tabpanel">
 
 						<div class="card">
 							<div class="card-header">
@@ -75,7 +75,7 @@
 								<h5 class="card-title mb-0">Public info</h5>
 							</div>
 							<div class="card-body">
-								<form action="updateAccount.do" method="post">
+								<form action="updateUsername.do" method="post">
 									<div class="row">
 										<div class="col-md-8">
 											<div class="form-group">
@@ -121,6 +121,7 @@
 									<input type="hidden" name="id" value="${loggedInUser.id}">
 									<input type="hidden" name="password"
 										value="${loggedInUser.password}">
+										<input type="hidden" name="address" value="${loggedInUser.address}">
 									<button type="submit" class="btn btn-primary">Save
 										changes</button>
 								</form>
@@ -246,8 +247,8 @@
 							</div>
 						</div>
 
-					</div>
-					<div class="tab-pane fade" id="password" role="tabpanel">
+					</div>					
+					<div class="tab-pane fade show active" id="password" role="tabpanel">
 						<div class="card">
 							<div class="card-body">
 								<h5 class="card-title">Password</h5>
