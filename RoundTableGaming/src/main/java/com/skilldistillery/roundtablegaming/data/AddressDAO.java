@@ -16,6 +16,8 @@ public interface AddressDAO {
 	
 	public List<Address> getAllAddresses();
 	
+	public List<Address> getAddressesForAllEvents();
+	
 	public Address getAddressById(int id);
 	
 	public Address getAddressByEventId(int id);

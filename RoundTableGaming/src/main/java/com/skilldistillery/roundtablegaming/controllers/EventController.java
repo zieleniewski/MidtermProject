@@ -37,6 +37,7 @@ public class EventController {
 	@GetMapping("getAllEvents.do")
 	public String getAllEvents(Model model) {
 		List<Event> events = dao.getAllEvents();
+		
 		model.addAttribute("events", events);
 		return "events";
 	}
@@ -115,14 +116,12 @@ public class EventController {
 		return "#";
 	}
 	
-
 	@GetMapping("eventsByGame.do")
 	public String eventsByGame(@RequestParam String game, Model model) {
 		List<Event> eventsByGame = dao.getEventsByGame(game); 
 		model.addAttribute("eventsOfGame",eventsByGame);
 		return "gameEvents";
 	}
-	
 
 	/*
 	 * Generic Events Mapping so we can test events.jsp without having an action
