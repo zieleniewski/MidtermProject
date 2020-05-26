@@ -16,6 +16,7 @@
 <body>
 	<div class="navbar">
 		<jsp:include page="navbar.jsp" />
+			<jsp:include page="login-popout.jsp"></jsp:include>
 		<br>
 	</div>
 
@@ -76,6 +77,9 @@
 			<br>
 		</div>
 	</div>
+	<c:choose>
+	<c:when test="${not empty loggedInUser}">
+	
 	<div class="detailBox">
     <div class="titleBox">
       <label>Event Comments</label>
@@ -140,6 +144,8 @@
         </form>
     </div>
 </div>
+</c:when>
+</c:choose>
 	
 </body>
 </html>
