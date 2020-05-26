@@ -13,7 +13,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.skilldistillery.roundtablegaming.data.AddressDAO;
 import com.skilldistillery.roundtablegaming.data.EventDAO;
@@ -130,12 +129,11 @@ public class EventController {
 	 * 
 	 * Not too sure how to do it, so I'm testing this out.
 	 */
-	
-	@GetMapping("events.do")
-	public ModelAndView goToEvents() {
-		ModelAndView mav= new ModelAndView();
-		mav.setViewName("events.jsp");
-		return mav;
+	@GetMapping("/events")
+	public String goToEvents(Model model) {
+		List<Event> events = dao.getAllEvents();
+		model.addAttribute("events", events);
+		return "events";
 	}
 	
 	/*
