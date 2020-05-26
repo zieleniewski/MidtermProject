@@ -7,6 +7,7 @@ body, html {
 		background-repeat: no-repeat; 
 		background-size: cover; 
 		background-attachment: fixed;
+
 	
 }
 a span{
@@ -100,7 +101,7 @@ h1 {
 	min-width: 400px;
 	width: 100%;
 	height: auto;
-	min-height: 175px;
+	min-height: 200px;
 	position: relative;
 	z-index: 1000;
 	background: black;
@@ -123,7 +124,7 @@ h1 {
 	
 border-radius: 10px;
 	text-align: center;
-    background: black;
+background: black;
 	 opacity: 0.85;
 
 	border-width: 0px;
@@ -133,12 +134,19 @@ border-radius: 10px;
 	border: 0px !important;
 	color: white;
 	font-size: 25px;
+	font-family: "Courier New"
 }
 .game-list {
 	margin-left: 40px;
 	margin-right: 40px;
 }
+h1 {
+	font-family: "Courier New"
+}
 
+.team-back{
+	font-family: "Courier New"
+}
 
 
 
