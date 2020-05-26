@@ -2,6 +2,10 @@
 .main-body {
  text-align:center;
 }
+.btn btn-primary btn-block {
+	margin-top: 40px;
+}
+
 
 select { width: 400px; text-align-last:center; }
 ::-webkit-input-placeholder {

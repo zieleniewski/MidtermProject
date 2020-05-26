@@ -1,6 +1,7 @@
 @charset "UTF-8";
 
-#map-canvas {
-    width: 400px;
-    height: 400px;
+
+
+.table {
+	margin-top: 20px;
 }
