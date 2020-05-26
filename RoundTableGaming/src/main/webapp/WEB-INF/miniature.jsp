@@ -26,6 +26,7 @@
 			<div class="row">
 
 				<!--team-1-->
+				<a href="eventsByGame.do?game=A Song of Ice and Fire" >
 				<div class="col-xl-4">
 					<div class="our-team-main">
 
@@ -46,9 +47,11 @@
 
 					</div>
 				</div>
+				</a>
 				<!--team-1-->
 
 				<!--team-2-->
+				<a href="eventsByGame.do?game=Guild Ball" >
 				<div class="col-xl-4">
 					<div class="our-team-main">
 
@@ -67,9 +70,11 @@
 
 					</div>
 				</div>
+				</a>
 				<!--team-2-->
 
 				<!--team-3-->
+				<a href="eventsByGame.do?game=Malifaux" >
 				<div class="col-xl-4">
 					<div class="our-team-main">
 
@@ -90,9 +95,11 @@
 
 					</div>
 				</div>
+				</a>
 				<!--team-3-->
 
 				<!--team-4-->
+				<a href="eventsByGame.do?game=Monsterpoclypse" >
 				<div class="col-xl-4">
 					<div class="our-team-main">
 
@@ -110,9 +117,11 @@
 
 					</div>
 				</div>
+				</a>
 				<!--team-4-->
 
 				<!--team-5-->
+				<a href="eventsByGame.do?game=Star Wars: Legion" >
 				<div class="col-xl-4">
 					<div class="our-team-main">
 
@@ -133,9 +142,11 @@
 
 					</div>
 				</div>
+				</a>
 				<!--team-5-->
 
 				<!--team-6-->
+				<a href="eventsByGame.do?game=Pathfinder" >
 				<div class="col-xl-4">
 					<div class="our-team-main">
 
@@ -156,8 +167,10 @@
 
 					</div>
 				</div>
+				</a>
 				<!--team-6-->
 				<!--team-6-->
+				<a href="eventsByGame.do?game=The Walking Dead: All Out War" >
 				<div class="col-xl-4">
 					<div class="our-team-main">
 
@@ -176,8 +189,10 @@
 
 					</div>
 				</div>
+				</a>
 				<!--team-6-->
 				<!--team-6-->
+				<a href="eventsByGame.do?game=WarHammer 40K/Age of Sigmar" >
 				<div class="col-xl-4">
 					<div class="our-team-main">
 
@@ -196,8 +211,10 @@
 
 					</div>
 				</div>
+				</a>
 				<!--team-6-->
 				<!--team-6-->
+				<a href="eventsByGame.do?game=WarMachine/Hordes" >
 				<div class="col-xl-4">
 					<div class="our-team-main">
 
@@ -222,8 +239,10 @@
 
 					</div>
 				</div>
+				</a>
 				<!--team-6-->
 				<!--team-6-->
+				<a href="eventsByGame.do?game=Wings of Glory" >
 				<div class="col-xl-4">
 					<div class="our-team-main">
 
@@ -244,7 +263,9 @@
 
 					</div>
 				</div>
+				</a>
 				<!--team-6-->
+				<a href="eventsByGame.do?game=X-Wing" >
 				<div class="col-xl-4">
 					<div class="our-team-main">
 
@@ -263,6 +284,7 @@
 
 					</div>
 				</div>
+				</a>
 				<!--team-6-->
 
 

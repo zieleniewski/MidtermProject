@@ -26,6 +26,7 @@
 			<div class="row">
 
 				<!--team-1-->
+				<a href="eventsByGame.do?game=Final Fantasy" >
 				<div class="col-xl-4">
 					<div class="our-team-main">
 
@@ -47,9 +48,11 @@
 
 					</div>
 				</div>
+				</a>
 				<!--team-1-->
 
 				<!--team-2-->
+				<a href="eventsByGame.do?game=KeyForge" >
 				<div class="col-xl-4">
 					<div class="our-team-main">
 
@@ -68,9 +71,11 @@
 
 					</div>
 				</div>
+				</a>
 				<!--team-2-->
 
 				<!--team-3-->
+				<a href="eventsByGame.do?game=Legend of theFive Rings" >
 				<div class="col-xl-4">
 					<div class="our-team-main">
 
@@ -91,9 +96,11 @@
 
 					</div>
 				</div>
+				</a>
 				<!--team-3-->
 
 				<!--team-4-->
+				<a href="eventsByGame.do?game=Pokemon" >
 				<div class="col-xl-4">
 					<div class="our-team-main">
 
@@ -115,9 +122,11 @@
 
 					</div>
 				</div>
+				</a>
 				<!--team-4-->
 
 				<!--team-5-->
+				<a href="eventsByGame.do?game=Star Wars Trading Card Game" >
 				<div class="col-xl-4">
 					<div class="our-team-main">
 
@@ -137,9 +146,11 @@
 
 					</div>
 				</div>
+				</a>
 				<!--team-5-->
 
 				<!--team-6-->
+				<a href="eventsByGame.do?game=Yu-Gi-Oh" >
 				<div class="col-xl-4">
 					<div class="our-team-main">
 
@@ -157,6 +168,7 @@
 
 					</div>
 				</div>
+				</a>
 				<!--team-6-->
 				
 
