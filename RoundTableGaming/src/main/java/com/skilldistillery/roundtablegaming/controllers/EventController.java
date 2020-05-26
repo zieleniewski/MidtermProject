@@ -13,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.skilldistillery.roundtablegaming.data.AddressDAO;
 import com.skilldistillery.roundtablegaming.data.EventDAO;
@@ -115,6 +116,7 @@ public class EventController {
 		return "#";
 	}
 	
+
 	@GetMapping("eventsByGame.do")
 	public String eventsByGame(@RequestParam String game, Model model) {
 		List<Event> eventsByGame = dao.getEventsByGame(game); 
@@ -122,4 +124,35 @@ public class EventController {
 		return "gameEvents";
 	}
 	
+
+	/*
+	 * Generic Events Mapping so we can test events.jsp without having an action
+	 * 
+	 * Not too sure how to do it, so I'm testing this out.
+	 */
+	
+	@GetMapping("events.do")
+	public ModelAndView goToEvents() {
+		ModelAndView mav= new ModelAndView();
+		mav.setViewName("events.jsp");
+		return mav;
+	}
+	
+	/*
+	 * We will need to return single Event Details
+	 * Right now this returns to a separate thisEvent.jsp which is not created or linked.
+	 * Nowhere on the site, currently, as of 11:40 EST Monday night, that you can view
+	 * an event and it's details. 
+	 * 
+	 * We have used events.jsp to show list results by category, and searches
+	 */
+	@GetMapping("singleEvent.do")
+	public String getEvent(int id, Model model) {
+		Event event = dao.getEventById(id);
+		model.addAttribute("event", event);
+		return "thisEvent";
+	}
+	
+	
+
 }

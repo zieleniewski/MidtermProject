@@ -40,7 +40,22 @@
 						<td>${event.title}</td>
 						<td>${event.eventDate }</td>
 						<td></td>
-
+					</tr>
+					<tr>
+						<td>${event.description}</td>
+					</tr>
+					<tr>
+						<c:forEach var="eventGame" items="${event.eventGames}">
+							<tr>
+								<td>${eventGame.title } </td>
+							</tr>
+							<tr>
+								<td>${eventGame.description }</td>
+							</tr>
+							<tr>
+								<td>Signed up= ${eventGame.players.size()} / ${eventGame.maxPlayers }</td>
+							</tr>
+						</c:forEach>
 					</tr>
 				</c:forEach>
 			</tbody>
