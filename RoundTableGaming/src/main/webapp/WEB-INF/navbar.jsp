@@ -47,7 +47,7 @@
 					</div>
 				</div>
 				<form class="mx-2 my-auto d-inline w-30 align-right"
-					action="searchByGame.do">
+					action="searchBar.do">
 					<div class="input-group">
 						<input type="text" class="form-control" placeholder="Search Games"
 							name="keyword"> <span class="input-group-btn">
@@ -98,7 +98,7 @@
 				</div>
 			</div>
 			<form class="mx-2 my-auto d-inline w-30 align-right"
-				action="searchByGame.do">
+				action="searchBar.do">
 				<div class="input-group">
 					<input type="text" class="form-control" placeholder="Search Games"
 						name="keyword"> <span class="input-group-btn">
