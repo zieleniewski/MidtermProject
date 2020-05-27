@@ -34,7 +34,7 @@ public class EventCommentController {
 		ec.setUser((User) session.getAttribute("loggedInUser"));
 		dao.createEventComment(ec);
 		model.addAttribute("comment", ec);
-		return "thisEvent";
+		return "redirect:singleEvent.do?id=" + evId;
 	}
 	
 	@PostMapping("updateComment.do")
