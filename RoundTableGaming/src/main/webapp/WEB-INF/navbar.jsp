@@ -32,8 +32,8 @@
 						href="${pageContext.request.contextPath}/logOut.do">Log Out</a></li>
 					<li class="nav-item"><a class="btn btn-default btn-rounded "
 						href="${pageContext.request.contextPath}/account.do">Account</a></li>
-					<li class="nav-item"><a class="btn btn-default btn-rounded "
-						href="${pageContext.request.contextPath}/createEventPage.do">Create Event</a></li>
+					<%-- <li class="nav-item"><a class="btn btn-default btn-rounded "
+						href="${pageContext.request.contextPath}/createEventPage.do">Create Event</a></li> --%>
 					
 				</ul></div>
 				<div class="dropdown">
@@ -42,8 +42,10 @@
 						aria-haspopup="true" aria-expanded="true">Navigation</button>
 					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 						<a class="dropdown-item" href="createEventPage.do">Create Event</a> <a
-							class="dropdown-item" href="getAllEvents.do">List All Events</a> <a
-							class="dropdown-item" href="#">Something else here</a>
+							class="dropdown-item" href="getAllEvents.do">List All Events</a> 
+							<a class="dropdown-item" href="rpg.do">Table Top RPG</a>
+							<a class="dropdown-item" href="miniature.do">Miniatures</a>
+							<a class="dropdown-item" href="tcg.do">Trading Card Games</a>
 					</div>
 				</div>
 				<form class="mx-2 my-auto d-inline w-30 align-right"
@@ -92,9 +94,10 @@
 					id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
 					aria-expanded="false">Navigation</button>
 				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-					<a class="dropdown-item" href="createEventPage.do">Create Event</a> <a
-						class="dropdown-item" href="getAllEvents.do">List All Events</a> <a
-						class="dropdown-item" href="#">Something else here</a>
+					 <a	class="dropdown-item" href="getAllEvents.do">List All Events</a> 
+						<a class="dropdown-item" href="rpg.do">Table Top RPG</a>
+						<a class="dropdown-item" href="miniature.do">Miniatures</a>
+							<a class="dropdown-item" href="tcg.do">Trading Card Games</a>
 				</div>
 			</div>
 			<form class="mx-2 my-auto d-inline w-30 align-right"
