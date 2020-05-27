@@ -152,18 +152,21 @@
 
 				<div class="actionBox">
 					<ul class="commentList">
+						
+						<c:forEach var="userComment" items="${comments}"></c:forEach>
 						<li>
 							<div class="commenterImage">
 								<img
 									src="https://static.artfire.com/uploads/mfs/items/3c/58/large/3c58575a667b657c32614b0a891c3477b4ea7e937b4766d45ab41ef84ea8c9bc.jpg" />
 							</div>
 							<div class="commentText">
-								<p class="">Hello Sergio...</p>
-								<span class="date sub-text">on March 5th, 2014</span>
+								<p class="">${comment.comment}</p>
+								<p class="">posted by ${comment.user.firstName}</p>
+								<span class="date sub-text">on ${comment.commentDate}</span>
 
 							</div>
 						</li>
-						<li>
+						<!-- <li>
 							<div class="commenterImage">
 								<img
 									src="https://static.artfire.com/uploads/mfs/items/3c/58/large/3c58575a667b657c32614b0a891c3477b4ea7e937b4766d45ab41ef84ea8c9bc.jpg" />
@@ -206,15 +209,16 @@
 								<span class="date sub-text">on March 5th, 2014</span>
 
 							</div>
-						</li>
+						</li> -->
 					</ul>
-					<form class="form-inline" role="form">
+					<form class="form-inline" role="form" action="postComment.do" method="post">
 						<div class="form-group">
+						<input type="hidden" value="${event.id}" name=evId>
 							<input class="form-control" type="text"
-								placeholder="Your comments" />
+								placeholder="Your comments" name="comment"/>
 						</div>
 						<div class="form-group">
-							<button class="btn btn-default">Add</button>
+							<button type="submit""btn btn-default">Add</button>
 						</div>
 					</form>
 				</div>

@@ -5,7 +5,6 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -24,12 +23,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.skilldistillery.roundtablegaming.data.AddressDAO;
+import com.skilldistillery.roundtablegaming.data.EventCommentDAO;
 import com.skilldistillery.roundtablegaming.data.EventDAO;
 import com.skilldistillery.roundtablegaming.data.GameDAO;
 import com.skilldistillery.roundtablegaming.data.UserDAO;
 import com.skilldistillery.roundtablegaming.entities.Address;
 import com.skilldistillery.roundtablegaming.entities.Attendee;
 import com.skilldistillery.roundtablegaming.entities.Event;
+import com.skilldistillery.roundtablegaming.entities.EventComment;
 import com.skilldistillery.roundtablegaming.entities.Game;
 import com.skilldistillery.roundtablegaming.entities.User;
 
@@ -47,6 +48,9 @@ public class EventController {
 	
 	@Autowired
 	private UserDAO userDao;
+	
+	@Autowired
+	private EventCommentDAO commentDao;
 
 	@GetMapping("getAllEvents.do")
 	public String getAllEvents(Model model) {
@@ -154,7 +158,12 @@ public class EventController {
 	@GetMapping("singleEvent.do")
 	public String getEvent(int id, Model model) {
 		Event event = dao.getEventById(id);
+		List<EventComment> comments = commentDao.getEventCommentsByEventId(id);
 		model.addAttribute("event", event);
+		model.addAttribute("comments", comments);
+		for (EventComment comment : comments) {
+			System.out.println(comment);
+		}
 		return "thisEvent";
 	}
 	
