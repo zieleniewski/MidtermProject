@@ -12,6 +12,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 import com.sun.istack.NotNull;
 
 @Entity
@@ -31,8 +34,10 @@ public class EventComment {
 	private Event event;
 	@Column(name = "content")
 	private String comment;
+	@CreationTimestamp
 	@Column(name = "comment_date")
 	private LocalDateTime commentDate;
+	@UpdateTimestamp
 	@Column(name = "last_updated")
 	private LocalDateTime lastUpdated;
 	@NotNull

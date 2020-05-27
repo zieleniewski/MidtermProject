@@ -121,10 +121,10 @@ public class EventController {
 	
 	@PostMapping("createEvent.do")
 	public String create(Event newEvent, Model model, HttpSession session, @RequestParam ("eventGameIds") Integer[] eventGameIds) {
-		System.out.println(Arrays.deepToString(eventGameIds));
+//		System.out.println(Arrays.deepToString(eventGameIds));
 		User loggedInUser = (User)session.getAttribute("loggedInUser");
 		newEvent.setOrganizer(userDao.getUserById(loggedInUser.getId()));
-		System.out.println(newEvent.getEventGames());
+//		System.out.println(newEvent.getEventGames());
 		Event event = dao.createEvent(newEvent, eventGameIds);
 		model.addAttribute("newEvent", event);
 		return "account";
@@ -150,27 +150,7 @@ public class EventController {
 		model.addAttribute("eventsOfGame",eventsByGame);
 		return "gameEvents";
 	}
-
-	/*
-	 * Generic Events Mapping so we can test events.jsp without having an action
-	 * 
-	 * Not too sure how to do it, so I'm testing this out.
-	 */
-	@GetMapping("/events")
-	public String goToEvents(Model model) {
-		List<Event> events = dao.getAllEvents();
-		model.addAttribute("events", events);
-		return "events";
-	}
 	
-	/*
-	 * We will need to return single Event Details
-	 * Right now this returns to a separate thisEvent.jsp which is not created or linked.
-	 * Nowhere on the site, currently, as of 11:40 EST Monday night, that you can view
-	 * an event and it's details. 
-	 * 
-	 * We have used events.jsp to show list results by category, and searches
-	 */
 	@GetMapping("singleEvent.do")
 	public String getEvent(int id, Model model) {
 		Event event = dao.getEventById(id);

@@ -19,22 +19,22 @@ public class EventCommentDAOImpl implements EventCommentDAO {
 	private EntityManager em;
 
 	@Override
-	public EventComment createEventComment(EventComment ev) {
-		em.persist(ev);
+	public EventComment createEventComment(EventComment ec) {
+		ec.getEvent().addEventComment(ec);
+		ec.setEnabled(true);
+		em.persist(ec);
 		em.flush();
-		return ev;
+		return ec;
 	}
 
 	@Override
-	public EventComment updateEventComment(EventComment ev) {
-		EventComment updated = em.find(EventComment.class, ev.getId());
-		if (updated != null) {
-			updated.setComment(ev.getComment());
-			updated.setLastUpdated(LocalDateTime.now());
-			em.persist(updated);
+	public EventComment updateEventComment(EventComment ec) {
+		if (ec != null) {
+			ec.setEnabled(true);
+			em.persist(ec);
 			em.flush();
 		}
-		return updated;
+		return ec;
 	}
 
 	@Override

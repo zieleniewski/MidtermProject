@@ -14,7 +14,6 @@ public interface EventCommentDAO {
 	
 	public List<EventComment> getEventCommentsByEventId(int eventId);
 	
-	//don't know if we need this. Maybe in a for loop?
 	public EventComment getEventCommentById(int id);
 	
 	public boolean enableEventComment(int id);
