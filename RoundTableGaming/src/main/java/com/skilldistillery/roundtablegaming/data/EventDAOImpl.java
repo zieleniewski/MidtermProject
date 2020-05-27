@@ -32,17 +32,19 @@ public class EventDAOImpl implements EventDAO {
 		event.setEnabled(true);
 		event.setAddress(tempAddr);
 		for (Integer gameId : eventGameIds) {
-			Game g = em.find(Game.class, gameId);
-			if (g != null) {
-				EventGame eg = new EventGame();
-				eg.setEnabled(true);
-				eg.setStartTime(event.getStartTime());
-				eg.setMaxPlayers(event.getCapacity());
-				eg.setMinPlayers(2);
-				eg.setGame(g);
-				eg.setEvent(event);
-				em.persist(eg);
-				event.addEventGame(eg);
+			if (gameId != null) {
+				Game g = em.find(Game.class, gameId);
+				if (g != null) {
+					EventGame eg = new EventGame();
+					eg.setEnabled(true);
+					eg.setStartTime(event.getStartTime());
+					eg.setMaxPlayers(event.getCapacity());
+					eg.setMinPlayers(2);
+					eg.setGame(g);
+					eg.setEvent(event);
+					em.persist(eg);
+					event.addEventGame(eg);
+				}
 			}
 		}
 		em.persist(event);
@@ -53,8 +55,7 @@ public class EventDAOImpl implements EventDAO {
 	@Override
 	public List<Event> getAllEvents() {
 		String query = "SELECT e FROM Event e ORDER BY e.eventDate";
-		List<Event> allEvents = em.createQuery(query, Event.class)
-				.getResultList();
+		List<Event> allEvents = em.createQuery(query, Event.class).getResultList();
 		return allEvents;
 	}
 
@@ -66,9 +67,7 @@ public class EventDAOImpl implements EventDAO {
 	@Override
 	public List<Event> getEventsByAddress(Address address) {
 		String jpql = "SELECT e FROM Event e WHERE e.address.id = :search";
-		List<Event> events = em.createQuery(jpql, Event.class)
-				.setParameter("search", address.getId())
-				.getResultList();
+		List<Event> events = em.createQuery(jpql, Event.class).setParameter("search", address.getId()).getResultList();
 		return events;
 	}
 
@@ -106,28 +105,23 @@ public class EventDAOImpl implements EventDAO {
 
 	@Override
 	public List<Event> getEventsByKeyword(String keyword) {
-		String query = "SELECT e FROM Event e WHERE e.title LIKE '" + "%" + keyword + "%'"
-				+ " OR e.description LIKE '" + "%" + keyword + "%'";
-		List<Event> events = em.createQuery(query, Event.class)
-				.getResultList();
+		String query = "SELECT e FROM Event e WHERE e.title LIKE '" + "%" + keyword + "%'" + " OR e.description LIKE '"
+				+ "%" + keyword + "%'";
+		List<Event> events = em.createQuery(query, Event.class).getResultList();
 		return events;
 	}
 
 	@Override
 	public List<Event> getEventsByZipCode(String zipCode) {
 		String jpql = "SELECT e FROM Event e WHERE address.zipCode = :zipCode";
-		List<Event> events = em.createQuery(jpql, Event.class)
-				.setParameter("zipCode", zipCode)
-				.getResultList();
+		List<Event> events = em.createQuery(jpql, Event.class).setParameter("zipCode", zipCode).getResultList();
 		return events;
 	}
 
 	@Override
 	public List<Event> getEventsByDate(LocalDate date) {
 		String jpql = "SELECT e FROM Event e WHERE e.eventDate = :search";
-		List<Event> events = em.createQuery(jpql, Event.class)
-				.setParameter("search", date)
-				.getResultList();
+		List<Event> events = em.createQuery(jpql, Event.class).setParameter("search", date).getResultList();
 		return events;
 	}
 
@@ -135,9 +129,7 @@ public class EventDAOImpl implements EventDAO {
 	public List<Attendee> getEventAttendees(Event event) {
 		List<Attendee> attendees = new ArrayList<>();
 		String jpql = "SELECT a FROM Attendee a JOIN a.eventGame g WHERE " + "g.event.id = :id";
-		attendees = em.createQuery(jpql, Attendee.class)
-				.setParameter("id", event.getId())
-				.getResultList();
+		attendees = em.createQuery(jpql, Attendee.class).setParameter("id", event.getId()).getResultList();
 		return attendees;
 	}
 

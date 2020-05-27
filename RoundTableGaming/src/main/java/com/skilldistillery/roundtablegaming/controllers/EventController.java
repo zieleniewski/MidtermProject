@@ -6,6 +6,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -140,12 +141,21 @@ public class EventController {
 	}
 	
 	@PostMapping("createEvent.do")
-	public String create(Event newEvent, Model model, HttpSession session, @RequestParam ("eventGameIds") Integer[] eventGameIds) {
-//		System.out.println(Arrays.deepToString(eventGameIds));
+	public String create(Event newEvent, Model model, HttpSession session, @RequestParam ("eventGameIds") String[] eventGameIds) {
+		System.out.println(Arrays.deepToString(eventGameIds));
+		Integer[] gameIds = new Integer[eventGameIds.length];
+	    for(int i=0; i < eventGameIds.length; i++) {
+	    	
+	    	try {
+				gameIds[i] = Integer.parseInt(eventGameIds[i]);
+			} catch (NumberFormatException e) {
+				gameIds[i] = null;
+			}
+	    }
 		User loggedInUser = (User)session.getAttribute("loggedInUser");
 		newEvent.setOrganizer(userDao.getUserById(loggedInUser.getId()));
 //		System.out.println(newEvent.getEventGames());
-		Event event = dao.createEvent(newEvent, eventGameIds);
+		Event event = dao.createEvent(newEvent, gameIds);
 		model.addAttribute("newEvent", event);
 		return "account";
 	}
