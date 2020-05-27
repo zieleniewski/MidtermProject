@@ -5,7 +5,6 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.skilldistillery.roundtablegaming.data.AttendeeDAO;
@@ -25,11 +24,9 @@ public class AttendeeController {
 		if (loggedInUser != null) {
 			Attendee atten = dao.create(loggedInUser, egId);
 			model.addAttribute("attendee", atten);
+			return "redirect:singleEvent.do?=" + atten.getEventGame().getEvent().getId();
 		}
-		else {
 			return "index";
-		}
-		return "redirect:thisEvent";
 	}
 	
 	@PostMapping("leaveEvent.do")
@@ -44,6 +41,6 @@ public class AttendeeController {
 			left = "Error leaving this event";
 		}
 		model.addAttribute("left", left);
-		return "redirect:account";
+		return "account";
 	}
 }
