@@ -31,11 +31,12 @@ public class HomeController {
 	@GetMapping("account.do")
 	public String account(HttpSession session, Model model) {
 		User loggedInUser = (User)session.getAttribute("loggedInUser");
+		List<Attendee> attendees = loggedInUser.getAttendees();
 		List<Event> allEvents = new ArrayList<>();
 		List<Event> pastEvents = new ArrayList<>();
 		List<Event> futureEvents = new ArrayList<>();
 		
-		for (Attendee attendee : loggedInUser.getAttendees()) {
+		for (Attendee attendee : attendees) {
 			allEvents.add(attendee.getEventGame().getEvent());
 		}
 		
