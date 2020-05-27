@@ -1,6 +1,5 @@
 package com.skilldistillery.roundtablegaming.data;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -10,6 +9,7 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import com.skilldistillery.roundtablegaming.entities.EventComment;
+import com.skilldistillery.roundtablegaming.entities.User;
 
 @Service
 @Transactional
@@ -22,6 +22,8 @@ public class EventCommentDAOImpl implements EventCommentDAO {
 	public EventComment createEventComment(EventComment ec) {
 		ec.getEvent().addEventComment(ec);
 		ec.setEnabled(true);
+		User commentUser = em.find(User.class, ec.getUser().getId());
+		ec.setUser(commentUser);
 		em.persist(ec);
 		em.flush();
 		return ec;
