@@ -22,6 +22,6 @@ public interface AddressDAO {
 	
 	public Address getAddressByEventId(int id);
 	
-	public boolean checkAddress(Address address);
+	public Address checkAddress(Address address);
 	
 }
