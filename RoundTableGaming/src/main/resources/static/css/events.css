@@ -10,7 +10,11 @@ body {
 .table {
 	margin-top: 20px;
 	margin-bottom: 0px !important;
+	
 }
+
+
+
 
 img{
 	width: 100% !important;
@@ -19,7 +23,14 @@ img{
 p {
 	font-size: 15px;
 }
-.table td, .table th {
+.table td {
+	border: 0px !important;
+	color: white;
+	font-size: 20px;
+	font-family: "Courier New";
+}
+
+.table th {
 	border: 0px !important;
 	color: white;
 	font-size: 25px;
