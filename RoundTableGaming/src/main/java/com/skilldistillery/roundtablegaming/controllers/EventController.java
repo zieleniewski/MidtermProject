@@ -78,6 +78,7 @@ public class EventController {
 				zipCodes += eventAddresses.get(i).getZipCode()+"|";
 			}
 		}
+		
 		model.addAttribute("pastEvents", pastEvents);
 		model.addAttribute("futureEvents", futureEvents);
 		model.addAttribute("allEvents", events);
@@ -184,6 +185,8 @@ public class EventController {
 	
 	@PostMapping("searchBar.do")
 	public String searBar(String search, Model model) {
+		List<Event> results = dao.getEventsByKeyword(search);
+		model.addAttribute("results", results);
 		return "searchedEvents";
 	}
 	
