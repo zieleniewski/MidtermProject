@@ -26,13 +26,13 @@
 					<th>Event Title:</th>
 
 					<td>${event.title }</td>
-					
+
 
 				</tr>
 				<tr>
 					<th>Description:</th>
 					<td>${event.description }</td>
-					
+
 				</tr>
 				<tr>
 					<th>Date:</th>
@@ -42,34 +42,34 @@
 				<tr>
 					<th>Start Time:</th>
 					<td>${event.startTime }</td>
-					
+
 				</tr>
 				<tr>
 					<th>Capacity:</th>
 					<td>${event.capacity }</td>
-					
+
 				</tr>
 				<tr>
 					<th>Games:</th>
-					<td>	<c:forEach var="eventGames" items="${event.eventGames}">
+					<td><c:forEach var="eventGames" items="${event.eventGames}">
 							${eventGames.game.title }<br>
-								</c:forEach></td>
-				
+						</c:forEach></td>
+
 				</tr>
 				<tr>
 					<th>Organizers:</th>
 					<td>${event.organizer.firstName }</td>
-				
+
 				</tr>
 				<tr>
 					<th>Address:</th>
 					<td>${event.address.street1}<br>${event.address.street2 }</td>
-			
+
 				</tr>
 				<tr>
 					<th>City:</th>
 					<td>${event.address.city}</td>
-			
+
 				</tr>
 				<tr>
 					<th>State:</th>
@@ -79,7 +79,27 @@
 			</tbody>
 
 		</table>
-	<div class="footer">	<a href="joinEvent.do" class="btn btn-lg btn-default"><h3><em>Join Event</em></h3></a></div>
+
+		<div class="dropdown">
+			<button class="btn btn-secondary dropdown-toggle" type="button"
+				id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+				aria-expanded="false">Select Which Game to Join</button>
+			<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+
+					<c:forEach var="eventGames"	items="${event.eventGames}">
+					<a class="dropdown-item" href="jointEvent.do?id=${eventGames.id}">${eventGames.game.title }</a>
+							<br>
+					</c:forEach></a>
+
+
+
+
+
+
+			</div>
+		</div>
+		<!-- <div class="footer">	<a href="joinEvent.do" class="btn btn-lg btn-default"><h3><em>Join Event</em></h3></a></div> -->
 
 
 
@@ -154,9 +174,11 @@
 
 				<div class="actionBox"">
 
-						<c:forEach var="userComment" items="${comments}">
+
+					<c:forEach var="userComment" items="${comments}">
 						<li>
-						
+
+
 							<div class="commenterImage">
 								<img
 									src="https://static.artfire.com/uploads/mfs/items/3c/58/large/3c58575a667b657c32614b0a891c3477b4ea7e937b4766d45ab41ef84ea8c9bc.jpg" />
@@ -167,15 +189,18 @@
 								<span class="date sub-text">on ${userComment.commentDate}</span>
 
 							</div>
-						
-					</li>
-						</c:forEach>
 
-					<form class="form-inline" role="form" action="postComment.do" method="post">
+
+						</li>
+					</c:forEach>
+
+					<form class="form-inline" role="form" action="postComment.do"
+						method="post">
+
 						<div class="form-group">
-						<input type="hidden" value="${event.id}" name=evId>
-							<input class="form-control" type="text"
-								placeholder="Your comments" name="comment"/>
+							<input type="hidden" value="${event.id}" name=evId> <input
+								class="form-control" type="text" placeholder="Your comments"
+								name="comment" />
 						</div>
 						<div class="form-group">
 							<button type="submit" style="margin-left: 20px;">Add</button>
@@ -185,7 +210,7 @@
 			</div>
 		</c:when>
 	</c:choose>
-		<jsp:include page="login-popout.jsp"></jsp:include>
+	<jsp:include page="login-popout.jsp"></jsp:include>
 
 </body>
 </html>
