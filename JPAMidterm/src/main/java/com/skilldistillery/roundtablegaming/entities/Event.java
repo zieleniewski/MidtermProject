@@ -48,8 +48,8 @@ public class Event {
 	@CreationTimestamp
 	@Column(name = "create_date")
 	private LocalDateTime createDate;
-	@Column(name = "last_update")
 	@UpdateTimestamp
+	@Column(name = "last_update")
 	private LocalDateTime lastUpdate;
 	@NotNull
 	private boolean enabled;
