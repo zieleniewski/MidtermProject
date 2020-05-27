@@ -1,6 +1,5 @@
 @charset "UTF-8";
 body{
-    margin-top:20px;
     background:#F0F8FF;
 }
 .card {
@@ -32,4 +31,9 @@ body{
     color: inherit;
     background-color: #fff;
     border-bottom: 1px solid #e5e9f2;
+}
+
+img{
+	height: 100px !important;
+	width: 100px !important;
 }
