@@ -27,31 +27,38 @@ public class HomeController {
 	public String register() {
 		return "register";
 	}
-	
+
 	@GetMapping("account.do")
 	public String account(HttpSession session, Model model) {
-		User loggedInUser = (User)session.getAttribute("loggedInUser");
-		List<Attendee> attendees = loggedInUser.getAttendees();
-		List<Event> allEvents = new ArrayList<>();
-		List<Event> pastEvents = new ArrayList<>();
-		List<Event> futureEvents = new ArrayList<>();
-		
-		for (Attendee attendee : attendees) {
-			allEvents.add(attendee.getEventGame().getEvent());
-		}
-		
-		for (Event event : allEvents) {
-			if (LocalDate.now().isAfter(event.getEventDate())) {
-				pastEvents.add(event);
+		User loggedInUser = (User) session.getAttribute("loggedInUser");
+		try {
+			List<Attendee> attendees = loggedInUser.getAttendees();
+			System.out.println("\n" + attendees + "\n");
+			List<Event> allEvents = new ArrayList<>();
+			List<Event> pastEvents = new ArrayList<>();
+			List<Event> futureEvents = new ArrayList<>();
+
+			if (attendees != null) {
+				for (Attendee attendee : attendees) {
+					allEvents.add(attendee.getEventGame().getEvent());
+				}
 			}
-			else {
-				futureEvents.add(event);
+			
+			for (Event event : allEvents) {
+				if (LocalDate.now().isAfter(event.getEventDate())) {
+					pastEvents.add(event);
+				} else {
+					futureEvents.add(event);
+				}
 			}
+
+			model.addAttribute("pastEvents", pastEvents);
+			model.addAttribute("futureEvents", futureEvents);
+		} catch (Exception e) {
+			System.out.println("\nUSER HAS NO EVENTS ASSOCIATED WITH THEM\n");
+			e.printStackTrace();
 		}
-		
-		model.addAttribute("pastEvents", pastEvents);
-		model.addAttribute("futureEvents", futureEvents);
 		return "account";
 	}
-	
+
 }

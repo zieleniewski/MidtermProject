@@ -162,16 +162,10 @@ public class EventController {
 	
 	@PostMapping("updateEvent.do")
 	public String update(Event event, Address address, Model model) {
-		Address updAddress = null;
-		if (addrDao.checkAddress(address)) {
-			updAddress = addrDao.createAddress(address);
-		}
-		else {
-			updAddress = addrDao.getAddressById(address.getId());
-		}
+		Address updAddress = addrDao.checkAddress(address);
 		Event updEvent = dao.updateEvent(event, updAddress);
 		model.addAttribute("updatedEvent", updEvent);
-		return "#";
+		return "redir:account";
 	}
 	
 	@GetMapping("eventsByGame.do")
