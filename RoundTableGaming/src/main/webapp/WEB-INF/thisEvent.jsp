@@ -153,19 +153,20 @@
 				<div class="actionBox">
 					<ul class="commentList">
 						
-						<c:forEach var="userComment" items="${comments}"></c:forEach>
+						<c:forEach var="userComment" items="${comments}">
 						<li>
 							<div class="commenterImage">
 								<img
 									src="https://static.artfire.com/uploads/mfs/items/3c/58/large/3c58575a667b657c32614b0a891c3477b4ea7e937b4766d45ab41ef84ea8c9bc.jpg" />
 							</div>
 							<div class="commentText">
-								<p class="">${comment.comment}</p>
-								<p class="">posted by ${comment.user.firstName}</p>
-								<span class="date sub-text">on ${comment.commentDate}</span>
+								<p class="">${userComment.comment}</p>
+								<p class="">posted by ${userComment.user.firstName}</p>
+								<span class="date sub-text">on ${userComment.commentDate}</span>
 
 							</div>
 						</li>
+						</c:forEach>
 						<!-- <li>
 							<div class="commenterImage">
 								<img
