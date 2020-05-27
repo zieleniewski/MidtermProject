@@ -1,6 +1,5 @@
 package com.skilldistillery.roundtablegaming.data;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.persistence.EntityManager;
