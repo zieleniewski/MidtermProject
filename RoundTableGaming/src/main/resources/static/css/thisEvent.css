@@ -1,9 +1,9 @@
 @charset "UTF-8";
 
-body {
+body html {
 	height: 100%;
 	font-family: "Courier New";
-text-align: center;
+	text-align: center;
 	background-image: url("https://fsb.zobj.net/crop.php?r=Da28LuD1vZs_GCsJAd1pj3xb-OUpy8edBGZQbB2__winaS_i6kfcqmr3rIIKZnrhAVAKVWZ0mS6ZCDHqomJkvin4abt39NhKyxoLrxPLLXENi5E6EO7Ky0beDwnDqF1KyPj9dXKRPYdpVURP");
 }
 
@@ -20,7 +20,8 @@ text-align: center;
 
 .text {
 	position: fixed !important;
-    width: 40% !important;
+    width: 100% !important;
+    height: 100% !important;
     padding-right: 15px !important;
     padding-left: 45px !important;
     padding-top: 30px !important;

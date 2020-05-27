@@ -18,8 +18,10 @@
 		<jsp:include page="navbar.jsp" />
 		<br>
 	</div>
-
-	<div class="text col-xl-4">
+	
+	<div class="whole-body">
+<img width="150px" src="https://maps.googleapis.com/maps/api/staticmap?center=${event.address.zipCode}&zoom=5&size=150x150&markers=${event.address.zipCode}&key=AIzaSyBGkwnAWsK1Xff-R9G3nurccb9Wxt3d8R8">
+	<div class="text ">
 		<table class="table table-dark table-hover">
 			<tbody>
 				<tr>
@@ -94,11 +96,11 @@
 
 
 
-
-
-
 			</div>
 		</div>
+		
+		
+		
 		<!-- <div class="footer">	<a href="joinEvent.do" class="btn btn-lg btn-default"><h3><em>Join Event</em></h3></a></div> -->
 
 
@@ -211,6 +213,6 @@
 		</c:when>
 	</c:choose>
 	<jsp:include page="login-popout.jsp"></jsp:include>
-
+</div>
 </body>
 </html>
