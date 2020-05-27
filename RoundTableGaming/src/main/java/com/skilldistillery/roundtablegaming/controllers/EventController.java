@@ -167,6 +167,11 @@ public class EventController {
 		return "thisEvent";
 	}
 	
+	@PostMapping("searchBar.do")
+	public String searBar(String search, Model model) {
+		return "searchedEvents";
+	}
+	
 	@InitBinder
 	public void initBinder(WebDataBinder webDataBinder) {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
