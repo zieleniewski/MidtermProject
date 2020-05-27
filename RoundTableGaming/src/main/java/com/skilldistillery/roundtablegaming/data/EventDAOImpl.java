@@ -15,6 +15,7 @@ import com.skilldistillery.roundtablegaming.entities.Address;
 import com.skilldistillery.roundtablegaming.entities.Attendee;
 import com.skilldistillery.roundtablegaming.entities.Event;
 import com.skilldistillery.roundtablegaming.entities.EventGame;
+import com.skilldistillery.roundtablegaming.entities.Game;
 
 @Service
 @Transactional
@@ -24,12 +25,26 @@ public class EventDAOImpl implements EventDAO {
 	private EntityManager em;
 
 	@Override
-	public Event createEvent(Event event) {
+	public Event createEvent(Event event, Integer[] eventGameIds) {
 		System.out.println(event);
 		Address tempAddr = event.getAddress();
 		em.persist(tempAddr);
 		event.setEnabled(true);
 		event.setAddress(tempAddr);
+		for (Integer gameId : eventGameIds) {
+			Game g = em.find(Game.class, gameId);
+			if(g != null) {
+				EventGame eg = new EventGame();
+				eg.setEnabled(true);
+				eg.setStartTime(event.getStartTime());
+				eg.setMaxPlayers(event.getCapacity());
+				eg.setMinPlayers(2);
+				eg.setGame(g);
+				eg.setEvent(event);
+				em.persist(eg);
+				event.addEventGame(eg);
+			}
+		}
 		em.persist(event);
 		em.flush();
 		return event;

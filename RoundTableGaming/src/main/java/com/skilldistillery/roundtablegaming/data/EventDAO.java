@@ -9,7 +9,7 @@ import com.skilldistillery.roundtablegaming.entities.Event;
 
 public interface EventDAO {
 
-	public Event createEvent(Event event);
+	public Event createEvent(Event event, Integer[] eventGameIds);
 	
 	public List<Event> getAllEvents();
 	
