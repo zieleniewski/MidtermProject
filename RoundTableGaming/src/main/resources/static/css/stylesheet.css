@@ -25,6 +25,7 @@ img {
 
 .navbar .footer a{
 	border: 2px solid white !important;
+	background-color: grey !important;
 }
 .navbar .footer{
 	padding-bottom: 0px;
