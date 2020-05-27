@@ -80,7 +80,7 @@
 				</tbody>
 
 			</table>
-
+<div class="join-game">
 			<form action="joinEvent.do" method="POST">
 				<p>Please Select Your Game Choice</p>
 				<div>
@@ -97,15 +97,15 @@
 					<button type="submit" >Submit</button>
 				</div>
 			</form>
+</div>
 
 
 
-
-
+<%-- 
 					<c:forEach var="eventGames"	items="${event.eventGames}">
 					<a class="dropdown-item" href="jointEvent.do?id=${eventGames.id}">${eventGames.game.title }</a>
 							<br>
-					</c:forEach>
+					</c:forEach> --%>
 
 			<%-- <div class="dropdown">
 				<button class="btn btn-secondary dropdown-toggle" type="button"
