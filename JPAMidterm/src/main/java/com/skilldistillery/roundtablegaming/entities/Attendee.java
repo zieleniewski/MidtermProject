@@ -31,8 +31,7 @@ public class Attendee {
 	private boolean enabled;
 
 //	CONSTRUCTORS
-	public Attendee() {
-	}
+	public Attendee() {}
 
 	public Attendee(User user, AttendeeId id, EventGame eventGame, Integer eventRating, String attendeeComment,
 			boolean enabled) {
