@@ -26,8 +26,26 @@ text-align: center;
     padding-top: 30px !important;
 }
 
+.text-center .footer a{
+	border: 2px solid white !important;
+	background-color: white !important;
+	color : black !important;
+}
 
+.card{
+	height: 600px !important;
+}
 
+.text-white{
+	height:600px !important;
+}
+.modal-body{
+	height:600px !important;
+}
+
+#login {
+	padding-top: 100px !important;
+}
 
 img{
 	width: 100% !important;

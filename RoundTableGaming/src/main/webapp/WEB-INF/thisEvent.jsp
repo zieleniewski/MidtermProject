@@ -16,7 +16,6 @@
 <body>
 	<div class="navbar">
 		<jsp:include page="navbar.jsp" />
-		<jsp:include page="login-popout.jsp"></jsp:include>
 		<br>
 	</div>
 
@@ -79,8 +78,11 @@
 				</tr>
 			</tbody>
 
-
 		</table>
+	<div class="footer">	<a href="joinEvent.do" class="btn btn-lg btn-default"><h3><em>Join Event</em></h3></a></div>
+
+
+
 
 	</div>
 
@@ -226,6 +228,7 @@
 			</div>
 		</c:when>
 	</c:choose>
+		<jsp:include page="login-popout.jsp"></jsp:include>
 
 </body>
 </html>
