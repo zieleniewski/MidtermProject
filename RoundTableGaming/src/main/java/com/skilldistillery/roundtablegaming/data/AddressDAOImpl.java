@@ -100,61 +100,30 @@ public class AddressDAOImpl implements AddressDAO {
 	}
 	
 	@Override
-	public boolean checkAddress(Address address) {
-		List<Address> allAddresses = getAllAddresses();
-		boolean unique = false;
+	public Address checkAddress(Address address) {
+		Address newLinkedAddr;
 		
-		for (Address dbAddress : allAddresses) {
-			if (!dbAddress.getStreet1().equals(address.getStreet1())) {
-				unique = true;
-//				System.out.println("\n\n"+dbAddress.getStreet1());
-//				System.out.println("IF: " + unique);
-//				System.out.println(address.getStreet1());
-			} else {
-				unique = false;
-//				System.out.println("ELSE: " + unique);
-			}
-			if (dbAddress.getStreet2() != null ) {
-				if (!dbAddress.getStreet2().equals(address.getStreet2())) {
-					unique = true;
-//					System.out.println("\n"+dbAddress.getStreet2());
-//					System.out.println("IF: " + unique);
-//					System.out.println(address.getStreet2());
-				} else {
-					unique = false;
-//					System.out.println("ELSE: " + unique);
-				}
-			}
-			if (!dbAddress.getCity().equals(address.getCity())) {
-				unique = true;
-//				System.out.println("\n"+dbAddress.getCity());
-//				System.out.println("IF: " + unique);
-//				System.out.println(address.getCity());
-			} else {
-				unique = false;
-//				System.out.println("ELSE: " + unique);
-			}
-			if (!dbAddress.getState().equals(address.getState())) {
-				unique = true;
-//				System.out.println("\n"+dbAddress.getState());
-//				System.out.println("IF: " + unique);
-//				System.out.println(address.getState());
-			} else {
-				unique = false;
-//				System.out.println("ELSE: " + unique);
-			}
-			if (!dbAddress.getZipCode().equals(address.getZipCode())) {
-				unique = true;
-//				System.out.println("\n"+dbAddress.getZipCode());
-//				System.out.println("IF: " + unique);
-//				System.out.println(address.getZipCode());
-			} else {
-				unique = false;
-//				System.out.println("ELSE: " + unique + "\n\n");
-			}
-			if (unique == false) {break;}
+		String check = "SELECT a FROM Address a WHERE a.street1 = :str1 "
+				+ "AND a.street2 = :str2 AND a.city = :city AND a.state = :state "
+				+ "AND a.zipCode = :zipCode";
+		
+		List<Address> addresses = em.createQuery(check, Address.class)
+				.setParameter("str1", address.getStreet1())
+				.setParameter("str2", address.getStreet2())
+				.setParameter("city", address.getCity())
+				.setParameter("state", address.getState())
+				.setParameter("zipCode", address.getZipCode())
+				.getResultList();
+		
+		if (addresses == null || addresses.size() < 1) {
+			em.persist(address);
+			return address;
 		}
-		return unique;
+		else {
+			newLinkedAddr = addresses.get(0);
+			newLinkedAddr.setId(addresses.get(0).getId());
+			return newLinkedAddr;
+		}
 	}
 	
 }

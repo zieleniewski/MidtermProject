@@ -53,14 +53,7 @@ public class UserController {
 
 	@PostMapping("updateAccount.do")
 	public String updateAccount(User user, Address address, HttpSession session) {
-		Address updatedAddress = null;
-//		System.out.println("\n\n\n\n"+address+"\n\n\n\n");
-		if (addrDao.checkAddress(address)) {
-			updatedAddress = addrDao.createAddress(address);
-		}
-		else {
-			updatedAddress = addrDao.getAddressById(address.getId());
-		}
+		Address updatedAddress = addrDao.checkAddress(address);
 		User updatedUser = dao.updateAccount(user, updatedAddress);
 		session.setAttribute("loggedInUser", updatedUser);
 		return "account";
