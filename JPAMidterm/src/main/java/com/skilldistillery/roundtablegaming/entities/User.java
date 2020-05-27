@@ -42,12 +42,12 @@ public class User {
 	private boolean enabled;
 	@NotNull
 	private boolean admin;
-	@OneToMany(mappedBy = "creator", cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "creator", cascade = CascadeType.PERSIST)
 	private List<Game> games;
 	@ManyToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "address_id")
 	private Address address;
-	@OneToMany(mappedBy = "user", cascade = CascadeType.PERSIST)
+	@OneToMany(mappedBy = "user", cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
 	private List<Attendee> attendees;
 	@OneToMany(mappedBy = "organizer", cascade = CascadeType.PERSIST)
 	private List<Event> organizerEvents;
