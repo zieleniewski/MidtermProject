@@ -102,6 +102,11 @@
 
 
 
+					<c:forEach var="eventGames"	items="${event.eventGames}">
+					<a class="dropdown-item" href="jointEvent.do?id=${eventGames.id}">${eventGames.game.title }</a>
+							<br>
+					</c:forEach>
+
 			<%-- <div class="dropdown">
 				<button class="btn btn-secondary dropdown-toggle" type="button"
 					id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
