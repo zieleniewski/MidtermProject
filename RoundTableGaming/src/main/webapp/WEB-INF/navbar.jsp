@@ -25,9 +25,9 @@
 			<div class="navbar-collapse collapse justify-content-stretch"
 				id="navbar5">
 				<ul class="navbar-nav">
-					<li class="nav-item active"><a class="nav-link " href="#">About
+					<!-- <li class="nav-item active"><a class="nav-link " href="#">About
 							<span class="sr-only">Home</span>
-					</a></li>
+					</a></li> -->
 					<li class="nav-item"><a class="btn btn-default btn-rounded "
 						href="${pageContext.request.contextPath}/logOut.do">Log Out</a></li>
 					<li class="nav-item"><a class="btn btn-default btn-rounded "
@@ -46,6 +46,7 @@
 							<a class="dropdown-item" href="rpg.do">Table Top RPG</a>
 							<a class="dropdown-item" href="miniature.do">Miniatures</a>
 							<a class="dropdown-item" href="tcg.do">Trading Card Games</a>
+							<a class="dropdown-item" href="about.do">About Us</a>
 					</div>
 				</div>
 				<form class="mx-2 my-auto d-inline w-30 align-right"
@@ -74,9 +75,9 @@
 			<div class="navbar-collapse collapse justify-content-stretch"
 				id="navbar5">
 				<ul class="navbar-nav">
-					<li class="nav-item active"><a class="nav-link " href="#">About
+					<!-- <li class="nav-item active"><a class="nav-link " href="#">About
 							<span class="sr-only">Home</span>
-					</a></li>
+					</a></li> -->
 
 
 					<li class="nav-item"><a href=""
@@ -98,6 +99,7 @@
 						<a class="dropdown-item" href="rpg.do">Table Top RPG</a>
 						<a class="dropdown-item" href="miniature.do">Miniatures</a>
 							<a class="dropdown-item" href="tcg.do">Trading Card Games</a>
+							<a class="dropdown-item" href="about.do">About Us</a>
 				</div>
 			</div>
 			<form class="mx-2 my-auto d-inline w-30 align-right"
