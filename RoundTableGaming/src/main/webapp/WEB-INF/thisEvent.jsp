@@ -176,8 +176,10 @@
 
 				<div class="actionBox"">
 
+
 					<c:forEach var="userComment" items="${comments}">
 						<li>
+
 
 							<div class="commenterImage">
 								<img
@@ -190,11 +192,13 @@
 
 							</div>
 
+
 						</li>
 					</c:forEach>
 
 					<form class="form-inline" role="form" action="postComment.do"
 						method="post">
+
 						<div class="form-group">
 							<input type="hidden" value="${event.id}" name=evId> <input
 								class="form-control" type="text" placeholder="Your comments"
