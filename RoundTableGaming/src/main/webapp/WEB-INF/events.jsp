@@ -51,7 +51,7 @@
 							${eventGames.game.title }<br>
 								</c:forEach>
 							</td>
-							<td><img width="150px" src="https://maps.googleapis.com/maps/api/staticmap?center=us&zoom=3&size=150x150&markers=${event.address.zipCode}&key=AIzaSyBGkwnAWsK1Xff-R9G3nurccb9Wxt3d8R8">
+							<td><img width="150px" src="https://maps.googleapis.com/maps/api/staticmap?center=${event.address.zipCode}&zoom=5&size=150x150&markers=${event.address.zipCode}&key=AIzaSyBGkwnAWsK1Xff-R9G3nurccb9Wxt3d8R8">
 							
 							
 							
