@@ -21,6 +21,6 @@ public class GameController {
 	public String sbg(@RequestParam String keyword, Model model) {
 		List<Game> searchedGames = dao.getGamesByKeyword(keyword);
 		model.addAttribute("searchedGames", searchedGames);
-		return "searchedGames";
+		return "searchedEvents";
 	}
 }
