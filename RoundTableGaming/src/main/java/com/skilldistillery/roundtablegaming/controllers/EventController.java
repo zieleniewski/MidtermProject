@@ -176,19 +176,22 @@ public class EventController {
 	}
 	
 	@GetMapping("singleEvent.do")
-	public String getEvent(int id, Model model) {
-		Event event = dao.getEventById(id);
-		List<EventComment> comments = commentDao.getEventCommentsByEventId(id);
-		model.addAttribute("event", event);
-		model.addAttribute("comments", comments);
-		for (EventComment comment : comments) {
-			System.out.println(comment);
+	public String getEvent(Integer id, Model model) {
+		if (id != null) {
+			Event event = dao.getEventById(id);
+			List<EventComment> comments = commentDao.getEventCommentsByEventId(id);
+			model.addAttribute("event", event);
+			model.addAttribute("comments", comments);
+			for (EventComment comment : comments) {
+				System.out.println(comment);
+			}
+			return "thisEvent";
 		}
-		return "thisEvent";
+			return "redirect:getAllEvents.do";
 	}
 	
 	@PostMapping("searchBar.do")
-	public String searBar(String search, Model model) {
+	public String searchBar(String search, Model model) {
 		List<Event> results = dao.getEventsByKeyword(search);
 		model.addAttribute("results", results);
 		return "searchedEvents";
