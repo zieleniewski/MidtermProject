@@ -79,14 +79,21 @@
 					</tr>
 				</tbody>
 
+
+
 			</table>
+			
+				<c:choose>
+			<c:when test="${not empty loggedInUser}">
+			
+			
 <div class="join-game">
 			<form action="joinEvent.do" method="POST">
-				<p>Please Select Your Game Choice</p>
+				<p>Please Select The Game You Would Like To Join:</p>
 				<div>
 				<c:forEach var="eventGames" items="${event.eventGames}">
 					<input type="radio" id="${eventGames.id}" name="egId"
-						value="${eventGames.id}"> <label for="contactChoice1">${eventGames.game.title }</label> 
+						value="${eventGames.id}"> <label for="contactChoice1">${eventGames.game.title }</label> <br>
 						
 						</c:forEach>
 						
@@ -99,7 +106,9 @@
 			</form>
 </div>
 
-
+</c:when>
+<c:otherwise><h2>Please Login To Join This Event</h2></c:otherwise>
+</c:choose>
 
 <%-- 
 					<c:forEach var="eventGames"	items="${event.eventGames}">
