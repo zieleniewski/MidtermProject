@@ -7,7 +7,44 @@ body html {
 	background-image: url("https://fsb.zobj.net/crop.php?r=Da28LuD1vZs_GCsJAd1pj3xb-OUpy8edBGZQbB2__winaS_i6kfcqmr3rIIKZnrhAVAKVWZ0mS6ZCDHqomJkvin4abt39NhKyxoLrxPLLXENi5E6EO7Ky0beDwnDqF1KyPj9dXKRPYdpVURP");
 }
 
+.join-game{
+	background-color: white !important;
+	color: black !important;
+	  width: 300px !important;
+	  margin-top: 30px !important;
+	  border-radius: 10px !important;
+	  font-family: "Courier New";
+	  background-color: #343a40 !important;
+	  color: white !important;
+}
 
+h2{
+	color: white !important;
+	font-family: "Courier New";
+	
+	
+}
+
+.join-game form button{
+	
+	
+	margin-top: 20px !important;
+	margin-right: 20px !important;
+	margin-left: 20px !important;
+	margin-bottom: 5px !important;
+	font-family: "Courier New";
+	border-radius: 15px !important;
+	 background-color: #343a40 !important;
+	  color: white !important;
+}
+
+.join-game form{
+	margin-left: 5px !important;
+	margin-top: 5px !important;
+	margin-right:5px !important;
+	margin-bottom:5px !important;
+	font-family: "Courier New";
+}
 
 .table {
 	width: 300px !important;
@@ -19,7 +56,6 @@ body html {
 }
 
 .text {
-	position: fixed !important;
     width: 100% !important;
     height: 100% !important;
     padding-right: 15px !important;
