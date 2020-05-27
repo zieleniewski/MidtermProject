@@ -20,7 +20,6 @@
 	</div>
 	
 	<div class="whole-body">
-<img width="150px" src="https://maps.googleapis.com/maps/api/staticmap?center=${event.address.zipCode}&zoom=5&size=150x150&markers=${event.address.zipCode}&key=AIzaSyBGkwnAWsK1Xff-R9G3nurccb9Wxt3d8R8">
 	<div class="text ">
 		<table class="table table-dark table-hover">
 			<tbody>
