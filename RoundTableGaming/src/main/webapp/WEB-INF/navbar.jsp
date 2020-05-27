@@ -52,7 +52,7 @@
 				<form class="mx-2 my-auto d-inline w-30 align-right"
 					action="searchBar.do">
 					<div class="input-group">
-						<input type="text" class="form-control" placeholder="Search Games"
+						<input type="text" class="form-control" placeholder="Search Events"
 							name="keyword"> <span class="input-group-btn">
 							<button class="btn btn-default btn-rounded" type="submit">GO</button>
 						</span>
@@ -105,7 +105,7 @@
 			<form class="mx-2 my-auto d-inline w-30 align-right"
 				action="searchBar.do" method="POST">
 				<div class="input-group">
-					<input type="text" class="form-control" placeholder="Search Games"
+					<input type="text" class="form-control" placeholder="Search Events"
 						name="keyword"> <span class="input-group-btn">
 						<button class="btn btn-default btn-rounded" type="submit">GO</button>
 					</span>

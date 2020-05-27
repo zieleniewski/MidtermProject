@@ -1,11 +1,15 @@
 @charset "UTF-8";
 body{
-    margin-top:20px;
     background:#F0F8FF;
 }
 .card {
     margin-bottom: 1.5rem;
     box-shadow: 0 1px 15px 1px rgba(52,40,104,.08);
+}
+
+.join-game{
+	background-color: white !important;
+	color: black !important;
 }
 .card {
     position: relative;
@@ -32,4 +36,9 @@ body{
     color: inherit;
     background-color: #fff;
     border-bottom: 1px solid #e5e9f2;
+}
+
+img{
+	height: 100px !important;
+	width: 100px !important;
 }

@@ -5,25 +5,29 @@
 <html>
 <title>Insert title here</title>
 <head>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-	crossorigin="anonymous">
+<link
+	href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
 <link rel="stylesheet" href="css/account.css" type="text/css">
+<script
+	src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <meta charset="utf-8">
 
 
 
 </head>
 <div class="navbar">
-	<jsp:include page="navbar.jsp" /><br> <br>
+	<jsp:include page="navbar.jsp"/>
+		
+	
 </div>
 <body>
-	<div class="container p-0">
+	<div class="container" style="margin-top: 80px;">
 
 
 
-		<div class="row">
+		<div class="row w-85" >
 			<div class="col-md-5 col-xl-4">
 
 				<div class="card">
@@ -57,7 +61,7 @@
 									Upcoming Games </a> <a
 									class="list-group-item list-group-item-action"
 									data-toggle="list" href="#game-history" role="tab"> Game
-									History </a> <a class="list-group-item list-group-item-action"
+									History </a> <a class="list-group-item list-group-item-action"onclick="if (!(confirm('Are you sure you want to delete this record and all child records?'))) return false"
 									data-toggle="list" href="#" role="tab"> Delete account </a>
 							</div>
 						</c:otherwise>
@@ -335,12 +339,13 @@
 					<div class="tab-pane fade" id="upcoming-games" role="tabpanel">
 						<div class="card">
 							<div class="card-body">
-								<h5 class="card-title">Upcoming Games</h5>
+								<h5 class="card-title">Upcoming Events</h5>
 
 								<form>
 									<ul>
-										<c:forEach var="event" items="${category}">
-											<h3>${event.title}<br> ${event.eventDate }
+										<c:forEach var="event" items="${futureEvents}">
+											<h3>${event.title}<br>
+											${event.eventDate }
 											</h3>
 										</c:forEach>
 
@@ -353,12 +358,13 @@
 					<div class="tab-pane fade" id="game-history" role="tabpanel">
 						<div class="card">
 							<div class="card-body">
-								<h5 class="card-title">Game History</h5>
+								<h5 class="card-title">Event History</h5>
 
 								<form>
 									<ul>
-										<c:forEach var="event" items="${category}">
-											<h3>${event.title}<br> ${event.eventDate }
+										<c:forEach var="event" items="${pastEvents}">
+											<h3>${event.title}<br> 
+											${event.eventDate }
 											</h3>
 										</c:forEach>
 
@@ -373,17 +379,6 @@
 		</div>
 
 	</div>
-
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-		crossorigin="anonymous"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-		crossorigin="anonymous"></script>
-	<script
-		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-		crossorigin="anonymous"></script>
+	<jsp:include page="login-popout.jsp"/>
 </body>
 </html>
