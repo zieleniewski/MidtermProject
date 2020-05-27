@@ -18,7 +18,7 @@ text-align: center;
 	
 }
 
-.text-center {
+.text {
 	position: fixed !important;
     width: 40% !important;
     padding-right: 15px !important;
@@ -28,20 +28,17 @@ text-align: center;
 
 .text-center .footer a{
 	border: 2px solid white !important;
-	background-color: white !important;
+	background-color: grey !important;
 	color : black !important;
+	
+}
+.text .footer{
+	
+	position: fixed !important;
+	padding-left: 45px !important;
 }
 
-.card{
-	height: 600px !important;
-}
 
-.text-white{
-	height:600px !important;
-}
-.modal-body{
-	height:600px !important;
-}
 
 #login {
 	padding-top: 100px !important;
@@ -60,21 +57,31 @@ p {
 	font-size: 15px;
 	font-family: "Courier New";
 }
-@import url(//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css);
 
+@import url(//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css);
 .detailBox {
 	right: 50px;
     top: 90px;
 	position: fixed !important;
-    width: 300px !important;
+    width: 450px !important;
     padding-right: 15px !important;
     padding-left: 15px !important;
-    padding-top: 30px !important;
+    padding-top: 5px !important;
     border:1px solid #bbb;
     background-color: white !important;
 	margin: 0 auto !important;
 	border-radius: 10px !important;
-	height: 400px !important;
+	height: 700px !important;
+}
+
+.detailBox .actionBox{
+	height: 600px !important;
+	overflow: scroll !important;
+}
+
+.detailBox .actionBox li{
+	list-style: none !important;
+	display: block !important;
 }
 .titleBox {
     background-color:#fdfdfd;

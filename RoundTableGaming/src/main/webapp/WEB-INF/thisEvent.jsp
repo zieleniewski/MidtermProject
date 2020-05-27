@@ -19,7 +19,7 @@
 		<br>
 	</div>
 
-	<div class="text-center col-xl-4">
+	<div class="text col-xl-4">
 		<table class="table table-dark table-hover">
 			<tbody>
 				<tr>
@@ -152,11 +152,11 @@
 					<button type="button" class="close" aria-hidden="true">&times;</button>
 				</div>
 
-				<div class="actionBox">
-					<ul class="commentList">
-						
+				<div class="actionBox"">
+
 						<c:forEach var="userComment" items="${comments}">
 						<li>
+						
 							<div class="commenterImage">
 								<img
 									src="https://static.artfire.com/uploads/mfs/items/3c/58/large/3c58575a667b657c32614b0a891c3477b4ea7e937b4766d45ab41ef84ea8c9bc.jpg" />
@@ -167,53 +167,10 @@
 								<span class="date sub-text">on ${userComment.commentDate}</span>
 
 							</div>
-						</li>
+						
+					</li>
 						</c:forEach>
-						<!-- <li>
-							<div class="commenterImage">
-								<img
-									src="https://static.artfire.com/uploads/mfs/items/3c/58/large/3c58575a667b657c32614b0a891c3477b4ea7e937b4766d45ab41ef84ea8c9bc.jpg" />
-							</div>
-							<div class="commentText">
-								<p class="">....I know what you did last night ....</p>
-								<span class="date sub-text">on March 5th, 2014</span>
 
-							</div>
-						</li>
-						<li>
-							<div class="commenterImage">
-								<img
-									src="https://static.artfire.com/uploads/mfs/items/3c/58/large/3c58575a667b657c32614b0a891c3477b4ea7e937b4766d45ab41ef84ea8c9bc.jpg" />
-							</div>
-							<div class="commentText">
-								<p class="">....</p>
-								<span class="date sub-text">on March 5th, 2014</span>
-
-							</div>
-						</li>
-						<li>
-							<div class="commenterImage">
-								<img
-									src="https://static.artfire.com/uploads/mfs/items/3c/58/large/3c58575a667b657c32614b0a891c3477b4ea7e937b4766d45ab41ef84ea8c9bc.jpg" />
-							</div>
-							<div class="commentText">
-								<p class="">.... ...</p>
-								<span class="date sub-text">on March 5th, 2014</span>
-
-							</div>
-						</li>
-						<li>
-							<div class="commenterImage">
-								<img
-									src="https://static.artfire.com/uploads/mfs/items/3c/58/large/3c58575a667b657c32614b0a891c3477b4ea7e937b4766d45ab41ef84ea8c9bc.jpg" />
-							</div>
-							<div class="commentText">
-								<p class="">.... wouldn't you like to know ...</p>
-								<span class="date sub-text">on March 5th, 2014</span>
-
-							</div>
-						</li> -->
-					</ul>
 					<form class="form-inline" role="form" action="postComment.do" method="post">
 						<div class="form-group">
 						<input type="hidden" value="${event.id}" name=evId>
@@ -221,7 +178,7 @@
 								placeholder="Your comments" name="comment"/>
 						</div>
 						<div class="form-group">
-							<button type="submit""btn btn-default">Add</button>
+							<button type="submit" style="margin-left: 20px;">Add</button>
 						</div>
 					</form>
 				</div>
