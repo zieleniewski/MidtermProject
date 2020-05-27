@@ -28,7 +28,7 @@ public class AttendeeController {
 		else {
 			return "index";
 		}
-		return "redirect:thisEvent";
+		return "thisEvent";
 	}
 	
 	@PostMapping("leaveEvent.do")

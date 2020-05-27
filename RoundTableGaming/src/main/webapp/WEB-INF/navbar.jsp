@@ -103,7 +103,7 @@
 				</div>
 			</div>
 			<form class="mx-2 my-auto d-inline w-30 align-right"
-				action="searchBar.do">
+				action="searchBar.do" method="POST">
 				<div class="input-group">
 					<input type="text" class="form-control" placeholder="Search Games"
 						name="keyword"> <span class="input-group-btn">
