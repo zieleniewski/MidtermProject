@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -55,8 +56,20 @@ public class EventController {
 	@GetMapping("getAllEvents.do")
 	public String getAllEvents(Model model) {
 		List<Event> events = dao.getAllEvents();
+		List<Event> pastEvents = new ArrayList<>();
+		List<Event> futureEvents = new ArrayList<>();
 		List<Address> eventAddresses = addrDao.getAddressesForAllEvents();
 		String zipCodes = "";
+		
+		for (Event event : events) {
+			if (LocalDate.now().isAfter(event.getEventDate())) {
+				pastEvents.add(event);
+			}
+			else {
+				futureEvents.add(event);
+			}
+		}
+		
 		for (int i=0; i < eventAddresses.size(); i++) {
 			if (i == eventAddresses.size() - 1) {
 				zipCodes += eventAddresses.get(i).getZipCode();
@@ -65,7 +78,9 @@ public class EventController {
 				zipCodes += eventAddresses.get(i).getZipCode()+"|";
 			}
 		}
-		model.addAttribute("events", events);
+		model.addAttribute("pastEvents", pastEvents);
+		model.addAttribute("futureEvents", futureEvents);
+		model.addAttribute("allEvents", events);
 		model.addAttribute("zipCodes", zipCodes);
 		return "events";
 	}
