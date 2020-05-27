@@ -1,5 +1,7 @@
 package com.skilldistillery.roundtablegaming.data;
 
+import java.util.List;
+
 import com.skilldistillery.roundtablegaming.entities.Attendee;
 import com.skilldistillery.roundtablegaming.entities.AttendeeId;
 import com.skilldistillery.roundtablegaming.entities.User;
@@ -13,4 +15,7 @@ public interface AttendeeDAO {
 	public boolean enable(AttendeeId id);
 	
 	public boolean disable(AttendeeId id);
+	
+	public List<Attendee> getAllAttendees();
+	
 }
