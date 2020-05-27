@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 
 import com.skilldistillery.roundtablegaming.entities.Attendee;
 import com.skilldistillery.roundtablegaming.entities.AttendeeId;
+import com.skilldistillery.roundtablegaming.entities.EventGame;
+import com.skilldistillery.roundtablegaming.entities.User;
 
 @Service
 @Transactional
@@ -17,10 +19,15 @@ public class AttendeeDAOImpl implements AttendeeDAO {
 	private EntityManager em;
 	
 	@Override
-	public Attendee create(Attendee attn) {
-		em.persist(attn);
-		em.flush();
-		return attn;
+	public Attendee create(User user, int egId) {
+		EventGame eg = em.find(EventGame.class, egId);
+		Attendee newAttendee = new Attendee();
+		if (eg != null) {
+			newAttendee.setUser(user);
+			newAttendee.setEventGame(eg);
+			em.persist(newAttendee);
+		}
+		return newAttendee;
 	}
 
 	@Override
