@@ -91,7 +91,7 @@
 					<c:forEach var="eventGames"	items="${event.eventGames}">
 					<a class="dropdown-item" href="jointEvent.do?id=${eventGames.id}">${eventGames.game.title }</a>
 							<br>
-					</c:forEach></a>
+					</c:forEach>
 
 
 
