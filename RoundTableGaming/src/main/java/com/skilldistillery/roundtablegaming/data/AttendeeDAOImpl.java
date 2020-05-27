@@ -1,5 +1,7 @@
 package com.skilldistillery.roundtablegaming.data;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
@@ -70,6 +72,14 @@ public class AttendeeDAOImpl implements AttendeeDAO {
 		else {
 			return false;
 		}
+	}
+
+	@Override
+	public List<Attendee> getAllAttendees() {
+		String jpql = "SELECT a FROM Attendee a";
+		List <Attendee> attendees = em.createQuery(jpql, Attendee.class)
+				.getResultList();
+		return attendees;
 	}
 
 }
