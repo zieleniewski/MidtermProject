@@ -339,12 +339,13 @@
 					<div class="tab-pane fade" id="upcoming-games" role="tabpanel">
 						<div class="card">
 							<div class="card-body">
-								<h5 class="card-title">Upcoming Games</h5>
+								<h5 class="card-title">Upcoming Events</h5>
 
 								<form>
 									<ul>
-										<c:forEach var="event" items="${category}">
-											<h3>${event.title}<br> ${event.eventDate }
+										<c:forEach var="event" items="${futureEvents}">
+											<h3>${event.title}<br>
+											${event.eventDate }
 											</h3>
 										</c:forEach>
 
@@ -357,12 +358,13 @@
 					<div class="tab-pane fade" id="game-history" role="tabpanel">
 						<div class="card">
 							<div class="card-body">
-								<h5 class="card-title">Game History</h5>
+								<h5 class="card-title">Event History</h5>
 
 								<form>
 									<ul>
-										<c:forEach var="event" items="${category}">
-											<h3>${event.title}<br> ${event.eventDate }
+										<c:forEach var="event" items="${pastEvents}">
+											<h3>${event.title}<br> 
+											${event.eventDate }
 											</h3>
 										</c:forEach>
 
