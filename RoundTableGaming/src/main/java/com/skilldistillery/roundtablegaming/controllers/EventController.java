@@ -197,6 +197,19 @@ public class EventController {
 		return "searchedEvents";
 	}
 	
+	@GetMapping("editEvent.do")
+	public String editEvent(int id, Model model) {
+		Event editEvent = dao.getEventById(id);
+		model.addAttribute("eventToEdit", editEvent);
+		return "editEvent";
+	}
+	
+	@PostMapping("deleteEvent.do")
+	public String deleteEvent(int id) {
+		dao.disableEvent(id);
+		return "account";
+	}
+	
 	@InitBinder
 	public void initBinder(WebDataBinder webDataBinder) {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
