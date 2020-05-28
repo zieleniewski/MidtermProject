@@ -11,7 +11,8 @@
 <link rel="stylesheet" href="css/account.css" type="text/css">
 <script
 	src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <meta charset="utf-8">
 
 
@@ -391,16 +392,18 @@
 							<div class="card-body">
 								<h5 class="card-title">My Events</h5>
 
-								<form>
+								
 									<ul>
-										<c:forEach var="event" items="${pastEvents}">
-											<h3>${event.title}<br> 
-											${event.eventDate }
-											</h3>
+										<c:forEach var="event" items="${orgEvents}">
+										${event.title} 
+											${event.eventDate }<br>
+										<a href="editEvent.do?id=${event.id}"  class="btn btn-info" role="button">Edit Event</a>
+										<a href="deleteEvent.do?id=${event.id}"  class="btn btn-info" role="button">Delete Event</a>
+
+								
 										</c:forEach>
 
 									</ul>
-								</form>
 
 							</div>
 						</div>
