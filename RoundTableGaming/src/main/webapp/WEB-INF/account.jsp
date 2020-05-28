@@ -4,6 +4,9 @@
 <!DOCTYPE html>
 <html>
 <title>Account</title>
+<link rel="icon" 
+      type="image/png" 
+      href="img/favicon.ico">
 <head>
 <link
 	href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"

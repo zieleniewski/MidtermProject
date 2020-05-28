@@ -13,6 +13,9 @@
  <link rel="stylesheet" href="css/register.css" type="text/css"> 
 
 <title>Sign Up</title>
+<link rel="icon" 
+      type="image/png" 
+      href="img/favicon.ico">
 </head>
 <body>
 <div class="narbar-rpg">

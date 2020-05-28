@@ -10,6 +10,9 @@
 	<link rel="stylesheet" href="css/login-popout.css" type="text/css">
 <meta charset="UTF-8">
 <title>Login</title>
+<link rel="icon" 
+      type="image/png" 
+      href="img/favicon.ico">
 </head>
 <body>
 	<!-- Modal -->

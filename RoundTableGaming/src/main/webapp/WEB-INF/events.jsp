@@ -12,6 +12,9 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <meta charset="UTF-8">
 <title>Events</title>
+<link rel="icon" 
+      type="image/png" 
+      href="img/favicon.ico">
 </head>
 <body>
 

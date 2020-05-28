@@ -15,6 +15,9 @@
 <link rel="stylesheet" href="css/miniature.css" type="text/css">
 <meta charset="UTF-8">
 <title>Miniatures</title>
+<link rel="icon" 
+      type="image/png" 
+      href="img/favicon.ico">
 </head>
 <body>
 	<div class="navbar">

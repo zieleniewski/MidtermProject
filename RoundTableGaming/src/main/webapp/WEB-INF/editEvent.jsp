@@ -17,6 +17,9 @@
 
 <link rel="stylesheet" href="css/createEvent.css" type="text/css">
 <title>Edit event</title>
+<link rel="icon" 
+      type="image/png" 
+      href="img/favicon.ico">
 <meta charset="UTF-8">
 </head>
 <body>

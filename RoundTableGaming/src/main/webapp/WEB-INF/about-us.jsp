@@ -15,6 +15,9 @@
 <link rel="stylesheet" href="css/about-us.css" type="text/css">
 <meta charset="UTF-8">
 <title>About Us</title>
+<link rel="icon" 
+      type="image/png" 
+      href="img/favicon.ico">
 </head>
 
 	<div class="navbar">
