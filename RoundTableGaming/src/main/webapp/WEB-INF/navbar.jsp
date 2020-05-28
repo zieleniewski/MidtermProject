@@ -53,7 +53,7 @@
 					action="searchBar.do" method="post">
 					<div class="input-group">
 						<input type="text" class="form-control" placeholder="Search Events"
-							name="keyword"> <span class="input-group-btn">
+							name="search"> <span class="input-group-btn">
 							<button class="btn btn-default btn-rounded" type="submit">GO</button>
 						</span>
 					</div>
