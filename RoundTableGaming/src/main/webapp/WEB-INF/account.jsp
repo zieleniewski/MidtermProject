@@ -57,11 +57,23 @@
 									class="list-group-item list-group-item-action active"
 									data-toggle="list" href="#password" role="tab"> Password </a> <a
 									class="list-group-item list-group-item-action"
-									data-toggle="list" href="#upcoming-games" role="tab">
-									Upcoming Games </a> <a
+									data-toggle="list" href="#upcoming-events" role="tab">
+									Upcoming Events </a> 
+									
+									<a
 									class="list-group-item list-group-item-action"
-									data-toggle="list" href="#game-history" role="tab"> Game
-									History </a> <a class="list-group-item list-group-item-action"onclick="if (!(confirm('Are you sure you want to delete this record and all child records?'))) return false"
+									data-toggle="list" href="#event-history" role="tab"> Event
+									History </a> 
+									<a
+									class="list-group-item list-group-item-action"
+									data-toggle="list" href="#my-events" role="tab"> My Events </a> 
+									
+									
+									
+									
+									
+									
+									<a class="list-group-item list-group-item-action"onclick="if (!(confirm('Are you sure you want to delete this record and all child records?'))) return false"
 									data-toggle="list" href="#" role="tab"> Delete account </a>
 							</div>
 						</c:otherwise>
@@ -336,7 +348,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="tab-pane fade" id="upcoming-games" role="tabpanel">
+					<div class="tab-pane fade" id="upcoming-events" role="tabpanel">
 						<div class="card">
 							<div class="card-body">
 								<h5 class="card-title">Upcoming Events</h5>
@@ -355,10 +367,29 @@
 							</div>
 						</div>
 					</div>
-					<div class="tab-pane fade" id="game-history" role="tabpanel">
+					<div class="tab-pane fade" id="event-history" role="tabpanel">
 						<div class="card">
 							<div class="card-body">
 								<h5 class="card-title">Event History</h5>
+
+								<form>
+									<ul>
+										<c:forEach var="event" items="${pastEvents}">
+											<h3>${event.title}<br> 
+											${event.eventDate }
+											</h3>
+										</c:forEach>
+
+									</ul>
+								</form>
+
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane fade" id="my-events" role="tabpanel">
+						<div class="card">
+							<div class="card-body">
+								<h5 class="card-title">My Events</h5>
 
 								<form>
 									<ul>

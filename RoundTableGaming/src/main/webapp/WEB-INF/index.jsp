@@ -29,7 +29,7 @@
 	<div class="container-fluid">
 		
 		
-<img src="img/LogoMakr_7yQwOf.png">
+<img src="img/LogoMakr_6nfsz7.png">
 
 
 
