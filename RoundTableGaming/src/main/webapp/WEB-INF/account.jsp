@@ -48,7 +48,7 @@
 									class="list-group-item list-group-item-action"
 									data-toggle="list" href="#game-history" role="tab"> Game
 									History </a> <a class="list-group-item list-group-item-action"
-									data-toggle="list" href="#" role="tab"> Delete account </a>
+									data-toggle="list" href="deleteAccount.do" role="tab"> Delete account </a>
 							</div>
 						</c:when>
 						<c:otherwise>
@@ -74,8 +74,8 @@
 									
 									
 									
-									<a class="list-group-item list-group-item-action"onclick="if (!(confirm('Are you sure you want to delete this record and all child records?'))) return false"
-									data-toggle="list" href="#" role="tab"> Delete account </a>
+									<a class="list-group-item list-group-item-action"
+									data-toggle="list" href="#deleteThisAccount" role="tab"> Delete account </a>
 							</div>
 						</c:otherwise>
 					</c:choose>
@@ -393,25 +393,42 @@
 								<h5 class="card-title">My Events</h5>
 
 								
-											<form action="deleteEvent.do" method="post">
 									<ul>
 										<c:forEach var="event" items="${orgEvents}">
 											${event.title} 
 											${event.eventDate }<br>
 											
 										<a href="editEvent.do?id=${event.id}" class="btn btn-info" role="button">Edit Event</a>
+
+											<form action="deleteEvent.do" method="post">
 										<input type="hidden" name="id" value="${event.id}" />
 										<input type="submit" class="btn btn-info" role="button" />Delete Event
-
+											</form>
 								
 										</c:forEach>
 
 									</ul>
-											</form>
 
 							</div>
 						</div>
 					</div>
+					
+					<div class="tab-pane fade" id="deleteThisAccount" role="tabpanel">
+						<div class="card">
+							<div class="card-body">
+								<h5 class="card-title">Delete Account</h5>
+
+								<form action=deleteAccount.do method="post">
+									Are you sure you want to delete your account?
+									
+									<input type="submit" value="Delete">
+									
+								</form>
+
+							</div>
+						</div>
+					</div>
+					
 				</div>
 			</div>
 		</div>

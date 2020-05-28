@@ -37,7 +37,7 @@ public class UserController {
 	@RequestMapping(path = "logIn.do")
 	public String login(User user, HttpSession session) {
 		User loggingUser = dao.checkLogin(user);
-		if (loggingUser == null) {
+		if (loggingUser == null || !loggingUser.isEnabled()) {
 			return "index";
 		} else {
 			session.setAttribute("loggedInUser", loggingUser);
@@ -86,5 +86,13 @@ public class UserController {
 			return "account";
 
 		}
+	}
+	
+	@PostMapping("deleteAccount.do")
+	public String deleteAccount(HttpSession session) {
+		User disabled = (User)session.getAttribute("loggedInUser");
+		dao.disableUser(disabled.getId());
+		session.removeAttribute("loggedInUser");
+		return "index";
 	}
 }
