@@ -14,6 +14,8 @@ public interface EventDAO {
 	public List<Event> getAllEvents();
 	
 	public Event getEventById(int id);
+	
+	public List<Event> getEventsByOrganizerId(int orgId);
 		
 	public List<Event> getEventsByAddress(Address address);
 	
