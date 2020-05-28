@@ -27,8 +27,9 @@ public class GameDAOImpl implements GameDAO{
 
 	@Override
 	public List<Game> getAllGames() {
-		String query= "SELECT g FROM Game g";
-		List<Game> allGames = em.createQuery(query, Game.class).getResultList();
+		String query= "SELECT g FROM Game g WHERE g.enabled = true";
+		List<Game> allGames = em.createQuery(query, Game.class)
+				.getResultList();
 		return allGames;
 	}
 		
@@ -39,7 +40,8 @@ public class GameDAOImpl implements GameDAO{
 	
 	@Override
 	public List<Game> getGamesByKeyword(String keyword) {
-		String query= "SELECT g FROM Game g WHERE g.title LIKE '"+"%"+keyword+"%'";
+		String query= "SELECT g FROM Game g WHERE g.enabled = true "
+				+ "AND g.title LIKE '"+"%"+keyword+"%'";
 		List<Game> foundGames = em.createQuery(query, Game.class)
 				.getResultList();
 		return foundGames;
@@ -47,7 +49,8 @@ public class GameDAOImpl implements GameDAO{
 
 	@Override
 	public Game getGameByTitle(String title) {
-		String query = "SELECT g FROM Game g WHERE g.title = :title";
+		String query = "SELECT g FROM Game g WHERE g.enabled = true "
+				+ "AND g.title = :title";
 		Game game = em.createQuery(query, Game.class)
 				.setParameter("title", title)
 				.getSingleResult();
@@ -56,7 +59,8 @@ public class GameDAOImpl implements GameDAO{
 	
 	@Override
 	public List<Game> getGamesByCategory(int categoryID) {
-		String query = "SELECT g FROM Game g WHERE g.category = :catId";
+		String query = "SELECT g FROM Game g WHERE g.enabled = true "
+				+ "AND g.category = :catId";
 		List<Game> games = em.createQuery(query, Game.class)
 				.setParameter("catId", categoryID)
 				.getResultList();

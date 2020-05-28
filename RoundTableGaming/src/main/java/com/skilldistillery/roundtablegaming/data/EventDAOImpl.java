@@ -123,8 +123,8 @@ public class EventDAOImpl implements EventDAO {
 
 	@Override
 	public List<Event> getEventsByKeyword(String keyword) {
-		String query = "SELECT e FROM Event e WHERE e.title LIKE '" + "%" 
-				+ keyword + "%'" + " OR e.description LIKE '"
+		String query = "SELECT e FROM Event e WHERE e.enabled = true "
+				+ "AND e.title LIKE '" + "%" + keyword + "%'" + " OR e.description LIKE '"
 				+ "%" + keyword + "%'";
 		List<Event> events = em.createQuery(query, Event.class)
 				.getResultList();
@@ -133,7 +133,8 @@ public class EventDAOImpl implements EventDAO {
 
 	@Override
 	public List<Event> getEventsByZipCode(String zipCode) {
-		String jpql = "SELECT e FROM Event e WHERE address.zipCode = :zipCode";
+		String jpql = "SELECT e FROM Event e WHERE e.enabled = true "
+				+ "AND e.address.zipCode = :zipCode";
 		List<Event> events = em.createQuery(jpql, Event.class)
 				.setParameter("zipCode", zipCode)
 				.getResultList();
@@ -142,7 +143,8 @@ public class EventDAOImpl implements EventDAO {
 
 	@Override
 	public List<Event> getEventsByDate(LocalDate date) {
-		String jpql = "SELECT e FROM Event e WHERE e.eventDate = :search";
+		String jpql = "SELECT e FROM Event e WHERE e.enabled = true "
+				+ "AND e.eventDate = :search";
 		List<Event> events = em.createQuery(jpql, Event.class)
 				.setParameter("search", date)
 				.getResultList();
@@ -152,7 +154,8 @@ public class EventDAOImpl implements EventDAO {
 	@Override
 	public List<Attendee> getEventAttendees(Event event) {
 		List<Attendee> attendees = new ArrayList<>();
-		String jpql = "SELECT a FROM Attendee a JOIN a.eventGame g WHERE " + "g.event.id = :id";
+		String jpql = "SELECT a FROM Attendee a JOIN a.eventGame g WHERE g.event.enabled = true "
+				+ "AND g.event.id = :id";
 		attendees = em.createQuery(jpql, Attendee.class)
 				.setParameter("id", event.getId())
 				.getResultList();
