@@ -1,11 +1,12 @@
 @charset "UTF-8";
 
 body {
-background-image: url("https://cdna.artstation.com/p/assets/images/images/004/347/140/large/juanjo-barcelo-dark-city-01.jpg?1482770432") !important;
+background-image: url("https://wallpapercave.com/wp/wp2533041.jpg") !important;
 background-repeat: no-repeat;
- background-size: 100% 100%;
  background-position: center;
  height:1000px !important;
+
+	
 
 }
 h2{
@@ -18,11 +19,7 @@ h2{
 }
 
 
-/* .d-flex{
-	position: absolute;
-	bottom: 40px;
-	
-} */
+
 
 img {
   display: block;
@@ -31,17 +28,19 @@ img {
   width: 40%;
 
 }
-
+.container{
+}
 
 .practice-area .inner img{
 	display:inline-block;
+	
 }
-
-
 .our-webcoderskull{
-  background: url("http://www.webcoderskull.com/img/right-sider-banner.png") no-repeat center top / cover;
-  
+	padding-top: 150px !important;
+   	padding-bottom: auto !important;
 }
+
+
 .our-webcoderskull .cnt-block{ 
    float:left; 
    width:100%; 
@@ -49,7 +48,9 @@ img {
    padding:30px 20px; 
    text-align:center; 
    border:2px solid #d5d5d5;
-   margin: 0 0 28px;
+      border-radius:10%; 
+   	
+   
 }
 .our-webcoderskull .cnt-block figure{
    width:148px; 
@@ -98,6 +99,4 @@ img {
 .our-webcoderskull .cnt-block .follow-us li .fa:hover{ 
    color:#025a8e;
 }
-
-
 
