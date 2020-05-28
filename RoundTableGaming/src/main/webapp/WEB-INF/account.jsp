@@ -393,21 +393,21 @@
 								<h5 class="card-title">My Events</h5>
 
 								
-											<form action="deleteEvent.do" method="post">
 									<ul>
 										<c:forEach var="event" items="${orgEvents}">
 											${event.title} 
 											${event.eventDate }<br>
 											
 										<a href="editEvent.do?id=${event.id}" class="btn btn-info" role="button">Edit Event</a>
+
+											<form action="deleteEvent.do" method="post">
 										<input type="hidden" name="id" value="${event.id}" />
 										<input type="submit" class="btn btn-info" role="button" />Delete Event
-
+											</form>
 								
 										</c:forEach>
 
 									</ul>
-											</form>
 
 							</div>
 						</div>
