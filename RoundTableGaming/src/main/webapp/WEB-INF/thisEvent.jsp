@@ -107,7 +107,7 @@
 </div>
 
 </c:when>
-<c:otherwise><h2>Please Login To Join This Event</h2></c:otherwise>
+<c:otherwise><h2>Please Login To Join This<br> Event Or Leave A Comment</h2></c:otherwise>
 </c:choose>
 
 <%-- 
