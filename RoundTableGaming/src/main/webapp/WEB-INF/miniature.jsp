@@ -12,7 +12,7 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="css/rpg.css" type="text/css">
+<link rel="stylesheet" href="css/miniature.css" type="text/css">
 <meta charset="UTF-8">
 <title>Role Play Games</title>
 </head>
