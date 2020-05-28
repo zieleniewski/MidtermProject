@@ -14,7 +14,7 @@
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
 <link rel="stylesheet" href="css/createEvent.css" type="text/css">
-<title>create event</title>
+<title>Edit event</title>
 <meta charset="UTF-8">
 </head>
 <body>
@@ -27,15 +27,15 @@
 	
 	<div class="card-body text-center">
 <div class="card-header" style="margin-bottom: 20px">
-		<h2>Create New Event</h2>
+		<h2>Edit Event</h2>
 </div>
-		<form class="form" role="form" action="createEvent.do" method="POST">
+		<form class="form" role="form" action="updateEvent.do" method="POST">
 
 			<div class="form-group">
 
 				<div class="col-md-6 mx-auto">
 					<input type="text" id="eventName" placeholder="Event Name"
-						class="form-control" autofocus name="title">
+						class="form-control" autofocus name="title" value="${eventToEdit.title}">
 				</div>
 			</div>
 			<!-- <!-- put drop down of games here with five rows  -->
@@ -46,7 +46,7 @@
 					<!-- <select class="custom-select" id="inputGroupSelect01" name="eventGames.game.id"> -->
 					<select class="custom-select" id="inputGroupSelect01" name="eventGameIds">
 						<option value="0" selected>Select Game Title</option>
-						<c:forEach var="game" items="${games}">
+						<c:forEach var="game" items="${eventGames}">
 							<option value="${game.id }">${game.title}</option>
 						</c:forEach>
 					</select>
@@ -57,7 +57,7 @@
 				<div class="col-md-6 mx-auto">
 					<select class="custom-select" id="inputGroupSelect02" name="eventGameIds">
 						<option selected>Select Game Title</option>
-						<c:forEach var="game" items="${games}">
+						<c:forEach var="game" items="${eventGames}">
 							<option value="${game.id }">${game.title}</option>
 						</c:forEach>
 					</select>
@@ -69,7 +69,7 @@
 
 					<select class="custom-select" id="inputGroupSelect03" name="eventGameIds">
 						<option selected>Select Game Title</option>
-						<c:forEach var="game" items="${games}">
+						<c:forEach var="game" items="${eventGames}">
 							<option value="${game.id }">${game.title}</option>
 						</c:forEach>
 					</select>
@@ -81,7 +81,7 @@
 
 					<select class="custom-select" id="inputGroupSelect04" name="eventGameIds">
 						<option selected>Select Game Title</option>
-						<c:forEach var="game" items="${games}">
+						<c:forEach var="game" items="${eventGames}">
 							<option value="${game.id }">${game.title}</option>
 						</c:forEach>
 					</select>
@@ -92,7 +92,7 @@
 				<div class="col-md-6 mx-auto">
 					<select class="custom-select" id="inputGroupSelect05" name="eventGameIds">
 						<option selected>Select Game Title</option>
-						<c:forEach var="game" items="${games}">
+						<c:forEach var="game" items="${eventGames}">
 							<option value="${game.id }">${game.title}</option>
 						</c:forEach>
 					</select>
@@ -105,7 +105,7 @@
 				
 				<div class="col-md-6 mx-auto">
 					<input type="text" id="description" placeholder="Event Description "
-						class="form-control" name="description">
+						class="form-control" name="description" value="${eventToEdit.title}">
 				</div>
 			</div>
 
@@ -113,34 +113,34 @@
 			<div class="form-group">
 				<div class="col-md-6 mx-auto">
 					<input type="text" id="maxPlayers" placeholder="Max Players"
-						class="form-control" name="capacity"> <span
+						class="form-control" name="capacity" value="${eventToEdit.capacity}"> <span
 						class="help-block"> </span>
 				</div>
 			</div>
 			<div class="form-group">
 				<div class="col-md-6 mx-auto">
 					<input type="text" id="street1" placeholder="Address"
-						class="form-control" name="address.street1">
+						class="form-control" name="street1" value="${eventToEdit.address.street1}">
 				</div>
 			</div>
 			<div class="form-group">				
 				<div class="col-md-6 mx-auto">
 					<input type="text" id="street2" placeholder="Address"
-						class="form-control" name="address.street2">
+						class="form-control" name="street2" value="${eventToEdit.address.street2}">
 				</div>
 			</div>
 			<div class="form-group">
 				
 				<div class="col-md-6 mx-auto">
 					<input type="text" id="city" placeholder="City"
-						class="form-control" name="address.city">
+						class="form-control" name="city" value="${eventToEdit.address.city}">
 				</div>
 			</div>
 			<div class="form-group">
 				
 				<div class="col-md-6 mx-auto">
-					 <select id="inputState" class="form-control" name="address.state">
-						<option selected="">State...</option>
+					 <select id="inputState" class="form-control" name="state">
+						<option selected="">${eventToEdit.address.state}</option>
 												<option>Alabama</option>
 												<option>Alaska</option>
 												<option>Arizona</option>
@@ -200,7 +200,7 @@
 				
 				<div class="col-md-6 mx-auto">
 					<input type="text" id="zipCode" placeholder="Zip Code"
-						class="form-control" name="address.zipCode">
+						class="form-control" name="zipCode" value="${eventToEdit.address.zipCode}">
 				</div>
 			</div>
 			
@@ -210,7 +210,7 @@
 
 
 			<input type="date" id="meeting-date" name="eventDate"
-				value="">
+				value="${eventToEdit.eventDate}">
 	</div>
 	</div>
 	
@@ -218,15 +218,15 @@
 					<div class="col-md-6 mx-auto">
 			<label for="eventTime">Time of Event - </label>
 			<input type="time" id="meeting-time" name="startTime"
-				value="">
+				value="${eventToEdit.startTime}">
 				</div>
 	</div>
 		
 
 
 
-
-			<button type="submit" class="btn btn-primary btn-block" style="margin-top: 20px;">Create!</button>
+             <input type="hidden" name="id" value="${eventToEdit.id}">
+			<button type="submit" class="btn btn-primary btn-block" style="margin-top: 20px;">Submit Edit!</button>
 		</form>
 		
 	</div>
