@@ -22,6 +22,7 @@ public class AddressDAOImpl implements AddressDAO {
 	@Override
 	public Address createAddress(Address address) {
 		address.setId(0);
+		address.setEnabled(true);
 		em.persist(address);
 		em.flush();
 		return address;
@@ -64,6 +65,7 @@ public class AddressDAOImpl implements AddressDAO {
 			address.setCity(updatedAddress.getCity());
 			address.setState(updatedAddress.getState());
 			address.setZipCode(updatedAddress.getZipCode());
+			address.setEnabled(true);
 			em.persist(address);
 			em.flush();
 		}
@@ -116,12 +118,14 @@ public class AddressDAOImpl implements AddressDAO {
 				.getResultList();
 		
 		if (addresses == null || addresses.size() < 1) {
+			address.setEnabled(true);
 			em.persist(address);
 			return address;
 		}
 		else {
 			newLinkedAddr = addresses.get(0);
 			newLinkedAddr.setId(addresses.get(0).getId());
+			newLinkedAddr.setEnabled(true);
 			return newLinkedAddr;
 		}
 	}

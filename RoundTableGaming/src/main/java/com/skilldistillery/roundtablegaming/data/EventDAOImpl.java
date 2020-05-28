@@ -26,8 +26,8 @@ public class EventDAOImpl implements EventDAO {
 
 	@Override
 	public Event createEvent(Event event, Integer[] eventGameIds) {
-		System.out.println(event);
 		Address tempAddr = event.getAddress();
+		tempAddr.setEnabled(true);
 		em.persist(tempAddr);
 		event.setEnabled(true);
 		event.setAddress(tempAddr);
@@ -163,6 +163,7 @@ public class EventDAOImpl implements EventDAO {
 	public Event updateEvent(Event updatedEvent, Address address) {
 		Event event = em.find(Event.class, updatedEvent.getId());
 		if (event != null) {
+			event.setEnabled(true);
 			event.setOrganizer(updatedEvent.getOrganizer());
 			event.setAddress(updatedEvent.getAddress());
 			event.setTitle(updatedEvent.getTitle());

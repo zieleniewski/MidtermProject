@@ -19,6 +19,7 @@ public class GameDAOImpl implements GameDAO{
 	
 	@Override
 	public Game createGame(Game game) {
+		game.setEnabled(true);
 		em.persist(game);
 		em.flush();
 		return game;
@@ -66,6 +67,7 @@ public class GameDAOImpl implements GameDAO{
 	public Game updateGame(Game game) {
 		Game updated = em.find(Game.class, game.getId());
 		if (updated != null) {
+			updated.setEnabled(true);
 			updated.setTitle(game.getTitle());
 			updated.setDescription(game.getDescription());
 			updated.setMinPlayers(game.getMinPlayers());
