@@ -207,6 +207,7 @@ public class EventController {
 	
 	@PostMapping("searchBar.do")
 	public String searchBar(String search, Model model) {
+		System.out.println("\n\n\n"+search+"\n\n\n");
 		List<Event> results = dao.getEventsByKeyword(search);
 		model.addAttribute("results", results);
 		return "searchedEvents";
