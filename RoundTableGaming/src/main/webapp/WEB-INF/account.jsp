@@ -394,17 +394,14 @@
 								
 									<ul>
 										<c:forEach var="event" items="${orgEvents}">
-											${event.title} 
-											${event.eventDate }<br>
-											
-										<a href="editEvent.do?id=${event.id}" class="btn btn-info" role="button">Edit Event</a>
-
-											<form action="deleteEvent.do" method="post">
+										<h4>Event Title: ${event.title}</h4>
+										<h4>Event Date: ${event.eventDate }</h4>
+											<a href="editEvent.do?id=${event.id}" class="btn btn-info" role="button" >Edit Event</a>	<br>
+									<form action="deleteEvent.do" method="post" style="margin-top: 10px; margin-bottom: 20px;">
 										<input type="hidden" name="id" value="${event.id}" />
-										<input type="submit" class="btn btn-info" role="button" />Delete Event
+										<input type="submit" class="btn btn-info" value="Delete Event" role="button" />
 											</form>
-								
-										</c:forEach>
+								</c:forEach>
 
 									</ul>
 
