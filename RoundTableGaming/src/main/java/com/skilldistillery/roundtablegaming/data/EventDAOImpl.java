@@ -125,7 +125,6 @@ public class EventDAOImpl implements EventDAO {
 				+ "%" + keyword + "%'";
 		List<Event> events = em.createQuery(query, Event.class)
 				.getResultList();
-		System.out.println("\n\n\nINSIDE IMPL  "+events+"\n\n\n");
 		return events;
 	}
 

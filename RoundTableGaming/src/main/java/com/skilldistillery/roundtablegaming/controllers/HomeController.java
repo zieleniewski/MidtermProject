@@ -73,4 +73,8 @@ public class HomeController {
 		return "account";
 	}
 
+	@GetMapping("about.do")
+	public String about() {
+		return "about-us";
+	}
 }
