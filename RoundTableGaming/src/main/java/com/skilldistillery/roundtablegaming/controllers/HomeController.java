@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.skilldistillery.roundtablegaming.data.EventDAO;
 import com.skilldistillery.roundtablegaming.data.UserDAO;
 import com.skilldistillery.roundtablegaming.entities.Attendee;
 import com.skilldistillery.roundtablegaming.entities.Event;
@@ -22,6 +23,9 @@ public class HomeController {
 	
 	@Autowired
 	private UserDAO userDao;
+	
+	@Autowired
+	private EventDAO eventDao;
 
 	@RequestMapping(path = { "/", "home.do" })
 	public String home() {
@@ -40,7 +44,7 @@ public class HomeController {
 		session.setAttribute("loggedInUser", loggedInUser);
 		try {
 			List<Attendee> attendees = loggedInUser.getAttendees();
-			System.out.println("\n" + attendees + "\n");
+			List<Event> orgEvents = eventDao.getEventsByOrganizerId(loggedInUser.getId());
 			List<Event> allEvents = new ArrayList<>();
 			List<Event> pastEvents = new ArrayList<>();
 			List<Event> futureEvents = new ArrayList<>();
@@ -59,6 +63,7 @@ public class HomeController {
 				}
 			}
 
+			model.addAttribute("orgEvents", orgEvents);
 			model.addAttribute("pastEvents", pastEvents);
 			model.addAttribute("futureEvents", futureEvents);
 		} catch (Exception e) {
