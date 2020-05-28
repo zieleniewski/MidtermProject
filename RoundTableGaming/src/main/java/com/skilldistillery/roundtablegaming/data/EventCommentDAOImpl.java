@@ -41,7 +41,7 @@ public class EventCommentDAOImpl implements EventCommentDAO {
 
 	@Override
 	public List<EventComment> getAllEventComments() {
-		String query = "SELECT ec FROM EventComment ec";
+		String query = "SELECT ec FROM EventComment ec WHERE ec.enabled = true";
 		List<EventComment> allCommentsEver = em.createQuery(query, EventComment.class)
 				.getResultList();
 		return allCommentsEver;
@@ -49,7 +49,8 @@ public class EventCommentDAOImpl implements EventCommentDAO {
 
 	@Override
 	public List<EventComment> getEventCommentsByEventId(int eventId) {
-		String query = "SELECT ec FROM EventComment ec WHERE ec.event.id = :eid";
+		String query = "SELECT ec FROM EventComment ec WHERE ec.enabled = true "
+				+ "AND ec.event.id = :eid";
 		List<EventComment> foundComments = em.createQuery(query, EventComment.class)
 				.setParameter("eid", eventId)
 				.getResultList();
