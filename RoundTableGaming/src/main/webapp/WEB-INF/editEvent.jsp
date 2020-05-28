@@ -224,7 +224,7 @@
 		
 
 
-
+	         <input type="hidden" name="addressId" value="${eventToEdit.address.id}">
              <input type="hidden" name="id" value="${eventToEdit.id}">
 			<button type="submit" class="btn btn-primary btn-block" style="margin-top: 20px;">Submit Edit!</button>
 		</form>
