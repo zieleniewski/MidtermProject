@@ -87,4 +87,12 @@ public class UserController {
 
 		}
 	}
+	
+	@PostMapping("deleteAccount.do")
+	public String deleteAccount(HttpSession session) {
+		User disabled = (User)session.getAttribute("loggedInUser");
+		disabled.setEnabled(false);
+		session.removeAttribute("loggedInUser");
+		return "index";
+	}
 }
