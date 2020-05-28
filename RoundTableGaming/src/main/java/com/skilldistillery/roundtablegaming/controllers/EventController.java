@@ -161,11 +161,15 @@ public class EventController {
 	}
 	
 	@PostMapping("updateEvent.do")
-	public String update(Event event, Address address, Model model) {
+	public String update(Event event, Address address,  @RequestParam int id, Model model, HttpSession session) {
+		System.out.println(event);
+		System.out.println(address);
+		User loggedInUser = (User) session.getAttribute("loggedInUser");
 		Address updAddress = addrDao.checkAddress(address);
-		Event updEvent = dao.updateEvent(event, updAddress);
+		Event updEvent = dao.updateEvent(event, updAddress, id);
 		model.addAttribute("updatedEvent", updEvent);
-		return "redir:account";
+		session.setAttribute("loggedInUser", loggedInUser);
+		return "redirect:account.do";
 	}
 	
 	@GetMapping("eventsByGame.do")
@@ -199,8 +203,10 @@ public class EventController {
 	
 	@GetMapping("editEvent.do")
 	public String editEvent(int id, Model model) {
+		List<Game> allGames = gameDao.getAllGames();
 		Event editEvent = dao.getEventById(id);
 		model.addAttribute("eventToEdit", editEvent);
+		model.addAttribute("eventGames", allGames);
 		return "editEvent";
 	}
 	
@@ -210,7 +216,7 @@ public class EventController {
 		loggedInUser = userDao.getUserById(loggedInUser.getId());
 		session.setAttribute("loggedInUser", loggedInUser);
 		dao.disableEvent(id);
-		return "account";
+		return "redirect:account.do";
 	}
 	
 	@InitBinder
