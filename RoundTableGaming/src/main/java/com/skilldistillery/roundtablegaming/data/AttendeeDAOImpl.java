@@ -24,6 +24,7 @@ public class AttendeeDAOImpl implements AttendeeDAO {
 	public Attendee create(User user, int egId) {
 		EventGame eg = em.find(EventGame.class, egId);
 		Attendee newAttendee = new Attendee();
+		user = em.find(User.class, user.getId());
 		if (eg != null) {
 			newAttendee.setUser(user);
 			newAttendee.setEventGame(eg);
