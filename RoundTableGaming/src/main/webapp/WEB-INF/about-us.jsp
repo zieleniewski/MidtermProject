@@ -31,7 +31,7 @@
 				<h5 class="modal-title" id="exampleModalLongTitle">Dad Noise Provider</h5>
 				
 			</div>
-			<div class="modal-body">Shane is the master mind behind this entire project. Making use of his extensive in-depth knowlege Shane was able to keep this project on track and headed in the right direction. Whenever we 
+			<div class="modal-body">Shane is the master mind behind this entire project. Making use of his extensive in-depth knowledge, Shane was able to keep this project on track and headed in the right direction. Whenever we 
 			had structural questions or decisions to make, Shane was the man to talk to.</div>
 			<div class="modal-footer">
 			</div>

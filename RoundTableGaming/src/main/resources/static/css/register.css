@@ -4,6 +4,15 @@ html body {
 
 
 }
+h2{
+		font-family: "Courier New" !important;
+		font-weight: 500 !important;
+}
+.col-md-8{
+    float: none;
+    margin: 0 auto;
+    	font-family: "Courier New" !important;
+}
 ::-webkit-input-placeholder {
    text-align: center;
 }
