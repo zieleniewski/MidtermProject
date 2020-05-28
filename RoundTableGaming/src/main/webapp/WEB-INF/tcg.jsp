@@ -14,7 +14,7 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="css/tcg.css" type="text/css">
 <meta charset="UTF-8">
-<title>Role Play Games</title>
+<title>Trading Card Games</title>
 </head>
 <body>
 	<div class="navbar">

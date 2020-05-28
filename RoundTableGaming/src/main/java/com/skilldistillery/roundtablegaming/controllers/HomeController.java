@@ -27,7 +27,7 @@ public class HomeController {
 	@Autowired
 	private EventDAO eventDao;
 
-	@RequestMapping(path = { "/", "home.do" })
+	@RequestMapping("home.do")
 	public String home() {
 		return "index";
 	}

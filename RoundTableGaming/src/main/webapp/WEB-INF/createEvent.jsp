@@ -16,7 +16,7 @@
 <meta charset="UTF-8">
 
 <link rel="stylesheet" href="css/createEvent.css" type="text/css">
-<title>create event</title>
+<title>Create Event</title>
 <meta charset="UTF-8">
 </head>
 <body>

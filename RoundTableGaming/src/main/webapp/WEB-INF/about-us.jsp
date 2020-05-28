@@ -14,7 +14,7 @@
 
 <link rel="stylesheet" href="css/about-us.css" type="text/css">
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>About Us</title>
 </head>
 
 	<div class="navbar">
@@ -114,11 +114,11 @@
 				<li class="col-12 col-md-6 col-lg-4">
 					<div class="cnt-block equal-hight" style="height: 349px;">
 						<figure>
-							<img src="https://cdn5.vectorstock.com/i/1000x1000/08/34/empty-office-chair-with-vacant-sign-employment-vector-20380834.jpg"
+							<img src="images/jacob-aboutme.jpg"
 								class="img-responsive" alt="">
 						</figure>
 						<h3>
-							<a href="#/">Jacob Zieleniewski </a>
+							<a href="#">Jacob Zieleniewski </a>
 						</h3>
 						<p>Front End / Master Skater</p>
 						

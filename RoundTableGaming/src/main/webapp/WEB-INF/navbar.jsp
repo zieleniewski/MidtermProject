@@ -20,20 +20,17 @@
 				data-toggle="collapse" data-target="#navbar5">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-			<a href="/" class="navbar-brand nav-btn"><img class="logo"
+			<a href="home.do" class="navbar-brand nav-btn"><img class="logo"
 				src="images/newRoundTableLogo.png"></a>
 			<div class="navbar-collapse collapse justify-content-stretch"
 				id="navbar5">
 				<ul class="navbar-nav">
-					<!-- <li class="nav-item active"><a class="nav-link " href="#">About
-							<span class="sr-only">Home</span>
-					</a></li> -->
+					
 					<li class="nav-item"><a class="btn btn-default btn-rounded "
 						href="${pageContext.request.contextPath}/logOut.do">Log Out</a></li>
 					<li class="nav-item"><a class="btn btn-default btn-rounded "
 						href="${pageContext.request.contextPath}/account.do">Account</a></li>
-					<%-- <li class="nav-item"><a class="btn btn-default btn-rounded "
-						href="${pageContext.request.contextPath}/createEventPage.do">Create Event</a></li> --%>
+					
 					
 				</ul></div>
 				<div class="dropdown">
@@ -70,14 +67,12 @@
 				data-toggle="collapse" data-target="#navbar5">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-			<a href="/" class="navbar-brand nav-btn"><img class="logo"
+			<a href="home.do" class="navbar-brand nav-btn"><img class="logo"
 				src="images/newRoundTableLogo.png"></a>
 			<div class="navbar-collapse collapse justify-content-stretch"
 				id="navbar5">
 				<ul class="navbar-nav">
-					<!-- <li class="nav-item active"><a class="nav-link " href="#">About
-							<span class="sr-only">Home</span>
-					</a></li> -->
+					
 
 
 					<li class="nav-item"><a href=""
