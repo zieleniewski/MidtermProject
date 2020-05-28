@@ -4,6 +4,15 @@ plugins {
 	id 'java'
 }
 
+apply plugin: 'war'
+war {
+  enabled = true
+  // Gradle will replace the variable baseName
+  // with our app name, as defined in settings.gradle
+  archiveName = "${baseName}.war"
+  destinationDir = file("./")         // Project root directory
+}
+
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
@@ -24,6 +33,7 @@ dependencies {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
 	testImplementation('junit:junit:4.12')
+	implementation ('org.springframework.boot:spring-boot-starter-tomcat')
 }
 
 test {
