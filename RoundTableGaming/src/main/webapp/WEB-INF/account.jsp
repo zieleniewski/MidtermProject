@@ -75,7 +75,7 @@
 									
 									
 									<a class="list-group-item list-group-item-action"onclick="if (!(confirm('Are you sure you want to delete this record and all child records?'))) return false"
-									data-toggle="list" href="#" role="tab"> Delete account </a>
+									data-toggle="list" href="deleteAccount.do" role="tab"> Delete account </a>
 							</div>
 						</c:otherwise>
 					</c:choose>
