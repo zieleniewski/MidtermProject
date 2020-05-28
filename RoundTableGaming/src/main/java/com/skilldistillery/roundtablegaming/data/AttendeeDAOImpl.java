@@ -79,7 +79,7 @@ public class AttendeeDAOImpl implements AttendeeDAO {
 
 	@Override
 	public List<Attendee> getAllAttendees() {
-		String jpql = "SELECT a FROM Attendee a";
+		String jpql = "SELECT a FROM Attendee a WHERE a.enabled = true";
 		List <Attendee> attendees = em.createQuery(jpql, Attendee.class)
 				.getResultList();
 		return attendees;

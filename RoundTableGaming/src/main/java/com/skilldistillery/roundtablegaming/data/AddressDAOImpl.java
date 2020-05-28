@@ -74,7 +74,7 @@ public class AddressDAOImpl implements AddressDAO {
 	
 	@Override
 	public List<Address> getAllAddresses() {
-		String query= "SELECT a FROM Address a";
+		String query= "SELECT a FROM Address a WHERE a.enabled = true";
 		List<Address> allAddresses = em.createQuery(query, Address.class)
 				.getResultList();
 		return allAddresses;
@@ -82,7 +82,7 @@ public class AddressDAOImpl implements AddressDAO {
 	
 	@Override
 	public List<Address> getAddressesForAllEvents() {
-		String query= "SELECT a FROM Address a JOIN FETCH a.events";
+		String query= "SELECT a FROM Address a JOIN FETCH a.events WHERE a.enabled = true";
 		List<Address> allEventAddresses = em.createQuery(query, Address.class)
 				.getResultList();
 		return allEventAddresses;
