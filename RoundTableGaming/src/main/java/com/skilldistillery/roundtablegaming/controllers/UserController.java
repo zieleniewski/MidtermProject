@@ -37,7 +37,7 @@ public class UserController {
 	@RequestMapping(path = "logIn.do")
 	public String login(User user, HttpSession session) {
 		User loggingUser = dao.checkLogin(user);
-		if (loggingUser == null) {
+		if (loggingUser == null || !loggingUser.isEnabled()) {
 			return "index";
 		} else {
 			session.setAttribute("loggedInUser", loggingUser);
