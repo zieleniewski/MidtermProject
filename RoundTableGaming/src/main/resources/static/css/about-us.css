@@ -33,140 +33,71 @@ img {
 }
 
 
-
-.navbar .footer a{
-	border: 2px solid white !important;
-	background-color: grey !important;
-}
-.navbar .footer{
-	padding-bottom: 0px;
-	margin-bottom: 25px;
-	padding-left: 0px;
-	padding-right: 0px;
-	
+.practice-area .inner img{
+	display:inline-block;
 }
 
 
-.table-top {
-	.z-depth-5
+.our-webcoderskull{
+  background: url("http://www.webcoderskull.com/img/right-sider-banner.png") no-repeat center top / cover;
+  
 }
-.container-fluid{
-	padding-top: 100px !important;
-	 text-align: center !important;
+.our-webcoderskull .cnt-block{ 
+   float:left; 
+   width:100%; 
+   background:#fff; 
+   padding:30px 20px; 
+   text-align:center; 
+   border:2px solid #d5d5d5;
+   margin: 0 0 28px;
 }
-
-.fluid-container{
-	 align-content: center;
-	 
+.our-webcoderskull .cnt-block figure{
+   width:148px; 
+   height:148px; 
+   border-radius:100%; 
+   display:inline-block;
+   margin-bottom: 15px;
 }
-#navbar5{
-height: 20px;
-justify-content: space-between;
-
+.our-webcoderskull .cnt-block img{ 
+   width:148px; 
+   height:148px; 
+   border-radius:100%; 
 }
-.dropdown{
-	margin-right: 10px;
-	
-	}
-
-.navbar-custom {
-    color:#d65a31;
-    background-color:  #CC3333;
-    -webkit-box-shadow: 1.5px1.5px 2.5px 3px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
-  -moz-box-shadow:    1.5px 1.5px 2.5px 3px  #ccc;  /* Firefox 3.5 - 3.6 */
-  box-shadow:        1.5px 1.5px 2.5px 3px #ccc;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
-  font-family: "Courier New"
+.our-webcoderskull .cnt-block h3{ 
+   color:#2a2a2a; 
+   font-size:20px; 
+   font-weight:500; 
+   padding:6px 0;
+   text-transform:uppercase;
 }
-
-.img-fluid {
-	height: 400px;
-	width: 400px;
+.our-webcoderskull .cnt-block h3 a{
+  text-decoration:none;
+	color:#2a2a2a;
 }
-
-.carousel {
-   
- 	margin-bottom: 50px;
-    margin-top: 50px;
-
+.our-webcoderskull .cnt-block h3 a:hover{
+	color:#337ab7;
 }
-
-.carousel-inner img {
-
-	height: 250px;
-
+.our-webcoderskull .cnt-block p{ 
+   color:#2a2a2a; 
+   font-size:13px; 
+   line-height:20px; 
+   font-weight:400;
 }
-
-.entire-carousel{
-	margin-left: auto;
-	margin-right: auto;
+.our-webcoderskull .cnt-block .follow-us{
+	margin:20px 0 0;
 }
-
-.container-whole{
-	width: 80%;
-	 max-width: 500px;
-	margin-left: auto;
-	margin-right: auto;
-	text-align: center;
+.our-webcoderskull .cnt-block .follow-us li{ 
+    display:inline-block; 
+	width:auto; 
+	margin:0 5px;
 }
-
-.carousel-buttons{
-	text-align: center;
+.our-webcoderskull .cnt-block .follow-us li .fa{ 
+   font-size:24px; 
+   color:#767676;
 }
-
-.footer {
-margin-top: 50px;
-margin-bottom: 100px;
-padding-bottom: 100px;
- text-align: center;
- font-family: "Courier New"
-
-
+.our-webcoderskull .cnt-block .follow-us li .fa:hover{ 
+   color:#025a8e;
 }
 
 
-
-.create-event {
- 	border: solid;
- 
-  float: right;
-  width: 32%;
-  height: 175px;
-  padding-left: 15px;
-}
-
-.submit-game {
-	border: solid;
-	
-  float: right;
-  width: 32%;
-  height: 175px;
-}
-
-}
-
-
-*[role="form"] {
-    max-width: 530px;
-    padding: 15px;
-    margin: 0 auto;
-    border-radius: 0.3em;
-    background-color: #f2f2f2;
-}
-
-*[role="form"] h2 { 
-    font-family: 'Open Sans' , sans-serif;
-    font-size: 40px;
-    font-weight: 600;
-    color: #000000;
-    margin-top: 5%;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-}
-
-.logo{
-	height: 35px !important; 
-	width: 70px !important;
-
-}
 
