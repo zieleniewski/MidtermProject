@@ -48,7 +48,10 @@ public class UserDAOImpl implements UserDAO {
 	public User updateUsername(User user) {
 		User updated = em.find(User.class, user.getId());
 		if (updated != null) {
+			updated.setAvatar(null);
+			em.persist(updated);
 			updated.setUsername(user.getUsername());
+			updated.setAvatar(user.getAvatar());
 			em.persist(updated);
 			em.flush();
 		}

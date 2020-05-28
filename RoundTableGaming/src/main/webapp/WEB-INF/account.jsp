@@ -101,15 +101,16 @@
 													name="username" value="${loggedInUser.username}">
 											</div>
 											<div class="form-group">
-												<label for="inputUsername">Biography</label>
-												<textarea rows="2" class="form-control" id="inputBio"
-													placeholder="Tell something about yourself"></textarea>
+												<label for="inputAvatarURL">Avatar URL</label> <input
+													type="text" class="form-control" id="inputAvatarURL"
+													name="avatar" value="${loggedInUser.avatar}">
 											</div>
+											
 										</div>
 										<div class="col-md-4">
 											<div class="text-center">
 												<img alt="Andrew Jones"
-													src="https://static.artfire.com/uploads/mfs/items/3c/58/large/3c58575a667b657c32614b0a891c3477b4ea7e937b4766d45ab41ef84ea8c9bc.jpg"
+													src="${loggedInUser.avatar}"
 													class="rounded-circle img-responsive mt-2" width="128"
 													height="128">
 												<div class="mt-2">
@@ -131,9 +132,7 @@
 										value="${loggedInUser.firstName}"> <input
 										type="hidden" name="lastName" value="${loggedInUser.lastName}">
 									<input type="hidden" name="email" value="${loggedInUser.email}">
-									<input type="hidden" name="avatar"
-										value="${loggedInUser.avatar}"> <input type="hidden"
-										name="enabled" value="${loggedInUser.enabled}"> <input
+										 <input type="hidden" name="enabled" value="${loggedInUser.enabled}"> <input
 										type="hidden" name="admin" value="${loggedInUser.admin}">
 									<input type="hidden" name="id" value="${loggedInUser.id}">
 									<input type="hidden" name="password"
