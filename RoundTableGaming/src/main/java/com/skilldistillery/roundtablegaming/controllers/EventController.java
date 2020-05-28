@@ -90,21 +90,45 @@ public class EventController {
 	@GetMapping("rpg.do")
 	public String rpg(Model model) {
 		List<Event> rpgEvents = dao.getEventsByCategory("Tabletop RPG");
-		model.addAttribute("category", rpgEvents);
+		List<Event> futureEvents = new ArrayList<>();
+		
+		for (Event event : rpgEvents) {
+			if (LocalDate.now().isBefore(event.getEventDate())) {
+				futureEvents.add(event);
+			}
+		}
+		
+		model.addAttribute("category", futureEvents);
 		return "rpg";
 	}
 	
 	@GetMapping("miniature.do")
 	public String mini(Model model) {
 		List<Event> miniEvents = dao.getEventsByCategory("Miniatures");
-		model.addAttribute("category", miniEvents);
+		List<Event> futureEvents = new ArrayList<>();
+		
+		for (Event event : miniEvents) {
+			if (LocalDate.now().isBefore(event.getEventDate())) {
+				futureEvents.add(event);
+			}
+		}
+		
+		model.addAttribute("category", futureEvents);
 		return "miniature";
 	}
 	
 	@GetMapping("tcg.do")
 	public String tcg(Model model) {
 		List<Event> tcgEvents = dao.getEventsByCategory("Trading Card Games");
-		model.addAttribute("category", tcgEvents);
+		List<Event> futureEvents = new ArrayList<>();
+		
+		for (Event event : tcgEvents) {
+			if (LocalDate.now().isBefore(event.getEventDate())) {
+				futureEvents.add(event);
+			}
+		}
+		
+		model.addAttribute("category", futureEvents);
 		return "tcg";
 	}
 	
