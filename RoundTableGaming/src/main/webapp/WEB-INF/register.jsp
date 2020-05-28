@@ -18,7 +18,12 @@
 <div class="narbar-rpg">
 			<jsp:include page="navbar.jsp" />
 		</div>	
-			<br><br>
+			<br><br><br><br>
+			<div class="container">
+			<div class="row">
+        <div class="col-md-8">
+			<div class="card">
+			<div class="card-body ">
 <div class="container-register ">
             <form class="form-horizontal" role="form" action="registrationComplete.do" method="POST">
                 <h2>Registration</h2>
@@ -136,5 +141,10 @@
                     </div>
         
         <jsp:include page="login-popout.jsp"></jsp:include>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
 </body>
 </html>

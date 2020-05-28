@@ -25,12 +25,15 @@
 <br>
 <br>
 <br>
-<div class="card w-75 mx-auto">
+<div class="container">
+			<div class="row">
+        <div class="col-md-8">
+<div class="card ">
 	
-	<div class="card-body text-center">
-<div class="card-header" style="margin-bottom: 20px">
+	<div class="card-body ">
+
 		<h2>Create New Event</h2>
-</div>
+
 		<form class="form" role="form" action="createEvent.do" method="POST">
 
 			<div class="form-group">
@@ -232,7 +235,9 @@
 		</form>
 		
 	</div>
-
+</div>
+</div>
+</div>
 
 </div>
 </body>
