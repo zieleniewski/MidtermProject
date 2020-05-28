@@ -227,6 +227,7 @@ public class EventController {
 		loggedInUser = userDao.getUserById(loggedInUser.getId());
 		session.setAttribute("loggedInUser", loggedInUser);
 		dao.disableEvent(id);
+		System.out.println("\n\n\n"+id+"\n\n\n");
 		return "redirect:account.do";
 	}
 	

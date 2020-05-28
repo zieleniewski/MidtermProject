@@ -57,7 +57,8 @@ public class EventDAOImpl implements EventDAO {
 
 	@Override
 	public List<Event> getAllEvents() {
-		String query = "SELECT e FROM Event e ORDER BY e.eventDate";
+		String query = "SELECT e FROM Event e WHERE e.enabled = true "
+				+ "ORDER BY e.eventDate";
 		List<Event> allEvents = em.createQuery(query, Event.class)
 				.getResultList();
 		return allEvents;
@@ -70,7 +71,8 @@ public class EventDAOImpl implements EventDAO {
 	
 	@Override
 	public List<Event> getEventsByOrganizerId(int orgId) {
-		String query = "SELECT e FROM Event e WHERE e.organizer.id = :orgId ORDER BY e.eventDate";
+		String query = "SELECT e FROM Event e WHERE e.enabled = true "
+				+ "AND e.organizer.id = :orgId ORDER BY e.eventDate";
 		List<Event> events = em.createQuery(query, Event.class)
 				.setParameter("orgId", orgId)
 				.getResultList();
@@ -79,7 +81,8 @@ public class EventDAOImpl implements EventDAO {
 
 	@Override
 	public List<Event> getEventsByAddress(Address address) {
-		String jpql = "SELECT e FROM Event e WHERE e.address.id = :search";
+		String jpql = "SELECT e FROM Event e WHERE e.address.id = :search "
+				+ "AND e.enabled = true";
 		List<Event> events = em.createQuery(jpql, Event.class)
 				.setParameter("search", address.getId())
 				.getResultList();
