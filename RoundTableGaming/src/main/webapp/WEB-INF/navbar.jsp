@@ -106,7 +106,7 @@
 				action="searchBar.do" method="POST">
 				<div class="input-group">
 					<input type="text" class="form-control" placeholder="Search Events"
-						name="keyword"> <span class="input-group-btn">
+						name="search"> <span class="input-group-btn">
 						<button class="btn btn-default btn-rounded" type="submit">GO</button>
 					</span>
 				</div>
