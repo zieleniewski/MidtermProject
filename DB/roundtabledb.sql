@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `first_name` VARCHAR(45) NULL,
   `last_name` VARCHAR(45) NULL,
   `email` VARCHAR(100) NULL,
-  `avatar_url` VARCHAR(5000) NULL,
+  `avatar_url` VARCHAR(5000) NULL DEFAULT 'https://static.artfire.com/uploads/mfs/items/3c/58/large/3c58575a667b657c32614b0a891c3477b4ea7e937b4766d45ab41ef84ea8c9bc.jpg',
   `create_date` DATETIME NULL,
   `enabled` TINYINT NOT NULL DEFAULT 1,
   `admin` TINYINT NOT NULL DEFAULT 0,
@@ -276,10 +276,10 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `roundtabledb`;
-INSERT INTO `address` (`id`, `street1`, `street2`, `city`, `state`, `zip_code`, `enabled`) VALUES (1, '123 admin st', NULL, 'Silverton', 'Oregon', '97381', 1);
+INSERT INTO `address` (`id`, `street1`, `street2`, `city`, `state`, `zip_code`, `enabled`) VALUES (1, '123 admin st', '', 'Silverton', 'Oregon', '97381', 1);
 INSERT INTO `address` (`id`, `street1`, `street2`, `city`, `state`, `zip_code`, `enabled`) VALUES (2, '808 Noisia Ave', 'Apt# 303', 'Bassdrop', 'Oregon', '97381', 1);
 INSERT INTO `address` (`id`, `street1`, `street2`, `city`, `state`, `zip_code`, `enabled`) VALUES (3, '45 Ecksdee Ave', '', 'Springfield', 'Kentucky', '12345', 1);
-INSERT INTO `address` (`id`, `street1`, `street2`, `city`, `state`, `zip_code`, `enabled`) VALUES (4, '555 Frontend Dr', NULL, 'Colorado Springs', 'Colorado', '80907', 1);
+INSERT INTO `address` (`id`, `street1`, `street2`, `city`, `state`, `zip_code`, `enabled`) VALUES (4, '555 Frontend Dr', '', 'Colorado Springs', 'Colorado', '80907', 1);
 INSERT INTO `address` (`id`, `street1`, `street2`, `city`, `state`, `zip_code`, `enabled`) VALUES (5, '9751 Sunnyside St', '#3010', 'Fayetteville', 'North Carolina', '28301', 1);
 
 COMMIT;

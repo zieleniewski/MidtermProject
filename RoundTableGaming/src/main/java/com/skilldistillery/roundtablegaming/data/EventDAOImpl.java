@@ -123,8 +123,8 @@ public class EventDAOImpl implements EventDAO {
 
 	@Override
 	public List<Event> getEventsByKeyword(String keyword) {
-		String query = "SELECT e FROM Event e WHERE e.enabled = true "
-				+ "AND e.title LIKE '" + "%" + keyword + "%'" + " OR e.description LIKE '"
+		String query = "SELECT e FROM Event e JOIN e.eventGames eg WHERE e.enabled = true "
+				+ "AND e.title LIKE '" + "%" + keyword + "%'" + " OR eg.game.title LIKE '"
 				+ "%" + keyword + "%'";
 		List<Event> events = em.createQuery(query, Event.class)
 				.getResultList();
