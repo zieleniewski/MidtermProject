@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `first_name` VARCHAR(45) NULL,
   `last_name` VARCHAR(45) NULL,
   `email` VARCHAR(100) NULL,
-  `avatar_url` VARCHAR(5000) NULL DEFAULT 'https://static.artfire.com/uploads/mfs/items/3c/58/large/3c58575a667b657c32614b0a891c3477b4ea7e937b4766d45ab41ef84ea8c9bc.jpg',
+  `avatar_url` VARCHAR(5000) NULL DEFAULT 'images/default-avatar.jpg',
   `create_date` DATETIME NULL,
   `enabled` TINYINT NOT NULL DEFAULT 1,
   `admin` TINYINT NOT NULL DEFAULT 0,
@@ -278,7 +278,7 @@ START TRANSACTION;
 USE `roundtabledb`;
 INSERT INTO `address` (`id`, `street1`, `street2`, `city`, `state`, `zip_code`, `enabled`) VALUES (1, '123 admin st', '', 'Silverton', 'Oregon', '97381', 1);
 INSERT INTO `address` (`id`, `street1`, `street2`, `city`, `state`, `zip_code`, `enabled`) VALUES (2, '808 Noisia Ave', 'Apt# 303', 'Bassdrop', 'Oregon', '97381', 1);
-INSERT INTO `address` (`id`, `street1`, `street2`, `city`, `state`, `zip_code`, `enabled`) VALUES (3, '45 Ecksdee Ave', '', 'Springfield', 'Kentucky', '12345', 1);
+INSERT INTO `address` (`id`, `street1`, `street2`, `city`, `state`, `zip_code`, `enabled`) VALUES (3, '45 Ecksdee Ave', '', 'Springfield', 'Kentucky', '41631', 1);
 INSERT INTO `address` (`id`, `street1`, `street2`, `city`, `state`, `zip_code`, `enabled`) VALUES (4, '555 Frontend Dr', '', 'Colorado Springs', 'Colorado', '80907', 1);
 INSERT INTO `address` (`id`, `street1`, `street2`, `city`, `state`, `zip_code`, `enabled`) VALUES (5, '9751 Sunnyside St', '#3010', 'Fayetteville', 'North Carolina', '28301', 1);
 
@@ -291,7 +291,7 @@ COMMIT;
 START TRANSACTION;
 USE `roundtabledb`;
 INSERT INTO `user` (`id`, `address_id`, `username`, `password`, `role`, `first_name`, `last_name`, `email`, `avatar_url`, `create_date`, `enabled`, `admin`) VALUES (1, 1, 'admin', 'admin', '', 'admin', 'admin', 'admin@stenchcarnival.com', NULL, '2020-05-22 13:00:00', 1, 1);
-INSERT INTO `user` (`id`, `address_id`, `username`, `password`, `role`, `first_name`, `last_name`, `email`, `avatar_url`, `create_date`, `enabled`, `admin`) VALUES (2, 2, 'serg', 'lol', '', 'Sergio', 'Samoiloff', 'serg@stenchcarnival.com', NULL, '2020-05-24 12:30:00', 1, 0);
+INSERT INTO `user` (`id`, `address_id`, `username`, `password`, `role`, `first_name`, `last_name`, `email`, `avatar_url`, `create_date`, `enabled`, `admin`) VALUES (2, 2, 'serg', 'lol', '', 'Sergio', 'Samoiloff', 'serg@stenchcarnival.com', 'https://i.pinimg.com/originals/86/18/65/861865b83d52f3659241cf5c7113cb75.jpg', '2020-05-24 12:30:00', 1, 0);
 INSERT INTO `user` (`id`, `address_id`, `username`, `password`, `role`, `first_name`, `last_name`, `email`, `avatar_url`, `create_date`, `enabled`, `admin`) VALUES (3, 3, 'shane', 'cereal', '', 'Shane', 'Duncan', 'shane@stenchcarnival.com', NULL, '2020-05-24 12:33:00', 1, 0);
 INSERT INTO `user` (`id`, `address_id`, `username`, `password`, `role`, `first_name`, `last_name`, `email`, `avatar_url`, `create_date`, `enabled`, `admin`) VALUES (4, 4, 'jacob', 'hatred', '', 'Jacob', 'Zieleniewski', 'jacob@stenchcarnival.com', NULL, '2020-05-24 12:35:00', 1, 0);
 

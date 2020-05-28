@@ -110,95 +110,14 @@
 <c:otherwise><h2>Please Login To Join This<br> Event Or Leave A Comment</h2></c:otherwise>
 </c:choose>
 
-<%-- 
-					<c:forEach var="eventGames"	items="${event.eventGames}">
-					<a class="dropdown-item" href="jointEvent.do?id=${eventGames.id}">${eventGames.game.title }</a>
-							<br>
-					</c:forEach> --%>
-
-			<%-- <div class="dropdown">
-				<button class="btn btn-secondary dropdown-toggle" type="button"
-					id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-					aria-expanded="false">Select Which Game to Join</button>
-				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-
-
-					<c:forEach var="eventGames" items="${event.eventGames}">
-						<a class="dropdown-item" href="jointEvent.do?id=${eventGames.id}">${eventGames.game.title }</a>
-						<br>
-					</c:forEach>
-
-
-
-				</div>
-			</div>
- --%>
 
 
 			<!-- <div class="footer">	<a href="joinEvent.do" class="btn btn-lg btn-default"><h3><em>Join Event</em></h3></a></div> -->
 
 
-
-
 		</div>
 
-		<%-- <div class="text-center">
-		<div class="container-event">
-			<table class="table table-dark table-hover">
-				<thead>
-					<th scope="col">Event Title</th>
-					<th scope="col">Event Description</th>
-					<th scope="col">Event Date</th>
-					<th scope="col">Event Start Time</th>
-					<th scope="col">Capacity</th>
-					<th scope="col">Games</th>
-
-				</thead>
-				<tbody>
-
-					<tr>
-
-						
-						<td>${event.title }</td>
-						
-						<td>${event.description }</td>
-						<td>${event.eventDate }</td>
-						<td>${event.startTime }</td>
-						<td>${event.capacity }</td>
-						<td>
-								<c:forEach var="eventGames" items="${event.eventGames}">
-							${eventGames.game.title }<br>
-								</c:forEach>
-							</td>
-						
-					</tr>
-
-				<thead>
-					<th scope="col">Organizer</th>
-					<th scope="col">Address</th>
-					<th scope="col">City</th>
-					<th scope="col">State</th>
-				
-
-				</thead>
-				
-				<tr>
-				
-						<td>${event.organizer.firstName }</td>
-						<td>${event.address.street1}<br>${event.address.street2 }</td>
-						<td>${event.address.city}</td>
-						<td>${event.address.state}</td>
-						
-						
-				</tr>
-					
-		</table>
-			<br>
-			<br>
-			<br>
-			<br>
-		</div>
-	</div>  --%>
+		
 		<c:choose>
 			<c:when test="${not empty loggedInUser}">
 
@@ -215,13 +134,13 @@
 							<li>
 
 
-								<div class="commenterImage">
+								<!-- <div class="commenterImage">
 									<img
 										src="https://static.artfire.com/uploads/mfs/items/3c/58/large/3c58575a667b657c32614b0a891c3477b4ea7e937b4766d45ab41ef84ea8c9bc.jpg" />
-								</div>
+								</div> -->
 								<div class="commentText">
 									<p class="">${userComment.comment}</p>
-									<p class="">posted by ${userComment.user.firstName}</p>
+									<p class=""><font size="1"><em>posted by <strong>${userComment.user.firstName}</strong></em></font></p>
 									<span class="date sub-text">on
 										${userComment.commentDate}</span>
 
