@@ -161,12 +161,23 @@ public class EventController {
 	}
 	
 	@PostMapping("updateEvent.do")
-	public String update(Event event, Address address,  @RequestParam int id, Model model, HttpSession session) {
+	public String update(Event event, Address address,  @RequestParam int id,  @RequestParam int addressId, 
+			@RequestParam String[] eventGameIds, Model model, HttpSession session) {
+		Integer[] gameIds = new Integer[eventGameIds.length];
+	    for(int i=0; i < eventGameIds.length; i++) {
+	    	
+	    	try {
+				gameIds[i] = Integer.parseInt(eventGameIds[i]);
+			} catch (NumberFormatException e) {
+				gameIds[i] = null;
+			}
+	    }
 		System.out.println(event);
 		System.out.println(address);
+//		address.setId(addressId);
 		User loggedInUser = (User) session.getAttribute("loggedInUser");
-		Address updAddress = addrDao.checkAddress(address);
-		Event updEvent = dao.updateEvent(event, updAddress, id);
+//		Address updAddress = addrDao.checkAddress(address);
+		Event updEvent = dao.updateEvent(event, address, id, gameIds);
 		model.addAttribute("updatedEvent", updEvent);
 		session.setAttribute("loggedInUser", loggedInUser);
 		return "redirect:account.do";

@@ -9,6 +9,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.skilldistillery.roundtablegaming.entities.Address;
@@ -23,6 +24,8 @@ public class EventDAOImpl implements EventDAO {
 
 	@PersistenceContext
 	private EntityManager em;
+	
+	@Autowired AddressDAO addressDao;
 
 	@Override
 	public Event createEvent(Event event, Integer[] eventGameIds) {
@@ -160,13 +163,35 @@ public class EventDAOImpl implements EventDAO {
 	}
 
 	@Override
-	public Event updateEvent(Event updatedEvent, Address address, int id) {
+	public Event updateEvent(Event updatedEvent, Address address, int id, Integer[] eventGameIds) {
 		System.out.println(id);
 		Event event = em.find(Event.class, id);
+		address = addressDao.updateAddress(address);
+		address= em.find(Address.class, address.getId());
+		while(event.getEventGames().size() > 0) {
+            em.remove(event.getEventGames().get(0));
+			event.getEventGames().remove(0);
+		}
+		for (Integer gameId : eventGameIds) {
+			if (gameId != null) {
+				Game g = em.find(Game.class, gameId);
+				if (g != null) {
+					EventGame eg = new EventGame();
+					eg.setEnabled(true);
+					eg.setStartTime(updatedEvent.getStartTime());
+					eg.setMaxPlayers(updatedEvent.getCapacity());
+					eg.setMinPlayers(2);
+					eg.setGame(g);
+					eg.setEvent(event);
+					em.persist(eg);
+					event.addEventGame(eg);
+				}
+			}
+		}
 		if (event != null) {
 			event.setEnabled(true);
 //			event.setOrganizer(updatedEvent.getOrganizer());
-			event.setAddress(updatedEvent.getAddress());
+			event.setAddress(address);
 			event.setTitle(updatedEvent.getTitle());
 			event.setDescription(updatedEvent.getDescription());
 			event.setEventDate(updatedEvent.getEventDate());
