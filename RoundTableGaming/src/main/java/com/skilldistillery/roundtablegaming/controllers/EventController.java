@@ -185,7 +185,7 @@ public class EventController {
 	
 	@GetMapping("eventsByGame.do")
 	public String eventsByGame(@RequestParam String game, Model model) {
-		List<Event> eventsByGame = dao.getEventsByGame(game); 
+		List<Event> eventsByGame = dao.getEventsByGame(game);
 		model.addAttribute("eventsOfGame",eventsByGame);
 		return "gameEvents";
 	}
