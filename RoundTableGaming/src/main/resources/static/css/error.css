@@ -1,0 +1,172 @@
+@charset "UTF-8";
+
+body {
+background-image: url("https://cdna.artstation.com/p/assets/images/images/004/347/140/large/juanjo-barcelo-dark-city-01.jpg?1482770432") !important;
+background-repeat: no-repeat;
+ background-size: 100% 100%;
+ background-position: center;
+ height:1000px !important;
+
+}
+h2{
+	font-family: "Courier New" !important;
+	text-align: center !important;
+	color:white;
+	width: 80% !important;
+	  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* .d-flex{
+	position: absolute;
+	bottom: 40px;
+	
+} */
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+
+}
+
+
+
+.navbar .footer a{
+	border: 2px solid white !important;
+	background-color: grey !important;
+}
+.navbar .footer{
+	padding-bottom: 0px;
+	margin-bottom: 25px;
+	padding-left: 0px;
+	padding-right: 0px;
+	
+}
+
+
+.table-top {
+	.z-depth-5
+}
+.container-fluid{
+	padding-top: 100px !important;
+	 text-align: center !important;
+}
+
+.fluid-container{
+	 align-content: center;
+	 
+}
+#navbar5{
+height: 20px;
+justify-content: space-between;
+
+}
+.dropdown{
+	margin-right: 10px;
+	
+	}
+
+.navbar-custom {
+    color:#d65a31;
+    background-color:  #CC3333;
+    -webkit-box-shadow: 1.5px1.5px 2.5px 3px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow:    1.5px 1.5px 2.5px 3px  #ccc;  /* Firefox 3.5 - 3.6 */
+  box-shadow:        1.5px 1.5px 2.5px 3px #ccc;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+  font-family: "Courier New"
+}
+
+.img-fluid {
+	height: 400px;
+	width: 400px;
+}
+
+.carousel {
+   
+ 	margin-bottom: 50px;
+    margin-top: 50px;
+
+}
+
+.carousel-inner img {
+
+	height: 250px;
+
+}
+
+.entire-carousel{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.container-whole{
+	width: 80%;
+	 max-width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.carousel-buttons{
+	text-align: center;
+}
+
+.footer {
+margin-top: 50px;
+margin-bottom: 100px;
+padding-bottom: 100px;
+ text-align: center;
+ font-family: "Courier New"
+
+
+}
+
+
+
+.create-event {
+ 	border: solid;
+ 
+  float: right;
+  width: 32%;
+  height: 175px;
+  padding-left: 15px;
+}
+
+.submit-game {
+	border: solid;
+	
+  float: right;
+  width: 32%;
+  height: 175px;
+}
+
+}
+
+
+*[role="form"] {
+    max-width: 530px;
+    padding: 15px;
+    margin: 0 auto;
+    border-radius: 0.3em;
+    background-color: #f2f2f2;
+}
+
+*[role="form"] h2 { 
+    font-family: 'Open Sans' , sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    color: #000000;
+    margin-top: 5%;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.logo{
+	height: 35px !important; 
+	width: 70px !important;
+
+}
+
