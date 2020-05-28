@@ -17,6 +17,7 @@ public class EventGameDAOImpl implements EventGameDAO{
 
 	@Override
 	public EventGame create(EventGame eg) {
+		eg.setEnabled(true);
 		em.persist(eg);
 		em.flush();
 		return eg;
@@ -26,6 +27,7 @@ public class EventGameDAOImpl implements EventGameDAO{
 	public EventGame update(EventGame eg) {
 		EventGame updated = em.find(EventGame.class, eg.getId());
 		if (updated != null) {
+			updated.setEnabled(true);
 			updated.setDescription(eg.getDescription());
 			updated.setGame(eg.getGame());
 			updated.setEvent(eg.getEvent());

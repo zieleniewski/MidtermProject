@@ -34,33 +34,5 @@ public class CategoryDAOImpl implements CategoryDAO{
 		em.flush();
 		return newCategory;
 	}
-
-//	@Override
-//	public boolean disableCategory(int categoryId) {
-//		Category disabled = em.find(Category.class, categoryId);
-//		if (disabled != null) {
-//			disabled.setEnabled(false);
-//			em.persist(disabled);
-//			em.flush();
-//			return true;
-//		}
-//		else {
-//			return false;
-//		}
-//	}
-//
-//	@Override
-//	public boolean enableCategory(int categoryId) {
-//		Category enabled = em.find(Category.class, categoryId);
-//		if (enabled != null) {
-//			enabled.setEnabled(true);
-//			em.persist(enabled);
-//			em.flush();
-//			return true;
-//		}
-//		else {
-//			return false;
-//		}
-//	}
 	
 }

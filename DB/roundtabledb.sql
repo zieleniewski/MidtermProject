@@ -276,7 +276,7 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `roundtabledb`;
-INSERT INTO `address` (`id`, `street1`, `street2`, `city`, `state`, `zip_code`, `enabled`) VALUES (1, '123 admin st', NULL, 'Adminsville', 'Adminado', '00000', 1);
+INSERT INTO `address` (`id`, `street1`, `street2`, `city`, `state`, `zip_code`, `enabled`) VALUES (1, '123 admin st', NULL, 'Silverton', 'Oregon', '97381', 1);
 INSERT INTO `address` (`id`, `street1`, `street2`, `city`, `state`, `zip_code`, `enabled`) VALUES (2, '808 Noisia Ave', 'Apt# 303', 'Bassdrop', 'Oregon', '97381', 1);
 INSERT INTO `address` (`id`, `street1`, `street2`, `city`, `state`, `zip_code`, `enabled`) VALUES (3, '45 Ecksdee Ave', '', 'Springfield', 'Kentucky', '12345', 1);
 INSERT INTO `address` (`id`, `street1`, `street2`, `city`, `state`, `zip_code`, `enabled`) VALUES (4, '555 Frontend Dr', NULL, 'Colorado Springs', 'Colorado', '80907', 1);
@@ -294,7 +294,6 @@ INSERT INTO `user` (`id`, `address_id`, `username`, `password`, `role`, `first_n
 INSERT INTO `user` (`id`, `address_id`, `username`, `password`, `role`, `first_name`, `last_name`, `email`, `avatar_url`, `create_date`, `enabled`, `admin`) VALUES (2, 2, 'serg', 'lol', '', 'Sergio', 'Samoiloff', 'serg@stenchcarnival.com', NULL, '2020-05-24 12:30:00', 1, 0);
 INSERT INTO `user` (`id`, `address_id`, `username`, `password`, `role`, `first_name`, `last_name`, `email`, `avatar_url`, `create_date`, `enabled`, `admin`) VALUES (3, 3, 'shane', 'cereal', '', 'Shane', 'Duncan', 'shane@stenchcarnival.com', NULL, '2020-05-24 12:33:00', 1, 0);
 INSERT INTO `user` (`id`, `address_id`, `username`, `password`, `role`, `first_name`, `last_name`, `email`, `avatar_url`, `create_date`, `enabled`, `admin`) VALUES (4, 4, 'jacob', 'hatred', '', 'Jacob', 'Zieleniewski', 'jacob@stenchcarnival.com', NULL, '2020-05-24 12:35:00', 1, 0);
-INSERT INTO `user` (`id`, `address_id`, `username`, `password`, `role`, `first_name`, `last_name`, `email`, `avatar_url`, `create_date`, `enabled`, `admin`) VALUES (5, 5, 'mike', 'cats', '', 'Mike', 'Matosky', 'mike@stenchcarnival.com', NULL, '2020-05-24 12:51:00', 1, 0);
 
 COMMIT;
 
@@ -316,12 +315,12 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `roundtabledb`;
-INSERT INTO `event` (`id`, `organizer_id`, `address_id`, `title`, `description`, `event_date`, `start_time`, `capacity`, `img_url`, `create_date`, `last_update`, `enabled`) VALUES (1, 1, 1, 'TestFest', 'Just some sweet admin testing', '2020-05-22', '08:00:00', 1, 'someimage.png', '2020-05-22 17:14:00', '2020-05-22 17:14:00', 1);
+INSERT INTO `event` (`id`, `organizer_id`, `address_id`, `title`, `description`, `event_date`, `start_time`, `capacity`, `img_url`, `create_date`, `last_update`, `enabled`) VALUES (1, 4, 1, 'Sprint Party', 'Just a weeklong grueling test of patience.', '2020-05-22', '08:00:00', 3, 'someimage.png', '2020-05-22 17:14:00', '2020-05-22 17:14:00', 1);
 INSERT INTO `event` (`id`, `organizer_id`, `address_id`, `title`, `description`, `event_date`, `start_time`, `capacity`, `img_url`, `create_date`, `last_update`, `enabled`) VALUES (2, 2, 2, 'PDXLAN', 'Normally a the West Coast\'s largest LAN party, but this time we\'re going analog!', '2020-07-05', '13:00:00', 550, 'https://www.pdxlan.net/LAN/wp-content/uploads/2018/04/pdxlan_text-2-300x100.png', '2020-05-24 12:24:00', '2020-05-24 12:24:00', 1);
 INSERT INTO `event` (`id`, `organizer_id`, `address_id`, `title`, `description`, `event_date`, `start_time`, `capacity`, `img_url`, `create_date`, `last_update`, `enabled`) VALUES (3, 3, 3, 'Blizzcon', 'Against all government laws and regulations, Shane has decided to throw this year\'s Blizzcon at his house!', '2020-05-30', '08:00:00', 1000, 'https://upload.wikimedia.org/wikipedia/en/thumb/5/51/BlizzCon_logo.svg/1200px-BlizzCon_logo.svg.png', '2020-05-24 12:34:00', '2020-05-24 12:34:00', 1);
-INSERT INTO `event` (`id`, `organizer_id`, `address_id`, `title`, `description`, `event_date`, `start_time`, `capacity`, `img_url`, `create_date`, `last_update`, `enabled`) VALUES (4, 5, 4, 'Let\'s Play', 'Everything at the same time', '2020-06-06', '15:30:00', 75, 'stockimage.png', '2020-05-24 12:38:00', '2020-05-24 12:38:00', 1);
+INSERT INTO `event` (`id`, `organizer_id`, `address_id`, `title`, `description`, `event_date`, `start_time`, `capacity`, `img_url`, `create_date`, `last_update`, `enabled`) VALUES (4, 3, 4, 'Let\'s Play', 'Everything at the same time', '2020-06-06', '15:30:00', 75, 'stockimage.png', '2020-05-24 12:38:00', '2020-05-24 12:38:00', 1);
 INSERT INTO `event` (`id`, `organizer_id`, `address_id`, `title`, `description`, `event_date`, `start_time`, `capacity`, `img_url`, `create_date`, `last_update`, `enabled`) VALUES (5, 4, 5, 'Squarecon', 'Final Fantasy games only!', '2020-03-14', '10:00:00', 1200, 'https://gh.cdn.sewest.net/assets/ident/news/message-square-enix-ceo/en_US/Square-Enix-logo.jpg?quality=65', '2020-05-26 22:10:00', NULL, 1);
-INSERT INTO `event` (`id`, `organizer_id`, `address_id`, `title`, `description`, `event_date`, `start_time`, `capacity`, `img_url`, `create_date`, `last_update`, `enabled`) VALUES (6, 1, 3, 'Trading Night', 'Come show off your cards and trade with others.', '2020-06-17', '21:00:00', 12, 'https://upload.wikimedia.org/wikipedia/en/thumb/2/24/CCG_card_back_image_assortment.jpg/220px-CCG_card_back_image_assortment.jpg', '2020-05-26 22:25:00', NULL, 1);
+INSERT INTO `event` (`id`, `organizer_id`, `address_id`, `title`, `description`, `event_date`, `start_time`, `capacity`, `img_url`, `create_date`, `last_update`, `enabled`) VALUES (6, 2, 3, 'Trading Night', 'Come show off your cards and trade with others.', '2020-06-17', '21:00:00', 12, 'https://upload.wikimedia.org/wikipedia/en/thumb/2/24/CCG_card_back_image_assortment.jpg/220px-CCG_card_back_image_assortment.jpg', '2020-05-26 22:25:00', NULL, 1);
 
 COMMIT;
 
@@ -377,12 +376,18 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `roundtabledb`;
-INSERT INTO `event_game` (`id`, `event_id`, `game_id`, `description`, `min_players`, `max_players`, `start_time`, `enabled`) VALUES (1, 1, 1, 'nulllllll', 2, 2, '18:00:00', 1);
+INSERT INTO `event_game` (`id`, `event_id`, `game_id`, `description`, `min_players`, `max_players`, `start_time`, `enabled`) VALUES (1, 1, 1, 'Spectator', 1, 1, '00:00:00', 1);
 INSERT INTO `event_game` (`id`, `event_id`, `game_id`, `description`, `min_players`, `max_players`, `start_time`, `enabled`) VALUES (2, 2, 11, 'Card game', 2, 2, '22:00:00', 1);
 INSERT INTO `event_game` (`id`, `event_id`, `game_id`, `description`, `min_players`, `max_players`, `start_time`, `enabled`) VALUES (3, 3, 18, 'Miniature game', 2, 2, '21:30:00', 1);
 INSERT INTO `event_game` (`id`, `event_id`, `game_id`, `description`, `min_players`, `max_players`, `start_time`, `enabled`) VALUES (4, 4, 3, 'RPG', 3, 10, '13:45:00', 1);
 INSERT INTO `event_game` (`id`, `event_id`, `game_id`, `description`, `min_players`, `max_players`, `start_time`, `enabled`) VALUES (5, 4, 14, 'Minis', 2, 2, '15:00:00', 1);
 INSERT INTO `event_game` (`id`, `event_id`, `game_id`, `description`, `min_players`, `max_players`, `start_time`, `enabled`) VALUES (6, 4, 20, 'Card trading', 2, 12, '21:00:00', 1);
+INSERT INTO `event_game` (`id`, `event_id`, `game_id`, `description`, `min_players`, `max_players`, `start_time`, `enabled`) VALUES (7, 5, 11, 'Card match', 2, 2, '15:00:00', 1);
+INSERT INTO `event_game` (`id`, `event_id`, `game_id`, `description`, `min_players`, `max_players`, `start_time`, `enabled`) VALUES (8, 6, 20, 'Trading', 2, 20, '12:00:00', 1);
+INSERT INTO `event_game` (`id`, `event_id`, `game_id`, `description`, `min_players`, `max_players`, `start_time`, `enabled`) VALUES (9, 6, 12, 'Trading', 2, 20, '12:00:00', 1);
+INSERT INTO `event_game` (`id`, `event_id`, `game_id`, `description`, `min_players`, `max_players`, `start_time`, `enabled`) VALUES (10, 6, 13, 'Trading', 2, 20, '12:00:00', 1);
+INSERT INTO `event_game` (`id`, `event_id`, `game_id`, `description`, `min_players`, `max_players`, `start_time`, `enabled`) VALUES (11, 6, 14, 'Trading', 2, 20, '12:00:00', 1);
+INSERT INTO `event_game` (`id`, `event_id`, `game_id`, `description`, `min_players`, `max_players`, `start_time`, `enabled`) VALUES (12, 6, 17, 'Trading', 2, 20, '12:00:00', 1);
 
 COMMIT;
 
@@ -396,7 +401,7 @@ INSERT INTO `attendee` (`user_id`, `event_game_id`, `event_rating`, `comment_by_
 INSERT INTO `attendee` (`user_id`, `event_game_id`, `event_rating`, `comment_by_attendee`, `enabled`) VALUES (2, 2, 4, 'I was confused the whole time', 1);
 INSERT INTO `attendee` (`user_id`, `event_game_id`, `event_rating`, `comment_by_attendee`, `enabled`) VALUES (3, 3, 4, 'Fantastic', 1);
 INSERT INTO `attendee` (`user_id`, `event_game_id`, `event_rating`, `comment_by_attendee`, `enabled`) VALUES (4, 4, 2, 'I feel cheated!', 1);
-INSERT INTO `attendee` (`user_id`, `event_game_id`, `event_rating`, `comment_by_attendee`, `enabled`) VALUES (5, 5, 5, 'GG <3', 1);
+INSERT INTO `attendee` (`user_id`, `event_game_id`, `event_rating`, `comment_by_attendee`, `enabled`) VALUES (3, 5, 5, 'GG <3', 1);
 INSERT INTO `attendee` (`user_id`, `event_game_id`, `event_rating`, `comment_by_attendee`, `enabled`) VALUES (4, 6, 2, 'I disagree with this format. I lost everything I brought.', 1);
 
 COMMIT;
@@ -422,7 +427,7 @@ INSERT INTO `event_comment` (`id`, `user_id`, `event_id`, `content`, `comment_da
 INSERT INTO `event_comment` (`id`, `user_id`, `event_id`, `content`, `comment_date`, `last_updated`, `enabled`) VALUES (3, 3, 3, 'Had a great time!', '2020-05-26 22:33:00', NULL, 1);
 INSERT INTO `event_comment` (`id`, `user_id`, `event_id`, `content`, `comment_date`, `last_updated`, `enabled`) VALUES (4, 3, 4, 'I wish I brought my friends. This was awesome.', '2020-05-26 22:33:00', NULL, 1);
 INSERT INTO `event_comment` (`id`, `user_id`, `event_id`, `content`, `comment_date`, `last_updated`, `enabled`) VALUES (5, 4, 5, 'I\'ve been to better events.', '2020-05-26 22:33:00', NULL, 1);
-INSERT INTO `event_comment` (`id`, `user_id`, `event_id`, `content`, `comment_date`, `last_updated`, `enabled`) VALUES (6, 5, 6, 'My only complaint is that there were no vegan hot dogs.', '2020-05-26 22:33:00', NULL, 1);
+INSERT INTO `event_comment` (`id`, `user_id`, `event_id`, `content`, `comment_date`, `last_updated`, `enabled`) VALUES (6, 4, 6, 'My only complaint is that there were no vegan hot dogs.', '2020-05-26 22:33:00', NULL, 1);
 
 COMMIT;
 

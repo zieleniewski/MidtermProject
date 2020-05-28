@@ -28,6 +28,7 @@ public class AttendeeDAOImpl implements AttendeeDAO {
 		if (eg != null) {
 			newAttendee.setUser(user);
 			newAttendee.setEventGame(eg);
+			newAttendee.setEnabled(true);
 			em.persist(newAttendee);
 		}
 		return newAttendee;
@@ -41,6 +42,7 @@ public class AttendeeDAOImpl implements AttendeeDAO {
 			updated.setEventGame(attn.getEventGame());
 			updated.setEventRating(attn.getEventRating());
 			updated.setAttendeeComment(attn.getAttendeeComment());
+			updated.setEnabled(true);
 			em.persist(updated);
 			em.flush();
 		}
