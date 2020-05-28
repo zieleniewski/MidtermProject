@@ -65,7 +65,6 @@
 			</tbody>
 		</table>
 
-<img width="100%" src="https://maps.googleapis.com/maps/api/staticmap?center=us&zoom=3&size=800x800&markers=${zipCodes}&key=AIzaSyBGkwnAWsK1Xff-R9G3nurccb9Wxt3d8R8">
 	
 	
  
@@ -111,6 +110,7 @@
 			</tbody>
 		</table>
 
+<img src="https://maps.googleapis.com/maps/api/staticmap?center=us&zoom=3&size=800x800&markers=${zipCodes}&key=AIzaSyBGkwnAWsK1Xff-R9G3nurccb9Wxt3d8R8">
 	
 	
  
