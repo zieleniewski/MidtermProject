@@ -205,7 +205,10 @@ public class EventController {
 	}
 	
 	@PostMapping("deleteEvent.do")
-	public String deleteEvent(int id) {
+	public String deleteEvent(int id, HttpSession session) {
+		User loggedInUser = (User) session.getAttribute("loggedInUser");
+		loggedInUser = userDao.getUserById(loggedInUser.getId());
+		session.setAttribute("loggedInUser", loggedInUser);
 		dao.disableEvent(id);
 		return "account";
 	}
