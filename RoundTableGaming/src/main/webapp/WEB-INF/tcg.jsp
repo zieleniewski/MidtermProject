@@ -10,7 +10,7 @@
 <script
 	src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<link rel="stylesheet" href="css/rpg.css" type="text/css">
+<link rel="stylesheet" href="css/tcg.css" type="text/css">
 <meta charset="UTF-8">
 <title>Role Play Games</title>
 </head>
@@ -88,8 +88,7 @@
 							<span> Enter the vibrant world of Rokugan with Legend of the Five Rings: The Card Game, a Living Card Game® of
 							 honor and conflict for two players! Drawing on the legacy of AEG’s original Legend of the Five Rings 
 							 collectible card game, and now reimagined with new mechanics, story, and the Living Card Game distribution
-							  model, you are invited to join the Great Clans, uphold the tenets of Bushidō, and fulfill your duty to your
-							   daimyō and the Emperor in a world shaped and changed by a dynamic, player-influenced story. <br> <br> <br> <br> <br> <br>
+							  model, you are invited to join the Great Clans, uphold the tenets of Bushidō, and fulfill your duty. <br> <br> <br> <br> <br> <br>
 								<br>​
 							</span>
 						</div>
@@ -162,7 +161,7 @@
 						<div class="team-back">
 							<span> In this game, two players Duel each other using a variety of Monster, Spell, and Trap Cards to defeat
 							 their opponent's monsters and be the first to drop the other's Life Points to 0.<br> <br> <br>
-								<br> <br> <br> <br>
+								<br> <br> <br> <br><br> <br>
 							</span>
 						</div>
 				</a>

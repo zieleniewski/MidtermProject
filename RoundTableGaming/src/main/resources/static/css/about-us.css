@@ -1,0 +1,103 @@
+@charset "UTF-8";
+
+body {
+background-image: url("https://cdna.artstation.com/p/assets/images/images/004/347/140/large/juanjo-barcelo-dark-city-01.jpg?1482770432") !important;
+background-repeat: no-repeat;
+ background-size: 100% 100%;
+ background-position: center;
+ height:1000px !important;
+
+}
+h2{
+	font-family: "Courier New" !important;
+	text-align: center !important;
+	color:white;
+	width: 80% !important;
+	  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* .d-flex{
+	position: absolute;
+	bottom: 40px;
+	
+} */
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+
+}
+
+
+.practice-area .inner img{
+	display:inline-block;
+}
+
+
+.our-webcoderskull{
+  background: url("http://www.webcoderskull.com/img/right-sider-banner.png") no-repeat center top / cover;
+  
+}
+.our-webcoderskull .cnt-block{ 
+   float:left; 
+   width:100%; 
+   background:#fff; 
+   padding:30px 20px; 
+   text-align:center; 
+   border:2px solid #d5d5d5;
+   margin: 0 0 28px;
+}
+.our-webcoderskull .cnt-block figure{
+   width:148px; 
+   height:148px; 
+   border-radius:100%; 
+   display:inline-block;
+   margin-bottom: 15px;
+}
+.our-webcoderskull .cnt-block img{ 
+   width:148px; 
+   height:148px; 
+   border-radius:100%; 
+}
+.our-webcoderskull .cnt-block h3{ 
+   color:#2a2a2a; 
+   font-size:20px; 
+   font-weight:500; 
+   padding:6px 0;
+   text-transform:uppercase;
+}
+.our-webcoderskull .cnt-block h3 a{
+  text-decoration:none;
+	color:#2a2a2a;
+}
+.our-webcoderskull .cnt-block h3 a:hover{
+	color:#337ab7;
+}
+.our-webcoderskull .cnt-block p{ 
+   color:#2a2a2a; 
+   font-size:13px; 
+   line-height:20px; 
+   font-weight:400;
+}
+.our-webcoderskull .cnt-block .follow-us{
+	margin:20px 0 0;
+}
+.our-webcoderskull .cnt-block .follow-us li{ 
+    display:inline-block; 
+	width:auto; 
+	margin:0 5px;
+}
+.our-webcoderskull .cnt-block .follow-us li .fa{ 
+   font-size:24px; 
+   color:#767676;
+}
+.our-webcoderskull .cnt-block .follow-us li .fa:hover{ 
+   color:#025a8e;
+}
+
+
+
