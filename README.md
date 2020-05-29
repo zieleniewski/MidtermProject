@@ -36,14 +36,11 @@
   <p align="center">
     A web program designed to connect users with gaming events near them
     <br />
-
-    <br />
-    <br />
     <a href="https://github.com/othneildrew/Best-README-Template">Make demo video here?</a>
-    ·
+    <br />
     <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
+    <br />
+<a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
   </p>
 </p>
 
