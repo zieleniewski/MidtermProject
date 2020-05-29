@@ -27,9 +27,9 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-
+<a href="https://github.com/zieleniewski/MidtermProject">
     <img src="images/newRoundTableLogo.png" alt="Logo" width="80" height="80">
-
+</a>
 
   <h3 align="center">Round Table Gaming</h3>
 
