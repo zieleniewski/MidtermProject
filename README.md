@@ -38,11 +38,6 @@
 
 
 
-<!-- ABOUT THE PROJECT -->
-## About The Project
-
-![Product Name Screen Shot][product-screenshot]
-
 This program was built as a midterm project in the summer of 2020 while attending school at Skill Distillery. It was developed over an eight day sprint.
 
 Here's why:
@@ -95,7 +90,14 @@ https://github.com/zieleniewski/MidtermProject.git
 
 
 
+## Demo
 
+![demo][demo]
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+![Product Name Screen Shot][product-screenshot]
 
 
 
@@ -142,3 +144,4 @@ Project Link: [https://github.com/zieleniewski/MidtermProject](https://github.co
 [issues-url]: https://github.com/zieleniewski/MidtermProject/issues
 [product-screenshot]: images/screenshot.png
 [schema]: images/roundtabledb.png
+[demo]: images/demo.gif
