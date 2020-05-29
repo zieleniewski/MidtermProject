@@ -123,7 +123,9 @@ Here is just a small sample of our application.
 ![Round Table Gaming Demo](demo/demo.gif)
 
 
+## SQL Schema
 
+![SQL Schema][schema]
 
 
 ## Lessons Learned
@@ -165,3 +167,4 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=flat-square
 [license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
 [product-screenshot]: images/screenshot.png
+[schema]: images/roundtabledb.png
