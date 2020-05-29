@@ -28,13 +28,13 @@
 <br />
 <p align="center">
 <a href="https://github.com/zieleniewski/MidtermProject">
-    <img src="images/newRoundTableLogo.png" alt="Logo" width="100" height="80">
+    <img src="images/newRoundTableLogo.png" alt="Logo" width="120" height="80">
 </a>
 
   <h3 align="center">Round Table Gaming</h3>
 
   <p align="center">
-    A web program designed to connect users with gaming events near them
+  <em>A web program designed to connect users with gaming events near them</em>
     <br />
     <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
     <br />
@@ -64,7 +64,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[Product Name Screen Shot][product-screenshot]
+![Product Name Screen Shot][product-screenshot]
 
 This program was built as a midterm project in the summer of 2020 while attending school at Skill Distillery. It was developed over an eight day sprint.
 
