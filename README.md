@@ -27,20 +27,18 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
+
     <img src="images/newRoundTableLogo.png" alt="Logo" width="80" height="80">
-  </a>
+
 
   <h3 align="center">Round Table Gaming</h3>
 
   <p align="center">
     A web program designed to connect users with gaming events near them
     <br />
-
-
     <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
     <br />
-<a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
+    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
   </p>
 </p>
 
