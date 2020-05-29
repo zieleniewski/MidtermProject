@@ -53,7 +53,6 @@
 * [Prerequisites](#prerequisites)
 * [Installation](#installation)
 * [Usage](#usage)
-* [Roadmap](#roadmap)
 * [Contributing](#contributing)
 * [License](#license)
 * [Contact](#contact)
@@ -64,7 +63,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![Product Name Screen Shot][product-screenshot]
+[![Product Name Screen Shot][product-screenshot]]
 
 This program was built as a midterm project in the summer of 2020 while attending school at Skill Distillery. It was developed over an eight day sprint.
 
@@ -128,10 +127,7 @@ Here is just a small sample of our application.
 
 
 
-<!-- ROADMAP -->
-## Roadmap
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a list of proposed features (and known issues).
 
 ## Lessons Learned
 
