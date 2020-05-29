@@ -96,12 +96,7 @@ https://github.com/zieleniewski/MidtermProject.git
 
 
 
-<!-- USAGE EXAMPLES -->
-## Demo
 
-Here is just a small sample of our application.
-
-![Round Table Gaming Demo](demo/demo.gif)
 
 
 ## SQL Schema
