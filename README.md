@@ -36,8 +36,8 @@
   <p align="center">
     A web program designed to connect users with gaming events near them
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">Make demo video here?</a>
-    <br />
+
+
     <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
     <br />
 <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
@@ -66,7 +66,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]]
+[Product Name Screen Shot][product-screenshot]
 
 This program was built as a midterm project in the summer of 2020 while attending school at Skill Distillery. It was developed over an eight day sprint.
 
@@ -80,10 +80,10 @@ Team members and roles:
 * Sergio Samoiloff (Developer, DBA)
 * Jacob Zieleniewski (Developer, Front End Design)
 
-The purpose of this program is to connect people together who share a common interest in table top gaming. The use of the site is similar in nature to other event connection sites. Without being logged in a user can view upcoming events and browse all of our current game offerings. Once they register and log in they can join specific events, create new events, leave events, and make community comments on events. The site also has full feature account section where they can edit their profile, see all their upcoming events they're signed up for, all previous events they attended, and make modifications to any events they might be hosting.
+The purpose of this program is to connect people together who share a common interest in table top gaming. The use of the site is similar in nature to other event connection sites. Without being logged in a user can view upcoming events and browse all of our current game offerings. Once they register and log in they can join specific events, create new events, leave events, and make community comments on events. The site also has a full feature account section where they can edit their profile, see all their upcoming events they're signed up for, all previous events they attended, and make modifications to any events they might be hosting.
 
 ### Built With
-This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+Technologies and frameworks we used in this project.
 * [Bootstrap](https://getbootstrap.com)
 * [JQuery](https://jquery.com)
 * [Spring/Spring Boot](https://spring.io/)
@@ -147,9 +147,9 @@ See the [open issues](https://github.com/othneildrew/Best-README-Template/issues
 <!-- CONTACT -->
 ## Contact
 
-Jacob Zieleniewski -  JacobZieleniewski@gmail.com
-Shane Duncan -  aequitas321@icloud.com
-Sergio Samoiloff - Sergio.Samoiloff@gmail.com
+Jacob Zieleniewski -  JacobZieleniewski@gmail.com <br />
+Shane Duncan -  aequitas321@icloud.com <br />
+Sergio Samoiloff - Sergio.Samoiloff@gmail.com <br />
 Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
 
 
